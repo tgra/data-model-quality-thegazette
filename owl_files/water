@@ -1,0 +1,640 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf:RDF [
+    <!ENTITY dcterms "http://purl.org/dc/terms/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY water "https://www.thegazette.co.uk/def/water#" >
+    <!ENTITY person "https://www.thegazette.co.uk/def/person#" >
+    <!ENTITY wgs84_pos "http://www.w3.org/2003/01/geo/wgs84_pos#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY authority "https://www.thegazette.co.uk/def/authority#" >
+    <!ENTITY transport "https://www.thegazette.co.uk/def/transport#" >
+    <!ENTITY publication "https://www.thegazette.co.uk/def/publication#" >
+    <!ENTITY environment "https://www.thegazette.co.uk/def/environment#" >
+    <!ENTITY consultation "https://www.thegazette.co.uk/def/consultation#" >
+    <!ENTITY organisation "https://www.thegazette.co.uk/def/organisation#" >
+	<!ENTITY legislation "https://www.thegazette.co.uk/def/legislation#" >
+	<!ENTITY location "https://www.thegazette.co.uk/def/location#" >
+	<!ENTITY ns "http://www.w3.org/2006/vcard/ns#" >
+	<!ENTITY ontology "https://www.thegazette.co.uk/def/publication#" >
+	<!ENTITY planning "https://www.thegazette.co.uk/def/planning#" >
+]>
+
+<rdf:RDF xmlns="https://www.thegazette.co.uk/def/water#"
+     xml:base="https://www.thegazette.co.uk/def/water"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+	 xmlns:ontology="https://www.thegazette.co.uk/def/publication#"
+	 xmlns:planning="https://www.thegazette.co.uk/def/planning#"
+	 xmlns:consultation="https://www.thegazette.co.uk/def/consultation#"
+	 xmlns:organisation="https://www.thegazette.co.uk/def/organisation#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<owl:Ontology rdf:about="">
+		<dc:description xml:lang="en"
+            >
+  		Ontology for Water Notices.
+		
+  		This is a beta version, and you should expect it to change.
+		</dc:description>
+		<dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Gazette Water Notices Ontology</dc:title>
+		<dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2008-09-18</dcterms:created>
+		<dcterms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Griff Chamberlain, The Stationery Office, mark.chamberlain@tso.co.uk</dcterms:creator>
+
+	</owl:Ontology>
+	<rdf:Property rdf:about="http://purl.org/dc/elements/1.1/description">
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+	</rdf:Property>
+	<rdf:Property rdf:about="http://purl.org/dc/elements/1.1/title">
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+	</rdf:Property>
+	<rdf:Description rdf:about="http://purl.org/dc/terms/created"/>
+	<rdf:Description rdf:about="http://purl.org/dc/terms/creator"/>
+	<rdf:Description rdf:about="http://purl.org/dc/terms/license"/>
+
+
+
+
+
+
+
+
+	<!-- WATER THINGS -->
+	<!-- https://www.thegazette.co.uk/def/water#WaterNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/water#WaterNotice">
+        <rdfs:subClassOf rdf:resource="&planning;PlanningAndEnvironmentNotice"/>
+    </owl:Class>
+
+    <!-- https://www.thegazette.co.uk/def/water#WaterThing -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/water#WaterThing">
+		<owl:equivalentClass>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<owl:Class rdf:about="#Application"/>
+					<owl:Class rdf:about="#ByelawConfirmation"/>
+				</owl:unionOf>
+			</owl:Class>
+		</owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&planning;PlanningAndEnvironmentThing"/>
+    </owl:Class>
+	
+	<owl:Class rdf:ID="Application">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Applications to local authorities</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Application class</rdfs:label>
+		<rdfs:subClassOf rdf:resource="#WaterThing"/>
+		<owl:disjointWith rdf:resource="#ByelawConfirmation"/>
+	</owl:Class>
+
+	<owl:Class rdf:ID="ByelawConfirmation">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Confirmation of byelaw</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ByelawConfirmation class</rdfs:label>
+		<rdfs:subClassOf rdf:resource="#WaterThing"/>
+		<owl:disjointWith rdf:resource="#Application"/>
+	</owl:Class>
+
+<!--	<owl:Class rdf:ID="WaterResources">
+		<rdfs:subClassOf rdf:resource="#WaterThing"/>
+	</owl:Class>-->
+	
+	<owl:ObjectProperty rdf:ID="hasByelaw">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bylaw that is being confirmed</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasByelaw property</rdfs:label>
+		<rdfs:domain rdf:resource="#ByelawConfirmation"/>
+		<rdfs:range rdf:resource="&legislation;Byelaw"/>
+	</owl:ObjectProperty>	
+
+	<owl:DatatypeProperty rdf:ID="dateOfApplication">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">date application made</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dateOfApplication functional property</rdfs:label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+		<rdfs:domain rdf:resource="#ByelawConfirmation"/>
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+	</owl:DatatypeProperty>	
+	
+	
+	
+	<owl:Class rdf:ID="ApplicationForConsent">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Application for consent</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ApplicationForConsent class</rdfs:label>
+		<rdfs:subClassOf rdf:resource="#Application"/>
+		<owl:disjointWith rdf:resource="#ApplicationForAppointment"/>
+		<owl:disjointWith rdf:resource="#NaturalMineralWaterSourceApplicationApproval"/>
+	</owl:Class>
+
+	<owl:Class rdf:ID="ApplicationForAppointment">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Application for appointment</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ApplicationForAppointment class</rdfs:label>
+		<rdfs:subClassOf rdf:resource="#Application"/>
+		<owl:disjointWith rdf:resource="#ApplicationForConsent"/>
+		<owl:disjointWith rdf:resource="#NaturalMineralWaterSourceApplicationApproval"/>
+	</owl:Class> 
+
+	<owl:Class rdf:ID="NaturalMineralWaterSourceApplicationApproval">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Approval of Natural Mineral Water Source Applciation</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NaturalMineralWaterSourceApplicationApproval class</rdfs:label>
+		<rdfs:subClassOf rdf:resource="#Application"/>
+		<owl:disjointWith rdf:resource="#ApplicationForAppointment"/>
+		<owl:disjointWith rdf:resource="#ApplicationForConsent"/>
+	</owl:Class>
+
+	<owl:DatatypeProperty rdf:ID="dateOfApproval">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Date approved</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dateOfApproval property</rdfs:label>
+		<rdfs:domain rdf:resource="#NaturalMineralWaterSourceApplicationApproval"/>
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+	</owl:DatatypeProperty>	
+	
+	<owl:ObjectProperty rdf:ID="hasApplication">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Associated Application</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasApplication property</rdfs:label>
+		<rdfs:domain rdf:resource="#Application"/>
+		<rdfs:range rdf:resource="&legislation;Application"/>
+	</owl:ObjectProperty>	
+
+	<owl:ObjectProperty rdf:ID="hasApplicationMadeBy">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Organisation that made the application </rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasApplicationMadeBy property</rdfs:label>
+		<rdfs:domain rdf:resource="#Application"/>
+		<rdfs:range rdf:resource="&organisation;Organisation"/>
+	</owl:ObjectProperty>
+
+	<owl:ObjectProperty rdf:ID="hasApplicationMadeTo">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Organisation the application has been submitted to</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasApplicationMadeBy property</rdfs:label>
+		<rdfs:domain rdf:resource="#Application"/>
+		<rdfs:range rdf:resource="&organisation;Organisation"/>
+	</owl:ObjectProperty>	
+	
+	
+	
+	<!--NOTICE TYPES -->
+
+	<owl:Class rdf:ID="LandDrainageNotice">
+		<owl:equivalentClass>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+				<owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1903</owl:hasValue>
+			</owl:Restriction>
+		</owl:equivalentClass>
+		<rdfs:subClassOf rdf:resource="#WaterNotice"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ontology;isAbout"/>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<owl:Class rdf:about="#WaterThing"/>
+							<owl:Class rdf:about="&consultation;StatutoryConsultationNotification"/>
+						</owl:unionOf>
+					</owl:Class>
+				</owl:allValuesFrom>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#NaturalMineralWatersNotice"/>
+		<owl:disjointWith rdf:resource="#WaterIndustryNotice"/>
+		<owl:disjointWith rdf:resource="#WaterResourcesNotice"/>
+	</owl:Class>
+
+	<owl:Class rdf:ID="NaturalMineralWatersNotice">
+		<owl:equivalentClass>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+				<owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1904</owl:hasValue>
+			</owl:Restriction>
+		</owl:equivalentClass>
+		<rdfs:subClassOf rdf:resource="#WaterNotice"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ontology;isAbout"/>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<owl:Class rdf:about="#WaterThing"/>
+							<owl:Class rdf:about="&consultation;StatutoryConsultationNotification"/>
+						</owl:unionOf>
+					</owl:Class>
+				</owl:allValuesFrom>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#LandDrainageNotice"/>
+		<owl:disjointWith rdf:resource="#WaterIndustryNotice"/>
+		<owl:disjointWith rdf:resource="#WaterResourcesNotice"/>
+	</owl:Class>
+
+	<owl:Class rdf:ID="WaterIndustryNotice">
+		<owl:equivalentClass>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+				<owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1902</owl:hasValue>
+			</owl:Restriction>
+		</owl:equivalentClass>
+		<rdfs:subClassOf rdf:resource="#WaterNotice"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ontology;isAbout"/>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<owl:Class rdf:about="#WaterThing"/>
+							<owl:Class rdf:about="&consultation;StatutoryConsultationNotification"/>
+						</owl:unionOf>
+					</owl:Class>
+				</owl:allValuesFrom>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#NaturalMineralWatersNotice"/>
+		<owl:disjointWith rdf:resource="#LandDrainageNotice"/>
+		<owl:disjointWith rdf:resource="#WaterResourcesNotice"/>
+	</owl:Class>
+	
+	<owl:Class rdf:ID="WaterResourcesNotice">
+		<owl:equivalentClass>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+				<owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1901</owl:hasValue>
+			</owl:Restriction>
+		</owl:equivalentClass>
+		<rdfs:subClassOf rdf:resource="#WaterNotice"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ontology;isAbout"/>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<owl:Class rdf:about="#WaterThing"/>
+							<owl:Class rdf:about="&consultation;StatutoryConsultationNotification"/>
+						</owl:unionOf>
+					</owl:Class>
+				</owl:allValuesFrom>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#NaturalMineralWatersNotice"/>
+		<owl:disjointWith rdf:resource="#WaterIndustryNotice"/>
+		<owl:disjointWith rdf:resource="#LandDrainageNotice"/>
+	</owl:Class>
+
+
+<!--DRAINAGE CLASSES-->
+	<owl:Class rdf:about="#InternalDrainageBoard">
+		<dc:description>An Internal Drainage Board (IDB) is a type of operating authority which occur in areas of special drainage need in England and Wales with permissive powers to undertake work to secure clean water drainage and water level management within drainage districts.</dc:description>
+		<rdfs:subClassOf rdf:resource="&organisation;PublicInstitution"/>
+		<owl:disjointWith rdf:resource="&organisation;ExecutiveAgency"/>
+		<owl:disjointWith rdf:resource="&organisation;GovernmentDepartment"/>
+		<owl:disjointWith rdf:resource="&organisation;PublicCorporation"/>
+		<owl:disjointWith rdf:resource="&organisation;RegionalAdministration"/>
+	</owl:Class>	
+
+	<owl:Class rdf:about="#DrainageDistrict">
+		<dc:description>Drainage Districts occur in England and Wales, varying in size from a few hundred acres to over 100,000 acres (400 km2), all in low lying areas of the country where flood risk management and land drainage are sensitive issues</dc:description>
+		<rdfs:subClassOf rdf:resource="http://www.geonames.org/ontology#Feature"/>
+		<owl:disjointWith rdf:resource="&location;ArbitraryLocation"/>
+		<owl:disjointWith rdf:resource="&location;Building"/>
+		<owl:disjointWith rdf:resource="&location;CivicCentre"/>
+		<owl:disjointWith rdf:resource="&location;Docks"/>
+		<owl:disjointWith rdf:resource="&location;PostOffice"/>
+		<owl:disjointWith rdf:resource="&location;Guildhall"/>
+		<owl:disjointWith rdf:resource="&organisation;Office"/>
+		<owl:disjointWith rdf:resource="&location;InternalFeature"/>
+		<owl:disjointWith rdf:resource="&location;Library"/>
+		<owl:disjointWith rdf:resource="&location;Locality"/>
+		<owl:disjointWith rdf:resource="&location;ParkingBay"/>
+		<owl:disjointWith rdf:resource="&location;Road"/>
+		<owl:disjointWith rdf:resource="&location;WaterCourse"/>
+		<owl:disjointWith rdf:resource="&location;Zoo"/>
+		<owl:disjointWith rdf:resource="&transport;Aerodrome"/>
+		<owl:disjointWith rdf:resource="&transport;RailwayStation"/>
+	</owl:Class>		
+
+	<!--DISCHARGE CLASSES-->
+
+	<owl:Class rdf:about="#ChangeOfDischarge">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">superclass for change of discharge classes</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ChangeOfDischarge class</rdfs:label>
+		<rdfs:subClassOf rdf:resource="&consultation;ConsultationThing"/>
+		<owl:equivalentClass>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<owl:Class rdf:about="#NewDischarge"/>
+					<owl:Class rdf:about="#VariationDischarge"/>
+				</owl:unionOf>
+			</owl:Class>
+		</owl:equivalentClass>
+		<owl:disjointWith rdf:resource="#ChangeOfUndertaker"/>
+		<owl:disjointWith rdf:resource="#ChangeOfMineralWaterSource"/>
+		<owl:disjointWith rdf:resource="#ChangeDrainageBaord"/>
+		<owl:disjointWith rdf:resource="#AmalgamationOfDrainageDistrict"/>
+	</owl:Class>
+
+	<owl:Class rdf:about="#NewDischarge">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">New discharge</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NewDischarge class</rdfs:label>
+		<rdfs:subClassOf rdf:resource="#ChangeOfDischarge"/>
+		<owl:disjointWith rdf:resource="#VariationDischarge"/>
+	</owl:Class>
+
+	<owl:Class rdf:about="#VariationDischarge">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">vairation of existing discharge</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">VariationDischarge class</rdfs:label>
+		<rdfs:subClassOf rdf:resource="#ChangeOfDischarge"/>
+		<owl:disjointWith rdf:resource="#NewDischarge"/>
+	</owl:Class>
+
+	<owl:DatatypeProperty rdf:ID="dischargeQuantity">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quantity of discharge being applied for</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dischargeQuantity property</rdfs:label>
+		<rdfs:domain rdf:resource="#ChangeOfDischarge"/>
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+	</owl:DatatypeProperty>		
+
+	<owl:DatatypeProperty rdf:ID="dischargeType">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">type of discharge being applied for</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dischargeType property</rdfs:label>
+		<rdfs:domain rdf:resource="#ChangeOfDischarge"/>
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+	</owl:DatatypeProperty>	
+
+	<owl:ObjectProperty rdf:ID="dischargeTo">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">location effluent will discharge into</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dischargeTo property</rdfs:label>
+		<rdfs:domain rdf:resource="#ChangeOfDischarge"/>
+		<rdfs:range rdf:resource="http://www.geonames.org/ontology#Feature"/>
+	</owl:ObjectProperty>
+
+
+	<owl:ObjectProperty rdf:ID="dischargeFrom">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">location where effluent generated</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dischargeFrom property</rdfs:label>
+		<rdfs:domain rdf:resource="#ChangeOfDischarge"/>
+		<rdfs:range rdf:resource="http://www.geonames.org/ontology#Feature"/>
+	</owl:ObjectProperty>
+
+	<!--UNDERTAKER-->
+
+	<owl:Class rdf:about="#ChangeOfUndertaker">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">superclass for change of role undertaker</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ChangeOfUndertaker class</rdfs:label>
+		<rdfs:subClassOf rdf:resource="&consultation;ConsultationThing"/>
+		<owl:equivalentClass>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<owl:Class rdf:about="#ChangeOfSewageUndertaker"/>
+					<owl:Class rdf:about="#ChangeOfWaterUndertaker"/>
+				</owl:unionOf>
+			</owl:Class>
+		</owl:equivalentClass>
+		<owl:disjointWith rdf:resource="#ChangeOfDischarge"/>
+		<owl:disjointWith rdf:resource="#ChangeOfMineralWaterSource"/>
+		<owl:disjointWith rdf:resource="#ChangeDrainageBaord"/>
+		<owl:disjointWith rdf:resource="#AmalgamationOfDrainageDistrict"/>
+	</owl:Class>
+
+	<owl:Class rdf:about="#ChangeOfSewageUndertaker">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">change of sewage undertaker</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ChangeOfSewageUndertaker class</rdfs:label>
+		<rdfs:subClassOf rdf:resource="#ChangeOfUndertaker"/>
+		<owl:disjointWith rdf:resource="#ChangeOfWaterUndertaker"/>
+	</owl:Class>
+
+	<owl:Class rdf:about="#ChangeOfWaterUndertaker">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">change of water undertaker</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ChangeOfSewageUndertaker class</rdfs:label>
+		<rdfs:subClassOf rdf:resource="#ChangeOfUndertaker"/>
+		<owl:disjointWith rdf:resource="#ChangeOfSewageUndertaker"/>
+	</owl:Class>
+
+	<owl:ObjectProperty rdf:ID="inPlaceOfExistingUndertaker">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">existing undertaker</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inPlaceOfExistingUndertaker property</rdfs:label>
+		<rdfs:domain rdf:resource="#ChangeOfUndertaker"/>
+		<rdfs:range rdf:resource="&organisation;Organisation"/>
+	</owl:ObjectProperty>
+
+	<owl:ObjectProperty rdf:ID="hasNewUndertaker">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">new undertaker</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasNewUndertaker property</rdfs:label>
+		<rdfs:domain rdf:resource="#ChangeOfUndertaker"/>
+		<rdfs:range rdf:resource="&organisation;Organisation"/>
+	</owl:ObjectProperty>	
+
+	<owl:ObjectProperty rdf:ID="hasLocationOfUndertaking">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">location that is being undertaken</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasLocationOfUndertaking property</rdfs:label>
+		<rdfs:domain rdf:resource="#ChangeOfUndertaker"/>
+		<rdfs:range rdf:resource="http://www.geonames.org/ontology#Feature"/>
+	</owl:ObjectProperty>
+
+
+	<!--DRAINAGE BOARDS-->
+
+	<owl:Class rdf:about="#AmalgamationOfDrainageDistrict">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amalgamation of drainage districts into one district</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AmalgamationOfDrainageDistrict class</rdfs:label>
+		<rdfs:subClassOf rdf:resource="&consultation;ConsultationThing"/>
+		<owl:disjointWith rdf:resource="#ChangeOfDischarge"/>
+		<owl:disjointWith rdf:resource="#ChangeOfMineralWaterSource"/>
+		<owl:disjointWith rdf:resource="#ChangeDrainageBaord"/>
+		<owl:disjointWith rdf:resource="#ChangeOfUndertaker"/>
+	</owl:Class>
+
+	<owl:ObjectProperty rdf:ID="amalgamatesDrainageDistrict">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">drainage districts that are being amalgamated</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amalgamatesDrainageDistrict property</rdfs:label>
+		<rdfs:domain rdf:resource="#AmalgamationOfDrainageDistrict"/>
+		<rdfs:range rdf:resource="#DrainageDistrict"/>
+	</owl:ObjectProperty>	
+
+	<owl:Class rdf:about="#ChangeDrainageBaord">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Superclass for change of drainage board classes</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ChangeDrainageBaord class</rdfs:label>
+		<rdfs:subClassOf rdf:resource="&consultation;ConsultationThing"/>
+		<owl:equivalentClass>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<owl:Class rdf:about="#ReconstitutionOfDrainageBoard"/>
+					<owl:Class rdf:about="#AbolitionOfDrainageBoard"/>
+					<owl:Class rdf:about="#NewDrainageBoard"/>
+				</owl:unionOf>
+			</owl:Class>
+		</owl:equivalentClass>
+		<owl:disjointWith rdf:resource="#ChangeOfDischarge"/>
+		<owl:disjointWith rdf:resource="#AmalgamationOfDrainageDistrict"/>
+		<owl:disjointWith rdf:resource="#ChangeOfMineralWaterSource"/>
+		<owl:disjointWith rdf:resource="#ChangeOfUndertaker"/>
+	</owl:Class>
+
+	<owl:Class rdf:about="#ReconstitutionOfDrainageBoard">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reconsitution (change of number of members) of Drainage Board</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ReconstitutionOfDrainageBoard class</rdfs:label>
+		<rdfs:subClassOf rdf:resource="#ChangeDrainageBaord"/>
+		<owl:disjointWith rdf:resource="#AbolitionOfDrainageBoard"/>
+		<owl:disjointWith rdf:resource="#NewDrainageBoard"/>
+	</owl:Class>
+
+	<owl:Class rdf:about="#AbolitionOfDrainageBoard">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abolition of Drainage Board</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AbolitionOfDrainageBoard class</rdfs:label>
+		<rdfs:subClassOf rdf:resource="#ChangeDrainageBaord"/>
+		<owl:disjointWith rdf:resource="#ReconstitutionOfDrainageBoard"/>
+		<owl:disjointWith rdf:resource="#NewDrainageBoard"/>
+	</owl:Class>
+
+	<owl:Class rdf:about="#NewDrainageBoard">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Formation of new Drainage Board</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NewDrainageBoard class</rdfs:label>
+		<rdfs:subClassOf rdf:resource="#ChangeDrainageBaord"/>
+		<owl:disjointWith rdf:resource="#ReconstitutionOfDrainageBoard"/>
+		<owl:disjointWith rdf:resource="#AbolitionOfDrainageBoard"/>
+	</owl:Class>	
+
+	<owl:DatatypeProperty rdf:ID="newNumberOfMembers">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">new number of member in reconstituted drainage board</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">newNumberOfMembers property</rdfs:label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+		<rdfs:domain rdf:resource="#ReconstitutionOfDrainageBoard"/>
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+	</owl:DatatypeProperty>	
+
+	<owl:DatatypeProperty rdf:ID="previousNumberOfMembers">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">previous number of member in reconstituted drainage board</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">previousNumberOfMembers property</rdfs:label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+		<rdfs:domain rdf:resource="#ReconstitutionOfDrainageBoard"/>
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+	</owl:DatatypeProperty>		
+
+	<owl:ObjectProperty rdf:ID="hasDrainageDistrict">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">drainage districts within a drainage board</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasDrainageDistrict property</rdfs:label>
+		<rdfs:domain rdf:resource="#InternalDrainageBoard"/>
+		<rdfs:range rdf:resource="#DrainageDistrict"/>
+	</owl:ObjectProperty>
+
+	<owl:ObjectProperty rdf:ID="hasDrainageBoard">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Drainage board that is assocaited with the change of drainage baord</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasDrainageBoard property</rdfs:label>
+		<rdfs:domain rdf:resource="#ChangeDrainageBaord"/>
+		<rdfs:range rdf:resource="#InternalDrainageBoard"/>
+	</owl:ObjectProperty>
+
+
+
+	<!--MINERAL WATER-->
+
+	<owl:Class rdf:about="#ChangeOfMineralWaterSource">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Superclass for change of mineral water source classes</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ChangeOfMineralWaterSource class</rdfs:label>
+		<rdfs:subClassOf rdf:resource="&consultation;ConsultationThing"/>
+		<owl:equivalentClass>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<owl:Class rdf:about="#NewRecognitionOfSource"/>
+					<owl:Class rdf:about="#WithdrawnRecognitionOfSource"/>
+					<owl:Class rdf:about="#RedesignateSource"/>
+				</owl:unionOf>
+			</owl:Class>
+		</owl:equivalentClass>
+		<owl:disjointWith rdf:resource="#ChangeOfDischarge"/>
+		<owl:disjointWith rdf:resource="#AmalgamationOfDrainageDistrict"/>
+		<owl:disjointWith rdf:resource="#ChangeDrainageBaord"/>
+		<owl:disjointWith rdf:resource="#ChangeOfUndertaker"/>
+	</owl:Class>
+
+
+	<owl:Class rdf:ID="NewRecognitionOfSource">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Recognised new source of mineral water</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NewRecognitionOfSource class</rdfs:label>
+		<rdfs:subClassOf rdf:resource="#ChangeOfMineralWaterSource"/>
+		<owl:disjointWith rdf:resource="#WithdrawnRecognitionOfSource"/>
+		<owl:disjointWith rdf:resource="#RedesignateSource"/>
+	</owl:Class>   
+
+	<owl:Class rdf:ID="WithdrawnRecognitionOfSource">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Withdraw recognition of mineral water source</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WithdrawnRecognitionOfSource class</rdfs:label>
+		<rdfs:subClassOf rdf:resource="#ChangeOfMineralWaterSource"/>
+		<owl:disjointWith rdf:resource="#NewRecognitionOfSource"/>
+		<owl:disjointWith rdf:resource="#RedesignateSource"/>
+	</owl:Class>      
+
+	<owl:Class rdf:ID="RedesignateSource">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Redesignate (sometimes refered to as Rename) mineral water source</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RedesignateSource class</rdfs:label>
+		<rdfs:subClassOf rdf:resource="#ChangeOfMineralWaterSource"/>
+		<owl:disjointWith rdf:resource="#NewRecognitionOfSource"/>
+		<owl:disjointWith rdf:resource="#WithdrawnRecognitionOfSource"/>
+	</owl:Class>    
+
+	<owl:Class rdf:ID="NaturalMineralWater">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Natural mineral water</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NaturalMineralWater class</rdfs:label>
+		<rdfs:subClassOf rdf:resource="#WaterThing"/>
+	</owl:Class>  
+
+	<owl:ObjectProperty rdf:ID="hasMineralWaterDesignation">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Designation of mineral water</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasMineralWaterDesignation property</rdfs:label>
+		<rdfs:domain rdf:resource="#ChangeOfMineralWaterSource"/>
+		<rdfs:range rdf:resource="#NaturalMineralWater"/>
+	</owl:ObjectProperty>	 	
+
+
+	<owl:DatatypeProperty rdf:ID="nameOfMineralWater">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name of mineral water</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nameOfMineralWater property</rdfs:label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+		<rdfs:domain rdf:resource="#NaturalMineralWater"/>
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+	</owl:DatatypeProperty>		
+
+	<owl:ObjectProperty rdf:ID="hasSource">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">location (source) of mineral water</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasSource property</rdfs:label>
+		<rdfs:domain rdf:resource="#NaturalMineralWater"/>
+		<rdfs:range rdf:resource="http://www.geonames.org/ontology#Feature"/>
+	</owl:ObjectProperty>
+
+	<owl:ObjectProperty rdf:ID="hasProducer">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">organisation associated with mineral water production</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasProducer property</rdfs:label>
+		<rdfs:domain rdf:resource="#NaturalMineralWater"/>
+		<rdfs:range rdf:resource="&organisation;Organisation"/>
+	</owl:ObjectProperty>	
+
+	<owl:ObjectProperty rdf:ID="hasPreviousDesignation">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">previous mineral water designation</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasPreviousDesignation property</rdfs:label>
+		<rdfs:domain rdf:resource="#RedesignateSource"/>
+		<rdfs:range rdf:resource="#NaturalMineralWater"/>
+	</owl:ObjectProperty>
+
+	<owl:ObjectProperty rdf:ID="hasNewDesignation">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">new mineral water designation</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasNewDesignation property</rdfs:label>
+		<rdfs:domain rdf:resource="#RedesignateSource"/>
+		<rdfs:range rdf:resource="#NaturalMineralWater"/>
+	</owl:ObjectProperty>
+
+	<owl:ObjectProperty rdf:ID="hasDesignation">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mineral water designation</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasDesignation property</rdfs:label>
+		<rdfs:domain rdf:resource="#ChangeOfMineralWaterSource"/>
+		<rdfs:range rdf:resource="#NaturalMineralWater"/>
+	</owl:ObjectProperty>	
+
+	<owl:DatatypeProperty rdf:ID="dateOfDesignation">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">date of mineral water designation</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dateOfDesignation property</rdfs:label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+		<rdfs:domain rdf:resource="#ReconstitutionOfDrainageBoard"/>
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+	</owl:DatatypeProperty>		
+
+</rdf:RDF>

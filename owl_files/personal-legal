@@ -1,0 +1,1042 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY foaf "http://xmlns.com/foaf/0.1/" >
+	<!ENTITY dbpedia "http://dbpedia.org/ontology/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY ns "http://www.w3.org/2006/vcard/ns#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY ontology "https://www.thegazette.co.uk/def/#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY person "https://www.thegazette.co.uk/def/person#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY contact "http://www.w3.org/2000/10/swap/pim/contact#" >
+    <!ENTITY legislation "https://www.thegazette.co.uk/def/legislation#" >
+    <!ENTITY organisation "https://www.thegazette.co.uk/def/organisation#" >
+]>
+
+
+<rdf:RDF xmlns="https://www.thegazette.co.uk/def/personal-legal"
+     xml:base="https://www.thegazette.co.uk/def/personal-legal"
+     xmlns:person="https://www.thegazette.co.uk/def/person"
+     xmlns:ns="http://www.w3.org/2006/vcard/ns#"
+	 xmlns:dbpedia="http://dbpedia.org/ontology/"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:organisation="https://www.thegazette.co.uk/def/organisation"
+     xmlns:legislation="https://www.thegazette.co.uk/def/legislation"
+     xmlns:ontology="https://www.thegazette.co.uk/def/publication"
+     xmlns:contact="http://www.w3.org/2000/10/swap/pim/contact#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="https://www.thegazette.co.uk/def/personal-legal">
+        <owl:imports rdf:resource="https://www.thegazette.co.uk/def/organisation"/>
+        <owl:imports rdf:resource="https://www.thegazette.co.uk/def/person"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="&xsd;date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+    <!-- http://www.gazettes.co.uk/ontology#isInNotice -->
+
+    <owl:ObjectProperty rdf:about="&ontology;isInNotice"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#abandonsName -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/personal-legal#abandonsName">
+        <rdfs:comment rdf:datatype="&xsd;string">The old name of the person.</rdfs:comment>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/personal-legal#ChangeOfName"/>
+        <rdfs:range rdf:resource="&ns;Name"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#assumesName -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/personal-legal#assumesName">
+        <rdfs:comment rdf:datatype="&xsd;string">The new name of the person.</rdfs:comment>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/personal-legal#ChangeOfName"/>
+        <owl:inverseOf rdf:resource="https://www.thegazette.co.uk/def/personal-legal#isAssumedBy"/>
+        <rdfs:range rdf:resource="&ns;Name"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#belongsToCitizen -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/personal-legal#belongsToCitizen">
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/personal-legal#Citizenship"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#changesNameOf -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/personal-legal#changesNameOf">
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/personal-legal#ChangeOfName"/>
+        <owl:inverseOf rdf:resource="https://www.thegazette.co.uk/def/personal-legal#hasNameChange"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#conferredByLegislation -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/personal-legal#conferredByLegislation">
+        <rdfs:range rdf:resource="&legislation;LegislationPart"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/personal-legal#Citizenship"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#confersCitizenship -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/personal-legal#confersCitizenship">
+        <rdfs:domain rdf:resource="&legislation;LegislationPart"/>
+        <rdfs:range rdf:resource="https://www.thegazette.co.uk/def/personal-legal#Citizenship"/>
+        <owl:inverseOf rdf:resource="https://www.thegazette.co.uk/def/personal-legal#conferredByLegislation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#consentsToChangeOfName -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/personal-legal#consentsToChangeOfName">
+        <rdfs:range rdf:resource="https://www.thegazette.co.uk/def/personal-legal#ChildChangeOfName"/>
+        <owl:inverseOf rdf:resource="https://www.thegazette.co.uk/def/personal-legal#isConsentedToBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#hasCitizenship -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/personal-legal#hasCitizenship">
+        <rdfs:range rdf:resource="https://www.thegazette.co.uk/def/personal-legal#Citizenship"/>
+        <owl:inverseOf rdf:resource="https://www.thegazette.co.uk/def/personal-legal#belongsToCitizen"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#hasContactOrganisation -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/personal-legal#hasContactOrganisation">
+        <rdfs:range rdf:resource="&organisation;Organisation"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/personal-legal#NoticeForClaimsAgainstEstate"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/personal-legal#SearchForNextOfKin"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#hasEstateOf -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/personal-legal#hasEstateOf">
+    	<rdfs:label>hasEstateOf</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Indicates the person who has died.</rdfs:comment>
+        <rdfs:range rdf:resource="https://www.thegazette.co.uk/def/personal-legal#DeceasedPerson"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/personal-legal#MissingWills"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/personal-legal#NoticeForClaimsAgainstEstate"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#hasExecutor -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/personal-legal#hasExecutor">
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/personal-legal#WillsAndProbateThing"/>
+        <rdfs:range rdf:resource="&foaf;Agent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#hasMaritalStatus -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/personal-legal#hasMaritalStatus">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="https://www.thegazette.co.uk/def/personal-legal#MaritalStatus"/>
+        <owl:inverseOf rdf:resource="https://www.thegazette.co.uk/def/personal-legal#isMaritalStatusOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#hasNameChange -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/personal-legal#hasNameChange">
+        <rdfs:range rdf:resource="https://www.thegazette.co.uk/def/personal-legal#ChangeOfName"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#hasNextOfKin -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/personal-legal#hasNextOfKin">
+        <rdfs:range rdf:resource="&contact;Person"/>
+        <rdfs:domain rdf:resource="&contact;Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#hasNextOfKinBeingSearchedFor -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/personal-legal#hasNextOfKinBeingSearchedFor">
+        <rdfs:comment>The person who could be the next of kin and is being searched for; this person is usually a relative of a deceased one.</rdfs:comment>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/personal-legal#SearchForNextOfKin"/>
+        <rdfs:range rdf:resource="&contact;Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#hasNoticeForClaims -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/personal-legal#hasNoticeForClaims">
+        <rdfs:comment rdf:datatype="&xsd;string">Relates a deceased person to the notice for claims on their estate.</rdfs:comment>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/personal-legal#DeceasedPerson"/>
+        <rdfs:range rdf:resource="https://www.thegazette.co.uk/def/personal-legal#NoticeForClaimsAgainstEstate"/>
+        <owl:inverseOf rdf:resource="https://www.thegazette.co.uk/def/personal-legal#hasEstateOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#hasParentalResponsibilityFor -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/personal-legal#hasParentalResponsibilityFor"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#hasPersonalRepresentative -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/personal-legal#hasPersonalRepresentative">
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/personal-legal#NoticeForClaimsAgainstEstate"/>
+        <rdfs:subPropertyOf rdf:resource="https://www.thegazette.co.uk/def/personal-legal#hasExecutor"/>
+        <owl:inverseOf rdf:resource="https://www.thegazette.co.uk/def/personal-legal#isPersonalRepresentativeFor"/>
+        <rdfs:range rdf:resource="&foaf;Agent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#isAbandonedBy -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/personal-legal#isAbandonedBy">
+        <rdfs:range rdf:resource="https://www.thegazette.co.uk/def/personal-legal#ChangeOfName"/>
+        <owl:inverseOf rdf:resource="https://www.thegazette.co.uk/def/personal-legal#abandonsName"/>
+        <rdfs:domain rdf:resource="&ns;Name"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#isAssumedBy -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/personal-legal#isAssumedBy">
+        <rdfs:range rdf:resource="https://www.thegazette.co.uk/def/personal-legal#ChangeOfName"/>
+        <rdfs:domain rdf:resource="&ns;Name"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#isConsentedToBy -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/personal-legal#isConsentedToBy">
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/personal-legal#ChildChangeOfName"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#isContactOrganisationFor -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/personal-legal#isContactOrganisationFor">
+        <rdfs:domain rdf:resource="&organisation;Organisation"/>
+        <owl:inverseOf rdf:resource="https://www.thegazette.co.uk/def/personal-legal#hasContactOrganisation"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/personal-legal#NoticeForClaimsAgainstEstate"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/personal-legal#SearchForNextOfKin"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#isForNextOfKinOf -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/personal-legal#isForNextOfKinOf">
+        <rdfs:comment rdf:datatype="&xsd;string">The person for whom next of kin are being searched for; the person is usually deceased.</rdfs:comment>
+        <rdfs:range rdf:resource="&person;Person"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/personal-legal#SearchForNextOfKin"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#isMaritalStatusOf -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/personal-legal#isMaritalStatusOf">
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/personal-legal#MaritalStatus"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#isNextOfKinOf -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/personal-legal#isNextOfKinOf">
+        <owl:inverseOf rdf:resource="https://www.thegazette.co.uk/def/personal-legal#hasNextOfKin"/>
+        <rdfs:domain rdf:resource="&contact;Person"/>
+        <rdfs:range rdf:resource="&contact;Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#isParentalResponsibilityOf -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/personal-legal#isParentalResponsibilityOf">
+        <owl:inverseOf rdf:resource="https://www.thegazette.co.uk/def/personal-legal#hasParentalResponsibilityFor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#isPersonalRepresentativeFor -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/personal-legal#isPersonalRepresentativeFor">
+        <rdfs:range rdf:resource="https://www.thegazette.co.uk/def/personal-legal#NoticeForClaimsAgainstEstate"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.gazettes.co.uk/ontology#hasNoticeCode -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;hasNoticeCode"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#dateOfDeath -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/personal-legal#dateOfDeath">
+        <rdfs:label>dateOfDeath</rdfs:label>
+        <rdfs:domain rdf:resource="&person;Person"/>
+        <rdfs:subPropertyOf rdf:resource="https://www.thegazette.co.uk/def/personal-legal#dateOfDecease"/>
+        <rdfs:range rdf:resource="&xsd;date"/>
+    </owl:DatatypeProperty>
+    
+	<!-- https://www.thegazette.co.uk/def/personal-legal#placeOfDeath -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/personal-legal#placeOfDeath">
+        <rdfs:label>placeOfDeath</rdfs:label>
+        <rdfs:domain rdf:resource="&person;Person"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#dateOfDecease -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/personal-legal#dateOfDecease">
+        <rdfs:label>dateOfDecease</rdfs:label>
+        <rdfs:domain rdf:resource="&person;Person"/>
+        <rdfs:range rdf:resource="&xsd;date"/>
+    </owl:DatatypeProperty>
+    
+	<!-- https://www.thegazette.co.uk/def/personal-legal#dateOfMarriage --> 
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/personal-legal#dateOfMarriage">
+        <rdfs:label>dateOfMarriage</rdfs:label>
+        <rdfs:domain rdf:resource="&person;Person"/>
+        <rdfs:range rdf:resource="&xsd;date"/>
+    </owl:DatatypeProperty>
+	
+	<!-- https://www.thegazette.co.uk/def/personal-legal#placeOfMarriage -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/personal-legal#placeOfMarriage">
+        <rdfs:label>placeOfMarriage</rdfs:label>
+        <rdfs:domain rdf:resource="&person;Person"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+	<!-- https://www.thegazette.co.uk/def/personal-legal#spouse -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/personal-legal#spouse">
+        <rdfs:label>spouse</rdfs:label>
+        <rdfs:domain rdf:resource="&person;Person"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+		<!--<rdfs:subPropertyOf rdf:resource="&dbpedia;spouse"/>-->
+    </owl:DatatypeProperty>
+	
+	<!-- https://www.thegazette.co.uk/def/personal-legal#nationality -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/personal-legal#nationality">
+        <rdfs:label>nationality</rdfs:label>
+        <rdfs:domain rdf:resource="&person;Person"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+	
+	<!-- https://www.thegazette.co.uk/def/personal-legal#religion -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/personal-legal#religion">
+        <rdfs:label>religion</rdfs:label>
+        <rdfs:domain rdf:resource="&person;Person"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+	
+	<!-- https://www.thegazette.co.uk/def/personal-legal#dateEnteredUK --> 
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/personal-legal#dateEnteredUK">
+        <rdfs:label>dateEnteredUK</rdfs:label>
+        <rdfs:domain rdf:resource="&person;Person"/>
+        <rdfs:range rdf:resource="&xsd;date"/>
+    </owl:DatatypeProperty>
+	
+	<!-- https://www.thegazette.co.uk/def/personal-legal#dateOfNaturalisation --> 
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/personal-legal#dateOfNaturalisation">
+        <rdfs:label>dateOfNaturalisation</rdfs:label>
+        <rdfs:domain rdf:resource="&person;Person"/>
+        <rdfs:range rdf:resource="&xsd;date"/>
+    </owl:DatatypeProperty>
+	
+	<!-- https://www.thegazette.co.uk/def/personal-legal#dateOfAdoption --> 
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/personal-legal#dateOfAdoption">
+        <rdfs:label>dateOfAdoption</rdfs:label>
+        <rdfs:domain rdf:resource="&person;Person"/>
+        <rdfs:range rdf:resource="&xsd;date"/>
+    </owl:DatatypeProperty>
+	
+	<!-- https://www.thegazette.co.uk/def/personal-legal#dateOfDivorce --> 
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/personal-legal#dateOfDivorce">
+        <rdfs:label>dateOfDivorce</rdfs:label>
+        <rdfs:domain rdf:resource="&person;Person"/>
+        <rdfs:range rdf:resource="&xsd;date"/>
+    </owl:DatatypeProperty>
+	
+	 <!-- https://www.thegazette.co.uk/def/personal-legal#otherInfo -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/personal-legal#otherInfo">
+		<rdfs:label>otherInfo</rdfs:label>
+        <rdfs:domain rdf:resource="&person;Person"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:ObjectProperty>
+	
+    <!-- https://www.thegazette.co.uk/def/personal-legal#deedPollDate -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/personal-legal#deedPollDate">
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/personal-legal#DeedPoll"/>
+        <rdfs:range rdf:resource="&xsd;date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#endDateOfDeath -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/personal-legal#endDateOfDeath">
+        <rdfs:label>endDate</rdfs:label>
+        <rdfs:domain rdf:resource="&person;Person"/>
+        <rdfs:subPropertyOf rdf:resource="https://www.thegazette.co.uk/def/personal-legal#dateOfDecease"/>
+        <rdfs:range rdf:resource="&xsd;date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#enrollmentDate -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/personal-legal#enrollmentDate">
+        <rdfs:comment rdf:datatype="&xsd;string">The date on which the Deed Poll is enrolled at the Supreme Court (of Judicature/of England and Wales).</rdfs:comment>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/personal-legal#DeedPoll"/>
+        <rdfs:range rdf:resource="&xsd;date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#hasClaimDeadline -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/personal-legal#hasClaimDeadline">
+     	<rdfs:label>claimDeadline</rdfs:label>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/personal-legal#WillsAndProbateThing"/>
+        <rdfs:range rdf:resource="&xsd;date"/>
+    </owl:DatatypeProperty>
+    
+   <!-- https://www.thegazette.co.uk/def/personal-legal#hasClaimNumber -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/personal-legal#hasClaimNumber">
+     	<rdfs:label>ClaimNumber</rdfs:label>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/personal-legal#WillsAndProbateThing"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+    <!-- https://www.thegazette.co.uk/def/personal-legal#onOrBeforeDateOfDeath -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/personal-legal#onOrBeforeDateOfDeath">
+        <rdfs:label>onOrBeforeDateOfDeath</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="https://www.thegazette.co.uk/def/personal-legal#dateOfDecease"/>
+        <rdfs:range rdf:resource="&xsd;date"/>
+        <rdfs:domain rdf:resource="&foaf;Person"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#startDateOfDeath -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/personal-legal#startDateOfDeath">
+        <rdfs:label>fromDate</rdfs:label>
+        <rdfs:domain rdf:resource="&person;Person"/>
+        <rdfs:subPropertyOf rdf:resource="https://www.thegazette.co.uk/def/personal-legal#dateOfDecease"/>
+        <rdfs:range rdf:resource="&xsd;date"/>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/personal-legal#executorDetails">
+         <rdfs:label>executorDetails</rdfs:label>
+         <rdfs:domain rdf:resource="&foaf;Agent"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.gazettes.co.uk/ontology/legislation#LegislationPart -->
+
+    <owl:Class rdf:about="&legislation;LegislationPart"/>
+    
+
+
+    <!-- http://www.gazettes.co.uk/ontology/organisation#Organisation -->
+
+    <owl:Class rdf:about="&organisation;Organisation"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#AdultChangeOfName -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/personal-legal#AdultChangeOfName">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/personal-legal#ChangeOfName"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/personal-legal#ChildChangeOfName"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#BritishCitizenship -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/personal-legal#BritishCitizenship">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/personal-legal#Citizenship"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/personal-legal#CommonwealthCitizenship"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Note that British citizenship is purposefully not disjoint from Commonwealth citizenship.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#ChangeOfName -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/personal-legal#ChangeOfName">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/personal-legal#DeedPoll"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.thegazette.co.uk/def/personal-legal#changesNameOf"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isInNotice"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/personal-legal#ChangeOfNameNotice"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.thegazette.co.uk/def/personal-legal#abandonsName"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.thegazette.co.uk/def/personal-legal#assumesName"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="&xsd;string">The change of a single person&#39;s name. (A ChangeOfNameNotice may involve more than one ChangeOfName.)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#ChangeOfNameNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/personal-legal#ChangeOfNameNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2901</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/personal-legal#WillsAndProbateNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/personal-legal#ChangeOfName"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#ChildChangeOfName -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/personal-legal#ChildChangeOfName">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/personal-legal#ChangeOfName"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.thegazette.co.uk/def/personal-legal#isConsentedToBy"/>
+                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#Citizenship -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/personal-legal#Citizenship"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#CommonwealthCitizenship -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/personal-legal#CommonwealthCitizenship">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/personal-legal#Citizenship"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#DeceasedEstatesNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/personal-legal#DeceasedEstatesNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;int">2903</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/personal-legal#WillsAndProbateNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/personal-legal#NoticeForClaimsAgainstEstate"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+    <!-- https://www.thegazette.co.uk/def/personal-legal#UnclaimedAssetsNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/personal-legal#UnclaimedAssetsNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;int">2904</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/personal-legal#WillsAndProbateNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/personal-legal#NoticeForUnclaimedAssets"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#DeceasedPerson -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/personal-legal#DeceasedPerson">
+    <rdfs:label>DeceasedPerson</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&person;Person"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.thegazette.co.uk/def/personal-legal#dateOfDecease"/>
+                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#DeedPoll -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/personal-legal#DeedPoll">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/personal-legal#WillsAndProbateThing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.thegazette.co.uk/def/personal-legal#deedPollDate"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.thegazette.co.uk/def/personal-legal#enrollmentDate"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/personal-legal#NoticeForClaimsAgainstEstate"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/personal-legal#SearchForNextOfKin"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#MaritalStatus -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/personal-legal#MaritalStatus">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/personal-legal#DivorcedMaritalStatus"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/personal-legal#WidowedMaritalStatus"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/personal-legal#SeparatedMaritalStatus"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/personal-legal#SingleMaritalStatus"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/personal-legal#MarriedMaritalStatus"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#MissingBeneficiaries -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/personal-legal#MissingBeneficiaries">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/personal-legal#WillsAndProbateThing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.thegazette.co.uk/def/personal-legal#hasEstateOf"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isInNotice"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/personal-legal#MissingBeneficiariesNotice"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#MissingBeneficiariesNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/personal-legal#MissingBeneficiariesNotice">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/personal-legal#WillsAndProbateNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/personal-legal#MissingBeneficiaries"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#MissingFreeholders -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/personal-legal#MissingFreeholders">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/personal-legal#WillsAndProbateThing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isInNotice"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/personal-legal#MissingFreeholdersNotice"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#MissingFreeholdersNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/personal-legal#MissingFreeholdersNotice">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/personal-legal#WillsAndProbateNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/personal-legal#MissingFreeholders"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#MissingWills -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/personal-legal#MissingWills">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/personal-legal#WillsAndProbateThing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isInNotice"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/personal-legal#MissingWillsNotice"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.thegazette.co.uk/def/personal-legal#hasEstateOf"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#MissingWillsNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/personal-legal#MissingWillsNotice">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/personal-legal#WillsAndProbateNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/personal-legal#MissingWills"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#NextOfKinNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/personal-legal#NextOfKinNotice">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/personal-legal#WillsAndProbateNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/personal-legal#SearchForNextOfKin"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#NoticeForClaimsAgainstEstate -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/personal-legal#NoticeForClaimsAgainstEstate">
+    	<rdfs:label>NoticeForClaimsAgainstEstate</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/personal-legal#WillsAndProbateThing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.thegazette.co.uk/def/personal-legal#hasEstateOf"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isInNotice"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/personal-legal#DeceasedEstatesNotice"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.thegazette.co.uk/def/personal-legal#hasPersonalRepresentative"/>
+                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/personal-legal#SearchForNextOfKin"/>
+        <rdfs:comment rdf:datatype="&xsd;string">A Deceased Estates notice gives notice for claims to be made against a deceased person&#39;s estate.</rdfs:comment>
+    </owl:Class>
+    
+	<!-- https://www.thegazette.co.uk/def/personal-legal#NoticeForUnclaimedAssets -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/personal-legal#NoticeForUnclaimedAssets">
+    	<rdfs:label>NoticeForUnclaimedAssets</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/personal-legal#WillsAndProbateThing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.thegazette.co.uk/def/personal-legal#hasEstateOf"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isInNotice"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/personal-legal#UnclaimedAssetsNotice"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.thegazette.co.uk/def/personal-legal#hasPersonalRepresentative"/>
+                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/personal-legal#SearchForNextOfKin"/>
+        <rdfs:comment rdf:datatype="&xsd;string">A Deceased Estates (Unclaimed Estates) notice gives notice for claims to be made against a deceased person&#39;s estate.</rdfs:comment>
+    </owl:Class>
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#SearchForNextOfKin -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/personal-legal#SearchForNextOfKin">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/personal-legal#WillsAndProbateThing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isInNotice"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/personal-legal#NextOfKinNotice"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#WillsAndProbateNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/personal-legal#WillsAndProbateNotice">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/personal-legal#ChangeOfNameNotice"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/personal-legal#DeceasedEstatesNotice"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/personal-legal#NextOfKinNotice"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#WillsAndProbateThing -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/personal-legal#WillsAndProbateThing">
+    </owl:Class>
+
+
+    <!-- http://www.w3.org/2006/vcard/ns#Name -->
+
+    <owl:Class rdf:about="&ns;Name"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#DivorcedMaritalStatus -->
+
+    <owl:NamedIndividual rdf:about="https://www.thegazette.co.uk/def/personal-legal#DivorcedMaritalStatus">
+        <rdf:type rdf:resource="https://www.thegazette.co.uk/def/personal-legal#MaritalStatus"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#MarriedMaritalStatus -->
+
+    <owl:NamedIndividual rdf:about="https://www.thegazette.co.uk/def/personal-legal#MarriedMaritalStatus">
+        <rdf:type rdf:resource="https://www.thegazette.co.uk/def/personal-legal#MaritalStatus"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#SeparatedMaritalStatus -->
+
+    <owl:NamedIndividual rdf:about="https://www.thegazette.co.uk/def/personal-legal#SeparatedMaritalStatus">
+        <rdf:type rdf:resource="https://www.thegazette.co.uk/def/personal-legal#MaritalStatus"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#SingleMaritalStatus -->
+
+    <owl:NamedIndividual rdf:about="https://www.thegazette.co.uk/def/personal-legal#SingleMaritalStatus">
+        <rdf:type rdf:resource="https://www.thegazette.co.uk/def/personal-legal#MaritalStatus"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/personal-legal#WidowedMaritalStatus -->
+
+    <owl:NamedIndividual rdf:about="https://www.thegazette.co.uk/def/personal-legal#WidowedMaritalStatus">
+        <rdf:type rdf:resource="https://www.thegazette.co.uk/def/personal-legal#MaritalStatus"/>
+    </owl:NamedIndividual>
+    <rdf:Description>
+        <rdfs:comment rdf:datatype="&xsd;string">Not all Deed Polls are enrolled (registered), although all Deed Polls that appear within the London Gazette are.</rdfs:comment>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://www.thegazette.co.uk/def/personal-legal#DivorcedMaritalStatus"/>
+            <rdf:Description rdf:about="https://www.thegazette.co.uk/def/personal-legal#MarriedMaritalStatus"/>
+            <rdf:Description rdf:about="https://www.thegazette.co.uk/def/personal-legal#SeparatedMaritalStatus"/>
+            <rdf:Description rdf:about="https://www.thegazette.co.uk/def/personal-legal#SingleMaritalStatus"/>
+            <rdf:Description rdf:about="https://www.thegazette.co.uk/def/personal-legal#WidowedMaritalStatus"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.2.1789) http://owlapi.sourceforge.net -->
+

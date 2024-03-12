@@ -1,0 +1,234 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY dcterms "http://purl.org/dc/terms/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY ontology "https://www.thegazette.co.uk/def/publication#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY water "https://www.thegazette.co.uk/def/water#" >
+    <!ENTITY planning "https://www.thegazette.co.uk/def/planning#" >
+    <!ENTITY transport "https://www.thegazette.co.uk/def/transport#" >
+    <!ENTITY legislation "https://www.thegazette.co.uk/def/legislation#" >
+    <!ENTITY organisation "https://www.thegazette.co.uk/def/organisation#" >
+    <!ENTITY consultation "https://www.thegazette.co.uk/def/consultation#" >
+	<!ENTITY societies "https://www.thegazette.co.uk/def/societies#" >
+    <!ENTITY england-and-wales "http://www.legislation.gov.uk/id/#environmental-permitting-(england-and-wales)-" >
+]>
+
+ 
+
+<rdf:RDF xmlns="https://www.thegazette.co.uk/def/societies#"
+     xml:base="https://www.thegazette.co.uk/def/societies"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:ontology="https://www.thegazette.co.uk/def/publication#"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	 xmlns:societies="https://www.thegazette.co.uk/def/societies"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="https://www.thegazette.co.uk/def/societies">
+        <dcterms:created rdf:datatype="&xsd;string">2008-09-18</dcterms:created>
+        <dc:title rdf:datatype="&xsd;string">Gazette Environment Notice Ontology</dc:title>
+        <dcterms:creator rdf:datatype="&xsd;string">Griff Chamberlain, The Stationery Office, mark.chamberlain@tso.co.uk</dcterms:creator>
+        <dc:description xml:lang="en">societies Notice module
+
+  		This is a beta version, and you should expect it to change.
+		</dc:description>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="&xsd;date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+    <!-- https://www.thegazette.co.uk/def/societies#societyName -->
+
+    <owl:DatatypeProperty rdf:about="&societies;societyName">
+        <rdfs:label>societyName</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&societies;SocietiesThing"/>
+    </owl:DatatypeProperty>
+    
+    <!-- https://www.thegazette.co.uk/def/societies#societyNumber -->
+
+    <owl:DatatypeProperty rdf:about="&societies;societyNumber">
+        <rdfs:label>societyNumber</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&societies;SocietiesThing"/>
+    </owl:DatatypeProperty>
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+	
+    <!-- https://www.thegazette.co.uk/def/societies#SocietiesNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/societies#SocietiesNotice">
+        <rdfs:subClassOf rdf:resource="&ontology;PNBNotice"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/societies#SocietiesThing -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/societies#SocietiesThing">
+        <rdfs:subClassOf rdf:resource="&ontology;PNBThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/societies#BuildingSocieties -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/societies#BuildingSocieties">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/societies#SocietiesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/societies#BuildingSocietiesNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/societies#BuildingSocietiesNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2803</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&societies;SocietiesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&societies;BuildingSocieties"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+    
+    <!-- https://www.thegazette.co.uk/def/societies#FriendlySocieties -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/societies#FriendlySocieties">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/societies#SocietiesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/societies#FriendlySocietiesNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/societies#FriendlySocietiesNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2801</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&societies;SocietiesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&societies;FriendlySocieties"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+	
+	
+	
+    <!-- https://www.thegazette.co.uk/def/societies#IndustrialSocieties -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/societies#IndustrialSocieties">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/societies#SocietiesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/societies#IndustrialSocietiesNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/societies#IndustrialSocietiesNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2802</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&societies;SocietiesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&societies;IndustrialSocieties"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+   
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.2.1789) http://owlapi.sourceforge.net -->
+

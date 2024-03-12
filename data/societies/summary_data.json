@@ -1,0 +1,51 @@
+{
+    "classes": {
+        "https://www.thegazette.co.uk/def/societies#SocietiesNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/societies#SocietiesThing": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/societies#BuildingSocieties": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/societies#BuildingSocietiesNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/societies#FriendlySocieties": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/societies#FriendlySocietiesNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/societies#IndustrialSocieties": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/societies#IndustrialSocietiesNotice": {
+            "label": null,
+            "comment": null
+        }
+    },
+    "object_properties": {},
+    "data_properties": {
+        "https://www.thegazette.co.uk/def/societies#societyName": {
+            "label": "societyName",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/societies#SocietiesThing",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/societies#societyNumber": {
+            "label": "societyNumber",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/societies#SocietiesThing",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        }
+    }
+}

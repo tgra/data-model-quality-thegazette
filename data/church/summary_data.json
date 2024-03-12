@@ -1,0 +1,90 @@
+{
+    "classes": {
+        "https://www.thegazette.co.uk/def/publication#PNBNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/publication#PNBThing": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/church#ChurchNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/church#Church": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/church#ChurchThing": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/church#ChurchOfScotland": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/church#ChurchOfScotlandNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/church#ChurchWork": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/church#ChurchWorkNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/church#ChurchCommissioners": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/church#ChurchCommissionersNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/church#PlaceOfMarriage": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/church#PlaceOfMarriageNotice": {
+            "label": null,
+            "comment": null
+        }
+    },
+    "object_properties": {
+        "https://www.thegazette.co.uk/def/publication#isAbout": {
+            "label": null,
+            "comment": null,
+            "domain": null,
+            "range": null
+        },
+        "https://www.thegazette.co.uk/def/publication#isEnabledByLegislation": {
+            "label": null,
+            "comment": null,
+            "domain": null,
+            "range": null
+        },
+        "https://www.thegazette.co.uk/def/church#hasChurch": {
+            "label": "hasChurch",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/church#ChurchThing",
+            "range": "https://www.thegazette.co.uk/def/church#Church"
+        }
+    },
+    "data_properties": {
+        "https://www.thegazette.co.uk/def/publication#hasNoticeCode": {
+            "label": null,
+            "comment": null,
+            "domain": "",
+            "range": null
+        },
+        "https://www.thegazette.co.uk/def/church#churchName": {
+            "label": "churchName",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/church#Church",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        }
+    }
+}

@@ -1,0 +1,1722 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf:RDF [
+    <!ENTITY dcterms "http://purl.org/dc/terms/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY water "https://www.thegazette.co.uk/def/water#" >
+    <!ENTITY person "https://www.thegazette.co.uk/def/person#" >
+    <!ENTITY wgs84_pos "http://www.w3.org/2003/01/geo/wgs84_pos#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY authority "https://www.thegazette.co.uk/def/authority#" >
+    <!ENTITY transport "https://www.thegazette.co.uk/def/transport#" >
+    <!ENTITY publication "https://www.thegazette.co.uk/def/publication#" >
+    <!ENTITY environment "https://www.thegazette.co.uk/def/environment#" >
+    <!ENTITY consultation "https://www.thegazette.co.uk/def/consultation#" >
+    <!ENTITY organisation "https://www.thegazette.co.uk/def/organisation#" >
+	<!ENTITY ns "http://www.w3.org/2006/vcard/ns#" >
+	<!ENTITY ontology "https://www.thegazette.co.uk/def/publication#" >
+	<!ENTITY planning "https://www.thegazette.co.uk/def/planning#" >
+	<!ENTITY companies-partnerships "https://www.thegazette.co.uk/def/companies-partnerships#" >
+]>
+
+<rdf:RDF xmlns="https://www.thegazette.co.uk/def/companies-partnerships#"
+     xml:base="https://www.thegazette.co.uk/def/companies-partnerships"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+	 xmlns:ontology="https://www.thegazette.co.uk/def/publication#"
+	 xmlns:planning="https://www.thegazette.co.uk/def/planning#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<owl:Ontology rdf:about="">
+		<dc:description xml:lang="en"
+            >
+  		Ontology for companies-partnerships Notices.
+		
+  		This is a beta version, and you should expect it to change.
+		</dc:description>
+		<dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Gazette companies-partnerships Notices Ontology</dc:title>
+		<dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2008-09-18</dcterms:created>
+		<dcterms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Griff Chamberlain, The Stationery Office, mark.chamberlain@tso.co.uk</dcterms:creator>
+
+	</owl:Ontology>
+	<rdf:Property rdf:about="http://purl.org/dc/elements/1.1/description">
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+	</rdf:Property>
+	<rdf:Property rdf:about="http://purl.org/dc/elements/1.1/title">
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+	</rdf:Property>
+	<rdf:Description rdf:about="http://purl.org/dc/terms/created"/>
+	<rdf:Description rdf:about="http://purl.org/dc/terms/creator"/>
+	<rdf:Description rdf:about="http://purl.org/dc/terms/license"/>
+
+
+
+
+
+
+
+
+	<!-- https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice">
+        <rdfs:subClassOf rdf:resource="&ontology;PNBNotice"/>
+    </owl:Class>
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing">
+        <rdfs:subClassOf rdf:resource="&ontology;PNBThing"/>
+    </owl:Class>
+
+
+	
+	<!--NOTICE TYPES -->
+
+	    <!-- https://www.thegazette.co.uk/def/companies-partnerships#CompetitionCommision -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#CompetitionCommision">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#CompetitionCommisionNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#CompetitionCommisionNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">3101</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#CompetitionCommision"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+	    <!-- https://www.thegazette.co.uk/def/companies-partnerships#EmploymentAgencies -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#EmploymentAgencies">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#EmploymentAgenciesNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#EmploymentAgenciesNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2606</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#EmploymentAgencies"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+	    <!-- https://www.thegazette.co.uk/def/companies-partnerships#IPApplications -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#IPApplications">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#IPApplicationsNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#IPApplicationsNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2607</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#IPApplications"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+		
+	    <!-- https://www.thegazette.co.uk/def/companies-partnerships#MeetingOfCreditors -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#MeetingOfCreditors">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#MeetingOfCreditorsNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#MeetingOfCreditorsNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2613</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#MeetingOfCreditors"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+			
+	    <!-- https://www.thegazette.co.uk/def/companies-partnerships#RedemptionOrPurchase -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#RedemptionOrPurchase">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#RedemptionOrPurchaseNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#RedemptionOrPurchaseNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2602</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#RedemptionOrPurchase"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+				
+	    <!-- https://www.thegazette.co.uk/def/companies-partnerships#ReductionOfCapital -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#ReductionOfCapital">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#ReductionOfCapitalNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#ReductionOfCapitalNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2610</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#ReductionOfCapital"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+					
+	    <!-- https://www.thegazette.co.uk/def/companies-partnerships#ClaimAgainstPensionSchemes -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#ClaimAgainstPensionSchemes">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#ClaimAgainstPensionSchemesNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#ClaimAgainstPensionSchemesNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2604</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#ClaimAgainstPensionSchemes"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+						
+	    <!-- https://www.thegazette.co.uk/def/companies-partnerships#CompaniesRemovedFromRegister -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesRemovedFromRegister">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#CompaniesRemovedFromRegisterNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesRemovedFromRegisterNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2609</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesRemovedFromRegister"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+							
+	    <!-- https://www.thegazette.co.uk/def/companies-partnerships#CompaniesRestoredFromRegister -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesRestoredFromRegister">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#CompaniesRestoredFromRegisterNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesRestoredFromRegisterNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2600</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesRestoredFromRegister"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+								
+	    <!-- https://www.thegazette.co.uk/def/companies-partnerships#CompanyDirectorDisqualificationOrder -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#CompanyDirectorDisqualificationOrder">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#CompanyDirectorDisqualificationOrderNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#CompanyDirectorDisqualificationOrderNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2608</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#CompanyDirectorDisqualificationOrder"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+									
+	    <!-- https://www.thegazette.co.uk/def/companies-partnerships#CompanyDocuments -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#CompanyDocuments">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#CompanyDocumentsNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#CompanyDocumentsNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2611</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#CompanyDocuments"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+										
+	    <!-- https://www.thegazette.co.uk/def/companies-partnerships#EEInterestGroupings -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#EEInterestGroupings">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#EEInterestGroupingsNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#EEInterestGroupingsNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2612</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#EEInterestGroupings"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+											
+	    <!-- https://www.thegazette.co.uk/def/companies-partnerships#OtherOffersToShareholders -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#OtherOffersToShareholders">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#OtherOffersToShareholdersNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#OtherOffersToShareholdersNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2615</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#OtherOffersToShareholders"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+												
+	    <!-- https://www.thegazette.co.uk/def/companies-partnerships#PartnershipChangeInMembers -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#PartnershipChangeInMembers">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#PartnershipChangeInMembersNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#PartnershipChangeInMembersNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2701</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#PartnershipChangeInMembers"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+													
+	    <!-- https://www.thegazette.co.uk/def/companies-partnerships#PartnershipDissolution -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#PartnershipDissolution">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#PartnershipDissolutionNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#PartnershipDissolutionNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2702</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#PartnershipDissolution"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+														
+	    <!-- https://www.thegazette.co.uk/def/companies-partnerships#PartnershipLimited -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#PartnershipLimited">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#PartnershipLimitedNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#PartnershipLimitedNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2703</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#PartnershipLimited"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+															
+	    <!-- https://www.thegazette.co.uk/def/companies-partnerships#PropertyDisclaimer -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#PropertyDisclaimer">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#PropertyDisclaimerNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#PropertyDisclaimerNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2603</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#PropertyDisclaimer"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+																
+	    <!-- https://www.thegazette.co.uk/def/companies-partnerships#TakeoverInsuranceCompanies -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#TakeoverInsuranceCompanies">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#TakeoverInsuranceCompaniesNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#TakeoverInsuranceCompaniesNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2605</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#TakeoverInsuranceCompanies"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+																	
+	    <!-- https://www.thegazette.co.uk/def/companies-partnerships#TakeoverPetitionToTransfer -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#TakeoverPetitionToTransfer">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#TakeoverPetitionToTransferNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#TakeoverPetitionToTransferNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2614</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#TakeoverPetitionToTransfer"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+																		
+	    <!-- https://www.thegazette.co.uk/def/companies-partnerships#TakeoverPreemptionOffers -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#TakeoverPreemptionOffers">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#TakeoverPreemptionOffersNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#TakeoverPreemptionOffersNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2601</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#TakeoverPreemptionOffers"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+																			
+	    <!-- https://www.thegazette.co.uk/def/companies-partnerships#TakeoverOffers -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#TakeoverOffers">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#TakeoverOffersNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#TakeoverOffersNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2615</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#TakeoverOffers"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+																				
+	    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseA -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseA">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseANotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseANotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">NEW</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseA"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+																					
+	    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseB1 -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseB1">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseB1Notice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseB1Notice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">NEW</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseB1"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+																						
+	    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseB2 -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseB2">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseB2Notice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseB2Notice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">NEW</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseB2"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+		    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseB3 -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseB3">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseB3Notice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseB3Notice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">NEW</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseB3"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+																							
+	    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseB4 -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseB4">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseB4Notice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseB4Notice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">NEW</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseB4"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+																								
+	    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseC1 -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseC1">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseC1Notice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseC1Notice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">NEW</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseC1"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+		    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseC2 -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseC2">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseC2Notice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseC2Notice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">NEW</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseC2"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+		    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseC3 -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseC3">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseC3Notice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseC3Notice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">NEW</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseC3"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+		
+		    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseD1 -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseD1">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseD1Notice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseD1Notice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">NEW</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseD1"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+		
+		    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseD2 -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseD2">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseD2Notice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseD2Notice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">NEW</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseD2"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+		
+		    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseE1 -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseE1">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseE1Notice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseE1Notice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">NEW</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseE1"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+		
+		    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseF1 -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseF1">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseF1Notice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseF1Notice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">NEW</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseF1"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+		
+		    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseF2 -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseF2">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseF2Notice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseF2Notice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">NEW</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseF2"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+		
+		    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseF3 -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseF3">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseF3Notice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseF3Notice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">NEW</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseF3"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+		
+		    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseF4 -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseF4">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseF4Notice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseF4Notice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">NEW</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseF4"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+			
+		    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG1 -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG1">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG1Notice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG1Notice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">NEW</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG1"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+			
+		    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG10 -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG10">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG10Notice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG10Notice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">NEW</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG10"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+			
+		    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG11 -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG11">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG11Notice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG11Notice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">NEW</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG11"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+			
+		    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG2 -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG2">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG2Notice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG2Notice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">NEW</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG2"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+			
+		    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG3 -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG3">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG3Notice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG3Notice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">NEW</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG3"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+			
+		    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG4 -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG4">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG4Notice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG4Notice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">NEW</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG4"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+			
+		    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG5 -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG5">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG5Notice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG5Notice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">NEW</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG5"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+			
+		    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG6 -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG6">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG6Notice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG6Notice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">NEW</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG6"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+			
+		    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG7 -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG7">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG7Notice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG7Notice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">NEW</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG7"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+			
+		    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG8 -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG8">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG8Notice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG8Notice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">NEW</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG8"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+			
+		    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG9 -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG9">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG9Notice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG9Notice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">NEW</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG9"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+			
+		    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseH1 -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseH1">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseH1Notice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseH1Notice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">NEW</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseH1"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+			
+		    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseH2 -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseH2">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseH2Notice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseH2Notice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">NEW</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseH2"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+			
+		    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseJ1 -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseJ1">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseJ1Notice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseJ1Notice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">NEW</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseJ1"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+			
+		    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseK1 -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseK1">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseK1Notice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseK1Notice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">NEW</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseK1"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+				
+		    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseK2 -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseK2">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseK2Notice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseK2Notice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">NEW</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseK2"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+			    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseK3 -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseK3">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseK3Notice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseK3Notice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">NEW</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseK3"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+			    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseK4 -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseK4">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseK4Notice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseK4Notice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">NEW</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseK4"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+			    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseK5 -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseK5">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseK5Notice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseK5Notice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">NEW</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseK5"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+			    <!-- https://www.thegazette.co.uk/def/companies-partnerships#StrikingOffDissolution -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#StrikingOffDissolution">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#StrikingOffDissolutionNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#StrikingOffDissolutionNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">NEW</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#StrikingOffDissolution"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+			    <!-- https://www.thegazette.co.uk/def/companies-partnerships#StrikingOff3Months -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#StrikingOff3Months">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/companies-partnerships#StrikingOff3MonthsNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#StrikingOff3MonthsNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">NEW</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/companies-partnerships#StrikingOff3Months"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+</rdf:RDF>

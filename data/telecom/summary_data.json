@@ -1,0 +1,38 @@
+{
+    "classes": {
+        "https://www.thegazette.co.uk/def/telecom#TelecomNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/telecom#TelecomThing": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/telecom#ElectronicCommunication": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/telecom#ElectronicCommunicationNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/telecom#PostOffice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/telecom#PostOfficeNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/telecom#Telecommunication": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/telecom#TelecommunicationNotice": {
+            "label": null,
+            "comment": null
+        }
+    },
+    "object_properties": {},
+    "data_properties": {}
+}

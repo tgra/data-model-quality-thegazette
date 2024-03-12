@@ -1,0 +1,1409 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY dcterms "http://purl.org/dc/terms/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY water "https://www.thegazette.co.uk/def/water#" >
+	<!ENTITY energy "https://www.thegazette.co.uk/def/energy#" >
+	<!ENTITY agriculture "https://www.thegazette.co.uk/def/agriculture#" >
+    <!ENTITY person "https://www.thegazette.co.uk/def/person#" >
+    <!ENTITY wgs84_pos "http://www.w3.org/2003/01/geo/wgs84_pos#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY authority "https://www.thegazette.co.uk/def/authority#" >
+	    <!ENTITY def "https://www.thegazette.co.uk/def/" >
+    <!ENTITY transport "https://www.thegazette.co.uk/def/transport#" >
+    <!ENTITY publication "https://www.thegazette.co.uk/def/publication#" >
+    <!ENTITY environment "https://www.thegazette.co.uk/def/environment#" >
+    <!ENTITY consultation "https://www.thegazette.co.uk/def/consultation#" >
+    <!ENTITY organisation "https://www.thegazette.co.uk/def/organisation#" >
+	<!ENTITY ns "http://www.w3.org/2006/vcard/ns#" >
+	<!ENTITY ontology "https://www.thegazette.co.uk/def/publication#" >
+	<!ENTITY legislation "https://www.thegazette.co.uk/def/legislation#" >
+	<!ENTITY location "https://www.thegazette.co.uk/def/location#" >
+	<!ENTITY planning "https://www.thegazette.co.uk/def/planning#" >
+]>
+
+
+<rdf:RDF xmlns="https://www.thegazette.co.uk/def/planning#"
+     xml:base="https://www.thegazette.co.uk/def/planning"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+	 xmlns:ontology="https://www.thegazette.co.uk/def/publication#"
+     xmlns:water="https://www.thegazette.co.uk/def/water#"
+     xmlns:person="https://www.thegazette.co.uk/def/person#"
+     xmlns:wgs84_pos="http://www.w3.org/2003/01/geo/wgs84_pos#"
+     xmlns:organisation="https://www.thegazette.co.uk/def/organisation#"
+	 xmlns:def="https://www.thegazette.co.uk/def/"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:publication="https://www.thegazette.co.uk/def/publication#"
+     xmlns:authority="https://www.thegazette.co.uk/def/authority#"
+     xmlns:consultation="https://www.thegazette.co.uk/def/consultation#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:environment="https://www.thegazette.co.uk/def/environment#"
+	 xmlns:energy="https://www.thegazette.co.uk/def/energy#"
+	 xmlns:agriculture="https://www.thegazette.co.uk/def/agriculture#"
+     xmlns:transport="https://www.thegazette.co.uk/def/transport#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="https://www.thegazette.co.uk/def/planning">
+        <dcterms:created rdf:datatype="&xsd;string">2008-09-18</dcterms:created>
+        <dcterms:creator rdf:datatype="&xsd;string">GRiff Chamberlain, The Stationery Office, mark.chamberlain@tso.co.uk</dcterms:creator>
+        <dc:title rdf:datatype="&xsd;string">Gazette Ontology</dc:title>
+        <dc:description xml:lang="en">
+  		Ontology for planning Notices.
+		
+  		This is a beta version, and you should expect it to change.
+		</dc:description>
+		<owl:imports rdf:resource="&def;water" />
+		<owl:imports rdf:resource="&def;environment" />
+		<owl:imports rdf:resource="&def;energy" />
+		<owl:imports rdf:resource="&def;agriculture" />
+		
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="https://www.thegazette.co.uk/def/planning#acquiredFrom">
+        <rdfs:domain rdf:resource="http://www.geonames.org/ontology#Feature"/>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="https://www.thegazette.co.uk/def/planning#dateAcquiredOn">
+        <rdfs:domain rdf:resource="http://www.geonames.org/ontology#Feature"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.geonames.org/ontology#Feature -->
+
+    <rdfs:Datatype rdf:about="http://www.geonames.org/ontology#Feature"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="&xsd;date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#acquiredFrom -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/planning#acquiredFrom">
+        <rdfs:range rdf:resource="&person;Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#enquiriesAddressedTo -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/planning#enquiriesAddressedTo">
+        <rdfs:label rdf:datatype="&xsd;string">enquiriesAddressedTo property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">address for Information and queries</rdfs:comment>
+        <rdfs:range rdf:resource="&wgs84_pos;SpatialThing"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/planning#ZooLicenceRenewal"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#hasAddress -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/planning#hasAddress">
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/planning#Proposal"/>
+		<rdfs:range rdf:resource="&ns;Address"/>
+    </owl:ObjectProperty>
+
+    <!-- https://www.thegazette.co.uk/def/planning#hasProposalApplicant -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/planning#hasProposalApplicant">
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/planning#Proposal"/>
+		<rdfs:range rdf:resource="&person;Person"/>
+    </owl:ObjectProperty>    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#hasApplicant -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/planning#hasApplicant">
+        <rdfs:label rdf:datatype="&xsd;string">hasApplicant property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Person and/or organisation applying for licence</rdfs:comment>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/planning#ZooLicensing"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&organisation;Organisation"/>
+                    <rdf:Description rdf:about="&person;Person"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#hasApplicationFrom -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/planning#hasApplicationFrom">
+        <rdfs:label rdf:datatype="&xsd;string">hasApplicationFrom property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Organisation applying for authorisation</rdfs:comment>
+        <rdfs:range rdf:resource="&organisation;Organisation"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/planning#PipelineApplication"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#hasApplicationOnBehalfOf -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/planning#hasApplicationOnBehalfOf">
+        <rdfs:label rdf:datatype="&xsd;string">isAppliedOnBehalfOf property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Organisation(s) application is on behalf of</rdfs:comment>
+        <rdfs:range rdf:resource="&organisation;Organisation"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/planning#PipelineApplication"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#hasContact -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/planning#hasContact">
+        <rdfs:range rdf:resource="&organisation;Organisation"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/planning#SearchForFormerOwners"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#hasCorrespondenceContact -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/planning#hasCorrespondenceContact">
+        <rdfs:range rdf:resource="&person;Person"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/planning#DisposalOfSurplusProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#hasDocuments -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/planning#hasDocuments">
+        <rdfs:range rdf:resource="&consultation;Document"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/planning#PipeLines"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#hasInspectionCopy -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/planning#hasInspectionCopy">
+        <rdfs:label rdf:datatype="&xsd;string">hasInspectionCopy property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Copy of documents/plans for inspection</rdfs:comment>
+        <rdfs:range rdf:resource="&consultation;InspectionCopy"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/planning#ZooLicenceApplicationIntention"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#hasOperation -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/planning#hasOperation">
+        <rdfs:label rdf:datatype="&xsd;string">hasOperation property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Operation that is run by an Organisation</rdfs:comment>
+        <rdfs:domain rdf:resource="&organisation;Organisation"/>
+        <rdfs:range rdf:resource="https://www.thegazette.co.uk/def/planning#Operation"/>
+        <owl:inverseOf rdf:resource="https://www.thegazette.co.uk/def/planning#hasOrganisation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#hasOperator -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/planning#hasOperator">
+        <rdfs:label rdf:datatype="&xsd;string">hasOperator property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Organisation authorised to operate pipeline</rdfs:comment>
+        <rdfs:range rdf:resource="&organisation;Organisation"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/planning#PipelineAuthorisation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#hasOrganisation -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/planning#hasOrganisation"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#hasOrganiser -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/planning#hasOrganiser">
+        <rdfs:label rdf:datatype="&xsd;string">hasOrganiser property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Organisation in charge of operation</rdfs:comment>
+        <rdfs:range rdf:resource="&organisation;Organisation"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/planning#Operation"/>
+        <owl:inverseOf rdf:resource="https://www.thegazette.co.uk/def/planning#hasOperation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#hasPipeline -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/planning#hasPipeline">
+        <rdfs:label rdf:datatype="&xsd;string">runsFrom property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Location of start of pipeline</rdfs:comment>
+        <rdfs:range rdf:resource="https://www.thegazette.co.uk/def/planning#ChangeOfPipeline"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/planning#PipeLines"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#hasProposal -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/planning#hasProposal">
+    <rdfs:label>hasProposal</rdfs:label>
+        <rdfs:range rdf:resource="https://www.thegazette.co.uk/def/planning#Proposal"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#hasRepresentative -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/planning#hasRepresentative">
+		<rdfs:range rdf:resource="https://www.thegazette.co.uk/def/person#InsolvencyPractitioner"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#hasStatutoryConsultationNotification -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/planning#hasStatutoryConsultationNotification"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#hasZooLocation -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/planning#hasZooLocation">
+        <rdfs:label rdf:datatype="&xsd;string">hasZooLocation property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Location of zoo</rdfs:comment>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/planning#ZooLicensing"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#isAboutConsultationThing -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/planning#isAboutConsultationThing">
+        <rdfs:label rdf:datatype="&xsd;string">general property for connecting a planning thing with a consultation thing</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">isAboutConsultationThing property</rdfs:comment>
+        <rdfs:range rdf:resource="&consultation;ConsultationThing"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/planning#PlanningThing"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#isAboutDocument -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/planning#isAboutDocument">
+        <rdfs:label rdf:datatype="&xsd;string">general property for connecting a planning thing with a document</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">isAboutDocument property</rdfs:comment>
+        <rdfs:range rdf:resource="&consultation;Document"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/planning#PlanningThing"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#isAboutPlans -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/planning#isAboutPlans">
+        <rdfs:label rdf:datatype="&xsd;string">isAboutPlans property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Plans and maps that notice is about</rdfs:comment>
+        <rdfs:range rdf:resource="&consultation;Document"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/planning#Conservation"/>
+        <owl:inverseOf rdf:resource="https://www.thegazette.co.uk/def/planning#hasStatutoryConsultationNotification"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#isAboutProperty -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/planning#isAboutProperty">
+        <rdfs:range rdf:resource="&organisation;Organisation"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/planning#AcquisitionAndDisposalOfLand"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#isHeldBy -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/planning#isHeldBy">
+        <rdfs:label rdf:datatype="&xsd;string">heldBy property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Organisation authorisaton is held by</rdfs:comment>
+        <rdfs:range rdf:resource="&organisation;Organisation"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/planning#WorksAuthorisation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#isSearchingForOrganisation -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/planning#isSearchingForOrganisation">
+        <rdfs:range rdf:resource="&organisation;Organisation"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/planning#SearchForFormerOwners"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#isSearchingForPerson -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/planning#isSearchingForPerson">
+        <rdfs:range rdf:resource="&person;Person"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/planning#SearchForFormerOwners"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#makesRepresentation -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/planning#makesRepresentation">
+        <rdfs:range rdf:resource="&authority;Authority"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/planning#PipelineApplication"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#runsFrom -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/planning#runsFrom">
+        <rdfs:label rdf:datatype="&xsd;string">runsFrom property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Location of start of pipeline</rdfs:comment>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/planning#ChangeOfPipeline"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#runsThrough -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/planning#runsThrough">
+        <rdfs:label rdf:datatype="&xsd;string">runsThrough property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Locations traversed by pipeline</rdfs:comment>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/planning#ChangeOfPipeline"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#runsTo -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/planning#runsTo">
+        <rdfs:label rdf:datatype="&xsd;string">runsTo property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Location of end of pipeline</rdfs:comment>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/planning#ChangeOfPipeline"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/publication#isAbout -->
+
+    <owl:ObjectProperty rdf:about="&publication;isAbout"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#berrNumber -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/planning#berrNumber">
+        <rdfs:label rdf:datatype="&xsd;string">BERRnumber property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">BERR number (also known as DTI number)</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/planning#Operation"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#dateAcquiredOn -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/planning#dateAcquiredOn">
+        <rdfs:range rdf:resource="&xsd;date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#dateCorrespondenceReceivedBy -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/planning#dateCorrespondenceReceivedBy">
+        <rdfs:range rdf:resource="&xsd;date"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/planning#DisposalOfSurplusProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#dateEnvironmentalStatementReceived -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/planning#dateEnvironmentalStatementReceived">
+        <rdfs:label rdf:datatype="&xsd;string">dateEnvironmentalStatementReceived property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Date Environmental Statement Received</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;date"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/planning#Operation"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#dateReviewCompleted -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/planning#dateReviewCompleted">
+        <rdfs:label rdf:datatype="&xsd;string">dateReviewCompleted property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Date Review Completed</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;date"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/planning#Operation"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#disposalReference -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/planning#disposalReference">
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/planning#AcquisitionAndDisposalOfLand"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#hasZooLocation -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/planning#hasZooLocation">
+        <rdfs:label rdf:datatype="&xsd;string">hasZooLocation property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Location of zoo</rdfs:comment>
+        <rdfs:range rdf:resource="http://www.geonames.org/ontology#Feature"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#orderDetails -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/planning#orderDetails">
+    	<rdfs:label>Details and representation information</rdfs:label>
+		<rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/planning#TownAndCountryPlanning"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+    <!-- https://www.thegazette.co.uk/def/planning#hasSchedule -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/planning#hasSchedule">
+    	<rdfs:label>Schedule information</rdfs:label>
+		<rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/planning#TownAndCountryPlanning"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+    <!-- https://www.thegazette.co.uk/def/planning#project -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/planning#project">
+        <rdfs:label rdf:datatype="&xsd;string">project property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Name of operation project</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/planning#Operation"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#proposalDescription -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/planning#proposalDescription">
+    	<rdfs:label>proposalDescription</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/planning#Proposal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#proposalReference -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/planning#proposalReference">
+        <rdfs:label>proposalReference</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/planning#Proposal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#quadBlock -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/planning#quadBlock">
+        <rdfs:label rdf:datatype="&xsd;string">quadBlock property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Quad/Block reference (part of BERR well number)</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/planning#Operation"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#representationDeadline -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/planning#representationDeadline">
+        <rdfs:label rdf:datatype="&xsd;string">representationDeadline property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Deadline for representations to be made</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;date"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/planning#Operation"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#runsFrom -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/planning#runsFrom">
+        <rdfs:label rdf:datatype="&xsd;string">runsFrom property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Location of start of pipeline</rdfs:comment>
+        <rdfs:range rdf:resource="http://www.geonames.org/ontology#Feature"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#runsThrough -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/planning#runsThrough">
+        <rdfs:label rdf:datatype="&xsd;string">runsThrough property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Locations traversed by pipeline</rdfs:comment>
+        <rdfs:range rdf:resource="http://www.geonames.org/ontology#Feature"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#runsTo -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/planning#runsTo">
+        <rdfs:label rdf:datatype="&xsd;string">runsTo property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Location of end of pipeline</rdfs:comment>
+        <rdfs:range rdf:resource="http://www.geonames.org/ontology#Feature"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#zooName -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/planning#zooName">
+        <rdfs:label rdf:datatype="&xsd;string">zooName property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Name of zoo</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/planning#ZooLicensing"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/publication#hasNoticeCode -->
+
+    <owl:DatatypeProperty rdf:about="&publication;hasNoticeCode"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing -->
+
+    <owl:Class rdf:about="&wgs84_pos;SpatialThing"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#Document -->
+
+    <owl:Class rdf:about="&consultation;Document"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#InspectionCopy -->
+
+    <owl:Class rdf:about="&consultation;InspectionCopy"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#StatutoryConsultationNotification -->
+
+    <owl:Class rdf:about="&consultation;StatutoryConsultationNotification"/>
+    
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#Organisation -->
+
+    <owl:Class rdf:about="&organisation;Organisation"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/person#Person -->
+
+    <owl:Class rdf:about="&person;Person"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#AcquireProperty -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/planning#AcquireProperty">
+        <rdfs:subClassOf rdf:resource="&consultation;ConsultationThing"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#ChangeOfConservationArea"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#ChangeOfPipeline"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#AcquisitionAndDisposalOfLand -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/planning#AcquisitionAndDisposalOfLand">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/planning#PlanningThing"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#CommonsRegistration"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#Conservation"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#InnerUrbanAreas"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#LocalGovernmentAndHousing"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#NewTowns"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#OpenSpaces"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#PipeLines"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#TownAndCountryPlanning"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#ZooLicensing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#AcquisitionAndDisposalOfLandNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/planning#AcquisitionAndDisposalOfLandNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1603</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/planning#PlanningNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&consultation;StatutoryConsultationNotification"/>
+                            <rdf:Description rdf:about="https://www.thegazette.co.uk/def/planning#AcquisitionAndDisposalOfLand"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#CommonsRegistrationNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#InnerUrbanAreasNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#LocalGovernmentAndHousingNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#NewTownsNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#OpenSpacesNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#PipeLinesNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#TownAndCountryPlanningNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#ZooLicensingNotice"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#AuthorisationApplication -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/planning#AuthorisationApplication">
+        <rdfs:label rdf:datatype="&xsd;string">Application for authorisation of construction</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/planning#PipelineApplication"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#PermitApplication"/>
+        <rdfs:comment rdf:datatype="&xsd;string">PipelineApplication class</rdfs:comment>
+    </owl:Class>
+    
+   
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#Cancellation -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/planning#Cancellation">
+        <rdfs:label rdf:datatype="&xsd;string">Notice of cancellation of a conservation area</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/planning#Conservation"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#Designation"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#Variation"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Cancellation class</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#ChangeOfConservationArea -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/planning#ChangeOfConservationArea">
+        <rdfs:subClassOf rdf:resource="&consultation;ConsultationThing"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#ChangeOfPipeline"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#ChangeOfPipeline -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/planning#ChangeOfPipeline">
+        <rdfs:label rdf:datatype="&xsd;string">A pipeline for conveying fluids or power</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&consultation;ConsultationThing"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Pipeline class</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#CommonsRegistration -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/planning#CommonsRegistration">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/planning#PlanningThing"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#Conservation"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#InnerUrbanAreas"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#LocalGovernmentAndHousing"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#NewTowns"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#OpenSpaces"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#PipeLines"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#TownAndCountryPlanning"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#ZooLicensing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#CommonsRegistrationNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/planning#CommonsRegistrationNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1605</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/planning#PlanningNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&consultation;StatutoryConsultationNotification"/>
+                            <rdf:Description rdf:about="https://www.thegazette.co.uk/def/planning#PlanningThing"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#InnerUrbanAreasNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#LocalGovernmentAndHousingNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#NewTownsNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#OpenSpacesNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#PipeLinesNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#TownAndCountryPlanningNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#ZooLicensingNotice"/>
+    </owl:Class>
+    
+	
+<!-- https://www.thegazette.co.uk/def/planning#PlanningAct2008 -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/planning#PlanningAct2008">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/planning#PlanningThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#PlanningAct2008Notice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/planning#PlanningAct2008Notice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">NEW</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/planning#PlanningNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom>
+                    <owl:Class  rdf:about="https://www.thegazette.co.uk/def/planning#PlanningAct2008"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+	
+		
+<!-- https://www.thegazette.co.uk/def/planning#BurialGrounds -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/planning#BurialGrounds">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/planning#PlanningThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#BurialGroundsNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/planning#BurialGroundsNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">NEW</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/planning#PlanningNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom>
+                    <owl:Class  rdf:about="https://www.thegazette.co.uk/def/planning#BurialGrounds"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+	
+			
+<!-- https://www.thegazette.co.uk/def/planning#PlanningApplications -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/planning#PlanningApplications">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/planning#PlanningThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#PlanningApplicationsNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/planning#PlanningApplicationsNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">NEW</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/planning#PlanningNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom>
+                    <owl:Class  rdf:about="https://www.thegazette.co.uk/def/planning#PlanningApplications"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+    <!-- https://www.thegazette.co.uk/def/planning#Consent -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/planning#Consent">
+        <rdfs:label rdf:datatype="&xsd;string">Consent granted</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/planning#PipelineAuthorisation"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#WorksAuthorisation"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Consent class</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#Conservation -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/planning#Conservation">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/planning#PlanningThing"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#InnerUrbanAreas"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#LocalGovernmentAndHousing"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#NewTowns"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#OpenSpaces"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#PipeLines"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#TownAndCountryPlanning"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#ZooLicensing"/>
+    </owl:Class>
+    
+
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#Designation -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/planning#Designation">
+        <rdfs:label rdf:datatype="&xsd;string">Notice of designation of a conservation area</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/planning#Conservation"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#Variation"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Designation class</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#DisposalOfSurplusProperty -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/planning#DisposalOfSurplusProperty">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/planning#AcquisitionAndDisposalOfLand"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#SearchForFormerOwners"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#InnerUrbanAreas -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/planning#InnerUrbanAreas">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/planning#PlanningThing"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#LocalGovernmentAndHousing"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#NewTowns"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#OpenSpaces"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#PipeLines"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#TownAndCountryPlanning"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#ZooLicensing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#InnerUrbanAreasNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/planning#InnerUrbanAreasNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1607</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/planning#PlanningNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&consultation;StatutoryConsultationNotification"/>
+                            <rdf:Description rdf:about="https://www.thegazette.co.uk/def/planning#PlanningThing"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#LocalGovernmentAndHousingNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#NewTownsNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#OpenSpacesNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#PipeLinesNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#TownAndCountryPlanningNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#ZooLicensingNotice"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#LocalGovernmentAndHousing -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/planning#LocalGovernmentAndHousing">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/planning#PlanningThing"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#NewTowns"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#OpenSpaces"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#PipeLines"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#TownAndCountryPlanning"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#ZooLicensing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#LocalGovernmentAndHousingNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/planning#LocalGovernmentAndHousingNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1604</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/planning#PlanningNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&consultation;StatutoryConsultationNotification"/>
+                            <rdf:Description rdf:about="https://www.thegazette.co.uk/def/planning#PlanningThing"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#NewTownsNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#OpenSpacesNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#PipeLinesNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#TownAndCountryPlanningNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#ZooLicensingNotice"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#NewConservationArea -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/planning#NewConservationArea">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/planning#ChangeOfConservationArea"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#RevokeConservationArea"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#NewPipeline -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/planning#NewPipeline">
+        <rdfs:label rdf:datatype="&xsd;string">A pipeline for conveying fluids or power</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/planning#ChangeOfPipeline"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Pipeline class</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#NewTowns -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/planning#NewTowns">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/planning#PlanningThing"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#OpenSpaces"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#PipeLines"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#TownAndCountryPlanning"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#ZooLicensing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#NewTownsNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/planning#NewTownsNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1602</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/planning#PlanningNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&consultation;StatutoryConsultationNotification"/>
+                            <rdf:Description rdf:about="https://www.thegazette.co.uk/def/planning#PlanningThing"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#OpenSpacesNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#PipeLinesNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#TownAndCountryPlanningNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#ZooLicensingNotice"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#OpenSpaces -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/planning#OpenSpaces">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/planning#PlanningThing"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#PipeLines"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#TownAndCountryPlanning"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#ZooLicensing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#OpenSpacesNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/planning#OpenSpacesNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1606</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/planning#PlanningNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&consultation;StatutoryConsultationNotification"/>
+                            <rdf:Description rdf:about="https://www.thegazette.co.uk/def/planning#PlanningThing"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#PipeLinesNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#TownAndCountryPlanningNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#ZooLicensingNotice"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#Operation -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/planning#Operation">
+        <rdfs:label rdf:datatype="&xsd;string">A large-scale business activity</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Operation class</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#PermitApplication -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/planning#PermitApplication">
+        <rdfs:label rdf:datatype="&xsd;string">Application for permit</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/planning#PipelineApplication"/>
+        <rdfs:comment rdf:datatype="&xsd;string">PermitApplication class</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#PipeLines -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/planning#PipeLines">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/planning#PlanningThing"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#TownAndCountryPlanning"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#ZooLicensing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#PipeLinesNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/planning#PipeLinesNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1608</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/planning#PlanningNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&consultation;StatutoryConsultationNotification"/>
+                            <rdf:Description rdf:about="https://www.thegazette.co.uk/def/planning#PlanningThing"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#TownAndCountryPlanningNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#ZooLicensingNotice"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#PipelineApplication -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/planning#PipelineApplication">
+        <rdfs:label rdf:datatype="&xsd;string">Consent granted</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/planning#PipeLines"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#PipelineAuthorisation"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Consent class</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#PipelineAuthorisation -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/planning#PipelineAuthorisation">
+        <rdfs:label rdf:datatype="&xsd;string">Consent granted</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/planning#PipeLines"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Consent class</rdfs:comment>
+    </owl:Class>
+    
+
+	<!-- https://www.thegazette.co.uk/def/planning#PlanningAndEnvironmentNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/planning#PlanningAndEnvironmentNotice">
+        <rdfs:label>PlanningAndEnvironmentNotice</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ontology;PNBNotice"/>
+    </owl:Class>
+	
+    <!-- https://www.thegazette.co.uk/def/planning#PlanningNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/planning#PlanningNotice">
+        <rdfs:label>PlanningNotice</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/planning#PlanningAndEnvironmentNotice"/>
+    </owl:Class>
+    
+
+	<!-- https://www.thegazette.co.uk/def/planning#PlanningAndEnvironmentThing -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/planning#PlanningAndEnvironmentThing">
+        <rdfs:label>PlanningAndEnvironmentThing</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ontology;PNBThing"/>
+    </owl:Class>
+
+    <!-- https://www.thegazette.co.uk/def/planning#PlanningThing -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/planning#PlanningThing">
+        <rdfs:label>PlanningThing</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/planning#PlanningAndEnvironmentThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#Proposal -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/planning#Proposal">
+        <rdfs:label>Proposal</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#RevokeConservationArea -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/planning#RevokeConservationArea">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/planning#ChangeOfConservationArea"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#SearchForFormerOwners -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/planning#SearchForFormerOwners">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/planning#AcquisitionAndDisposalOfLand"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#TownAndCountryPlanning -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/planning#TownAndCountryPlanning">
+    	<rdfs:label>Town and Country Planning (Notice Code 1601)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/planning#PlanningThing"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#ZooLicensing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#TownAndCountryPlanningNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/planning#TownAndCountryPlanningNotice">
+        <rdfs:label xml:lang="en">Town and Country Planning (Notice Code 1601)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1601</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/planning#PlanningNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/planning#TownAndCountryPlanning"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#ZooLicensingNotice"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#Variation -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/planning#Variation">
+        <rdfs:label rdf:datatype="&xsd;string">Notice of variation (amendment and revision) of a conservation area</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/planning#Conservation"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Variation class</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#WorksAuthorisation -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/planning#WorksAuthorisation">
+        <rdfs:label rdf:datatype="&xsd;string">Works Authorisation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/planning#PipelineAuthorisation"/>
+        <rdfs:comment rdf:datatype="&xsd;string">WorksAuthorisation class</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#ZooLicenceApplicationIntention -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/planning#ZooLicenceApplicationIntention">
+        <rdfs:label rdf:datatype="&xsd;string">Intention of applying for a zoo licence</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/planning#ZooLicensing"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/planning#ZooLicenceRenewal"/>
+        <rdfs:comment rdf:datatype="&xsd;string">ZooLicenceApplicationIntention class</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#ZooLicenceRenewal -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/planning#ZooLicenceRenewal">
+        <rdfs:label rdf:datatype="&xsd;string">ZooLicenceRenewal of existing zoo licence</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/planning#ZooLicensing"/>
+        <rdfs:comment rdf:datatype="&xsd;string">ZooLicenceRenewal class</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#ZooLicensing -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/planning#ZooLicensing">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/planning#PlanningThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/planning#ZooLicensingNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/planning#ZooLicensingNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1609</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/planning#PlanningNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/planning#ZooLicensing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/publication#Notice -->
+
+    <owl:Class rdf:about="&publication;Notice"/>
+    
+
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.2.1789) http://owlapi.sourceforge.net -->
+

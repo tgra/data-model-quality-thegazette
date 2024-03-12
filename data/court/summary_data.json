@@ -1,0 +1,188 @@
+{
+    "classes": {
+        "http://www.geonames.org/ontology#Feature": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/court#ChanceryDivision": {
+            "label": "ChanceryDivision Class",
+            "comment": "Chancery Division of the High Court"
+        },
+        "https://www.thegazette.co.uk/def/court#CompanyCourtCase": {
+            "label": "CompanyCourtCase",
+            "comment": "Court case involving a limited company"
+        },
+        "https://www.thegazette.co.uk/def/court#CountyCourt": {
+            "label": "CountyCourt Class",
+            "comment": "County Court"
+        },
+        "https://www.thegazette.co.uk/def/court#Court": {
+            "label": "Court",
+            "comment": "Superclass for all types of Court"
+        },
+        "https://www.thegazette.co.uk/def/court#CourtCase": {
+            "label": "CourtCase",
+            "comment": "A Court Case"
+        },
+        "https://www.thegazette.co.uk/def/court#CrownCourt": {
+            "label": "CrownCourt Class",
+            "comment": "Crown Court"
+        },
+        "https://www.thegazette.co.uk/def/court#DistrictRegistry": {
+            "label": "DistrictRegistry Class",
+            "comment": "A District Registry Court"
+        },
+        "https://www.thegazette.co.uk/def/court#FamilyDivision": {
+            "label": "FamilyDivision Class",
+            "comment": "A FamilyDivision of the High Court"
+        },
+        "https://www.thegazette.co.uk/def/court#HighCourt": {
+            "label": "HighCourt Class",
+            "comment": "The High Court"
+        },
+        "https://www.thegazette.co.uk/def/court#MagistratesCourt": {
+            "label": "MagistratesCourt Class",
+            "comment": "A Magistrates Court"
+        },
+        "https://www.thegazette.co.uk/def/court#OrganisationCourtCase": {
+            "label": "OrganisationCourtCase Class",
+            "comment": "Court Case involving an organisationp"
+        },
+        "https://www.thegazette.co.uk/def/court#PartnershipCourtCase": {
+            "label": "PartnershipCourtCase Class",
+            "comment": "Court Case involving a Partnership"
+        },
+        "https://www.thegazette.co.uk/def/court#PersonCourtCase": {
+            "label": "PersonCourtCase Class",
+            "comment": "Court Case involving an individual"
+        },
+        "https://www.thegazette.co.uk/def/court#QueensBenchDivision": {
+            "label": "QueensBenchDivision Class",
+            "comment": "Queens Bench Division of the High Court"
+        },
+        "https://www.thegazette.co.uk/def/court#SoleTraderCourtCase": {
+            "label": "SoleTraderCourtCase Class",
+            "comment": "Court Case involving a Sole Trader"
+        },
+        "https://www.thegazette.co.uk/def/organisation#LimitedCompany": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/organisation#Organisation": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/organisation#Partnership": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/organisation#SoleTrader": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/person#Person": {
+            "label": null,
+            "comment": null
+        }
+    },
+    "object_properties": {
+        "https://www.thegazette.co.uk/def/court#hasCourt": {
+            "label": "hasCourt property",
+            "comment": "Court associated with a Court Case\n\t\t\tInverse of hasCourtCase",
+            "domain": "https://www.thegazette.co.uk/def/court#CourtCase",
+            "range": "https://www.thegazette.co.uk/def/court#Court"
+        },
+        "https://www.thegazette.co.uk/def/court#hasCourtCase": {
+            "label": "hasCourtCase property",
+            "comment": "Court Case associated with a Court\n\t\t\tInverse of hasCourt",
+            "domain": "https://www.thegazette.co.uk/def/court#Court",
+            "range": "https://www.thegazette.co.uk/def/court#CourtCase"
+        },
+        "https://www.thegazette.co.uk/def/court#hasFollowingCourtCase": {
+            "label": "hasFollowingCourtCase property",
+            "comment": "court case that follows on from this court case",
+            "domain": "https://www.thegazette.co.uk/def/court#CourtCase",
+            "range": "https://www.thegazette.co.uk/def/court#CourtCase"
+        },
+        "https://www.thegazette.co.uk/def/court#hasPreviousCourtCase": {
+            "label": "hasPreviousCourtCase property",
+            "comment": "previous court case",
+            "domain": "https://www.thegazette.co.uk/def/court#CourtCase",
+            "range": "https://www.thegazette.co.uk/def/court#CourtCase"
+        },
+        "https://www.thegazette.co.uk/def/court#hasRelatedCourtCase": {
+            "label": "hasRelatedCourtCase property",
+            "comment": "related court case",
+            "domain": "https://www.thegazette.co.uk/def/court#CourtCase",
+            "range": "https://www.thegazette.co.uk/def/court#CourtCase"
+        },
+        "https://www.thegazette.co.uk/def/court#involvedInCourtCase": {
+            "label": "involvedInCourtCase property",
+            "comment": "Court Case that involves the organisation\n\t\t\tInverse of isAboutOrganisation",
+            "domain": "https://www.thegazette.co.uk/def/organisation#Organisation",
+            "range": "https://www.thegazette.co.uk/def/court#OrganisationCourtCase"
+        },
+        "https://www.thegazette.co.uk/def/court#involvedInPersonCourtCase": {
+            "label": "isAboutOrganisation property",
+            "comment": "Organisation involved in a Court Case\n\t\t\tInverse of involvedInCourtCase",
+            "domain": "https://www.thegazette.co.uk/def/person#Person",
+            "range": "https://www.thegazette.co.uk/def/court#PersonCourtCase"
+        },
+        "https://www.thegazette.co.uk/def/court#isAboutOrganisation": {
+            "label": "implied Organisation",
+            "comment": "Organisation involved in a Court Case\n\t\t\tInverse of involvedInCourtCase",
+            "domain": "https://www.thegazette.co.uk/def/court#OrganisationCourtCase",
+            "range": "https://www.thegazette.co.uk/def/organisation#Organisation"
+        },
+        "https://www.thegazette.co.uk/def/court#isAboutPerson": {
+            "label": "isAboutOrganisation property",
+            "comment": "Organisation involved in a Court Case\n\t\t\tInverse of involvedInCourtCase",
+            "domain": "https://www.thegazette.co.uk/def/court#PersonCourtCase",
+            "range": "https://www.thegazette.co.uk/def/person#Person"
+        },
+        "https://www.thegazette.co.uk/def/court#isRelatedToCourtCase": {
+            "label": "isRelatedToCourtCase property",
+            "comment": "court case that is related this court case",
+            "domain": "https://www.thegazette.co.uk/def/court#CourtCase",
+            "range": "https://www.thegazette.co.uk/def/court#CourtCase"
+        },
+        "https://www.thegazette.co.uk/def/court#sitsAt": {
+            "label": "residesAt property",
+            "comment": "location at which the court sits",
+            "domain": "https://www.thegazette.co.uk/def/court#Court",
+            "range": "http://www.geonames.org/ontology#Feature"
+        }
+    },
+    "data_properties": {
+        "https://www.thegazette.co.uk/def/court#caseNumber": {
+            "label": "caseNumber",
+            "comment": "Number issued to a Court Case",
+            "domain": "https://www.thegazette.co.uk/def/court#CourtCase",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/court#caseYear": {
+            "label": "caseYear",
+            "comment": "Year specific to a Court Case",
+            "domain": "https://www.thegazette.co.uk/def/court#CourtCase",
+            "range": "http://www.w3.org/2001/XMLSchema#gYear"
+        },
+        "https://www.thegazette.co.uk/def/court#courtDistrict": {
+            "label": "courtDistrict",
+            "comment": "District the court resides in",
+            "domain": "https://www.thegazette.co.uk/def/court#Court",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/court#courtName": {
+            "label": "courtName",
+            "comment": "Name that court is known by",
+            "domain": "https://www.thegazette.co.uk/def/court#Court",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/court#courtNumber": {
+            "label": "courtNumber property",
+            "comment": "Number of the court",
+            "domain": "https://www.thegazette.co.uk/def/court#Court",
+            "range": "http://www.w3.org/2001/XMLSchema#integer"
+        }
+    }
+}

@@ -1,0 +1,627 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY dcterms "http://purl.org/dc/terms/" >
+    <!ENTITY foaf "http://xmlns.com/foaf/0.1/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY swrl "http://www.w3.org/2003/11/swrl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY swrlb "http://www.w3.org/2003/11/swrlb#" >
+    <!ENTITY vCard "http://www.w3.org/2006/vcard/ns#" >
+    <!ENTITY ontology3 "http://www.geonames.org/ontology#" >
+    <!ENTITY ontology "https://www.thegazette.co.uk/def/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY ontology2 "http://www.gazettes.co.uk/ontology/" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY person "https://www.thegazette.co.uk/def/person#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY authority "https://www.thegazette.co.uk/def/authority#" >
+    <!ENTITY publication "https://www.thegazette.co.uk/def/publication#" >
+    <!ENTITY authority2 "http://www.gazettes.co.uk/ontology/authority#" >
+    <!ENTITY organisation "https://www.thegazette.co.uk/def/organisation#" >
+    <!ENTITY protege "http://protege.stanford.edu/plugins/owl/protege#" >
+    <!ENTITY organisation2 "http://www.gazettes.co.uk/ontology/organisation#" >
+    <!ENTITY xsp "http://www.owl-ontologies.com/2005/08/07/xsp.owl#" >
+]>
+
+
+<rdf:RDF xmlns="&ontology;person"
+     xml:base="&ontology;person"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:person="&ontology;person#"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+     xmlns:organisation="&ontology;organisation#"
+     xmlns:ontology3="http://www.geonames.org/ontology#"
+     xmlns:vCard="http://www.w3.org/2006/vcard/ns#"
+     xmlns:organisation2="&ontology2;organisation#"
+     xmlns:ontology="https://www.thegazette.co.uk/def/"
+     xmlns:ontology2="http://www.gazettes.co.uk/ontology/"
+     xmlns:publication="&ontology;publication#"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:authority2="&ontology2;authority#"
+     xmlns:authority="&ontology;authority#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="&ontology;person">
+        <dcterms:created rdf:datatype="&xsd;string">2008-01-23</dcterms:created>
+        <dcterms:creator rdf:datatype="&xsd;string">Griff Chamberlain, The Stationery Office, mark.chamberlain@tso.co.uk</dcterms:creator>
+        <dc:title rdf:datatype="&xsd;string">Person and Role Ontology</dc:title>
+        <dc:description xml:lang="en">
+  		Ontology for People and Roles.
+
+  		This is a beta version, and you should expect it to change.
+		</dc:description>
+        <owl:imports rdf:resource="http://www.w3.org/2006/vcard/ns"/>
+        <owl:imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&ontology2;authority#isKnownAs"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="&xsd;date"/>
+    
+    <!-- https://www.thegazette.co.uk/def/person#isTradingAs -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;person#isTradingAs">
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&ontology;person#Person"/>
+    </owl:DatatypeProperty>
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+    <!-- https://www.thegazette.co.uk/def/person#hasPrincipalTradingAddress -->
+
+    <owl:ObjectProperty rdf:about="&ontology;person#hasPrincipalTradingAddress">
+        <rdfs:label rdf:datatype="&xsd;string">hasPrincipalTradingAddress property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Principal Trading Address associated with a person</rdfs:comment>
+        <rdfs:range rdf:resource="&vCard;Address"/>
+        <rdfs:domain rdf:resource="&ontology;person#Person"/>
+    </owl:ObjectProperty>
+
+    <!-- https://www.thegazette.co.uk/def/person#assignedBy -->
+
+    <owl:ObjectProperty rdf:about="&ontology;person#assignedBy">
+        <rdfs:label rdf:datatype="&xsd;string">assignedBy property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">role assigned to an employment</rdfs:comment>
+        <rdfs:range rdf:resource="&ontology;person#Employment"/>
+        <rdfs:domain rdf:resource="&ontology;person#Role"/>
+        <owl:inverseOf rdf:resource="&ontology;person#employedAs"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/person#employedAs -->
+
+    <owl:ObjectProperty rdf:about="&ontology;person#employedAs">
+        <rdfs:label rdf:datatype="&xsd;string">employedAs property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">The role associated with an employment</rdfs:comment>
+        <rdfs:domain rdf:resource="&ontology;person#Employment"/>
+        <rdfs:range rdf:resource="&ontology;person#Role"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/person#hasAddress -->
+
+    <owl:ObjectProperty rdf:about="&ontology;person#hasAddress">
+    	<rdfs:label>hasAddress</rdfs:label>
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment>Current or last registered address for a person</rdfs:comment>
+        <rdfs:range rdf:resource="&vCard;Address"/>
+        <rdfs:subPropertyOf rdf:resource="&vCard;adr"/>
+        <rdfs:domain rdf:resource="&ontology;person#Person"/>
+        <owl:inverseOf rdf:resource="&ontology;person#hasSpatialLocation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/person#hasDepartmentMember -->
+
+    <owl:ObjectProperty rdf:about="&ontology;person#hasDepartmentMember">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:label rdf:datatype="&xsd;string">isBaseFor property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Employment that is held at specific location</rdfs:comment>
+        <rdfs:domain rdf:resource="&ontology2;organisation#Department"/>
+        <rdfs:range rdf:resource="&ontology;person#Position"/>
+        <owl:inverseOf rdf:resource="&ontology;person#isMemberOfDepartment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/person#hasEmployee -->
+
+    <owl:ObjectProperty rdf:about="&ontology;person#hasEmployee">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment>Person who developes an employment</rdfs:comment>
+        <rdfs:domain rdf:resource="&ontology;person#Employment"/>
+        <rdfs:range rdf:resource="&ontology;person#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/person#hasEmployment -->
+
+    <owl:ObjectProperty rdf:about="&ontology;person#hasEmployment">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:comment>Employment developed by a person</rdfs:comment>
+        <rdfs:range rdf:resource="&ontology;person#Employment"/>
+        <rdfs:domain rdf:resource="&ontology;person#Person"/>
+        <owl:inverseOf rdf:resource="&ontology;person#hasEmployee"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/person#hasPreviousAddress -->
+
+    <owl:ObjectProperty rdf:about="&ontology;person#hasPreviousAddress">
+        <rdfs:comment>Registered address that a person had in the past - this usually represents a move</rdfs:comment>
+        <rdfs:range rdf:resource="&vCard;Address"/>
+        <rdfs:domain rdf:resource="&ontology;person#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/person#hasRole -->
+
+    <owl:ObjectProperty rdf:about="&ontology;person#hasRole">
+        <rdfs:label rdf:datatype="&xsd;string">hasRole property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">The role associated with a person</rdfs:comment>
+        <rdfs:domain rdf:resource="&ontology;person#Person"/>
+        <rdfs:range rdf:resource="&ontology;person#Role"/>
+        <owl:inverseOf rdf:resource="&ontology;person#undertakenBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/person#hasSpatialLocation -->
+
+    <owl:ObjectProperty rdf:about="&ontology;person#hasSpatialLocation">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="&vCard;Address"/>
+        <rdfs:range rdf:resource="&ontology;person#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/person#isBaseFor -->
+
+    <owl:ObjectProperty rdf:about="&ontology;person#isBaseFor">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:label rdf:datatype="&xsd;string">isBaseFor property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Employment that is held at specific location</rdfs:comment>
+        <rdfs:domain rdf:resource="&ontology3;Feature"/>
+        <rdfs:range rdf:resource="&ontology;person#Position"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/person#isBasedAt -->
+
+    <owl:ObjectProperty rdf:about="&ontology;person#isBasedAt">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>basedAt</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Location that role is based at</rdfs:comment>
+        <rdfs:range rdf:resource="&ontology3;Feature"/>
+        <rdfs:domain rdf:resource="&ontology;person#Position"/>
+        <owl:inverseOf rdf:resource="&ontology;person#isBaseFor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/person#isMemberOfDepartment -->
+
+    <owl:ObjectProperty rdf:about="&ontology;person#isMemberOfDepartment">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>basedAt</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Location that role is based at</rdfs:comment>
+        <rdfs:range rdf:resource="&ontology2;organisation#Department"/>
+        <rdfs:domain rdf:resource="&ontology;person#Position"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/person#undertakenBy -->
+
+    <owl:ObjectProperty rdf:about="&ontology;person#undertakenBy">
+        <rdfs:label rdf:datatype="&xsd;string">undertakenBy property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">the person that is associated with the role</rdfs:comment>
+        <rdfs:range rdf:resource="&ontology;person#Person"/>
+        <rdfs:domain rdf:resource="&ontology;person#Role"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+     <!-- https://www.thegazette.co.uk/def/person#hasPersonalDetails -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;person#hasPersonalDetails">
+        <rdfs:comment>hasPersonalDetails</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&ontology;person#Person"/>
+    </owl:DatatypeProperty>   
+
+	<!-- https://www.thegazette.co.uk/def/person#hasStatus -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;person#hasStatus">
+        <rdfs:comment>hasStatus</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&ontology;person#Person"/>
+    </owl:DatatypeProperty>   
+
+    <!-- https://www.thegazette.co.uk/def/person#alsoKnownAs -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;person#alsoKnownAs">
+        <rdfs:comment>Another name by which the person was known</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&ontology;person#Person"/>
+    </owl:DatatypeProperty>
+    
+    <!-- https://www.thegazette.co.uk/def/person#isDeceased -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;person#isDeceased">
+        <rdfs:comment>Is this person deceased</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&ontology;person#Person"/>
+    </owl:DatatypeProperty>
+
+    <!-- https://www.thegazette.co.uk/def/person#bankruptcyStatus -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;person#bankruptcyStatus">
+        <rdfs:comment>Status of bankruptcy</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&ontology;person#Person"/>
+    </owl:DatatypeProperty>
+
+    <!-- https://www.thegazette.co.uk/def/person#dateOfBirth -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;person#dateOfBirth">
+    	<rdfs:label>dateOfBirth</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;date"/>
+        <rdfs:domain rdf:resource="&ontology;person#Person"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/person#hasIPnum -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;person#hasIPnum">
+        <rdfs:label>IpNumber</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Insolvency Practice number - this is associated with a person - the Insolvency Service provide a free database search at http://www.insolvency-service.co.uk/newipsearch.htm</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&ontology;person#InsolvencyPractitioner"/>
+    </owl:DatatypeProperty>
+    
+    <!-- https://www.thegazette.co.uk/def/person#hasIPCapacity -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;person#hasIPCapacity">
+        <rdfs:label>IPCapacity</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&ontology;person#InsolvencyPractitioner"/>
+    </owl:DatatypeProperty>
+    
+    <!-- https://www.thegazette.co.uk/def/person#noticeDated -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;person#noticeDated">
+        <rdfs:label>noticeDated</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;date"/>
+        <rdfs:domain rdf:resource="&ontology;person#InsolvencyPractitioner"/>
+    </owl:DatatypeProperty>
+    
+    <!-- https://www.thegazette.co.uk/def/person#additionalInformationIP -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;person#additionalInformationIP">
+        <rdfs:label>additionalInformation</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&ontology;person#InsolvencyPractitioner"/>
+    </owl:DatatypeProperty>
+    
+    <!-- https://www.thegazette.co.uk/def/person#additionalContactName -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;person#additionalContactName">
+        <rdfs:label>additionalInformation</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&ontology;person#InsolvencyPractitioner"/>
+    </owl:DatatypeProperty>
+
+    <!-- https://www.thegazette.co.uk/def/person#hasMaidenName -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;person#hasMaidenName">
+        <rdfs:comment>Optional name corresponding to the one when the person was single </rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&ontology;person#Person"/>
+        <rdfs:subPropertyOf rdf:resource="&ontology;person#alsoKnownAs"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/person#houseInformation -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;person#houseInformation">
+        <rdfs:domain rdf:resource="&vCard;Address"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/person#jobTitle -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;person#jobTitle">
+    	<rdfs:label>occupation</rdfs:label>
+        <rdfs:comment>Name of the job position</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&ontology;person#Employment"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/person#roleName -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;person#roleName">
+        <rdfs:comment>Name of the role undertaken by a person</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&ontology;person#Role"/>
+    </owl:DatatypeProperty>
+    
+    <!-- https://www.thegazette.co.uk/def/person#initials -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;person#initials">
+        <rdfs:comment>Initial of the name of a Person</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&ontology;person#Person"/>
+    </owl:DatatypeProperty>
+    
+    <!-- https://www.thegazette.co.uk/def/person#honour -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;person#honour">
+        <rdfs:comment>Honour of a Person</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&ontology;person#Person"/>
+    </owl:DatatypeProperty>
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.gazettes.co.uk/ontology/organisation#Department -->
+
+    <owl:Class rdf:about="&ontology2;organisation#Department"/>
+    
+
+
+    <!-- http://www.geonames.org/ontology#Feature -->
+
+    <owl:Class rdf:about="&ontology3;Feature"/>
+    
+
+
+    <!-- http://www.w3.org/2006/vcard/ns#Address -->
+
+    <owl:Class rdf:about="&vCard;Address"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/person#Administrator -->
+
+    <owl:Class rdf:about="&ontology;person#Administrator">
+        <rdfs:label rdf:datatype="&xsd;string">Administrator class</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ontology;person#Role"/>
+        <owl:disjointWith rdf:resource="&ontology;person#Director"/>
+        <owl:disjointWith rdf:resource="&ontology;person#Liquidator"/>
+        <owl:disjointWith rdf:resource="&ontology;person#Member"/>
+        <owl:disjointWith rdf:resource="&ontology;person#Petitioner"/>
+        <owl:disjointWith rdf:resource="&ontology;person#Receiver"/>
+        <owl:disjointWith rdf:resource="&ontology;person#Solicitor"/>
+        <rdfs:comment rdf:datatype="&xsd;string">The role of a Administrator - the person/organisation appointed as administrator</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/person#Director -->
+
+    <owl:Class rdf:about="&ontology;person#Director">
+        <rdfs:label rdf:datatype="&xsd;string">Director class</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ontology;person#Role"/>
+        <owl:disjointWith rdf:resource="&ontology;person#Liquidator"/>
+        <owl:disjointWith rdf:resource="&ontology;person#Member"/>
+        <owl:disjointWith rdf:resource="&ontology;person#Petitioner"/>
+        <owl:disjointWith rdf:resource="&ontology;person#Receiver"/>
+        <owl:disjointWith rdf:resource="&ontology;person#Solicitor"/>
+        <rdfs:comment rdf:datatype="&xsd;string">The role of a Director - someone who controls resources and expenditures</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/person#Employment -->
+
+    <owl:Class rdf:about="&ontology;person#Employment">
+        <rdfs:label>Employment</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ontology;person#Position"/>
+        <owl:disjointWith rdf:resource="&ontology;person#Role"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Position held within an organisation - an employment can encompass one or more roles</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/person#Female -->
+
+    <owl:Class rdf:about="&ontology;person#Female">
+        <rdfs:subClassOf rdf:resource="&ontology;person#Person"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&foaf;gender"/>
+                <owl:hasValue rdf:datatype="&xsd;string">female</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/person#InsolvencyPractitioner -->
+
+    <owl:Class rdf:about="&ontology;person#InsolvencyPractitioner">
+        <rdfs:label>Insolvency Practitioner</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ontology;person#Person"/>
+        <rdfs:comment rdf:datatype="&xsd;string">A person who is a registered Insolvency Practitioner this is different to a role in the fact that a persons role changes according to their employment whereas an IP is a registered appointment that a person takes with them through whatever roles they are employed in</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/person#Liquidator -->
+
+    <owl:Class rdf:about="&ontology;person#Liquidator">
+        <rdfs:label rdf:datatype="&xsd;string">Liquidator class</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ontology;person#Role"/>
+        <owl:disjointWith rdf:resource="&ontology;person#Member"/>
+        <owl:disjointWith rdf:resource="&ontology;person#Petitioner"/>
+        <owl:disjointWith rdf:resource="&ontology;person#Receiver"/>
+        <owl:disjointWith rdf:resource="&ontology;person#Solicitor"/>
+        <rdfs:comment rdf:datatype="&xsd;string">The role of a Liquidator - the person/organisation appointed as Liquidator</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/person#Male -->
+
+    <owl:Class rdf:about="&ontology;person#Male">
+        <rdfs:subClassOf rdf:resource="&ontology;person#Person"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&foaf;gender"/>
+                <owl:hasValue rdf:datatype="&xsd;string">male</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/person#Member -->
+
+    <owl:Class rdf:about="&ontology;person#Member">
+        <rdfs:label rdf:datatype="&xsd;string">Member class</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ontology;person#Role"/>
+        <owl:disjointWith rdf:resource="&ontology;person#Petitioner"/>
+        <owl:disjointWith rdf:resource="&ontology;person#Receiver"/>
+        <owl:disjointWith rdf:resource="&ontology;person#Solicitor"/>
+        <rdfs:comment rdf:datatype="&xsd;string">The role of a Member of Staff</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/person#Person -->
+
+    <owl:Class rdf:about="&ontology;person#Person">
+        <rdfs:label>Person</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foaf;Person"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/person#Petitioner -->
+
+    <owl:Class rdf:about="&ontology;person#Petitioner">
+        <rdfs:label rdf:datatype="&xsd;string">Petitioner class</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ontology;person#Role"/>
+        <owl:disjointWith rdf:resource="&ontology;person#Receiver"/>
+        <owl:disjointWith rdf:resource="&ontology;person#Solicitor"/>
+        <rdfs:comment rdf:datatype="&xsd;string">The role of a Petitioner - the person/organisation appointed as Petitioner</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/person#Position -->
+
+    <owl:Class rdf:about="&ontology;person#Position">
+        <rdfs:label rdf:datatype="&xsd;string">Position class</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">responsibility in business or other enterprise</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/person#Receiver -->
+
+    <owl:Class rdf:about="&ontology;person#Receiver">
+        <rdfs:label rdf:datatype="&xsd;string">Receiver class</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ontology;person#Role"/>
+        <owl:disjointWith rdf:resource="&ontology;person#Solicitor"/>
+        <rdfs:comment rdf:datatype="&xsd;string">The role of a Receiver - this can either be a person appointed as a receiver within an organisation or an individual office of the official receiver</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/person#Role -->
+
+    <owl:Class rdf:about="&ontology;person#Role">
+        <rdfs:label rdf:datatype="&xsd;string">Role class</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ontology;person#Position"/>
+        <rdfs:comment rdf:datatype="&xsd;string">A position involving a specific activity that is held either by a person or organisation
+		eg a role can be a person who is a solicitor within an organisation
+			or a role of solicitor can be provided by an organisation without reference to a particular person</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/person#Solicitor -->
+
+    <owl:Class rdf:about="&ontology;person#Solicitor">
+        <rdfs:label rdf:datatype="&xsd;string">Solicitor class</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ontology;person#Role"/>
+        <rdfs:comment rdf:datatype="&xsd;string">The role of a Solicitor - the person/organisation appointed as Solicitor</rdfs:comment>
+    </owl:Class>
+    
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.2.1789) http://owlapi.sourceforge.net -->
+

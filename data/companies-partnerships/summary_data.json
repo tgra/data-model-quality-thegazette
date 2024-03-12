@@ -1,0 +1,470 @@
+{
+    "classes": {
+        "https://www.thegazette.co.uk/def/companies-partnerships#CompaniesNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#CompaniesThing": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#CompetitionCommision": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#CompetitionCommisionNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#EmploymentAgencies": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#EmploymentAgenciesNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#IPApplications": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#IPApplicationsNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#MeetingOfCreditors": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#MeetingOfCreditorsNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#RedemptionOrPurchase": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#RedemptionOrPurchaseNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#ReductionOfCapital": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#ReductionOfCapitalNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#ClaimAgainstPensionSchemes": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#ClaimAgainstPensionSchemesNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#CompaniesRemovedFromRegister": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#CompaniesRemovedFromRegisterNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#CompaniesRestoredFromRegister": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#CompaniesRestoredFromRegisterNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#CompanyDirectorDisqualificationOrder": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#CompanyDirectorDisqualificationOrderNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#CompanyDocuments": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#CompanyDocumentsNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#EEInterestGroupings": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#EEInterestGroupingsNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#OtherOffersToShareholders": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#OtherOffersToShareholdersNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#PartnershipChangeInMembers": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#PartnershipChangeInMembersNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#PartnershipDissolution": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#PartnershipDissolutionNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#PartnershipLimited": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#PartnershipLimitedNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#PropertyDisclaimer": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#PropertyDisclaimerNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#TakeoverInsuranceCompanies": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#TakeoverInsuranceCompaniesNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#TakeoverPetitionToTransfer": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#TakeoverPetitionToTransferNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#TakeoverPreemptionOffers": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#TakeoverPreemptionOffersNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#TakeoverOffers": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#TakeoverOffersNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseA": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseANotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseB1": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseB1Notice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseB2": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseB2Notice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseB3": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseB3Notice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseB4": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseB4Notice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseC1": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseC1Notice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseC2": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseC2Notice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseC3": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseC3Notice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseD1": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseD1Notice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseD2": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseD2Notice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseE1": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseE1Notice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseF1": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseF1Notice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseF2": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseF2Notice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseF3": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseF3Notice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseF4": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseF4Notice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG1": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG1Notice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG10": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG10Notice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG11": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG11Notice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG2": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG2Notice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG3": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG3Notice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG4": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG4Notice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG5": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG5Notice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG6": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG6Notice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG7": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG7Notice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG8": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG8Notice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG9": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseG9Notice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseH1": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseH1Notice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseH2": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseH2Notice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseJ1": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseJ1Notice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseK1": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseK1Notice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseK2": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseK2Notice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseK3": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseK3Notice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseK4": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseK4Notice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseK5": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#FilingAtCompaniesHouseK5Notice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#StrikingOffDissolution": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#StrikingOffDissolutionNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#StrikingOff3Months": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/companies-partnerships#StrikingOff3MonthsNotice": {
+            "label": null,
+            "comment": null
+        }
+    },
+    "object_properties": {},
+    "data_properties": {}
+}

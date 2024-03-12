@@ -1,0 +1,419 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY dcterms "http://purl.org/dc/terms/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY ontology "https://www.thegazette.co.uk/def/publication#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY water "http://www.gazettes-online.co.uk/ontology/water#" >
+    <!ENTITY planning "http://www.gazettes-online.co.uk/ontology/planning#" >
+    <!ENTITY transport "http://www.gazettes-online.co.uk/ontology/transport#" >
+    <!ENTITY legislation "http://www.gazettes-online.co.uk/ontology/legislation#" >
+    <!ENTITY organisation "http://www.gazettes-online.co.uk/ontology/organisation#" >
+    <!ENTITY consultation "http://www.gazettes-online.co.uk/ontology/consultation#" >
+	<!ENTITY appointments "https://www.thegazette.co.uk/def/appointments#" >
+	<!ENTITY person "https://www.thegazette.co.uk/def/person#" >
+    <!ENTITY england-and-wales "http://www.legislation.gov.uk/id/#environmental-permitting-(england-and-wales)-" >
+]>
+
+ 
+ 
+
+<rdf:RDF xmlns="https://www.thegazette.co.uk/def/appointments#"
+     xml:base="https://www.thegazette.co.uk/def/appointments"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:ontology="https://www.thegazette.co.uk/def/publication#"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	 xmlns:appointments="https://www.thegazette.co.uk/def/appointments"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="https://www.thegazette.co.uk/def/appointments">
+        <dcterms:created rdf:datatype="&xsd;string">2008-09-18</dcterms:created>
+        <dc:title rdf:datatype="&xsd;string">Gazette Environment Notice Ontology</dc:title>
+        <dcterms:creator rdf:datatype="&xsd;string">Griff Chamberlain, The Stationery Office, mark.chamberlain@tso.co.uk</dcterms:creator>
+        <dc:description xml:lang="en">Appointments Notice module
+
+  		This is a beta version, and you should expect it to change.
+		</dc:description>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="&xsd;date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.gazettes-online.co.uk/ontology#isAbout -->
+
+    <owl:ObjectProperty rdf:about="&ontology;isAbout"/>
+    
+
+
+    <!-- http://www.gazettes-online.co.uk/ontology#isEnabledByLegislation -->
+
+    <owl:ObjectProperty rdf:about="&ontology;isEnabledByLegislation"/>
+    
+ 
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.gazettes-online.co.uk/ontology#hasNoticeCode -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;hasNoticeCode"/>
+    
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.gazettes-online.co.uk/ontology#PNBNotice -->
+
+    <owl:Class rdf:about="&ontology;PNBNotice"/>
+    
+
+
+    <!-- http://www.gazettes-online.co.uk/ontology#PNBThing -->
+
+    <owl:Class rdf:about="&ontology;PNBThing"/>
+
+	
+    <!-- https://www.thegazette.co.uk/def/appointments#AppointmentNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/appointments#AppointmentNotice">
+        <rdfs:subClassOf rdf:resource="&ontology;PNBNotice"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/appointments#AppointmentThing -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/appointments#AppointmentThing">
+        <rdfs:subClassOf rdf:resource="&ontology;PNBThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/appointments#AppointmentToRoyalHousehold -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/appointments#AppointmentToRoyalHousehold">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/appointments#AppointmentThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/appointments#AppointmentToRoyalHouseholdNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/appointments#AppointmentToRoyalHouseholdNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1103</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&appointments;AppointmentNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&appointments;AppointmentToRoyalHousehold"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+    <!-- https://www.thegazette.co.uk/def/appointments#hasAppointee -->
+
+    <owl:ObjectProperty rdf:about="&appointments;#hasAppointee">
+    	<rdfs:label>Appointee</rdfs:label>
+        <rdfs:range rdf:resource="&person;Person"/>
+        <rdfs:domain rdf:resource="&appointments;#AppointmentToRoyalHousehold"/>
+    </owl:ObjectProperty>
+
+
+    <!-- https://www.thegazette.co.uk/def/appointments#CrownOffice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/appointments#CrownOffice">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/appointments#AppointmentThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/appointments#CrownOfficeNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/appointments#CrownOfficeNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1108</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&appointments;AppointmentNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&appointments;CrownOffice"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/appointments#DeputyLieutenant -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/appointments#DeputyLieutenant">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/appointments#AppointmentThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/appointments#DeputyLieutenantNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/appointments#DeputyLieutenantNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1111</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&appointments;AppointmentNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&appointments;DeputyLieutenant"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/appointments#DuchyOfCornwall -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/appointments#DuchyOfCornwall">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/appointments#AppointmentThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/appointments#DuchyOfCornwallNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/appointments#DuchyOfCornwallNotice">
+		<owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1109</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&appointments;AppointmentNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&appointments;DuchyOfCornwall"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+
+
+    <!-- https://www.thegazette.co.uk/def/appointments#Judges -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/appointments#Judges">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/appointments#AppointmentThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/appointments#JudgesNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/appointments#JudgesNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1113</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&appointments;AppointmentNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&appointments;Judges"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/appointments#LordLieutenants -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/appointments#LordLieutenants">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/appointments#AppointmentThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/appointments#LordLieutenantsNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/appointments#LordLieutenantsNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1115</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&appointments;AppointmentNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&appointments;LordLieutenants"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+
+
+    <!-- https://www.thegazette.co.uk/def/appointments#PrimeMinistersOffice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/appointments#PrimeMinistersOffice">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/appointments#AppointmentThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/appointments#PrimeMinistersOfficeNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/appointments#PrimeMinistersOfficeNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1114</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&appointments;AppointmentNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&appointments;PrimeMinistersOffice"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+
+    <!-- https://www.thegazette.co.uk/def/appointments#Sheriffs -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/appointments#Sheriffs">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/appointments#AppointmentThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/appointments#SheriffsNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/appointments#SheriffsNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1110</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&appointments;AppointmentNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&appointments;Sheriffs"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.2.1789) http://owlapi.sourceforge.net -->
+

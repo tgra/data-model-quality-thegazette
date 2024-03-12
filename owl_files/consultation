@@ -1,0 +1,853 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY dcterms "http://purl.org/dc/terms/" >
+    <!ENTITY foaf "http://xmlns.com/foaf/0.1/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY geonames "http://www.geonames.org/ontology#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY court "https://www.thegazette.co.uk/def/court#" >
+    <!ENTITY person "https://www.thegazette.co.uk/def/person#" >
+    <!ENTITY wgs84_pos "http://www.w3.org/2003/01/geo/wgs84_pos#" >
+    <!ENTITY duration "https://www.thegazette.co.uk/def/duration#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY authority "https://www.thegazette.co.uk/def/authority#" >
+    <!ENTITY publication "https://www.thegazette.co.uk/def/publication#" >
+    <!ENTITY organisation "https://www.thegazette.co.uk/def/organisation#" >
+    <!ENTITY consultation "https://www.thegazette.co.uk/def/consultation#" >
+    <!ENTITY legislation "https://www.thegazette.co.uk/def/legislation#" >
+    <!ENTITY protege "http://protege.stanford.edu/plugins/owl/protege#" >
+    <!ENTITY xsp "http://www.owl-ontologies.com/2005/08/07/xsp.owl#" >
+]>
+
+
+<rdf:RDF xmlns="https://www.thegazette.co.uk/def/consultation#"
+     xml:base="https://www.thegazette.co.uk/def/consultation"
+     xml:legislation="https://www.thegazette.co.uk/def/legislation#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:person="https://www.thegazette.co.uk/def/person#"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:wgs84_pos="http://www.w3.org/2003/01/geo/wgs84_pos#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+     xmlns:organisation="https://www.thegazette.co.uk/def/organisation#"
+     xmlns:court="https://www.thegazette.co.uk/def/court#"
+     xmlns:geonames="http://www.geonames.org/ontology#"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:publication="https://www.thegazette.co.uk/def/publication#"
+     xmlns:authority="https://www.thegazette.co.uk/def/authority#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:duration="https://www.thegazette.co.uk/def/duration#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="https://www.thegazette.co.uk/def/consultation">
+
+        <dcterms:created rdf:datatype="&xsd;string">2008-10-23</dcterms:created>
+        <dc:title rdf:datatype="&xsd;string">Gazette Ontology</dc:title>
+        <dcterms:creator rdf:datatype="&xsd;string">Griff Chamberlain, The Stationery Office, mark.chamberlain@tso.co.uk</dcterms:creator>
+        <dc:description xml:lang="en">
+  		Ontology for the Statutory Consulatation process of making orders
+
+  		This is a beta version, and you should expect it to change.
+		</dc:description>
+        <owl:imports rdf:resource="http://purl.org/dc/elements/1.1/"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="https://www.thegazette.co.uk/def/consultation#shortDescription">
+        <rdfs:subPropertyOf rdf:resource="&dc;description"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/consultation#ConsultationThing"/>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="https://www.thegazette.co.uk/def/consultation#documentReference">
+        <rdfs:subPropertyOf rdf:resource="&dc;identifier"/>
+        <rdfs:domain rdf:resource="&foaf;Document"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="&xsd;date"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#duration -->
+
+    <rdfs:Datatype rdf:about="&xsd;duration"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#appliesToCourt -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/consultation#appliesToCourt">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <owl:inverseOf rdf:resource="https://www.thegazette.co.uk/def/consultation#hasOrderApplication"/>
+        <rdfs:range rdf:resource="&court;Court"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#grantedBy -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/consultation#grantedBy">
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/consultation#PlanningPermission"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&organisation;Organisation"/>
+                    <rdf:Description rdf:about="&person;Person"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#grantedTo -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/consultation#grantedTo">
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/consultation#PlanningPermission"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&organisation;Organisation"/>
+                    <rdf:Description rdf:about="&person;Person"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#hasAssociatedPlanningPermission -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/consultation#hasAssociatedPlanningPermission">
+        <rdfs:range rdf:resource="https://www.thegazette.co.uk/def/consultation#PlanningPermission"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#hasAvailableTimes -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/consultation#hasAvailableTimes">
+        <rdfs:label rdf:datatype="&xsd;string">hasDateTimeDuration property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Duration that Orders are available for inspection
+		This can use time durations ie 9.30 - 17.00
+		or Monday to Friday
+		</rdfs:comment>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/consultation#InspectionCopy"/>
+        <rdfs:range rdf:resource="&duration;Times"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#hasCopy -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/consultation#hasCopy">
+        <rdfs:label rdf:datatype="&xsd;string">hasCopies property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">copies of document</rdfs:comment>
+        <rdfs:range rdf:resource="https://www.thegazette.co.uk/def/consultation#Copy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#hasInspectionTimes -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/consultation#hasInspectionTimes">
+        <rdfs:label rdf:datatype="&xsd;string">hasInspectionTimes property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Times the inspection copy can be viewed</rdfs:comment>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/consultation#InspectionCopy"/>
+        <rdfs:range rdf:resource="&duration;Times"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#hasInspector -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/consultation#hasInspector">
+        <rdfs:label rdf:datatype="&xsd;string">hasInspector property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Person appointed as Inpsector for Public Inquiry</rdfs:comment>
+        <rdfs:range rdf:resource="&person;Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#hasLocation -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/consultation#hasLocation">
+        <rdfs:range rdf:resource="&geonames;Feature"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/consultation#ConsultationThing"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#hasLocationFrom -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/consultation#hasLocationFrom">
+        <rdfs:range rdf:resource="&geonames;Feature"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/consultation#ConsultationThing"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#hasLocationTo -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/consultation#hasLocationTo">
+        <rdfs:range rdf:resource="&geonames;Feature"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/consultation#ConsultationThing"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#hasMeetingLocation -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/consultation#hasMeetingLocation">
+        <rdfs:range rdf:resource="&geonames;Feature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#hasObjectionAddressee -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/consultation#hasObjectionAddressee">
+        <rdfs:label rdf:datatype="&xsd;string">hasObjectionAddressee property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">contact or address to which objections should be made</rdfs:comment>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/consultation#Objection"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&wgs84_pos;SpatialThing"/>
+                    <rdf:Description rdf:about="&organisation;Organisation"/>
+                    <rdf:Description rdf:about="&person;Position"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#hasObjectionDuration -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/consultation#hasObjectionDuration">
+        <rdfs:label rdf:datatype="&xsd;string">hasObjectionDuration property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">duration in which objections may be made</rdfs:comment>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/consultation#Objection"/>
+        <rdfs:range rdf:resource="&duration;ObjectionDuration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#hasOrderApplication -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/consultation#hasOrderApplication">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="&court;Court"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#hasOriginalNoticePublication -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/consultation#hasOriginalNoticePublication">
+        <rdfs:range rdf:resource="&publication;Issue"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#hasProgramOfficer -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/consultation#hasProgramOfficer">
+        <rdfs:label rdf:datatype="&xsd;string">hasProgramOfficer property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Person appointed as Program Officer for Public Inquiry</rdfs:comment>
+        <rdfs:range rdf:resource="&person;Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#hasSchedule -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/consultation#hasSchedule">
+        <rdfs:range rdf:resource="https://www.thegazette.co.uk/def/consultation#Schedule"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#hasStatutoryConsultationNotification -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/consultation#hasStatutoryConsultationNotification">
+        <rdfs:label rdf:datatype="&xsd;string">hasStatutoryConsultationNotification property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Order is included in Statutory Consulatation Notification</rdfs:comment>
+        <owl:inverseOf rdf:resource="https://www.thegazette.co.uk/def/consultation#isAboutOrder"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#hasWhoAppliedForOrder -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/consultation#hasWhoAppliedForOrder">
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&organisation;Department"/>
+                    <rdf:Description rdf:about="&organisation;Organisation"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#isAbout -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/consultation#isAbout">
+        <rdfs:range rdf:resource="https://www.thegazette.co.uk/def/consultation#ConsultationThing"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#isAboutOrder -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/consultation#isAboutOrder">
+        <rdfs:label rdf:datatype="&xsd;string">isAboutOrder property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Order that notice is about</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#isAvailableAt -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/consultation#isAvailableAt">
+        <rdfs:label rdf:datatype="&xsd;string">isAvailableAt property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Location that holds the Copy</rdfs:comment>
+        <rdfs:range rdf:resource="&wgs84_pos;SpatialThing"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/consultation#InspectionCopy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#isAvailableFrom -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/consultation#isAvailableFrom">
+        <rdfs:label rdf:datatype="&xsd;string">isAvailableFrom property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Role that holds the Order</rdfs:comment>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/consultation#Copy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#isAvailableFromOrganisation -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/consultation#isAvailableFromOrganisation">
+        <rdfs:label rdf:datatype="&xsd;string">isAvailableFromOrganisation property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Contact Organisation that holds the Order</rdfs:comment>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/consultation#Copy"/>
+        <rdfs:range rdf:resource="&organisation;Organisation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#isAvailableFromPerson -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/consultation#isAvailableFromPerson">
+        <rdfs:label rdf:datatype="&xsd;string">isAvailableFromPerson property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Contact Person that holds the Order</rdfs:comment>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/consultation#Copy"/>
+        <rdfs:range rdf:resource="&person;Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#isAvailableFromRole -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/consultation#isAvailableFromRole">
+        <rdfs:label rdf:datatype="&xsd;string">isAvailableFromRole property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Contact Role that holds the Order</rdfs:comment>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/consultation#Copy"/>
+        <rdfs:range rdf:resource="&person;Role"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#isCopyOf -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/consultation#isCopyOf">
+        <rdfs:label rdf:datatype="&xsd;string">isCopyOf property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Document that is copied</rdfs:comment>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/consultation#Copy"/>
+        <owl:inverseOf rdf:resource="https://www.thegazette.co.uk/def/consultation#hasCopy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#makeApplicationToCourt -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/consultation#makeApplicationToCourt">
+        <rdfs:label rdf:datatype="&xsd;string">makeApplicationToCourt property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">court to which objections are made</rdfs:comment>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/consultation#Objection"/>
+        <rdfs:range rdf:resource="&court;Court"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#submitOrderTo -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/consultation#submitOrderTo">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&authority;Authority"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#isPursuantToLegislation -->
+
+    <owl:ObjectProperty rdf:about="&consultation;isPursuantToLegislation">
+        <rdfs:label>isPursuantToLegislation</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Legislation item(s) pursuant to which the notice is placed</rdfs:comment>
+        <rdfs:domain rdf:resource="&consultation;StatutoryConsultationNotification"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&legislation;Legislation"/>
+                    <rdf:Description rdf:about="&legislation;LegislationPart"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#availableDuration -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/consultation#availableDuration">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;duration"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/consultation#InspectionCopy"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#completionDate -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/consultation#completionDate">
+        <rdfs:label rdf:datatype="&xsd;string">completionDate property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">date work is scheduled for completion</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;date"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/consultation#Schedule"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#concerning -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/consultation#concerning">
+        <rdfs:label rdf:datatype="&xsd;string">concerning property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">the nature of the notice - ie zebra crossing</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#dateApplicationMade -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/consultation#dateApplicationMade">
+        <rdfs:label rdf:datatype="&xsd;string">dateApplicationMade datatype property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Date order being withdrawn was origianlly applied for</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#dateAvailableFrom -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/consultation#dateAvailableFrom">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;date"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/consultation#InspectionCopy"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#dateAvailableTo -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/consultation#dateAvailableTo">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;date"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/consultation#InspectionCopy"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#dateGrantedOn -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/consultation#dateGrantedOn">
+        <rdfs:label rdf:datatype="&xsd;string">dateGrantedOn property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">date planning permission granted on</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;date"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/consultation#PlanningPermission"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#dateOfConfirmation -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/consultation#dateOfConfirmation">
+        <rdfs:label rdf:datatype="&xsd;string">dateOfConfirmation property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">date of conformation</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#dateOfDecisionLetter -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/consultation#dateOfDecisionLetter">
+        <rdfs:label rdf:datatype="&xsd;string">dateOfDecisionLetter property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">date Of Decision Letter</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#dateProposalsAdvertised -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/consultation#dateProposalsAdvertised">
+        <rdfs:label rdf:datatype="&xsd;string">dateProposalsAdvertised datatype property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Date Proposals for making an order were origianlly advertised</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#hasObjectionReference -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/consultation#hasObjectionReference">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/consultation#Objection"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#hearingDateTime -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/consultation#hearingDateTime">
+        <rdfs:label rdf:datatype="&xsd;string">dateTimeOfHearing datatype property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Date and Time of hearing</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#meetingDateTime -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/consultation#meetingDateTime">
+        <rdfs:label rdf:datatype="&xsd;string">meetingDateTime datatype property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Date and Time of meeting</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#planningReference -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/consultation#planningReference">
+        <rdfs:label rdf:datatype="&xsd;string">planningReference property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">planning permission reference number</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/consultation#PlanningPermission"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#scheduleNumber -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/consultation#scheduleNumber">
+        <rdfs:label rdf:datatype="&xsd;string">scheduleNumber property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">number appointed to a schedule</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/consultation#Schedule"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#startDate -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/consultation#startDate">
+        <rdfs:label rdf:datatype="&xsd;string">startDate property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">date work is scheduled to start</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;date"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/consultation#Schedule"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.geonames.org/ontology#Feature -->
+
+    <owl:Class rdf:about="&geonames;Feature"/>
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing -->
+
+    <owl:Class rdf:about="&wgs84_pos;SpatialThing"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Document -->
+
+    <owl:Class rdf:about="&foaf;Document"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/authority#Authority -->
+
+    <owl:Class rdf:about="&authority;Authority"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#ConsultationThing -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/consultation#ConsultationThing">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/consultation#Objection"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/consultation#PlanningPermission"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/consultation#Schedule"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#Copy -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/consultation#Copy">
+        <rdfs:label rdf:datatype="&xsd;string">Copy class</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foaf;Document"/>
+        <rdfs:comment rdf:datatype="&xsd;string">A copy of a document required by the consultation process</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#InspectionCopy -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/consultation#InspectionCopy">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/consultation#Copy"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.thegazette.co.uk/def/consultation#isAvailableAt"/>
+                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/consultation#ObtainableCopy"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#Objection -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/consultation#Objection">
+        <rdfs:label rdf:datatype="&xsd;string">Objection class</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/consultation#PlanningPermission"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/consultation#Schedule"/>
+        <rdfs:comment rdf:datatype="&xsd;string">a procedure whereby a party to a suit says that a particular line of questioning or a particular witness or a piece of evidence or other matter is improper and should not be continued and asks the authority to rule on its impropriety or illegality</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#ObtainableCopy -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/consultation#ObtainableCopy">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/consultation#Copy"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.thegazette.co.uk/def/consultation#isAvailableFrom"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&organisation;Department"/>
+                            <rdf:Description rdf:about="&organisation;Organisation"/>
+                            <rdf:Description rdf:about="&person;Role"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.thegazette.co.uk/def/consultation#isAvailableFrom"/>
+                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#PlanningPermission -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/consultation#PlanningPermission">
+        <rdfs:label rdf:datatype="&xsd;string">PlanningPermission class</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.thegazette.co.uk/def/consultation#grantedBy"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.thegazette.co.uk/def/consultation#grantedTo"/>
+                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.thegazette.co.uk/def/consultation#planningReference"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.thegazette.co.uk/def/consultation#dateGrantedOn"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/consultation#Schedule"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Planning Permission</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#Schedule -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/consultation#Schedule">
+        <rdfs:label rdf:datatype="&xsd;string">Schedule class</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.thegazette.co.uk/def/consultation#startDate"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.thegazette.co.uk/def/consultation#completionDate"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="&xsd;string">Schedule of Works</rdfs:comment>
+    </owl:Class>
+    
+
+    <!-- https://www.thegazette.co.uk/def/court#Court -->
+
+    <owl:Class rdf:about="&court;Court"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/duration#ObjectionDuration -->
+
+    <owl:Class rdf:about="&duration;ObjectionDuration"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/duration#Times -->
+
+    <owl:Class rdf:about="&duration;Times"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#Department -->
+
+    <owl:Class rdf:about="&organisation;Department"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#Organisation -->
+
+    <owl:Class rdf:about="&organisation;Organisation"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/person#Person -->
+
+    <owl:Class rdf:about="&person;Person"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/person#Position -->
+
+    <owl:Class rdf:about="&person;Position"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/person#Role -->
+
+    <owl:Class rdf:about="&person;Role"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/publication#Issue -->
+
+    <owl:Class rdf:about="&publication;Issue"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.2.1789) http://owlapi.sourceforge.net -->
+

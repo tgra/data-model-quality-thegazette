@@ -1,0 +1,222 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY dcterms "http://purl.org/dc/terms/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY ontology "https://www.thegazette.co.uk/def/publication#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY water "http://www.gazettes-online.co.uk/ontology/water#" >
+    <!ENTITY planning "https://www.thegazette.co.uk/def/planning#" >
+    <!ENTITY transport "http://www.gazettes-online.co.uk/ontology/transport#" >
+    <!ENTITY legislation "http://www.gazettes-online.co.uk/ontology/legislation#" >
+    <!ENTITY organisation "http://www.gazettes-online.co.uk/ontology/organisation#" >
+    <!ENTITY consultation "http://www.gazettes-online.co.uk/ontology/consultation#" >
+	<!ENTITY energy "https://www.thegazette.co.uk/def/energy#" >
+    <!ENTITY england-and-wales "http://www.legislation.gov.uk/id/#environmental-permitting-(england-and-wales)-" >
+]>
+
+ 
+
+<rdf:RDF xmlns="https://www.thegazette.co.uk/def/energy#"
+     xml:base="https://www.thegazette.co.uk/def/energy"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:ontology="https://www.thegazette.co.uk/def/publication#"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+	 xmlns:planning="https://www.thegazette.co.uk/def/planning#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	 xmlns:energy="https://www.thegazette.co.uk/def/energy"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="https://www.thegazette.co.uk/def/energy">
+        <dcterms:created rdf:datatype="&xsd;string">2008-09-18</dcterms:created>
+        <dc:title rdf:datatype="&xsd;string">Gazette Environment Notice Ontology</dc:title>
+        <dcterms:creator rdf:datatype="&xsd;string">Griff Chamberlain, The Stationery Office, mark.chamberlain@tso.co.uk</dcterms:creator>
+        <dc:description xml:lang="en">energy Notice module
+
+  		This is a beta version, and you should expect it to change.
+		</dc:description>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="&xsd;date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+ 
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <!-- https://www.thegazette.co.uk/def/energy#EnergyNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/energy#EnergyNotice">
+        <rdfs:subClassOf rdf:resource="&planning;PlanningAndEnvironmentNotice"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/energy#EnergyThing -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/energy#EnergyThing">
+        <rdfs:subClassOf rdf:resource="&planning;PlanningAndEnvironmentThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/energy#Gas -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/energy#Gas">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/energy#EnergyThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/energy#GasNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/energy#GasNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2101</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&energy;EnergyNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&energy;Gas"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+	
+    <!-- https://www.thegazette.co.uk/def/energy#Coal -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/energy#Coal">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/energy#EnergyThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/energy#CoalNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/energy#CoalNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2102</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&energy;EnergyNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&energy;Coal"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+	
+    <!-- https://www.thegazette.co.uk/def/energy#Electricity -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/energy#Electricity">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/energy#EnergyThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/energy#ElectricityNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/energy#ElectricityNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2103</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&energy;EnergyNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&energy;Electricity"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.2.1789) http://owlapi.sourceforge.net -->
+

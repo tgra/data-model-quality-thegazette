@@ -1,0 +1,268 @@
+{
+    "classes": {
+        "http://www.gazettes.co.uk/ontology/organisation#Department": {
+            "label": null,
+            "comment": null
+        },
+        "http://www.geonames.org/ontology#Feature": {
+            "label": null,
+            "comment": null
+        },
+        "http://www.w3.org/2006/vcard/ns#Address": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/person#Administrator": {
+            "label": "Administrator class",
+            "comment": "The role of a Administrator - the person/organisation appointed as administrator"
+        },
+        "https://www.thegazette.co.uk/def/person#Director": {
+            "label": "Director class",
+            "comment": "The role of a Director - someone who controls resources and expenditures"
+        },
+        "https://www.thegazette.co.uk/def/person#Employment": {
+            "label": "Employment",
+            "comment": "Position held within an organisation - an employment can encompass one or more roles"
+        },
+        "https://www.thegazette.co.uk/def/person#Female": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/person#InsolvencyPractitioner": {
+            "label": "Insolvency Practitioner",
+            "comment": "A person who is a registered Insolvency Practitioner this is different to a role in the fact that a persons role changes according to their employment whereas an IP is a registered appointment that a person takes with them through whatever roles they are employed in"
+        },
+        "https://www.thegazette.co.uk/def/person#Liquidator": {
+            "label": "Liquidator class",
+            "comment": "The role of a Liquidator - the person/organisation appointed as Liquidator"
+        },
+        "https://www.thegazette.co.uk/def/person#Male": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/person#Member": {
+            "label": "Member class",
+            "comment": "The role of a Member of Staff"
+        },
+        "https://www.thegazette.co.uk/def/person#Person": {
+            "label": "Person",
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/person#Petitioner": {
+            "label": "Petitioner class",
+            "comment": "The role of a Petitioner - the person/organisation appointed as Petitioner"
+        },
+        "https://www.thegazette.co.uk/def/person#Position": {
+            "label": "Position class",
+            "comment": "responsibility in business or other enterprise"
+        },
+        "https://www.thegazette.co.uk/def/person#Receiver": {
+            "label": "Receiver class",
+            "comment": "The role of a Receiver - this can either be a person appointed as a receiver within an organisation or an individual office of the official receiver"
+        },
+        "https://www.thegazette.co.uk/def/person#Role": {
+            "label": "Role class",
+            "comment": "A position involving a specific activity that is held either by a person or organisation\n\t\teg a role can be a person who is a solicitor within an organisation\n\t\t\tor a role of solicitor can be provided by an organisation without reference to a particular person"
+        },
+        "https://www.thegazette.co.uk/def/person#Solicitor": {
+            "label": "Solicitor class",
+            "comment": "The role of a Solicitor - the person/organisation appointed as Solicitor"
+        }
+    },
+    "object_properties": {
+        "https://www.thegazette.co.uk/def/person#hasPrincipalTradingAddress": {
+            "label": "hasPrincipalTradingAddress property",
+            "comment": "Principal Trading Address associated with a person",
+            "domain": "https://www.thegazette.co.uk/def/person#Person",
+            "range": "http://www.w3.org/2006/vcard/ns#Address"
+        },
+        "https://www.thegazette.co.uk/def/person#assignedBy": {
+            "label": "assignedBy property",
+            "comment": "role assigned to an employment",
+            "domain": "https://www.thegazette.co.uk/def/person#Role",
+            "range": "https://www.thegazette.co.uk/def/person#Employment"
+        },
+        "https://www.thegazette.co.uk/def/person#employedAs": {
+            "label": "employedAs property",
+            "comment": "The role associated with an employment",
+            "domain": "https://www.thegazette.co.uk/def/person#Employment",
+            "range": "https://www.thegazette.co.uk/def/person#Role"
+        },
+        "https://www.thegazette.co.uk/def/person#hasAddress": {
+            "label": "hasAddress",
+            "comment": "Current or last registered address for a person",
+            "domain": "https://www.thegazette.co.uk/def/person#Person",
+            "range": "http://www.w3.org/2006/vcard/ns#Address"
+        },
+        "https://www.thegazette.co.uk/def/person#hasDepartmentMember": {
+            "label": "isBaseFor property",
+            "comment": "Employment that is held at specific location",
+            "domain": "http://www.gazettes.co.uk/ontology/organisation#Department",
+            "range": "https://www.thegazette.co.uk/def/person#Position"
+        },
+        "https://www.thegazette.co.uk/def/person#hasEmployee": {
+            "label": null,
+            "comment": "Person who developes an employment",
+            "domain": "https://www.thegazette.co.uk/def/person#Employment",
+            "range": "https://www.thegazette.co.uk/def/person#Person"
+        },
+        "https://www.thegazette.co.uk/def/person#hasEmployment": {
+            "label": null,
+            "comment": "Employment developed by a person",
+            "domain": "https://www.thegazette.co.uk/def/person#Person",
+            "range": "https://www.thegazette.co.uk/def/person#Employment"
+        },
+        "https://www.thegazette.co.uk/def/person#hasPreviousAddress": {
+            "label": null,
+            "comment": "Registered address that a person had in the past - this usually represents a move",
+            "domain": "https://www.thegazette.co.uk/def/person#Person",
+            "range": "http://www.w3.org/2006/vcard/ns#Address"
+        },
+        "https://www.thegazette.co.uk/def/person#hasRole": {
+            "label": "hasRole property",
+            "comment": "The role associated with a person",
+            "domain": "https://www.thegazette.co.uk/def/person#Person",
+            "range": "https://www.thegazette.co.uk/def/person#Role"
+        },
+        "https://www.thegazette.co.uk/def/person#hasSpatialLocation": {
+            "label": null,
+            "comment": null,
+            "domain": "http://www.w3.org/2006/vcard/ns#Address",
+            "range": "https://www.thegazette.co.uk/def/person#Person"
+        },
+        "https://www.thegazette.co.uk/def/person#isBaseFor": {
+            "label": "isBaseFor property",
+            "comment": "Employment that is held at specific location",
+            "domain": "http://www.geonames.org/ontology#Feature",
+            "range": "https://www.thegazette.co.uk/def/person#Position"
+        },
+        "https://www.thegazette.co.uk/def/person#isBasedAt": {
+            "label": "basedAt",
+            "comment": "Location that role is based at",
+            "domain": "https://www.thegazette.co.uk/def/person#Position",
+            "range": "http://www.geonames.org/ontology#Feature"
+        },
+        "https://www.thegazette.co.uk/def/person#isMemberOfDepartment": {
+            "label": "basedAt",
+            "comment": "Location that role is based at",
+            "domain": "https://www.thegazette.co.uk/def/person#Position",
+            "range": "http://www.gazettes.co.uk/ontology/organisation#Department"
+        },
+        "https://www.thegazette.co.uk/def/person#undertakenBy": {
+            "label": "undertakenBy property",
+            "comment": "the person that is associated with the role",
+            "domain": "https://www.thegazette.co.uk/def/person#Role",
+            "range": "https://www.thegazette.co.uk/def/person#Person"
+        }
+    },
+    "data_properties": {
+        "https://www.thegazette.co.uk/def/person#isTradingAs": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/person#Person",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/person#hasPersonalDetails": {
+            "label": null,
+            "comment": "hasPersonalDetails",
+            "domain": "https://www.thegazette.co.uk/def/person#Person",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/person#hasStatus": {
+            "label": null,
+            "comment": "hasStatus",
+            "domain": "https://www.thegazette.co.uk/def/person#Person",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/person#alsoKnownAs": {
+            "label": null,
+            "comment": "Another name by which the person was known",
+            "domain": "https://www.thegazette.co.uk/def/person#Person",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/person#isDeceased": {
+            "label": null,
+            "comment": "Is this person deceased",
+            "domain": "https://www.thegazette.co.uk/def/person#Person",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/person#bankruptcyStatus": {
+            "label": null,
+            "comment": "Status of bankruptcy",
+            "domain": "https://www.thegazette.co.uk/def/person#Person",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/person#dateOfBirth": {
+            "label": "dateOfBirth",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/person#Person",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/person#hasIPnum": {
+            "label": "IpNumber",
+            "comment": "Insolvency Practice number - this is associated with a person - the Insolvency Service provide a free database search at http://www.insolvency-service.co.uk/newipsearch.htm",
+            "domain": "https://www.thegazette.co.uk/def/person#InsolvencyPractitioner",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/person#hasIPCapacity": {
+            "label": "IPCapacity",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/person#InsolvencyPractitioner",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/person#noticeDated": {
+            "label": "noticeDated",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/person#InsolvencyPractitioner",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/person#additionalInformationIP": {
+            "label": "additionalInformation",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/person#InsolvencyPractitioner",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/person#additionalContactName": {
+            "label": "additionalInformation",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/person#InsolvencyPractitioner",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/person#hasMaidenName": {
+            "label": null,
+            "comment": "Optional name corresponding to the one when the person was single ",
+            "domain": "https://www.thegazette.co.uk/def/person#Person",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/person#houseInformation": {
+            "label": null,
+            "comment": null,
+            "domain": "http://www.w3.org/2006/vcard/ns#Address",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/person#jobTitle": {
+            "label": "occupation",
+            "comment": "Name of the job position",
+            "domain": "https://www.thegazette.co.uk/def/person#Employment",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/person#roleName": {
+            "label": null,
+            "comment": "Name of the role undertaken by a person",
+            "domain": "https://www.thegazette.co.uk/def/person#Role",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/person#initials": {
+            "label": null,
+            "comment": "Initial of the name of a Person",
+            "domain": "https://www.thegazette.co.uk/def/person#Person",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/person#honour": {
+            "label": null,
+            "comment": "Honour of a Person",
+            "domain": "https://www.thegazette.co.uk/def/person#Person",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        }
+    }
+}

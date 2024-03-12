@@ -1,0 +1,624 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY dcterms "http://purl.org/dc/terms/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY ontology "https://www.thegazette.co.uk/def/publication#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+	<!ENTITY health "https://www.thegazette.co.uk/def/health#" >
+    <!ENTITY england-and-wales "http://www.legislation.gov.uk/id/#environmental-permitting-(england-and-wales)-" >
+]>
+
+ 
+
+<rdf:RDF xmlns="https://www.thegazette.co.uk/def/health#"
+     xml:base="https://www.thegazette.co.uk/def/health"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:ontology="https://www.thegazette.co.uk/def/publication#"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	 xmlns:health="https://www.thegazette.co.uk/def/health"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="https://www.thegazette.co.uk/def/health">
+        <dcterms:created rdf:datatype="&xsd;string">2008-09-18</dcterms:created>
+        <dc:title rdf:datatype="&xsd;string">Gazette Environment Notice Ontology</dc:title>
+        <dcterms:creator rdf:datatype="&xsd;string">Griff Chamberlain, The Stationery Office, mark.chamberlain@tso.co.uk</dcterms:creator>
+        <dc:description xml:lang="en">health Notice module
+
+  		This is a beta version, and you should expect it to change.
+		</dc:description>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="&xsd;date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+	
+    <!-- https://www.thegazette.co.uk/def/health#HealthNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/health#HealthNotice">
+        <rdfs:subClassOf rdf:resource="&ontology;PNBNotice"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/health#HealthThing -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/health#HealthThing">
+        <rdfs:subClassOf rdf:resource="&ontology;PNBThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/health#Medicines -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/health#Medicines">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/health#HealthThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/health#MedicinesNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/health#MedicinesNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1701</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&health;HealthNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&health;Medicines"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+     <!-- https://www.thegazette.co.uk/def/health#ProductLicensing -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/health#ProductLicensing">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/health#HealthThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/health#ProductLicensingNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/health#ProductLicensingNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1702</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&health;HealthNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&health;ProductLicensing"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+     <!-- https://www.thegazette.co.uk/def/health#PowersRelatingtoPotentiallyInfectiousPersons -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/health#PowersRelatingToPotentiallyInfectiousPersons">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/health#HealthThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/health#PowersRelatingToPotentiallyInfectiousPersonsNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/health#PowersRelatingToPotentiallyInfectiousPersonsNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1703</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&health;HealthNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&health;PowersRelatingToPotentiallyInfectiousPersons"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+     <!-- https://www.thegazette.co.uk/def/health#PowersToIssueDirectionsRelatingToEventsGatheringsAndPremises -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/health#PowersToIssueDirectionsRelatingToEventsGatheringsAndPremises">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/health#HealthThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/health#PowersToIssueDirectionsRelatingToEventsGatheringsAndPremisesNotice-->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/health#PowersToIssueDirectionsRelatingToEventsGatheringsAndPremisesNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1704</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&health;HealthNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&health;PowersToIssueDirectionsRelatingToEventsGatheringsAndPremises"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+     <!-- https://www.thegazette.co.uk/def/health#TransportationStorageAndDisposalOfDeadBodiesEtc -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/health#TransportationStorageAndDisposalOfDeadBodiesEtc">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/health#HealthThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/health#TransportationStorageAndDisposalOfDeadBodiesEtcNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/health#TransportationStorageAndDisposalOfDeadBodiesEtcNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1705</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&health;HealthNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&health;TransportationStorageAndDisposalOfDeadBodiesEtc"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+     <!-- https://www.thegazette.co.uk/def/health#EmergencyVolunteerCompensation -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/health#EmergencyVolunteerCompensation">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/health#HealthThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/health#EmergencyVolunteerCompensationNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/health#EmergencyVolunteerCompensationNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1706</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&health;HealthNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&health;EmergencyVolunteerCompensation"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+     <!-- https://www.thegazette.co.uk/def/health#DisapplicationModificationOfDbsProvisionsWales -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/health#DisapplicationModificationOfDbsProvisionsWales">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/health#HealthThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/health#DisapplicationModificationOfDbsProvisionsWalesNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/health#DisapplicationModificationOfDbsProvisionsWalesNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1707</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&health;HealthNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&health;DisapplicationModificationOfDbsProvisionsWales"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+     <!-- https://www.thegazette.co.uk/def/health#ReviewOfMedicalCertificatesOfCauseOfDeathAndCremationsScotland -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/health#ReviewOfMedicalCertificatesOfCauseOfDeathAndCremationsScotland">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/health#HealthThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/health#ReviewOfMedicalCertificatesOfCauseOfDeathAndCremationsScotlandNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/health#ReviewOfMedicalCertificatesOfCauseOfDeathAndCremationsScotlandNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1708</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&health;HealthNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&health;ReviewOfMedicalCertificatesOfCauseOfDeathAndCremationsScotland"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+     <!-- https://www.thegazette.co.uk/def/health#InformationRelatingToFoodSupplyChainsFinancialPenalties -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/health#InformationRelatingToFoodSupplyChainsFinancialPenalties">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/health#HealthThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/health#InformationRelatingToFoodSupplyChainsFinancialPenaltiesNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/health#InformationRelatingToFoodSupplyChainsFinancialPenaltiesNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1709</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&health;HealthNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&health;InformationRelatingToFoodSupplyChainsFinancialPenalties"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+
+     <!-- https://www.thegazette.co.uk/def/health#TemporaryClosureOfEducationalInstitutionsAndChildcarePremises -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/health#TemporaryClosureOfEducationalInstitutionsAndChildcarePremises">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/health#HealthThing"/>
+    </owl:Class>    
+
+
+    <!-- https://www.thegazette.co.uk/def/health#TemporaryClosureOfEducationalInstitutionsAndChildcarePremisesNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/health#TemporaryClosureOfEducationalInstitutionsAndChildcarePremisesNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1710</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&health;HealthNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&health;TemporaryClosureOfEducationalInstitutionsAndChildcarePremises"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+
+     <!-- https://www.thegazette.co.uk/def/health#TemporaryContinuityDirectionsEtcEducationTrainingAndChildcare -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/health#TemporaryContinuityDirectionsEtcEducationTrainingAndChildcare">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/health#HealthThing"/>
+    </owl:Class>    
+
+
+    <!-- https://www.thegazette.co.uk/def/health#TemporaryContinuityDirectionsEtcEducationTrainingAndChildcareNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/health#TemporaryContinuityDirectionsEtcEducationTrainingAndChildcareNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1711</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&health;HealthNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&health;TemporaryContinuityDirectionsEtcEducationTrainingAndChildcare"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+     <!-- https://www.thegazette.co.uk/def/health#PostponementOfElectionsScotland -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/health#PostponementOfElectionsScotland">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/health#HealthThing"/>
+    </owl:Class>    
+
+
+    <!-- https://www.thegazette.co.uk/def/health#PostponementOfElectionsScotlandNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/health#PostponementOfElectionsScotlandNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1712</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&health;HealthNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&health;PostponementOfElectionsScotland"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>
+	
+     <!-- https://www.thegazette.co.uk/def/health#FailureToPublishReportsOnTheNonDevolvedProvisionsOfCoronavirusAct2020 -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/health#FailureToPublishReportsOnTheNonDevolvedProvisionsOfCoronavirusAct2020">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/health#HealthThing"/>
+    </owl:Class>    
+
+
+    <!-- https://www.thegazette.co.uk/def/health#FailureToPublishReportsOnTheNonDevolvedProvisionsOfCoronavirusAct2020Notice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/health#FailureToPublishReportsOnTheNonDevolvedProvisionsOfCoronavirusAct2020Notice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1713</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&health;HealthNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&health;FailureToPublishReportsOnTheNonDevolvedProvisionsOfCoronavirusAct2020"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>
+	
+     <!-- https://www.thegazette.co.uk/def/health#TemporaryRegistrationOfSocialWorkersScotland -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/health#TemporaryRegistrationOfSocialWorkersScotland">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/health#HealthThing"/>
+    </owl:Class>    
+
+
+    <!-- https://www.thegazette.co.uk/def/health#TemporaryRegistrationOfSocialWorkersScotlandNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/health#TemporaryRegistrationOfSocialWorkersScotlandNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1714</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&health;HealthNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&health;TemporaryRegistrationOfSocialWorkersScotland"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>
+
+     <!-- https://www.thegazette.co.uk/def/health#FreedomOfInformationExtensionsScotland -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/health#FreedomOfInformationExtensionsScotland">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/health#HealthThing"/>
+    </owl:Class>    
+
+
+    <!-- https://www.thegazette.co.uk/def/health#FreedomOfInformationExtensionsScotlandNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/health#FreedomOfInformationExtensionsScotlandNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1715</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&health;HealthNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&health;FreedomOfInformationExtensionsScotland"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>
+	
+     <!-- https://www.thegazette.co.uk/def/health#ReportingOfStatutoryDutiesScotland -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/health#ReportingOfStatutoryDutiesScotland">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/health#HealthThing"/>
+    </owl:Class>    
+
+
+    <!-- https://www.thegazette.co.uk/def/health#ReportingOfStatutoryDutiesScotlandNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/health#ReportingOfStatutoryDutiesScotlandNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1716</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&health;HealthNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&health;ReportingOfStatutoryDutiesScotland"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>
+
+     <!-- https://www.thegazette.co.uk/def/health#SeriousAndImminentThreatDeclaration -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/health#SeriousAndImminentThreatDeclaration">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/health#HealthThing"/>
+    </owl:Class>    
+
+
+    <!-- https://www.thegazette.co.uk/def/health#SeriousAndImminentThreatDeclarationNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/health#SeriousAndImminentThreatDeclarationNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1717</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&health;HealthNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&health;SeriousAndImminentThreatDeclaration"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>
+
+    <!-- https://www.thegazette.co.uk/def/health#VeterinaryMedicines -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/health#VeterinaryMedicines">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/health#HealthThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/health#VeterinaryMedicinesNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/health#VeterinaryMedicinesNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2002</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&health;HealthNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&health;VeterinaryMedicines"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.2.1789) http://owlapi.sourceforge.net -->
+

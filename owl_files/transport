@@ -1,0 +1,2669 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY dcterms "http://purl.org/dc/terms/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY ontology2 "http://www.geonames.org/ontology#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY water "http://www.thegazette.co.uk/def/water#" >
+    <!ENTITY planning "http://www.thegazette.co.uk/def/planning#" >
+    <!ENTITY transport "https://www.thegazette.co.uk/def/transport" >
+    <!ENTITY transport2 "http://www.thegazette.co.uk/def/transport#" >
+    <!ENTITY location "https://www.thegazette.co.uk/def/location#" >
+    <!ENTITY duration "https://www.thegazette.co.uk/def/duration#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY ontology "https://www.thegazette.co.uk/def/publication#" >
+    <!ENTITY environment "https://www.thegazette.co.uk/def/environment#" >
+    <!ENTITY consultation "https://www.thegazette.co.uk/def/consultation#" >
+    <!ENTITY organisation "https://www.thegazette.co.uk/def/organisation#" >
+]>
+
+
+<rdf:RDF xmlns="&transport;#"
+     xml:base="https://www.thegazette.co.uk/def/transport"
+     xmlns:water="http://www.thegazette.co.uk/def/water#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:location="https://www.thegazette.co.uk/def/location#"
+     xmlns:organisation="https://www.thegazette.co.uk/def/organisation#"
+     xmlns:ontology="https://www.thegazette.co.uk/def/publication#"
+     xmlns:ontology2="http://www.geonames.org/ontology#"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:def="https://www.thegazette.co.uk/def/"
+     xmlns:consultation="https://www.thegazette.co.uk/def/consultation#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:transport2="http://www.thegazette.co.uk/def/transport#"
+     xmlns:duration="https://www.thegazette.co.uk/def/duration#"
+     xmlns:environment="https://www.thegazette.co.uk/def/environment#"
+     xmlns:planning="http://www.thegazette.co.uk/def/planning#"
+     xmlns:transport="https://www.thegazette.co.uk/def/transport"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="https://www.thegazette.co.uk/def/transport">
+        <dcterms:created rdf:datatype="&xsd;string">2008-09-18</dcterms:created>
+        <dc:title rdf:datatype="&xsd;string">Gazette Transport Notices Ontology</dc:title>
+        <dcterms:creator rdf:datatype="&xsd;string">Griff Chamberlain, The Stationery Office, mark.chamberlain@tso.co.uk</dcterms:creator>
+        <dc:description xml:lang="en">
+  		Ontology for Transport Notices.
+
+  		This is a beta version, and you should expect it to change.
+		</dc:description>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="&xsd;date"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#duration -->
+
+    <rdfs:Datatype rdf:about="&xsd;duration"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.geonames.org/ontology#featureClass -->
+
+    <owl:ObjectProperty rdf:about="&ontology2;featureClass"/>
+    
+
+
+    <!-- http://www.geonames.org/ontology#featureCode -->
+
+    <owl:ObjectProperty rdf:about="&ontology2;featureCode"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/publication#isAbout -->
+
+    <owl:ObjectProperty rdf:about="&ontology;isAbout"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#addsBusLane -->
+
+    <owl:ObjectProperty rdf:about="&transport;#addsBusLane">
+        <rdfs:range rdf:resource="&ontology2;Feature"/>
+        <rdfs:domain rdf:resource="&transport;#NewBusLane"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#addsDisabledParkingBay -->
+
+    <owl:ObjectProperty rdf:about="&transport;#addsDisabledParkingBay">
+        <rdfs:label rdf:datatype="&xsd;string">addsDisabledParkingBay property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">location of new disabled parking bay</rdfs:comment>
+        <rdfs:range rdf:resource="&location;DisabledParkingBay"/>
+        <rdfs:domain rdf:resource="&transport;#NewDisabledParkingBay"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#addsParkingBay -->
+
+    <owl:ObjectProperty rdf:about="&transport;#addsParkingBay">
+        <rdfs:range rdf:resource="&location;ParkingBay"/>
+        <rdfs:domain rdf:resource="&transport;#NewParkingBay"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#addsPermitParkingBay -->
+
+    <owl:ObjectProperty rdf:about="&transport;#addsPermitParkingBay">
+        <rdfs:range rdf:resource="&location;PermitParkingBay"/>
+        <rdfs:domain rdf:resource="&transport;#NewPermitParkingBay"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#addsSpeedLimitFrom -->
+
+    <owl:ObjectProperty rdf:about="&transport;#addsSpeedLimitFrom">
+        <rdfs:range rdf:resource="&ontology2;Feature"/>
+        <rdfs:domain rdf:resource="&transport;#NewSpeedLimit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#addsSpeedLimitTo -->
+
+    <owl:ObjectProperty rdf:about="&transport;#addsSpeedLimitTo">
+        <rdfs:range rdf:resource="&ontology2;Feature"/>
+        <rdfs:domain rdf:resource="&transport;#NewSpeedLimit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#amendsBusLane -->
+
+    <owl:ObjectProperty rdf:about="&transport;#amendsBusLane">
+        <rdfs:range rdf:resource="&ontology2;Feature"/>
+        <rdfs:domain rdf:resource="&transport;#AmendBusLane"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#amendsDisabledParkingBay -->
+
+    <owl:ObjectProperty rdf:about="&transport;#amendsDisabledParkingBay">
+        <rdfs:label rdf:datatype="&xsd;string">amendsDisabledParkingBay property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">location of amended disabled parking bay</rdfs:comment>
+        <rdfs:range rdf:resource="&location;DisabledParkingBay"/>
+        <rdfs:domain rdf:resource="&transport;#AmendDisabledParkingBay"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#amendsParkingBay -->
+
+    <owl:ObjectProperty rdf:about="&transport;#amendsParkingBay">
+        <rdfs:range rdf:resource="&location;ParkingBay"/>
+        <rdfs:domain rdf:resource="&transport;#AmendParkingBay"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#amendsPermitParkingBay -->
+
+    <owl:ObjectProperty rdf:about="&transport;#amendsPermitParkingBay">
+        <rdfs:range rdf:resource="&location;PermitParkingBay"/>
+        <rdfs:domain rdf:resource="&transport;#AmendPermitParkingBay"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#amendsSpeedLimitFrom -->
+
+    <owl:ObjectProperty rdf:about="&transport;#amendsSpeedLimitFrom">
+        <rdfs:range rdf:resource="&ontology2;Feature"/>
+        <rdfs:domain rdf:resource="&transport;#AmendSpeedLimit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#amendsSpeedLimitTo -->
+
+    <owl:ObjectProperty rdf:about="&transport;#amendsSpeedLimitTo">
+        <rdfs:range rdf:resource="&ontology2;Feature"/>
+        <rdfs:domain rdf:resource="&transport;#AmendSpeedLimit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#changesParkingRuleTimesTo -->
+
+    <owl:ObjectProperty rdf:about="&transport;#changesParkingRuleTimesTo">
+        <rdfs:label rdf:datatype="&xsd;string">hasParkingRuleTimes property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Times allocated to the parking rule</rdfs:comment>
+        <rdfs:range rdf:resource="&duration;Times"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&transport;#AmendDisabledParkingBay"/>
+                    <rdf:Description rdf:about="&transport;#AmendParkingBay"/>
+                    <rdf:Description rdf:about="&transport;#AmendPermitParkingBay"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#concernsAerodrome -->
+
+    <owl:ObjectProperty rdf:about="&transport;#concernsAerodrome">
+        <rdfs:label rdf:datatype="&xsd;string">concernsAerodrome property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Aerodromes that specification concerns</rdfs:comment>
+        <rdfs:range rdf:resource="&transport;#Aerodrome"/>
+        <rdfs:domain rdf:resource="&transport;#ChangeOfSpecification"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#concernsCountry -->
+
+    <owl:ObjectProperty rdf:about="&transport;#concernsCountry">
+        <rdfs:label rdf:datatype="&xsd;string">concernsCountry property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Country that specification concerns</rdfs:comment>
+        <rdfs:range rdf:resource="&ontology2;Country"/>
+        <rdfs:domain rdf:resource="&transport;#ChangeOfSpecification"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#hasAmendedDuration -->
+
+    <owl:ObjectProperty rdf:about="&transport;#hasAmendedDuration">
+        <rdfs:range rdf:resource="&duration;Times"/>
+        <rdfs:domain rdf:resource="&transport;#WaitingRestrictionDuration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#hasCompulsoryPurchaseOfProperty -->
+
+    <owl:ObjectProperty rdf:about="&transport;#hasCompulsoryPurchaseOfProperty">
+        <rdfs:range rdf:resource="&ontology2;Feature"/>
+        <rdfs:domain rdf:resource="&transport;#CompulsoryPurchase"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#hasDesignatedHarbourAuthority -->
+
+    <owl:ObjectProperty rdf:about="&transport;#hasDesignatedHarbourAuthority">
+        <rdfs:range rdf:resource="&organisation;Organisation"/>
+        <rdfs:domain rdf:resource="&transport;#DesignateHarbourAuthority"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#hasExistingOperator -->
+
+    <owl:ObjectProperty rdf:about="&transport;#hasExistingOperator">
+        <rdfs:range rdf:resource="&organisation;Organisation"/>
+        <rdfs:domain rdf:resource="&transport;#TransferOfOperator"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#hasNewOperator -->
+
+    <owl:ObjectProperty rdf:about="&transport;#hasNewOperator">
+        <rdfs:range rdf:resource="&organisation;Organisation"/>
+        <rdfs:domain rdf:resource="&transport;#TransferOfOperator"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#hasOperationDuration -->
+
+    <owl:ObjectProperty rdf:about="&transport;#hasOperationDuration">
+        <rdfs:range rdf:resource="&duration;Period"/>
+        <rdfs:domain rdf:resource="&consultation;ConsultationThing"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#hasOperationTimes -->
+
+    <owl:ObjectProperty rdf:about="&transport;#hasOperationTimes">
+        <rdfs:range rdf:resource="&duration;Times"/>
+        <rdfs:domain rdf:resource="&consultation;ConsultationThing"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#hasParkingRuleDuration -->
+
+    <owl:ObjectProperty rdf:about="&transport;#hasParkingRuleDuration">
+        <rdfs:label rdf:datatype="&xsd;string">hasParkingRuleTimes property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Duration for which parking rule applies</rdfs:comment>
+        <rdfs:range rdf:resource="&duration;Period"/>
+        <rdfs:domain rdf:resource="&transport;#ChangeOfParkingRule"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#hasParkingRuleTimes -->
+
+    <owl:ObjectProperty rdf:about="&transport;#hasParkingRuleTimes">
+        <rdfs:label rdf:datatype="&xsd;string">hasParkingRuleTimes property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Times allocated to the parking rule</rdfs:comment>
+        <rdfs:range rdf:resource="&duration;Times"/>
+        <rdfs:domain rdf:resource="&transport;#ChangeOfParkingRule"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#hasProhibitionLocation -->
+
+    <owl:ObjectProperty rdf:about="&transport;#hasProhibitionLocation">
+        <rdfs:range rdf:resource="&ontology2;Feature"/>
+        <rdfs:domain rdf:resource="&transport;#Prohibition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#hasRelinquishedHarbourAuthority -->
+
+    <owl:ObjectProperty rdf:about="&transport;#hasRelinquishedHarbourAuthority">
+        <rdfs:range rdf:resource="&organisation;Organisation"/>
+        <rdfs:domain rdf:resource="&transport;#DesignateHarbourAuthority"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#hasSchedule -->
+
+    <owl:ObjectProperty rdf:about="&transport;#hasSchedule">
+        <rdfs:label rdf:datatype="&xsd;string">hasSchedule class</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Schedule of work associated with Transport Thing</rdfs:comment>
+        <rdfs:range rdf:resource="&consultation;Schedule"/>
+        <rdfs:domain rdf:resource="&transport;#TransportThing"/>
+    </owl:ObjectProperty>
+  
+  
+    <!-- https://www.thegazette.co.uk/def/transport#hasSubjectElement -->
+
+    <owl:ObjectProperty rdf:about="&transport;#hasSubjectElement">
+        <rdfs:label rdf:datatype="&xsd;string">hasSubjectElement</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Subject element for Transport Thing</rdfs:comment>
+        <rdfs:range rdf:resource="&transport;#SubjectElement"/>
+        <rdfs:domain rdf:resource="&transport;#TransportThing"/>
+    </owl:ObjectProperty>  
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#hasStandLocation -->
+
+    <owl:ObjectProperty rdf:about="&transport;#hasStandLocation">
+        <rdfs:label rdf:datatype="&xsd;string">hasStandLocation property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">location of hackney carriage stand</rdfs:comment>
+        <rdfs:range rdf:resource="&ontology2;Feature"/>
+        <rdfs:domain rdf:resource="&transport;#LondonHackneyCarriageStanding"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#hasStreetWork -->
+
+    <owl:ObjectProperty rdf:about="&transport;#hasStreetWork">
+        <rdfs:label rdf:datatype="&xsd;string">hasStreetWork class</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Street Work associated with new roads and street works thing</rdfs:comment>
+        <rdfs:domain rdf:resource="&transport;#NewRoadsAndStreetWorks"/>
+        <rdfs:range rdf:resource="&transport;#StreetWork"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#hasWaitingRestrictionDuration -->
+
+    <owl:ObjectProperty rdf:about="&transport;#hasWaitingRestrictionDuration">
+        <rdfs:range rdf:resource="&duration;Period"/>
+        <rdfs:domain rdf:resource="&transport;#ChangeOfWaitingRestriction"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#hasWaitingRestrictionTimes -->
+
+    <owl:ObjectProperty rdf:about="&transport;#hasWaitingRestrictionTimes">
+        <rdfs:range rdf:resource="&duration;Times"/>
+        <rdfs:domain rdf:resource="&transport;#ChangeOfWaitingRestriction"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#isAboutChangeOfSpecification -->
+
+    <owl:ObjectProperty rdf:about="&transport;#isAboutChangeOfSpecification">
+        <rdfs:label rdf:datatype="&xsd;string">isAboutChangeOfSpecification property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">specification related to the Civil Avaition Thing</rdfs:comment>
+        <rdfs:range rdf:resource="&transport;#ChangeOfSpecification"/>
+        <rdfs:domain rdf:resource="&transport;#CivilAviation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#isOfType -->
+
+    <owl:ObjectProperty rdf:about="&transport;#isOfType">
+        <rdfs:range rdf:resource="&transport;#Railway"/>
+        <rdfs:domain rdf:resource="&transport;#RailwayConstruction"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#isPartOfRailway -->
+
+    <owl:ObjectProperty rdf:about="&transport;#isPartOfRailway">
+        <rdfs:range rdf:resource="&transport;#Railway"/>
+        <rdfs:domain rdf:resource="&transport;#RailwayConstruction"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#isPartOfStation -->
+
+    <owl:ObjectProperty rdf:about="&transport;#isPartOfStation">
+        <rdfs:domain rdf:resource="&transport;#PlatformConstruction"/>
+        <rdfs:range rdf:resource="&transport;#RailwayStation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#revokesBusLane -->
+
+    <owl:ObjectProperty rdf:about="&transport;#revokesBusLane">
+        <rdfs:range rdf:resource="&ontology2;Feature"/>
+        <rdfs:domain rdf:resource="&transport;#RevokeBusLane"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#revokesDisabledParkingBay -->
+
+    <owl:ObjectProperty rdf:about="&transport;#revokesDisabledParkingBay">
+        <rdfs:label rdf:datatype="&xsd;string">revokesDisabledParkingBay property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">location of revoked disabled parking bay</rdfs:comment>
+        <rdfs:range rdf:resource="&location;DisabledParkingBay"/>
+        <rdfs:domain rdf:resource="&transport;#RevokeDisabledParkingBay"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#revokesParkingBay -->
+
+    <owl:ObjectProperty rdf:about="&transport;#revokesParkingBay">
+        <rdfs:range rdf:resource="&location;ParkingBay"/>
+        <rdfs:domain rdf:resource="&transport;#RevokeParkingBay"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#revokesPermitParkingBay -->
+
+    <owl:ObjectProperty rdf:about="&transport;#revokesPermitParkingBay">
+        <rdfs:range rdf:resource="&location;PermitParkingBay"/>
+        <rdfs:domain rdf:resource="&transport;#RevokePermitParkingBay"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#revokesSpeedLimitFrom -->
+
+    <owl:ObjectProperty rdf:about="&transport;#revokesSpeedLimitFrom">
+        <rdfs:range rdf:resource="&ontology2;Feature"/>
+        <rdfs:domain rdf:resource="&transport;#RevokeSpeedLimit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#revokesSpeedLimitTo -->
+
+    <owl:ObjectProperty rdf:about="&transport;#revokesSpeedLimitTo">
+        <rdfs:range rdf:resource="&ontology2;Feature"/>
+        <rdfs:domain rdf:resource="&transport;#RevokeSpeedLimit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/publication#hasNoticeCode -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;hasNoticeCode"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#completionDate -->
+
+    <owl:DatatypeProperty rdf:about="&transport;#completionDate">
+        <rdfs:label rdf:datatype="&xsd;string">completionDate property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Street work completion date</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;date"/>
+        <rdfs:domain rdf:resource="&transport;#StreetWork"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#dateTakesEffectFrom -->
+
+    <owl:DatatypeProperty rdf:about="&transport;#dateTakesEffectFrom">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label rdf:datatype="&xsd;string">dateTakesEffectFrom property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Date the specification takes effect from</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;date"/>
+        <rdfs:domain rdf:resource="&transport;#NewSpecification"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#dateTookEffectFrom -->
+
+    <owl:DatatypeProperty rdf:about="&transport;#dateTookEffectFrom">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label rdf:datatype="&xsd;string">dateTookEffectFrom property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Date revoked specification took effect from</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;date"/>
+        <rdfs:domain rdf:resource="&transport;#RevokeSpecification"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#duration -->
+
+    <owl:DatatypeProperty rdf:about="&transport;#duration">
+        <rdfs:label rdf:datatype="&xsd;string">duration property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Duration of street works</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;duration"/>
+        <rdfs:domain rdf:resource="&transport;#StreetWork"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#height -->
+
+    <owl:DatatypeProperty rdf:about="&transport;#height">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&transport;#NewRaisedTable"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#length -->
+
+    <owl:DatatypeProperty rdf:about="&transport;#length">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&transport;#NewRaisedTable"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#limitOfWork -->
+
+    <owl:DatatypeProperty rdf:about="&transport;#limitOfWork">
+        <rdfs:label rdf:datatype="&xsd;string">limitOfWork property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Limit of street work</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&transport;#StreetWork"/>
+    </owl:DatatypeProperty>
+    
+    <!-- https://www.thegazette.co.uk/def/transport#hasSubheading -->
+
+    <owl:DatatypeProperty rdf:about="&transport;#hasSubheading">
+        <rdfs:label rdf:datatype="&xsd;string">hasSubheading</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&transport;#SubjectElement"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#numberOfCabs -->
+
+    <owl:DatatypeProperty rdf:about="&transport;#numberOfCabs">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label rdf:datatype="&xsd;string">numberOfCabs property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Number of cabs specified per stand</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+        <rdfs:domain rdf:resource="&transport;#LondonHackneyCarriageStanding"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#plotCode -->
+
+    <owl:DatatypeProperty rdf:about="&transport;#plotCode">
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&transport;#CompulsoryPurchase"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#railwayName -->
+
+    <owl:DatatypeProperty rdf:about="&transport;#railwayName">
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&transport;#Railway"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#restrictedWidth -->
+
+    <owl:DatatypeProperty rdf:about="&transport;#restrictedWidth">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&transport;#RoadWidthRestriction"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#speedLimit -->
+
+    <owl:DatatypeProperty rdf:about="&transport;#speedLimit">
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&transport;#ChangeOfSpeedLimit"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#startDate -->
+
+    <owl:DatatypeProperty rdf:about="&transport;#startDate">
+        <rdfs:label rdf:datatype="&xsd;string">startDate property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">STreet work start date</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;date"/>
+        <rdfs:domain rdf:resource="&transport;#StreetWork"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.geonames.org/ontology#Country -->
+
+    <owl:Class rdf:about="&ontology2;Country"/>
+    
+
+
+    <!-- http://www.geonames.org/ontology#Feature -->
+
+    <owl:Class rdf:about="&ontology2;Feature"/>
+    
+
+    
+
+
+    <!-- http://www.thegazette.co.uk/def/transport#RailwayStation -->
+
+    <owl:Class rdf:about="&transport2;RailwayStation">
+        <owl:disjointWith rdf:resource="&transport;#Aerodrome"/>
+    </owl:Class>
+    
+
+   
+
+
+    <!-- http://www.thegazette.co.uk/def/water#DrainageDistrict -->
+
+    <owl:Class rdf:about="&water;DrainageDistrict">
+        <owl:disjointWith rdf:resource="&transport;#Aerodrome"/>
+        <owl:disjointWith rdf:resource="&transport;#RailwayStation"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#ConsultationThing -->
+
+    <owl:Class rdf:about="&consultation;ConsultationThing"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#Schedule -->
+
+    <owl:Class rdf:about="&consultation;Schedule"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/consultation#StatutoryConsultationNotification -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/consultation#StatutoryConsultationNotification">
+        <rdfs:label>StatutoryConsultationNotification</rdfs:label>
+    </owl:Class>
+
+
+    <!-- https://www.thegazette.co.uk/def/duration#Period -->
+
+    <owl:Class rdf:about="&duration;Period"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/duration#Times -->
+
+    <owl:Class rdf:about="&duration;Times"/>
+    
+
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/location#ArbitraryLocation -->
+
+    <owl:Class rdf:about="&location;ArbitraryLocation">
+        <owl:disjointWith rdf:resource="&transport;#Aerodrome"/>
+        <owl:disjointWith rdf:resource="&transport;#RailwayStation"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/location#Building -->
+
+    <owl:Class rdf:about="&location;Building">
+        <owl:disjointWith rdf:resource="&transport;#Aerodrome"/>
+        <owl:disjointWith rdf:resource="&transport;#RailwayStation"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/location#CivicCentre -->
+
+    <owl:Class rdf:about="&location;CivicCentre">
+        <owl:disjointWith rdf:resource="&transport;#Aerodrome"/>
+        <owl:disjointWith rdf:resource="&transport;#RailwayStation"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/location#DisabledParkingBay -->
+
+    <owl:Class rdf:about="&location;DisabledParkingBay"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/location#Docks -->
+
+    <owl:Class rdf:about="&location;Docks">
+        <owl:disjointWith rdf:resource="&transport;#Aerodrome"/>
+        <owl:disjointWith rdf:resource="&transport;#RailwayStation"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/location#Guildhall -->
+
+    <owl:Class rdf:about="&location;Guildhall">
+        <owl:disjointWith rdf:resource="&transport;#Aerodrome"/>
+        <owl:disjointWith rdf:resource="&transport;#RailwayStation"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/location#InternalFeature -->
+
+    <owl:Class rdf:about="&location;InternalFeature">
+        <owl:disjointWith rdf:resource="&transport;#Aerodrome"/>
+        <owl:disjointWith rdf:resource="&transport;#RailwayStation"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/location#Library -->
+
+    <owl:Class rdf:about="&location;Library">
+        <owl:disjointWith rdf:resource="&transport;#Aerodrome"/>
+        <owl:disjointWith rdf:resource="&transport;#RailwayStation"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/location#Locality -->
+
+    <owl:Class rdf:about="&location;Locality">
+        <owl:disjointWith rdf:resource="&transport;#Aerodrome"/>
+        <owl:disjointWith rdf:resource="&transport;#RailwayStation"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/location#ParkingBay -->
+
+    <owl:Class rdf:about="&location;ParkingBay">
+        <owl:disjointWith rdf:resource="&transport;#Aerodrome"/>
+        <owl:disjointWith rdf:resource="&transport;#RailwayStation"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/location#PermitParkingBay -->
+
+    <owl:Class rdf:about="&location;PermitParkingBay"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/location#PostOffice -->
+
+    <owl:Class rdf:about="&location;PostOffice">
+        <owl:disjointWith rdf:resource="&transport;#Aerodrome"/>
+        <owl:disjointWith rdf:resource="&transport;#RailwayStation"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/location#Road -->
+
+    <owl:Class rdf:about="&location;Road">
+        <owl:disjointWith rdf:resource="&transport;#Aerodrome"/>
+        <owl:disjointWith rdf:resource="&transport;#RailwayStation"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/location#WaterCourse -->
+
+    <owl:Class rdf:about="&location;WaterCourse">
+        <owl:disjointWith rdf:resource="&transport;#Aerodrome"/>
+        <owl:disjointWith rdf:resource="&transport;#RailwayStation"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/location#Zoo -->
+
+    <owl:Class rdf:about="&location;Zoo">
+        <owl:disjointWith rdf:resource="&transport;#Aerodrome"/>
+        <owl:disjointWith rdf:resource="&transport;#RailwayStation"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#Office -->
+
+    <owl:Class rdf:about="&organisation;Office">
+        <owl:disjointWith rdf:resource="&transport;#Aerodrome"/>
+        <owl:disjointWith rdf:resource="&transport;#RailwayStation"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#Organisation -->
+
+    <owl:Class rdf:about="&organisation;Organisation"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/publication#PNBNotice -->
+
+    <owl:Class rdf:about="&ontology;PNBNotice"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/publication#PNBThing -->
+
+    <owl:Class rdf:about="&ontology;PNBThing"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#Aerodrome -->
+
+    <owl:Class rdf:about="&transport;#Aerodrome">
+        <rdfs:label rdf:datatype="&xsd;string">Aerodrome class</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ontology2;Feature"/>
+        <owl:disjointWith rdf:resource="&transport;#RailwayStation"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Spatial thing concerning aerodrome, airport</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#AmendAtAnyTimeWaitingRestriction -->
+
+    <owl:Class rdf:about="&transport;#AmendAtAnyTimeWaitingRestriction">
+        <rdfs:subClassOf rdf:resource="&transport;#AtAnyTimeWaitingRestriction"/>
+        <owl:disjointWith rdf:resource="&transport;#NewAtAnyTimeWaitingRestriction"/>
+        <owl:disjointWith rdf:resource="&transport;#RevokeAtAnyTimeWaitingRestriction"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#AmendBusLane -->
+
+    <owl:Class rdf:about="&transport;#AmendBusLane">
+        <rdfs:subClassOf rdf:resource="&transport;#ChangeOfBusLane"/>
+        <owl:disjointWith rdf:resource="&transport;#NewBusLane"/>
+        <owl:disjointWith rdf:resource="&transport;#RevokeBusLane"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#AmendBusStop -->
+
+    <owl:Class rdf:about="&transport;#AmendBusStop">
+        <rdfs:subClassOf rdf:resource="&transport;#ChangeOfBusStop"/>
+        <owl:disjointWith rdf:resource="&transport;#NewBusStop"/>
+        <owl:disjointWith rdf:resource="&transport;#RevokeBusStop"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#AmendCyclePath -->
+
+    <owl:Class rdf:about="&transport;#AmendCyclePath">
+        <rdfs:subClassOf rdf:resource="&transport;#ChangeOfCyclePath"/>
+        <owl:disjointWith rdf:resource="&transport;#NewCyclePath"/>
+        <owl:disjointWith rdf:resource="&transport;#RevokeCyclePath"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#AmendDisabledParkingBay -->
+
+    <owl:Class rdf:about="&transport;#AmendDisabledParkingBay">
+        <rdfs:label rdf:datatype="&xsd;string">AmendDisabledParkingBay class</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&transport;#ChangeOfDisabledParkingBay"/>
+        <owl:disjointWith rdf:resource="&transport;#NewDisabledParkingBay"/>
+        <owl:disjointWith rdf:resource="&transport;#RevokeDisabledParkingBay"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Amend existing disabled parking bay</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#AmendParkingBay -->
+
+    <owl:Class rdf:about="&transport;#AmendParkingBay">
+        <rdfs:subClassOf rdf:resource="&transport;#ChangeOfParkingBay"/>
+        <owl:disjointWith rdf:resource="&transport;#NewParkingBay"/>
+        <owl:disjointWith rdf:resource="&transport;#RevokeParkingBay"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#AmendPermitParkingBay -->
+
+    <owl:Class rdf:about="&transport;#AmendPermitParkingBay">
+        <rdfs:subClassOf rdf:resource="&transport;#ChangeOfPermitParkingBay"/>
+        <owl:disjointWith rdf:resource="&transport;#NewPermitParkingBay"/>
+        <owl:disjointWith rdf:resource="&transport;#RevokePermitParkingBay"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#AmendSpeedLimit -->
+
+    <owl:Class rdf:about="&transport;#AmendSpeedLimit">
+        <rdfs:subClassOf rdf:resource="&transport;#ChangeOfSpeedLimit"/>
+        <owl:disjointWith rdf:resource="&transport;#NewSpeedLimit"/>
+        <owl:disjointWith rdf:resource="&transport;#RevokeSpeedLimit"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#AmendWaitingRestriction -->
+
+    <owl:Class rdf:about="&transport;#AmendWaitingRestriction">
+        <rdfs:subClassOf rdf:resource="&transport;#WaitingRestrictionDuration"/>
+        <owl:disjointWith rdf:resource="&transport;#NewWaitingRestriction"/>
+        <owl:disjointWith rdf:resource="&transport;#RevokeWaitingRestriction"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#AppointmentOfStanding -->
+
+    <owl:Class rdf:about="&transport;#AppointmentOfStanding">
+        <rdfs:label rdf:datatype="&xsd;string">AppointmentOfStanding class</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&transport;#LondonHackneyCarriageStanding"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Appointment of Hackney Carriage Standing</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#AtAnyTimeWaitingRestriction -->
+
+    <owl:Class rdf:about="&transport;#AtAnyTimeWaitingRestriction">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&transport;#AmendAtAnyTimeWaitingRestriction"/>
+                    <rdf:Description rdf:about="&transport;#NewAtAnyTimeWaitingRestriction"/>
+                    <rdf:Description rdf:about="&transport;#RevokeAtAnyTimeWaitingRestriction"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&transport;#ChangeOfWaitingRestriction"/>
+        <owl:disjointWith rdf:resource="&transport;#WaitingRestrictionDuration"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#BranchLine -->
+
+    <owl:Class rdf:about="&transport;#BranchLine">
+        <rdfs:subClassOf rdf:resource="&transport;#Line"/>
+        <owl:disjointWith rdf:resource="&transport;#MainLine"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#BridgeConstruction -->
+
+    <owl:Class rdf:about="&transport;#BridgeConstruction">
+        <rdfs:subClassOf rdf:resource="&transport;#Construction"/>
+        <owl:disjointWith rdf:resource="&transport;#RailwayConstruction"/>
+        <owl:disjointWith rdf:resource="&transport;#RoadConstruction"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#BroadGauge -->
+
+    <owl:Class rdf:about="&transport;#BroadGauge">
+        <rdfs:subClassOf rdf:resource="&transport;#Gauge"/>
+        <owl:disjointWith rdf:resource="&transport;#NarrowGauge"/>
+        <owl:disjointWith rdf:resource="&transport;#StandardGauge"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#CarriagewayResurfacing -->
+
+    <owl:Class rdf:about="&transport;#CarriagewayResurfacing">
+        <rdfs:label rdf:datatype="&xsd;string">CarriagewayResurfacing class</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&transport;#Resurfacing"/>
+        <owl:disjointWith rdf:resource="&transport;#FootwayResurfacing"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Carriageway Resurfacing</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#ChangeOfBusLane -->
+
+    <owl:Class rdf:about="&transport;#ChangeOfBusLane">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&transport;#AmendBusLane"/>
+                    <rdf:Description rdf:about="&transport;#NewBusLane"/>
+                    <rdf:Description rdf:about="&transport;#RevokeBusLane"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&consultation;ConsultationThing"/>
+        <owl:disjointWith rdf:resource="&transport;#ChangeOfBusStop"/>
+        <owl:disjointWith rdf:resource="&transport;#ChangeOfCyclePath"/>
+        <owl:disjointWith rdf:resource="&transport;#ChangeOfParkingRule"/>
+        <owl:disjointWith rdf:resource="&transport;#ChangeOfRoadFeature"/>
+        <owl:disjointWith rdf:resource="&transport;#ChangeOfRoadUse"/>
+        <owl:disjointWith rdf:resource="&transport;#ChangeOfSpecification"/>
+        <owl:disjointWith rdf:resource="&transport;#ChangeOfSpeedLimit"/>
+        <owl:disjointWith rdf:resource="&transport;#ChangeOfWaitingRestriction"/>
+        <owl:disjointWith rdf:resource="&transport;#ChangeOfZebraCrossing"/>
+        <owl:disjointWith rdf:resource="&transport;#CompulsoryPurchase"/>
+        <owl:disjointWith rdf:resource="&transport;#Construction"/>
+        <owl:disjointWith rdf:resource="&transport;#LondonHackneyCarriageStanding"/>
+        <owl:disjointWith rdf:resource="&transport;#Ports"/>
+        <owl:disjointWith rdf:resource="&transport;#Prohibition"/>
+        <owl:disjointWith rdf:resource="&transport;#StreetWork"/>
+        <owl:disjointWith rdf:resource="&transport;#TransferOfOperator"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#ChangeOfBusStop -->
+
+    <owl:Class rdf:about="&transport;#ChangeOfBusStop">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&transport;#AmendBusStop"/>
+                    <rdf:Description rdf:about="&transport;#NewBusStop"/>
+                    <rdf:Description rdf:about="&transport;#RevokeBusStop"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&consultation;ConsultationThing"/>
+        <owl:disjointWith rdf:resource="&transport;#ChangeOfCyclePath"/>
+        <owl:disjointWith rdf:resource="&transport;#ChangeOfParkingRule"/>
+        <owl:disjointWith rdf:resource="&transport;#ChangeOfRoadFeature"/>
+        <owl:disjointWith rdf:resource="&transport;#ChangeOfRoadUse"/>
+        <owl:disjointWith rdf:resource="&transport;#ChangeOfSpecification"/>
+        <owl:disjointWith rdf:resource="&transport;#ChangeOfSpeedLimit"/>
+        <owl:disjointWith rdf:resource="&transport;#ChangeOfWaitingRestriction"/>
+        <owl:disjointWith rdf:resource="&transport;#ChangeOfZebraCrossing"/>
+        <owl:disjointWith rdf:resource="&transport;#CompulsoryPurchase"/>
+        <owl:disjointWith rdf:resource="&transport;#Construction"/>
+        <owl:disjointWith rdf:resource="&transport;#LondonHackneyCarriageStanding"/>
+        <owl:disjointWith rdf:resource="&transport;#Ports"/>
+        <owl:disjointWith rdf:resource="&transport;#Prohibition"/>
+        <owl:disjointWith rdf:resource="&transport;#StreetWork"/>
+        <owl:disjointWith rdf:resource="&transport;#TransferOfOperator"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#ChangeOfCyclePath -->
+
+    <owl:Class rdf:about="&transport;#ChangeOfCyclePath">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&transport;#AmendCyclePath"/>
+                    <rdf:Description rdf:about="&transport;#NewCyclePath"/>
+                    <rdf:Description rdf:about="&transport;#RevokeCyclePath"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&consultation;ConsultationThing"/>
+        <owl:disjointWith rdf:resource="&transport;#ChangeOfParkingRule"/>
+        <owl:disjointWith rdf:resource="&transport;#ChangeOfRoadFeature"/>
+        <owl:disjointWith rdf:resource="&transport;#ChangeOfRoadUse"/>
+        <owl:disjointWith rdf:resource="&transport;#ChangeOfSpecification"/>
+        <owl:disjointWith rdf:resource="&transport;#ChangeOfSpeedLimit"/>
+        <owl:disjointWith rdf:resource="&transport;#ChangeOfWaitingRestriction"/>
+        <owl:disjointWith rdf:resource="&transport;#ChangeOfZebraCrossing"/>
+        <owl:disjointWith rdf:resource="&transport;#CompulsoryPurchase"/>
+        <owl:disjointWith rdf:resource="&transport;#Construction"/>
+        <owl:disjointWith rdf:resource="&transport;#LondonHackneyCarriageStanding"/>
+        <owl:disjointWith rdf:resource="&transport;#Ports"/>
+        <owl:disjointWith rdf:resource="&transport;#Prohibition"/>
+        <owl:disjointWith rdf:resource="&transport;#StreetWork"/>
+        <owl:disjointWith rdf:resource="&transport;#TransferOfOperator"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#ChangeOfDisabledParkingBay -->
+
+    <owl:Class rdf:about="&transport;#ChangeOfDisabledParkingBay">
+        <rdfs:label rdf:datatype="&xsd;string">ChangeOfDisabledParkingBay class</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&transport;#AmendDisabledParkingBay"/>
+                    <rdf:Description rdf:about="&transport;#NewDisabledParkingBay"/>
+                    <rdf:Description rdf:about="&transport;#RevokeDisabledParkingBay"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&transport;#ChangeOfParkingRule"/>
+        <owl:disjointWith rdf:resource="&transport;#ChangeOfParkingBay"/>
+        <owl:disjointWith rdf:resource="&transport;#ChangeOfPermitParkingBay"/>
+        <rdfs:comment rdf:datatype="&xsd;string">superclass for change of disabled parking rule classes</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#ChangeOfParkingBay -->
+
+    <owl:Class rdf:about="&transport;#ChangeOfParkingBay">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&transport;#AmendParkingBay"/>
+                    <rdf:Description rdf:about="&transport;#NewParkingBay"/>
+                    <rdf:Description rdf:about="&transport;#RevokeParkingBay"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&transport;#ChangeOfParkingRule"/>
+        <owl:disjointWith rdf:resource="&transport;#ChangeOfPermitParkingBay"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#ChangeOfParkingRule -->
+
+    <owl:Class rdf:about="&transport;#ChangeOfParkingRule">
+        <rdfs:label rdf:datatype="&xsd;string">ChangeOfParkingRule class</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&transport;#ChangeOfDisabledParkingBay"/>
+                    <rdf:Description rdf:about="&transport;#ChangeOfParkingBay"/>
+                    <rdf:Description rdf:about="&transport;#ChangeOfPermitParkingBay"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&consultation;ConsultationThing"/>
+        <owl:disjointWith rdf:resource="&transport;#ChangeOfRoadFeature"/>
+        <owl:disjointWith rdf:resource="&transport;#ChangeOfRoadUse"/>
+        <owl:disjointWith rdf:resource="&transport;#ChangeOfSpecification"/>
+        <owl:disjointWith rdf:resource="&transport;#ChangeOfSpeedLimit"/>
+        <owl:disjointWith rdf:resource="&transport;#ChangeOfWaitingRestriction"/>
+        <owl:disjointWith rdf:resource="&transport;#ChangeOfZebraCrossing"/>
+        <owl:disjointWith rdf:resource="&transport;#CompulsoryPurchase"/>
+        <owl:disjointWith rdf:resource="&transport;#Construction"/>
+        <owl:disjointWith rdf:resource="&transport;#LondonHackneyCarriageStanding"/>
+        <owl:disjointWith rdf:resource="&transport;#Ports"/>
+        <owl:disjointWith rdf:resource="&transport;#Prohibition"/>
+        <owl:disjointWith rdf:resource="&transport;#StreetWork"/>
+        <owl:disjointWith rdf:resource="&transport;#TransferOfOperator"/>
+        <rdfs:comment rdf:datatype="&xsd;string">superclass for change of parking rule classes</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#ChangeOfPermitParkingBay -->
+
+    <owl:Class rdf:about="&transport;#ChangeOfPermitParkingBay">
+        <rdfs:label rdf:datatype="&xsd;string">ChangeOfPermitParkingBay class</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&transport;#AmendPermitParkingBay"/>
+                    <rdf:Description rdf:about="&transport;#NewPermitParkingBay"/>
+                    <rdf:Description rdf:about="&transport;#RevokePermitParkingBay"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&transport;#ChangeOfParkingRule"/>
+        <rdfs:comment rdf:datatype="&xsd;string">super class for change of permit parking bays</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#ChangeOfRaisedTable -->
+
+    <owl:Class rdf:about="&transport;#ChangeOfRaisedTable">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&transport;#NewRaisedTable"/>
+                    <rdf:Description rdf:about="&transport;#RemoveRaisedTable"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&transport;#ChangeOfRoadFeature"/>
+        <owl:disjointWith rdf:resource="&transport;#ChangeOfRoadHump"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#ChangeOfRoadFeature -->
+
+    <owl:Class rdf:about="&transport;#ChangeOfRoadFeature">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&transport;#ChangeOfRaisedTable"/>
+                    <rdf:Description rdf:about="&transport;#ChangeOfRoadHump"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&consultation;ConsultationThing"/>
+        <owl:disjointWith rdf:resource="&transport;#ChangeOfRoadUse"/>
+        <owl:disjointWith rdf:resource="&transport;#ChangeOfSpecification"/>
+        <owl:disjointWith rdf:resource="&transport;#ChangeOfSpeedLimit"/>
+        <owl:disjointWith rdf:resource="&transport;#ChangeOfWaitingRestriction"/>
+        <owl:disjointWith rdf:resource="&transport;#ChangeOfZebraCrossing"/>
+        <owl:disjointWith rdf:resource="&transport;#CompulsoryPurchase"/>
+        <owl:disjointWith rdf:resource="&transport;#Construction"/>
+        <owl:disjointWith rdf:resource="&transport;#LondonHackneyCarriageStanding"/>
+        <owl:disjointWith rdf:resource="&transport;#Ports"/>
+        <owl:disjointWith rdf:resource="&transport;#Prohibition"/>
+        <owl:disjointWith rdf:resource="&transport;#StreetWork"/>
+        <owl:disjointWith rdf:resource="&transport;#TransferOfOperator"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#ChangeOfRoadHump -->
+
+    <owl:Class rdf:about="&transport;#ChangeOfRoadHump">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&transport;#NewRoadHump"/>
+                    <rdf:Description rdf:about="&transport;#RemoveRoadHump"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&transport;#ChangeOfRoadFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#ChangeOfRoadUse -->
+
+    <owl:Class rdf:about="&transport;#ChangeOfRoadUse">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&transport;#Contraflow"/>
+                    <rdf:Description rdf:about="&transport;#RoadClosure"/>
+                    <rdf:Description rdf:about="&transport;#RoadWidthRestriction"/>
+                    <rdf:Description rdf:about="&transport;#StoppingUp"/>
+                    <rdf:Description rdf:about="&transport;#TrafficRestriction"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&consultation;ConsultationThing"/>
+        <owl:disjointWith rdf:resource="&transport;#ChangeOfSpecification"/>
+        <owl:disjointWith rdf:resource="&transport;#ChangeOfSpeedLimit"/>
+        <owl:disjointWith rdf:resource="&transport;#ChangeOfWaitingRestriction"/>
+        <owl:disjointWith rdf:resource="&transport;#ChangeOfZebraCrossing"/>
+        <owl:disjointWith rdf:resource="&transport;#CompulsoryPurchase"/>
+        <owl:disjointWith rdf:resource="&transport;#Construction"/>
+        <owl:disjointWith rdf:resource="&transport;#LondonHackneyCarriageStanding"/>
+        <owl:disjointWith rdf:resource="&transport;#Ports"/>
+        <owl:disjointWith rdf:resource="&transport;#Prohibition"/>
+        <owl:disjointWith rdf:resource="&transport;#StreetWork"/>
+        <owl:disjointWith rdf:resource="&transport;#TransferOfOperator"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#ChangeOfSpecification -->
+
+    <owl:Class rdf:about="&transport;#ChangeOfSpecification">
+        <rdfs:label rdf:datatype="&xsd;string">ChangeOfSpecification class</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&transport;#NewSpecification"/>
+                    <rdf:Description rdf:about="&transport;#RevokeSpecification"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&consultation;ConsultationThing"/>
+        <owl:disjointWith rdf:resource="&transport;#ChangeOfSpeedLimit"/>
+        <owl:disjointWith rdf:resource="&transport;#ChangeOfWaitingRestriction"/>
+        <owl:disjointWith rdf:resource="&transport;#ChangeOfZebraCrossing"/>
+        <owl:disjointWith rdf:resource="&transport;#CompulsoryPurchase"/>
+        <owl:disjointWith rdf:resource="&transport;#Construction"/>
+        <owl:disjointWith rdf:resource="&transport;#LondonHackneyCarriageStanding"/>
+        <owl:disjointWith rdf:resource="&transport;#Ports"/>
+        <owl:disjointWith rdf:resource="&transport;#Prohibition"/>
+        <owl:disjointWith rdf:resource="&transport;#StreetWork"/>
+        <owl:disjointWith rdf:resource="&transport;#TransferOfOperator"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Change of Specification</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#ChangeOfSpeedLimit -->
+
+    <owl:Class rdf:about="&transport;#ChangeOfSpeedLimit">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&transport;#AmendSpeedLimit"/>
+                    <rdf:Description rdf:about="&transport;#NewSpeedLimit"/>
+                    <rdf:Description rdf:about="&transport;#RevokeSpeedLimit"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&consultation;ConsultationThing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&transport;#speedLimit"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="&transport;#ChangeOfWaitingRestriction"/>
+        <owl:disjointWith rdf:resource="&transport;#ChangeOfZebraCrossing"/>
+        <owl:disjointWith rdf:resource="&transport;#CompulsoryPurchase"/>
+        <owl:disjointWith rdf:resource="&transport;#Construction"/>
+        <owl:disjointWith rdf:resource="&transport;#LondonHackneyCarriageStanding"/>
+        <owl:disjointWith rdf:resource="&transport;#Ports"/>
+        <owl:disjointWith rdf:resource="&transport;#Prohibition"/>
+        <owl:disjointWith rdf:resource="&transport;#StreetWork"/>
+        <owl:disjointWith rdf:resource="&transport;#TransferOfOperator"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#ChangeOfWaitingRestriction -->
+
+    <owl:Class rdf:about="&transport;#ChangeOfWaitingRestriction">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&transport;#AtAnyTimeWaitingRestriction"/>
+                    <rdf:Description rdf:about="&transport;#WaitingRestrictionDuration"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&consultation;ConsultationThing"/>
+        <owl:disjointWith rdf:resource="&transport;#ChangeOfZebraCrossing"/>
+        <owl:disjointWith rdf:resource="&transport;#CompulsoryPurchase"/>
+        <owl:disjointWith rdf:resource="&transport;#Construction"/>
+        <owl:disjointWith rdf:resource="&transport;#LondonHackneyCarriageStanding"/>
+        <owl:disjointWith rdf:resource="&transport;#Ports"/>
+        <owl:disjointWith rdf:resource="&transport;#Prohibition"/>
+        <owl:disjointWith rdf:resource="&transport;#StreetWork"/>
+        <owl:disjointWith rdf:resource="&transport;#TransferOfOperator"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#ChangeOfZebraCrossing -->
+
+    <owl:Class rdf:about="&transport;#ChangeOfZebraCrossing">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&transport;#NewZebraCrossing"/>
+                    <rdf:Description rdf:about="&transport;#RevokeZebraCrossing"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&consultation;ConsultationThing"/>
+        <owl:disjointWith rdf:resource="&transport;#CompulsoryPurchase"/>
+        <owl:disjointWith rdf:resource="&transport;#Construction"/>
+        <owl:disjointWith rdf:resource="&transport;#LondonHackneyCarriageStanding"/>
+        <owl:disjointWith rdf:resource="&transport;#Ports"/>
+        <owl:disjointWith rdf:resource="&transport;#Prohibition"/>
+        <owl:disjointWith rdf:resource="&transport;#StreetWork"/>
+        <owl:disjointWith rdf:resource="&transport;#TransferOfOperator"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#CivilAviation -->
+
+    <owl:Class rdf:about="&transport;#CivilAviation">
+        <rdfs:label rdf:datatype="&xsd;string">CivilAviation class</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&transport;#TransportThing"/>
+        <owl:disjointWith rdf:resource="&transport;#NewRoadsAndStreetWorks"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Civil Aviation Thing - generally concerning change of specification</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#CivilAviationNotice -->
+
+    <owl:Class rdf:about="&transport;#CivilAviationNotice">
+        <rdfs:label rdf:datatype="&xsd;string">CivilAviationNotice class</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1508</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&transport;#TransportNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom rdf:resource="&transport;#CivilAviation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="&transport;#CycleTracksNotice"/>
+        <owl:disjointWith rdf:resource="&transport;#HighwaysNotice"/>
+        <owl:disjointWith rdf:resource="&transport;#LondonHackneyCarriagesNotice"/>
+        <owl:disjointWith rdf:resource="&transport;#NewRoadsAndStreetWorksNotice"/>
+        <owl:disjointWith rdf:resource="&transport;#PortsNotice"/>
+        <owl:disjointWith rdf:resource="&transport;#RailwaysNotice"/>
+        <owl:disjointWith rdf:resource="&transport;#RoadTrafficActsNotice"/>
+        <owl:disjointWith rdf:resource="&transport;#RoadsNIOrderNotice"/>
+        <owl:disjointWith rdf:resource="&transport;#TransportActsNotice"/>
+        <owl:disjointWith rdf:resource="&transport;#VehicleImpoundingNotice"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Civil Aviation Notice (Type 1508)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#CompulsoryPurchase -->
+
+    <owl:Class rdf:about="&transport;#CompulsoryPurchase">
+        <rdfs:subClassOf rdf:resource="&consultation;ConsultationThing"/>
+        <owl:disjointWith rdf:resource="&transport;#Construction"/>
+        <owl:disjointWith rdf:resource="&transport;#LondonHackneyCarriageStanding"/>
+        <owl:disjointWith rdf:resource="&transport;#Ports"/>
+        <owl:disjointWith rdf:resource="&transport;#Prohibition"/>
+        <owl:disjointWith rdf:resource="&transport;#StreetWork"/>
+        <owl:disjointWith rdf:resource="&transport;#TransferOfOperator"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#Construction -->
+
+    <owl:Class rdf:about="&transport;#Construction">
+        <rdfs:subClassOf rdf:resource="&consultation;ConsultationThing"/>
+        <owl:disjointWith rdf:resource="&transport;#LondonHackneyCarriageStanding"/>
+        <owl:disjointWith rdf:resource="&transport;#Ports"/>
+        <owl:disjointWith rdf:resource="&transport;#Prohibition"/>
+        <owl:disjointWith rdf:resource="&transport;#StreetWork"/>
+        <owl:disjointWith rdf:resource="&transport;#TransferOfOperator"/>
+    </owl:Class>
+    
+
+
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#Contraflow -->
+
+    <owl:Class rdf:about="&transport;#Contraflow">
+        <rdfs:subClassOf rdf:resource="&transport;#ChangeOfRoadUse"/>
+        <owl:disjointWith rdf:resource="&transport;#RoadClosure"/>
+        <owl:disjointWith rdf:resource="&transport;#RoadWidthRestriction"/>
+        <owl:disjointWith rdf:resource="&transport;#StoppingUp"/>
+        <owl:disjointWith rdf:resource="&transport;#TrafficRestriction"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#CycleTracksNotice -->
+
+    <owl:Class rdf:about="&transport;#CycleTracksNotice">
+        <rdfs:label rdf:datatype="&xsd;string">CycleTracksNotice class</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1509</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&transport;#TransportNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&consultation;StatutoryConsultationNotification"/>
+                            <rdf:Description rdf:about="&transport;#TransportThing"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="&transport;#HighwaysNotice"/>
+        <owl:disjointWith rdf:resource="&transport;#LondonHackneyCarriagesNotice"/>
+        <owl:disjointWith rdf:resource="&transport;#NewRoadsAndStreetWorksNotice"/>
+        <owl:disjointWith rdf:resource="&transport;#PortsNotice"/>
+        <owl:disjointWith rdf:resource="&transport;#RailwaysNotice"/>
+        <owl:disjointWith rdf:resource="&transport;#RoadTrafficActsNotice"/>
+        <owl:disjointWith rdf:resource="&transport;#RoadsNIOrderNotice"/>
+        <owl:disjointWith rdf:resource="&transport;#TransportActsNotice"/>
+        <owl:disjointWith rdf:resource="&transport;#VehicleImpoundingNotice"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Cycle Tracks Notice (Type 1509)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#DesignateHarbourAuthority -->
+
+    <owl:Class rdf:about="&transport;#DesignateHarbourAuthority">
+        <rdfs:subClassOf rdf:resource="&transport;#Ports"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#FootBridgeConstruction -->
+
+    <owl:Class rdf:about="&transport;#FootBridgeConstruction">
+        <rdfs:subClassOf rdf:resource="&transport;#BridgeConstruction"/>
+        <owl:disjointWith rdf:resource="&transport;#RailBridgeConstruction"/>
+        <owl:disjointWith rdf:resource="&transport;#RoadBridgeConstruction"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#FootwayRelay -->
+
+    <owl:Class rdf:about="&transport;#FootwayRelay">
+        <rdfs:label rdf:datatype="&xsd;string">FootwayRelay class</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&transport;#FootwayResurfacing"/>
+                    <rdf:Description rdf:about="&transport;#KerbRealignment"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment rdf:datatype="&xsd;string">Footway Relay is a term used to describe the combination of footway resurfacing and kerb realignment</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#FootwayResurfacing -->
+
+    <owl:Class rdf:about="&transport;#FootwayResurfacing">
+        <rdfs:label rdf:datatype="&xsd;string">FootwayResurfacing class</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&transport;#Resurfacing"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Footway Resurfacing</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#Funicular -->
+
+    <owl:Class rdf:about="&transport;#Funicular">
+        <rdfs:subClassOf rdf:resource="&transport;#UrbanTransit"/>
+        <owl:disjointWith rdf:resource="&transport;#LightRailway"/>
+        <owl:disjointWith rdf:resource="&transport;#Monorail"/>
+        <owl:disjointWith rdf:resource="&transport;#RapidTransitSystem"/>
+        <owl:disjointWith rdf:resource="&transport;#Tram"/>
+        <owl:disjointWith rdf:resource="&transport;#Underground"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#Gauge -->
+
+    <owl:Class rdf:about="&transport;#Gauge">
+        <rdfs:subClassOf rdf:resource="&transport;#Railway"/>
+        <owl:disjointWith rdf:resource="&transport;#Line"/>
+        <owl:disjointWith rdf:resource="&transport;#UrbanTransit"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#HighwaysNotice -->
+
+    <owl:Class rdf:about="&transport;#HighwaysNotice">
+        <rdfs:label rdf:datatype="&xsd;string">HighwaysNotice class</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1503</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&transport;#TransportNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&consultation;StatutoryConsultationNotification"/>
+                            <rdf:Description rdf:about="&transport;#TransportThing"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="&transport;#LondonHackneyCarriagesNotice"/>
+        <owl:disjointWith rdf:resource="&transport;#NewRoadsAndStreetWorksNotice"/>
+        <owl:disjointWith rdf:resource="&transport;#PortsNotice"/>
+        <owl:disjointWith rdf:resource="&transport;#RailwaysNotice"/>
+        <owl:disjointWith rdf:resource="&transport;#RoadTrafficActsNotice"/>
+        <owl:disjointWith rdf:resource="&transport;#RoadsNIOrderNotice"/>
+        <owl:disjointWith rdf:resource="&transport;#TransportActsNotice"/>
+        <owl:disjointWith rdf:resource="&transport;#VehicleImpoundingNotice"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Highways Notice (Type 1503)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#KerbRealignment -->
+
+    <owl:Class rdf:about="&transport;#KerbRealignment">
+        <rdfs:label rdf:datatype="&xsd;string">KerbRealignment class</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&transport;#StreetWork"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Kerb Realignment</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#LightRailway -->
+
+    <owl:Class rdf:about="&transport;#LightRailway">
+        <rdfs:subClassOf rdf:resource="&transport;#UrbanTransit"/>
+        <owl:disjointWith rdf:resource="&transport;#Monorail"/>
+        <owl:disjointWith rdf:resource="&transport;#RapidTransitSystem"/>
+        <owl:disjointWith rdf:resource="&transport;#Tram"/>
+        <owl:disjointWith rdf:resource="&transport;#Underground"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#Line -->
+
+    <owl:Class rdf:about="&transport;#Line">
+        <rdfs:subClassOf rdf:resource="&transport;#Railway"/>
+        <owl:disjointWith rdf:resource="&transport;#UrbanTransit"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#LineExtension -->
+
+    <owl:Class rdf:about="&transport;#LineExtension">
+        <rdfs:subClassOf rdf:resource="&transport;#RailwayConstruction"/>
+        <owl:disjointWith rdf:resource="&transport;#PlatformConstruction"/>
+        <owl:disjointWith rdf:resource="&transport;#StationConstruction"/>
+        <owl:disjointWith rdf:resource="&transport;#TunnelConstruction"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#LondonHackneyCarriageStanding -->
+
+    <owl:Class rdf:about="&transport;#LondonHackneyCarriageStanding">
+        <rdfs:label rdf:datatype="&xsd;string">LondonHackneyCarriageStanding class</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&consultation;ConsultationThing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&transport;#numberOfCabs"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="&transport;#Ports"/>
+        <owl:disjointWith rdf:resource="&transport;#Prohibition"/>
+        <owl:disjointWith rdf:resource="&transport;#StreetWork"/>
+        <owl:disjointWith rdf:resource="&transport;#TransferOfOperator"/>
+        <rdfs:comment rdf:datatype="&xsd;string">London Hackney Carriage Standing</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#LondonHackneyCarriagesNotice -->
+
+    <owl:Class rdf:about="&transport;#LondonHackneyCarriagesNotice">
+        <rdfs:label rdf:datatype="&xsd;string">LondonHackneyCarriagesNotice class</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1504</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&transport;#TransportNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&consultation;StatutoryConsultationNotification"/>
+                            <rdf:Description rdf:about="&transport;#TransportThing"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="&transport;#NewRoadsAndStreetWorksNotice"/>
+        <owl:disjointWith rdf:resource="&transport;#PortsNotice"/>
+        <owl:disjointWith rdf:resource="&transport;#RailwaysNotice"/>
+        <owl:disjointWith rdf:resource="&transport;#RoadTrafficActsNotice"/>
+        <owl:disjointWith rdf:resource="&transport;#RoadsNIOrderNotice"/>
+        <owl:disjointWith rdf:resource="&transport;#TransportActsNotice"/>
+        <owl:disjointWith rdf:resource="&transport;#VehicleImpoundingNotice"/>
+        <rdfs:comment rdf:datatype="&xsd;string">LondonHackney Carriages Notice (Type 1504)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#MainLine -->
+
+    <owl:Class rdf:about="&transport;#MainLine">
+        <rdfs:subClassOf rdf:resource="&transport;#Line"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#Monorail -->
+
+    <owl:Class rdf:about="&transport;#Monorail">
+        <rdfs:subClassOf rdf:resource="&transport;#UrbanTransit"/>
+        <owl:disjointWith rdf:resource="&transport;#RapidTransitSystem"/>
+        <owl:disjointWith rdf:resource="&transport;#Tram"/>
+        <owl:disjointWith rdf:resource="&transport;#Underground"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#NarrowGauge -->
+
+    <owl:Class rdf:about="&transport;#NarrowGauge">
+        <rdfs:subClassOf rdf:resource="&transport;#Gauge"/>
+        <owl:disjointWith rdf:resource="&transport;#StandardGauge"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#NewAtAnyTimeWaitingRestriction -->
+
+    <owl:Class rdf:about="&transport;#NewAtAnyTimeWaitingRestriction">
+        <rdfs:subClassOf rdf:resource="&transport;#AtAnyTimeWaitingRestriction"/>
+        <owl:disjointWith rdf:resource="&transport;#RevokeAtAnyTimeWaitingRestriction"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#NewBusLane -->
+
+    <owl:Class rdf:about="&transport;#NewBusLane">
+        <rdfs:subClassOf rdf:resource="&transport;#ChangeOfBusLane"/>
+        <owl:disjointWith rdf:resource="&transport;#RevokeBusLane"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#NewBusStop -->
+
+    <owl:Class rdf:about="&transport;#NewBusStop">
+        <rdfs:subClassOf rdf:resource="&transport;#ChangeOfBusStop"/>
+        <owl:disjointWith rdf:resource="&transport;#RevokeBusStop"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#NewCyclePath -->
+
+    <owl:Class rdf:about="&transport;#NewCyclePath">
+        <rdfs:subClassOf rdf:resource="&transport;#ChangeOfCyclePath"/>
+        <owl:disjointWith rdf:resource="&transport;#RevokeCyclePath"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#NewDisabledParkingBay -->
+
+    <owl:Class rdf:about="&transport;#NewDisabledParkingBay">
+        <rdfs:label rdf:datatype="&xsd;string">NewDisabledParkingBay class</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&transport;#ChangeOfDisabledParkingBay"/>
+        <owl:disjointWith rdf:resource="&transport;#RevokeDisabledParkingBay"/>
+        <rdfs:comment rdf:datatype="&xsd;string">New disabled parking bay</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#NewParkingBay -->
+
+    <owl:Class rdf:about="&transport;#NewParkingBay">
+        <rdfs:subClassOf rdf:resource="&transport;#ChangeOfParkingBay"/>
+        <owl:disjointWith rdf:resource="&transport;#RevokeParkingBay"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#NewPermitParkingBay -->
+
+    <owl:Class rdf:about="&transport;#NewPermitParkingBay">
+        <rdfs:subClassOf rdf:resource="&transport;#ChangeOfPermitParkingBay"/>
+        <owl:disjointWith rdf:resource="&transport;#RevokePermitParkingBay"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#NewRaisedTable -->
+
+    <owl:Class rdf:about="&transport;#NewRaisedTable">
+        <rdfs:subClassOf rdf:resource="&transport;#ChangeOfRaisedTable"/>
+        <owl:disjointWith rdf:resource="&transport;#RemoveRaisedTable"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#NewRoadHump -->
+
+    <owl:Class rdf:about="&transport;#NewRoadHump">
+        <rdfs:subClassOf rdf:resource="&transport;#ChangeOfRoadHump"/>
+        <owl:disjointWith rdf:resource="&transport;#RemoveRoadHump"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#NewRoadsAndStreetWorks -->
+
+    <owl:Class rdf:about="&transport;#NewRoadsAndStreetWorks">
+        <rdfs:label rdf:datatype="&xsd;string">NewRoadsAndStreetWorks class</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&transport;#TransportThing"/>
+        <rdfs:comment rdf:datatype="&xsd;string">New Roads And Street Works Thing - doesnt require an order - this is for ntoification by a local authority that street works are due to be carried out</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#NewRoadsAndStreetWorksNotice -->
+
+    <owl:Class rdf:about="&transport;#NewRoadsAndStreetWorksNotice">
+        <rdfs:label rdf:datatype="&xsd;string">NewRoadsAndStreetWorksNotice class</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1502</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&transport;#TransportNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom rdf:resource="&transport;#NewRoadsAndStreetWorks"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="&transport;#PortsNotice"/>
+        <owl:disjointWith rdf:resource="&transport;#RailwaysNotice"/>
+        <owl:disjointWith rdf:resource="&transport;#RoadTrafficActsNotice"/>
+        <owl:disjointWith rdf:resource="&transport;#RoadsNIOrderNotice"/>
+        <owl:disjointWith rdf:resource="&transport;#TransportActsNotice"/>
+        <owl:disjointWith rdf:resource="&transport;#VehicleImpoundingNotice"/>
+        <rdfs:comment rdf:datatype="&xsd;string">New Roads And Street Works Notice (Type 1502)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#NewSpecification -->
+
+    <owl:Class rdf:about="&transport;#NewSpecification">
+        <rdfs:label rdf:datatype="&xsd;string">NewSpecification class</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&transport;#ChangeOfSpecification"/>
+        <owl:disjointWith rdf:resource="&transport;#RevokeSpecification"/>
+        <rdfs:comment rdf:datatype="&xsd;string">New Specification</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#NewSpeedLimit -->
+
+    <owl:Class rdf:about="&transport;#NewSpeedLimit">
+        <rdfs:subClassOf rdf:resource="&transport;#ChangeOfSpeedLimit"/>
+        <owl:disjointWith rdf:resource="&transport;#RevokeSpeedLimit"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#NewWaitingRestriction -->
+
+    <owl:Class rdf:about="&transport;#NewWaitingRestriction">
+        <rdfs:subClassOf rdf:resource="&transport;#WaitingRestrictionDuration"/>
+        <owl:disjointWith rdf:resource="&transport;#RevokeWaitingRestriction"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#NewZebraCrossing -->
+
+    <owl:Class rdf:about="&transport;#NewZebraCrossing">
+        <rdfs:subClassOf rdf:resource="&transport;#ChangeOfZebraCrossing"/>
+        <owl:disjointWith rdf:resource="&transport;#RevokeZebraCrossing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#PlatformConstruction -->
+
+    <owl:Class rdf:about="&transport;#PlatformConstruction">
+        <rdfs:subClassOf rdf:resource="&transport;#RailwayConstruction"/>
+        <owl:disjointWith rdf:resource="&transport;#StationConstruction"/>
+        <owl:disjointWith rdf:resource="&transport;#TunnelConstruction"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#Ports -->
+
+    <owl:Class rdf:about="&transport;#Ports">
+        <rdfs:subClassOf rdf:resource="&consultation;ConsultationThing"/>
+        <owl:disjointWith rdf:resource="&transport;#Prohibition"/>
+        <owl:disjointWith rdf:resource="&transport;#StreetWork"/>
+        <owl:disjointWith rdf:resource="&transport;#TransferOfOperator"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#PortsNotice -->
+
+    <owl:Class rdf:about="&transport;#PortsNotice">
+        <rdfs:label rdf:datatype="&xsd;string">PortsNotice class</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1507</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&transport;#TransportNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&consultation;StatutoryConsultationNotification"/>
+                            <rdf:Description rdf:about="&transport;#TransportThing"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="&transport;#RailwaysNotice"/>
+        <owl:disjointWith rdf:resource="&transport;#RoadTrafficActsNotice"/>
+        <owl:disjointWith rdf:resource="&transport;#RoadsNIOrderNotice"/>
+        <owl:disjointWith rdf:resource="&transport;#TransportActsNotice"/>
+        <owl:disjointWith rdf:resource="&transport;#VehicleImpoundingNotice"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Ports Notice (Type 1507)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#Prohibition -->
+
+    <owl:Class rdf:about="&transport;#Prohibition">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&transport;#ProhibitionOfStopping"/>
+                    <rdf:Description rdf:about="&transport;#ProhibitionOfTraffic"/>
+                    <rdf:Description rdf:about="&transport;#ProhibitionOfTurning"/>
+                    <rdf:Description rdf:about="&transport;#ProhibitionOfUse"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&consultation;ConsultationThing"/>
+        <owl:disjointWith rdf:resource="&transport;#StreetWork"/>
+        <owl:disjointWith rdf:resource="&transport;#TransferOfOperator"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#ProhibitionOfStopping -->
+
+    <owl:Class rdf:about="&transport;#ProhibitionOfStopping">
+        <rdfs:subClassOf rdf:resource="&transport;#Prohibition"/>
+        <owl:disjointWith rdf:resource="&transport;#ProhibitionOfTraffic"/>
+        <owl:disjointWith rdf:resource="&transport;#ProhibitionOfTurning"/>
+        <owl:disjointWith rdf:resource="&transport;#ProhibitionOfUse"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#ProhibitionOfTraffic -->
+
+    <owl:Class rdf:about="&transport;#ProhibitionOfTraffic">
+        <rdfs:subClassOf rdf:resource="&transport;#Prohibition"/>
+        <owl:disjointWith rdf:resource="&transport;#ProhibitionOfTurning"/>
+        <owl:disjointWith rdf:resource="&transport;#ProhibitionOfUse"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#ProhibitionOfTurning -->
+
+    <owl:Class rdf:about="&transport;#ProhibitionOfTurning">
+        <rdfs:subClassOf rdf:resource="&transport;#Prohibition"/>
+        <owl:disjointWith rdf:resource="&transport;#ProhibitionOfUse"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#ProhibitionOfUse -->
+
+    <owl:Class rdf:about="&transport;#ProhibitionOfUse">
+        <rdfs:subClassOf rdf:resource="&transport;#Prohibition"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#RailBridgeConstruction -->
+
+    <owl:Class rdf:about="&transport;#RailBridgeConstruction">
+        <rdfs:subClassOf rdf:resource="&transport;#BridgeConstruction"/>
+        <owl:disjointWith rdf:resource="&transport;#RoadBridgeConstruction"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#Railway -->
+
+    <owl:Class rdf:about="&transport;#Railway">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#RailwayConstruction -->
+
+    <owl:Class rdf:about="&transport;#RailwayConstruction">
+        <rdfs:subClassOf rdf:resource="&transport;#Construction"/>
+        <owl:disjointWith rdf:resource="&transport;#RoadConstruction"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#RailwayStation -->
+
+    <owl:Class rdf:about="&transport;#RailwayStation">
+        <rdfs:subClassOf rdf:resource="&ontology2;Feature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology2;featureClass"/>
+                <owl:hasValue rdf:resource="&ontology2;S"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology2;featureCode"/>
+                <owl:hasValue rdf:resource="&ontology2;S.RSTN"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#RailwaysNotice -->
+
+    <owl:Class rdf:about="&transport;#RailwaysNotice">
+        <rdfs:label rdf:datatype="&xsd;string">RailwaysNotice class</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1505</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&transport;#TransportNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&consultation;StatutoryConsultationNotification"/>
+                            <rdf:Description rdf:about="&transport;#TransportThing"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="&transport;#RoadTrafficActsNotice"/>
+        <owl:disjointWith rdf:resource="&transport;#RoadsNIOrderNotice"/>
+        <owl:disjointWith rdf:resource="&transport;#TransportActsNotice"/>
+        <owl:disjointWith rdf:resource="&transport;#VehicleImpoundingNotice"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Railways Notice (Type 1505)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#RapidTransitSystem -->
+
+    <owl:Class rdf:about="&transport;#RapidTransitSystem">
+        <rdfs:subClassOf rdf:resource="&transport;#UrbanTransit"/>
+        <owl:disjointWith rdf:resource="&transport;#Tram"/>
+        <owl:disjointWith rdf:resource="&transport;#Underground"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#RemoveRaisedTable -->
+
+    <owl:Class rdf:about="&transport;#RemoveRaisedTable">
+        <rdfs:subClassOf rdf:resource="&transport;#ChangeOfRaisedTable"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#RemoveRoadHump -->
+
+    <owl:Class rdf:about="&transport;#RemoveRoadHump">
+        <rdfs:subClassOf rdf:resource="&transport;#ChangeOfRoadHump"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#Resurfacing -->
+
+    <owl:Class rdf:about="&transport;#Resurfacing">
+        <rdfs:label rdf:datatype="&xsd;string">StreetWork class</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&transport;#CarriagewayResurfacing"/>
+                    <rdf:Description rdf:about="&transport;#FootwayResurfacing"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&transport;#StreetWork"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Recurfacing superclass</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#RevokeAtAnyTimeWaitingRestriction -->
+
+    <owl:Class rdf:about="&transport;#RevokeAtAnyTimeWaitingRestriction">
+        <rdfs:subClassOf rdf:resource="&transport;#AtAnyTimeWaitingRestriction"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#RevokeBusLane -->
+
+    <owl:Class rdf:about="&transport;#RevokeBusLane">
+        <rdfs:subClassOf rdf:resource="&transport;#ChangeOfBusLane"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#RevokeBusStop -->
+
+    <owl:Class rdf:about="&transport;#RevokeBusStop">
+        <rdfs:subClassOf rdf:resource="&transport;#ChangeOfBusStop"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#RevokeCyclePath -->
+
+    <owl:Class rdf:about="&transport;#RevokeCyclePath">
+        <rdfs:subClassOf rdf:resource="&transport;#ChangeOfCyclePath"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#RevokeDisabledParkingBay -->
+
+    <owl:Class rdf:about="&transport;#RevokeDisabledParkingBay">
+        <rdfs:label rdf:datatype="&xsd;string">RevokeDisabledParkingBay class</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&transport;#ChangeOfDisabledParkingBay"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Revoke existing disabled parking bay</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#RevokeParkingBay -->
+
+    <owl:Class rdf:about="&transport;#RevokeParkingBay">
+        <rdfs:subClassOf rdf:resource="&transport;#ChangeOfParkingBay"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#RevokePermitParkingBay -->
+
+    <owl:Class rdf:about="&transport;#RevokePermitParkingBay">
+        <rdfs:subClassOf rdf:resource="&transport;#ChangeOfPermitParkingBay"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#RevokeSpecification -->
+
+    <owl:Class rdf:about="&transport;#RevokeSpecification">
+        <rdfs:label rdf:datatype="&xsd;string">RevokeSpecification class</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&transport;#ChangeOfSpecification"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Revoke existing Specification</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#RevokeSpeedLimit -->
+
+    <owl:Class rdf:about="&transport;#RevokeSpeedLimit">
+        <rdfs:subClassOf rdf:resource="&transport;#ChangeOfSpeedLimit"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#RevokeWaitingRestriction -->
+
+    <owl:Class rdf:about="&transport;#RevokeWaitingRestriction">
+        <rdfs:subClassOf rdf:resource="&transport;#WaitingRestrictionDuration"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#RevokeZebraCrossing -->
+
+    <owl:Class rdf:about="&transport;#RevokeZebraCrossing">
+        <rdfs:subClassOf rdf:resource="&transport;#ChangeOfZebraCrossing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#RoadBridgeConstruction -->
+
+    <owl:Class rdf:about="&transport;#RoadBridgeConstruction">
+        <rdfs:subClassOf rdf:resource="&transport;#BridgeConstruction"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#RoadClosure -->
+
+    <owl:Class rdf:about="&transport;#RoadClosure">
+        <rdfs:subClassOf rdf:resource="&transport;#ChangeOfRoadUse"/>
+        <owl:disjointWith rdf:resource="&transport;#RoadWidthRestriction"/>
+        <owl:disjointWith rdf:resource="&transport;#StoppingUp"/>
+        <owl:disjointWith rdf:resource="&transport;#TrafficRestriction"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#RoadConstruction -->
+
+    <owl:Class rdf:about="&transport;#RoadConstruction">
+        <rdfs:subClassOf rdf:resource="&transport;#Construction"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#RoadTrafficActsNotice -->
+
+    <owl:Class rdf:about="&transport;#RoadTrafficActsNotice">
+        <rdfs:label rdf:datatype="&xsd;string">RoadTrafficActsNotice class</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1501</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&transport;#TransportNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&consultation;StatutoryConsultationNotification"/>
+                            <rdf:Description rdf:about="&transport;#TransportThing"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="&transport;#RoadsNIOrderNotice"/>
+        <owl:disjointWith rdf:resource="&transport;#TransportActsNotice"/>
+        <owl:disjointWith rdf:resource="&transport;#VehicleImpoundingNotice"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Road Traffic Acts Notice (Type 1501)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#RoadWidthRestriction -->
+
+    <owl:Class rdf:about="&transport;#RoadWidthRestriction">
+        <rdfs:subClassOf rdf:resource="&transport;#ChangeOfRoadUse"/>
+        <owl:disjointWith rdf:resource="&transport;#StoppingUp"/>
+        <owl:disjointWith rdf:resource="&transport;#TrafficRestriction"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#RoadsNIOrderNotice -->
+
+    <owl:Class rdf:about="&transport;#RoadsNIOrderNotice">
+        <rdfs:label rdf:datatype="&xsd;string">RoadsNIOrderNotice class</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1510</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&transport;#TransportNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&consultation;StatutoryConsultationNotification"/>
+                            <rdf:Description rdf:about="&transport;#TransportThing"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="&transport;#TransportActsNotice"/>
+        <owl:disjointWith rdf:resource="&transport;#VehicleImpoundingNotice"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Roads NI Order Notice (Type 1510)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#StandardGauge -->
+
+    <owl:Class rdf:about="&transport;#StandardGauge">
+        <rdfs:subClassOf rdf:resource="&transport;#Gauge"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#StationConstruction -->
+
+    <owl:Class rdf:about="&transport;#StationConstruction">
+        <rdfs:subClassOf rdf:resource="&transport;#RailwayConstruction"/>
+        <owl:disjointWith rdf:resource="&transport;#TunnelConstruction"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#StoppingUp -->
+
+    <owl:Class rdf:about="&transport;#StoppingUp">
+        <rdfs:subClassOf rdf:resource="&transport;#ChangeOfRoadUse"/>
+        <owl:disjointWith rdf:resource="&transport;#TrafficRestriction"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#StreetWork -->
+
+    <owl:Class rdf:about="&transport;#StreetWork">
+        <rdfs:label rdf:datatype="&xsd;string">StreetWork class</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&transport;#KerbRealignment"/>
+                    <rdf:Description rdf:about="&transport;#Resurfacing"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&consultation;ConsultationThing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&transport;#startDate"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="&transport;#TransferOfOperator"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Street Work</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#TrafficRestriction -->
+
+    <owl:Class rdf:about="&transport;#TrafficRestriction">
+        <rdfs:subClassOf rdf:resource="&transport;#ChangeOfRoadUse"/>
+    </owl:Class>
+    
+    <!-- https://www.thegazette.co.uk/def/transport#SubjectElement -->
+
+    <owl:Class rdf:about="&transport;#SubjectElement">
+    </owl:Class>
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#Tram -->
+
+    <owl:Class rdf:about="&transport;#Tram">
+        <rdfs:subClassOf rdf:resource="&transport;#UrbanTransit"/>
+        <owl:disjointWith rdf:resource="&transport;#Underground"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#TransferOfOperator -->
+
+    <owl:Class rdf:about="&transport;#TransferOfOperator">
+        <rdfs:subClassOf rdf:resource="&consultation;ConsultationThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#TransportActsNotice -->
+
+    <owl:Class rdf:about="&transport;#TransportActsNotice">
+        <rdfs:label rdf:datatype="&xsd;string">TransportActsNotice class</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1506</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&transport;#TransportNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&consultation;StatutoryConsultationNotification"/>
+                            <rdf:Description rdf:about="&transport;#TransportThing"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="&transport;#VehicleImpoundingNotice"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Transport Acts Notice (Type 1506)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#TransportNotice -->
+
+    <owl:Class rdf:about="&transport;#TransportNotice">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&transport;#CivilAviationNotice"/>
+                    <rdf:Description rdf:about="&transport;#CycleTracksNotice"/>
+                    <rdf:Description rdf:about="&transport;#HighwaysNotice"/>
+                    <rdf:Description rdf:about="&transport;#LondonHackneyCarriagesNotice"/>
+                    <rdf:Description rdf:about="&transport;#NewRoadsAndStreetWorksNotice"/>
+                    <rdf:Description rdf:about="&transport;#PortsNotice"/>
+                    <rdf:Description rdf:about="&transport;#RailwaysNotice"/>
+                    <rdf:Description rdf:about="&transport;#RoadTrafficActsNotice"/>
+                    <rdf:Description rdf:about="&transport;#RoadsNIOrderNotice"/>
+                    <rdf:Description rdf:about="&transport;#TransportActsNotice"/>
+                    <rdf:Description rdf:about="&transport;#VehicleImpoundingNotice"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&ontology;PNBNotice"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#TransportThing -->
+
+    <owl:Class rdf:about="&transport;#TransportThing">
+        <rdfs:label rdf:datatype="&xsd;string">TransportThing class</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&transport;#CivilAviation"/>
+                    <rdf:Description rdf:about="&transport;#NewRoadsAndStreetWorks"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&ontology;PNBThing"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Transport Things</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#TunnelConstruction -->
+
+    <owl:Class rdf:about="&transport;#TunnelConstruction">
+        <rdfs:subClassOf rdf:resource="&transport;#RailwayConstruction"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#Underground -->
+
+    <owl:Class rdf:about="&transport;#Underground">
+        <rdfs:subClassOf rdf:resource="&transport;#UrbanTransit"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#UrbanTransit -->
+
+    <owl:Class rdf:about="&transport;#UrbanTransit">
+        <rdfs:subClassOf rdf:resource="&transport;#Railway"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#VehicleImpoundingNotice -->
+
+    <owl:Class rdf:about="&transport;#VehicleImpoundingNotice">
+        <rdfs:label rdf:datatype="&xsd;string">VehicleImpoundingNotice class</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1511</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&transport;#TransportNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&consultation;StatutoryConsultationNotification"/>
+                            <rdf:Description rdf:about="&transport;#TransportThing"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="&xsd;string">Vehicle Impounding Notice (Type 1511)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/transport#WaitingRestrictionDuration -->
+
+    <owl:Class rdf:about="&transport;#WaitingRestrictionDuration">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&transport;#AmendWaitingRestriction"/>
+                    <rdf:Description rdf:about="&transport;#NewWaitingRestriction"/>
+                    <rdf:Description rdf:about="&transport;#RevokeWaitingRestriction"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&transport;#ChangeOfWaitingRestriction"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.geonames.org/ontology#S -->
+
+    <owl:NamedIndividual rdf:about="&ontology2;S"/>
+    
+
+
+    <!-- http://www.geonames.org/ontology#S.RSTN -->
+
+    <owl:NamedIndividual rdf:about="&ontology2;S.RSTN"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.2.1789) http://owlapi.sourceforge.net -->
+

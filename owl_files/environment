@@ -1,0 +1,753 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf:RDF [
+    <!ENTITY dcterms "http://purl.org/dc/terms/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY water "https://www.thegazette.co.uk/def/water#" >
+    <!ENTITY person "https://www.thegazette.co.uk/def/person#" >
+    <!ENTITY wgs84_pos "http://www.w3.org/2003/01/geo/wgs84_pos#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY authority "https://www.thegazette.co.uk/def/authority#" >
+    <!ENTITY transport "https://www.thegazette.co.uk/def/transport#" >
+    <!ENTITY publication "https://www.thegazette.co.uk/def/publication#" >
+    <!ENTITY environment "https://www.thegazette.co.uk/def/environment#" >
+    <!ENTITY consultation "https://www.thegazette.co.uk/def/consultation#" >
+    <!ENTITY organisation "https://www.thegazette.co.uk/def/organisation#" >
+	<!ENTITY legislation "https://www.thegazette.co.uk/def/legislation#" >
+	<!ENTITY location "https://www.thegazette.co.uk/def/location#" >
+	<!ENTITY ns "http://www.w3.org/2006/vcard/ns#" >
+	<!ENTITY ontology "https://www.thegazette.co.uk/def/publication#" >
+	<!ENTITY planning "https://www.thegazette.co.uk/def/planning#" >
+]>
+
+<rdf:RDF xmlns="https://www.thegazette.co.uk/def/environment#"
+     xml:base="https://www.thegazette.co.uk/def/environment"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:legislation="https://www.thegazette.co.uk/def/legislation#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<owl:Ontology rdf:about="">
+		<dc:description xml:lang="en"
+            >Environment Notice module
+
+  		This is a beta version, and you should expect it to change.
+		</dc:description>
+		<dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Gazette Environment Notice Ontology</dc:title>
+		<dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2008-09-18</dcterms:created>
+		<dcterms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Griff Chamberlain, The Stationery Office, mark.chamberlain@tso.co.uk</dcterms:creator>
+	</owl:Ontology>
+
+
+
+	<!--NOTICE TYPES-->
+				
+<!-- https://www.thegazette.co.uk/def/environment#ImpactAssesments -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/environment#ImpactAssesments">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/environment#EnvironmentThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/environment#ImpactAssesmentsNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/environment#ImpactAssesmentsNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">NEW</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/environment#EnvironmentNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom>
+                    <owl:Class  rdf:about="https://www.thegazette.co.uk/def/environment#ImpactAssesments"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+	<owl:Class rdf:ID="CleanAirNotice">
+		<owl:equivalentClass>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+				<owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1801</owl:hasValue>
+			</owl:Restriction>
+		</owl:equivalentClass>
+		<rdfs:subClassOf rdf:resource="#EnvironmentNotice"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ontology;isAbout"/>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<owl:Class rdf:about="#EnvironmentThing"/>
+							<owl:Class rdf:about="&consultation;StatutoryConsultationNotification"/>
+						</owl:unionOf>
+					</owl:Class>
+				</owl:allValuesFrom>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#CoastProtectionNotice"/>
+		<owl:disjointWith rdf:resource="#ControlOfPollutionNotice"/>
+		<owl:disjointWith rdf:resource="#EnvironmentalProtectionNotice"/>
+		<owl:disjointWith rdf:resource="#FloodPreventionNotice"/>
+		<owl:disjointWith rdf:resource="#HarboursNotice"/>
+		<owl:disjointWith rdf:resource="#NationalParksAndAccessToTheCountrysideNotice"/>
+		<owl:disjointWith rdf:resource="#WildlifeAndCountrysideNotice"/>
+	</owl:Class>
+
+	<owl:Class rdf:ID="CoastProtectionNotice">
+		<owl:equivalentClass>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+				<owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1804</owl:hasValue>
+			</owl:Restriction>
+		</owl:equivalentClass>
+		<rdfs:subClassOf rdf:resource="#EnvironmentNotice"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ontology;isAbout"/>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<owl:Class rdf:about="#EnvironmentThing"/>
+							<owl:Class rdf:about="&consultation;StatutoryConsultationNotification"/>
+						</owl:unionOf>
+					</owl:Class>
+				</owl:allValuesFrom>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#CleanAirNotice"/>
+		<owl:disjointWith rdf:resource="#ControlOfPollutionNotice"/>
+		<owl:disjointWith rdf:resource="#EnvironmentalProtectionNotice"/>
+		<owl:disjointWith rdf:resource="#FloodPreventionNotice"/>
+		<owl:disjointWith rdf:resource="#HarboursNotice"/>
+		<owl:disjointWith rdf:resource="#NationalParksAndAccessToTheCountrysideNotice"/>
+		<owl:disjointWith rdf:resource="#WildlifeAndCountrysideNotice"/>
+	</owl:Class>
+
+	<owl:Class rdf:ID="ControlOfPollutionNotice">
+		<owl:equivalentClass>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+				<owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1802</owl:hasValue>
+			</owl:Restriction>
+		</owl:equivalentClass>
+		<rdfs:subClassOf rdf:resource="#EnvironmentNotice"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ontology;isAbout"/>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<owl:Class rdf:about="#EnvironmentThing"/>
+							<owl:Class rdf:about="&consultation;StatutoryConsultationNotification"/>
+						</owl:unionOf>
+					</owl:Class>
+				</owl:allValuesFrom>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#CleanAirNotice"/>
+		<owl:disjointWith rdf:resource="#CoastProtectionNotice"/>
+		<owl:disjointWith rdf:resource="#EnvironmentalProtectionNotice"/>
+		<owl:disjointWith rdf:resource="#FloodPreventionNotice"/>
+		<owl:disjointWith rdf:resource="#HarboursNotice"/>
+		<owl:disjointWith rdf:resource="#NationalParksAndAccessToTheCountrysideNotice"/>
+		<owl:disjointWith rdf:resource="#WildlifeAndCountrysideNotice"/>
+	</owl:Class>
+
+	<owl:Class rdf:ID="EnvironmentalProtectionNotice">
+		<owl:equivalentClass>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+				<owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1803</owl:hasValue>
+			</owl:Restriction>
+		</owl:equivalentClass>
+		<rdfs:subClassOf rdf:resource="#EnvironmentNotice"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ontology;isAbout"/>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<owl:Class rdf:about="#EnvironmentThing"/>
+							<owl:Class rdf:about="&consultation;StatutoryConsultationNotification"/>
+						</owl:unionOf>
+					</owl:Class>
+				</owl:allValuesFrom>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#CleanAirNotice"/>
+		<owl:disjointWith rdf:resource="#ControlOfPollutionNotice"/>
+		<owl:disjointWith rdf:resource="#CoastProtectionNotice"/>
+		<owl:disjointWith rdf:resource="#FloodPreventionNotice"/>
+		<owl:disjointWith rdf:resource="#HarboursNotice"/>
+		<owl:disjointWith rdf:resource="#NationalParksAndAccessToTheCountrysideNotice"/>
+		<owl:disjointWith rdf:resource="#WildlifeAndCountrysideNotice"/>
+	</owl:Class>
+
+	<owl:Class rdf:ID="EnvironmentNotice">
+		<owl:equivalentClass>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<owl:Class rdf:about="#CleanAirNotice"/>
+					<owl:Class rdf:about="#CoastProtectionNotice"/>
+					<owl:Class rdf:about="#ControlOfPollutionNotice"/>
+					<owl:Class rdf:about="#EnvironmentalProtectionNotice"/>
+					<owl:Class rdf:about="#FloodPreventionNotice"/>
+					<owl:Class rdf:about="#HarboursNotice"/>
+					<owl:Class rdf:about="#NationalParksAndAccessToTheCountrysideNotice"/>
+					<owl:Class rdf:about="#WildlifeAndCountrysideNotice"/>
+				</owl:unionOf>
+			</owl:Class>
+		</owl:equivalentClass>
+		<rdfs:subClassOf rdf:resource="&planning;PlanningAndEnvironmentNotice"/>
+	</owl:Class>
+
+	<owl:Class rdf:ID="FloodPreventionNotice">
+		<owl:equivalentClass>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+				<owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1808</owl:hasValue>
+			</owl:Restriction>
+		</owl:equivalentClass>
+		<rdfs:subClassOf rdf:resource="#EnvironmentNotice"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ontology;isAbout"/>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<owl:Class rdf:about="#EnvironmentThing"/>
+							<owl:Class rdf:about="&consultation;StatutoryConsultationNotification"/>
+						</owl:unionOf>
+					</owl:Class>
+				</owl:allValuesFrom>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#WildlifeAndCountrysideNotice"/>
+		<owl:disjointWith rdf:resource="#ControlOfPollutionNotice"/>
+		<owl:disjointWith rdf:resource="#CoastProtectionNotice"/>
+		<owl:disjointWith rdf:resource="#EnvironmentalProtectionNotice"/>
+		<owl:disjointWith rdf:resource="#HarboursNotice"/>
+		<owl:disjointWith rdf:resource="#NationalParksAndAccessToTheCountrysideNotice"/>
+		<owl:disjointWith rdf:resource="#CleanAirNotice"/>
+	</owl:Class>
+
+	<owl:Class rdf:ID="HarboursNotice">
+		<owl:equivalentClass>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+				<owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1807</owl:hasValue>
+			</owl:Restriction>
+		</owl:equivalentClass>
+		<rdfs:subClassOf rdf:resource="#EnvironmentNotice"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ontology;isAbout"/>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<owl:Class rdf:about="#EnvironmentThing"/>
+							<owl:Class rdf:about="&consultation;StatutoryConsultationNotification"/>
+						</owl:unionOf>
+					</owl:Class>
+				</owl:allValuesFrom>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#WildlifeAndCountrysideNotice"/>
+		<owl:disjointWith rdf:resource="#ControlOfPollutionNotice"/>
+		<owl:disjointWith rdf:resource="#CoastProtectionNotice"/>
+		<owl:disjointWith rdf:resource="#CleanAirNotice"/>
+		<owl:disjointWith rdf:resource="#NationalParksAndAccessToTheCountrysideNotice"/>
+		<owl:disjointWith rdf:resource="#FloodPreventionNotice"/>
+		<owl:disjointWith rdf:resource="#EnvironmentalProtectionNotice"/>
+	</owl:Class>
+
+	<owl:DatatypeProperty rdf:ID="dateSigned">
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+		<rdfs:domain rdf:resource="#EnvironmentThing"/>
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+	</owl:DatatypeProperty>
+
+	<owl:Class rdf:ID="NationalParksAndAccessToTheCountrysideNotice">
+		<owl:equivalentClass>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+				<owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1805</owl:hasValue>
+			</owl:Restriction>
+		</owl:equivalentClass>
+		<rdfs:subClassOf rdf:resource="#EnvironmentNotice"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ontology;isAbout"/>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<owl:Class rdf:about="#EnvironmentThing"/>
+							<owl:Class rdf:about="&consultation;StatutoryConsultationNotification"/>
+						</owl:unionOf>
+					</owl:Class>
+				</owl:allValuesFrom>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#CoastProtectionNotice"/>
+		<owl:disjointWith rdf:resource="#EnvironmentalProtectionNotice"/>
+		<owl:disjointWith rdf:resource="#CleanAirNotice"/>
+		<owl:disjointWith rdf:resource="#FloodPreventionNotice"/>
+		<owl:disjointWith rdf:resource="#WildlifeAndCountrysideNotice"/>
+		<owl:disjointWith rdf:resource="#HarboursNotice"/>
+		<owl:disjointWith rdf:resource="#ControlOfPollutionNotice"/>
+	</owl:Class>
+
+	<owl:Class rdf:ID="WildlifeAndCountrysideNotice">
+		<owl:equivalentClass>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+				<owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1806</owl:hasValue>
+			</owl:Restriction>
+		</owl:equivalentClass>
+		<rdfs:subClassOf rdf:resource="#EnvironmentNotice"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ontology;isAbout"/>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<owl:Class rdf:about="#EnvironmentThing"/>
+							<owl:Class rdf:about="&consultation;StatutoryConsultationNotification"/>
+						</owl:unionOf>
+					</owl:Class>
+				</owl:allValuesFrom>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#CleanAirNotice"/>
+		<owl:disjointWith rdf:resource="#ControlOfPollutionNotice"/>
+		<owl:disjointWith rdf:resource="#NationalParksAndAccessToTheCountrysideNotice"/>
+		<owl:disjointWith rdf:resource="#EnvironmentalProtectionNotice"/>
+		<owl:disjointWith rdf:resource="#CoastProtectionNotice"/>
+		<owl:disjointWith rdf:resource="#HarboursNotice"/>
+		<owl:disjointWith rdf:resource="#FloodPreventionNotice"/>
+	</owl:Class>
+
+	
+	<!--ENVIRONMENTAL THINGS-->
+	<owl:Class rdf:ID="EnvironmentThing">
+		<owl:equivalentClass>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<owl:Class rdf:about="#Permit"/>
+					<owl:Class rdf:about="#DeclarationOfNatureReserve"/>
+				</owl:unionOf>
+			</owl:Class>
+		</owl:equivalentClass>
+		<rdfs:subClassOf rdf:resource="&planning;PlanningAndEnvironmentThing"/>
+	</owl:Class>	
+
+	<owl:Class rdf:about="#Permit">
+		<rdfs:subClassOf rdf:resource="#EnvironmentThing"/>
+		<owl:equivalentClass>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<owl:Class rdf:about="#EnvironmentalPermit"/>
+					<owl:Class rdf:about="#IntegratedPollutionPreventionAndControlPermit"/>
+				</owl:unionOf>
+			</owl:Class>
+		</owl:equivalentClass>
+		<owl:disjointWith rdf:resource="#DeclarationOfNatureReserve"/>
+	</owl:Class>	
+
+	<owl:Class rdf:about="#DeclarationOfNatureReserve">
+		<rdfs:subClassOf rdf:resource="#EnvironmentThing"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#isAboutDocument"/>
+				<owl:allValuesFrom rdf:resource="&legislation;Declaration"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#Permit"/>
+	</owl:Class>
+
+	<owl:Class rdf:about="#IntegratedPollutionPreventionAndControlPermit">
+		<rdfs:subClassOf rdf:resource="#Permit"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ontology;isEnabledByLegislation"/>
+				<owl:hasValue rdf:resource="http://www.legislation.gov.uk/id/#pollution-prevention-and-control-(england-and-wales)-regulations-2000/section/10"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:equivalentClass>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<owl:Class rdf:about="#IntegratedPollutionPreventionAndControlPermitApplication"/>
+					<owl:Class rdf:about="#IntegratedPollutionPreventionAndControlPermitRevocation"/>
+					<owl:Class rdf:about="#IntegratedPollutionPreventionAndControlPermitVariation"/>
+				</owl:unionOf>
+			</owl:Class>
+		</owl:equivalentClass>
+		<owl:disjointWith rdf:resource="#EnvironmentalPermit"/>
+	</owl:Class>	
+
+	<owl:Class rdf:about="#EnvironmentalPermit">
+		<rdfs:subClassOf rdf:resource="#Permit"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ontology;isEnabledByLegislation"/>
+				<owl:hasValue rdf:resource="http://www.legislation.gov.uk/id/#environmental-permitting-(england-and-wales)-regulations-2007"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:equivalentClass>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<owl:Class rdf:about="#EnvironmentalPermitApplication"/>
+					<owl:Class rdf:about="#EnvironmentalPermitRevocation"/>
+					<owl:Class rdf:about="#EnvironmentalPermitVariation"/>
+				</owl:unionOf>
+			</owl:Class>
+		</owl:equivalentClass>
+		<owl:disjointWith rdf:resource="#IntegratedPollutionPreventionAndControlPermit"/>
+	</owl:Class>	
+
+	<owl:Class rdf:about="#IntegratedPollutionPreventionAndControlPermitApplication">
+		<rdfs:subClassOf rdf:resource="#IntegratedPollutionPreventionAndControlPermit"/>
+		<owl:disjointWith rdf:resource="#IntegratedPollutionPreventionAndControlPermitRevocation"/>
+		<owl:disjointWith rdf:resource="#IntegratedPollutionPreventionAndControlPermitVariation"/>
+	</owl:Class>
+
+	<owl:Class rdf:about="#IntegratedPollutionPreventionAndControlPermitRevocation">
+		<rdfs:subClassOf rdf:resource="#IntegratedPollutionPreventionAndControlPermit"/>
+		<owl:disjointWith rdf:resource="#IntegratedPollutionPreventionAndControlPermitApplication"/>
+		<owl:disjointWith rdf:resource="#IntegratedPollutionPreventionAndControlPermitVariation"/>
+	</owl:Class>
+
+	<owl:Class rdf:about="#IntegratedPollutionPreventionAndControlPermitVariation">
+		<rdfs:subClassOf rdf:resource="#IntegratedPollutionPreventionAndControlPermit"/>
+		<owl:disjointWith rdf:resource="#IntegratedPollutionPreventionAndControlPermitRevocation"/>
+		<owl:disjointWith rdf:resource="#IntegratedPollutionPreventionAndControlPermitApplication"/>
+	</owl:Class>	
+
+	<owl:Class rdf:about="#EnvironmentalPermitApplication">
+		<rdfs:subClassOf rdf:resource="#EnvironmentalPermit"/>
+		<owl:disjointWith rdf:resource="#EnvironmentalPermitRevocation"/>
+		<owl:disjointWith rdf:resource="#EnvironmentalPermitVariation"/>
+	</owl:Class>
+
+	<owl:Class rdf:about="#EnvironmentalPermitRevocation">
+		<rdfs:subClassOf rdf:resource="#EnvironmentalPermit"/>
+		<owl:disjointWith rdf:resource="#EnvironmentalPermitApplication"/>
+		<owl:disjointWith rdf:resource="#EnvironmentalPermitVariation"/>
+	</owl:Class>
+
+	<owl:Class rdf:about="#EnvironmentalPermitVariation">
+		<rdfs:subClassOf rdf:resource="#EnvironmentalPermit"/>
+		<owl:disjointWith rdf:resource="#EnvironmentalPermitApplication"/>
+		<owl:disjointWith rdf:resource="#EnvironmentalPermitRevocation"/>
+	</owl:Class>	
+	
+	<owl:ObjectProperty rdf:ID="isAboutDocument">
+		<rdfs:domain rdf:resource="#EnvironmentThing"/>
+		<rdfs:range rdf:resource="&consultation;Document"/>
+	</owl:ObjectProperty>	
+
+	<owl:ObjectProperty rdf:ID="hasAppliedTo">
+		<rdfs:domain rdf:resource="#Permit"/>
+		<rdfs:range rdf:resource="&organisation;Organisation"/>
+	</owl:ObjectProperty>		
+
+	<owl:ObjectProperty rdf:ID="hasApplicant">
+		<rdfs:domain rdf:resource="#Permit"/>
+		<rdfs:range rdf:resource="&organisation;Organisation"/>
+	</owl:ObjectProperty>		
+
+
+
+<!--CONSULTATION THINGS -->	
+
+	<owl:Class rdf:about="#ChangeOfSmokeControl">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">superclass for all smoke control classes</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SmokeControl class</rdfs:label>
+		<rdfs:subClassOf rdf:resource="&consultation;ConsultationThing"/>
+		<owl:equivalentClass>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<owl:Class rdf:about="#NewSmokeControlArea"/>
+					<owl:Class rdf:about="#RevokeSmokeControlArea"/>
+					<owl:Class rdf:about="#VariationOfSmokeControlArea"/>
+					<owl:Class rdf:about="#SmokeControlExemption"/>
+				</owl:unionOf>
+			</owl:Class>
+		</owl:equivalentClass>
+		<owl:disjointWith rdf:resource="#DesignateNoiseAbatementZone"/>
+		<owl:disjointWith rdf:resource="#ChangeOfNationalNatureReserve"/>
+		<owl:disjointWith rdf:resource="#OperationOfInstallation"/>
+		<owl:disjointWith rdf:resource="#ChangeOfFootpath"/>
+		<owl:disjointWith rdf:resource="#CoastalProtectionWork"/>
+	</owl:Class>
+
+	<owl:Class rdf:about="#NewSmokeControlArea">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">designation of a new smoke control area</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NewSmokeControlArea class</rdfs:label>
+		<rdfs:subClassOf rdf:resource="#ChangeOfSmokeControl"/>
+		<owl:disjointWith rdf:resource="#RevokeSmokeControlArea"/>
+		<owl:disjointWith rdf:resource="#VariationOfSmokeControlArea"/>
+		<owl:disjointWith rdf:resource="#SmokeControlExemption"/>
+	</owl:Class>
+
+	
+	<owl:Class rdf:about="#RevokeSmokeControlArea">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">revoke a smoke control area</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RevokeSmokeControlArea class</rdfs:label>
+		<rdfs:subClassOf rdf:resource="#ChangeOfSmokeControl"/>
+		<owl:disjointWith rdf:resource="#NewSmokeControlArea"/>
+		<owl:disjointWith rdf:resource="#VariationOfSmokeControlArea"/>
+		<owl:disjointWith rdf:resource="#SmokeControlExemption"/>
+	</owl:Class>	
+	
+	<owl:Class rdf:about="#VariationOfSmokeControlArea">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">change smoke control area boundaries</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">VariationOfSmokeControlArea class</rdfs:label>
+		<rdfs:subClassOf rdf:resource="#ChangeOfSmokeControl"/>
+		<owl:disjointWith rdf:resource="#NewSmokeControlArea"/>
+		<owl:disjointWith rdf:resource="#RevokeSmokeControlArea"/>
+		<owl:disjointWith rdf:resource="#SmokeControlExemption"/>
+	</owl:Class>	
+	
+	<owl:Class rdf:about="#SmokeControlExemption">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">exemption within a smoke control area</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SmokeControlExemption class</rdfs:label>
+		<rdfs:subClassOf rdf:resource="#ChangeOfSmokeControl"/>
+		<owl:disjointWith rdf:resource="#NewSmokeControlArea"/>
+		<owl:disjointWith rdf:resource="#RevokeSmokeControlArea"/>
+		<owl:disjointWith rdf:resource="#VariationOfSmokeControlArea"/>
+	</owl:Class>	
+
+	
+	<owl:ObjectProperty rdf:ID="hasExemptedProperty">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">location within smoke control area that is exempted from the control</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasExemptedProperty property</rdfs:label>
+		<rdfs:domain rdf:resource="#SmokeControlExemption"/>
+		<rdfs:range rdf:resource="http://www.geonames.org/ontology#Feature"/>
+	</owl:ObjectProperty>	
+
+	<owl:ObjectProperty rdf:ID="hasSmokeControlAreaBoundaries">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">locations that mark the boundaries to an Smoke Control Area</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasSmokeControlAreaBoundaries property</rdfs:label>
+		<rdfs:domain rdf:resource="#ChangeOfSmokeControl"/>
+		<rdfs:range rdf:resource="http://www.geonames.org/ontology#Feature"/>
+	</owl:ObjectProperty>	
+	
+<!--AIR QUALITY-->
+	<owl:Class rdf:about="#ChangeAirQualityManagementArea">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">superclass for all Air Quality Management Area classes</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ChangeAirQualityManagementArea class</rdfs:label>
+		<rdfs:subClassOf rdf:resource="&consultation;ConsultationThing"/>
+		<owl:equivalentClass>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<owl:Class rdf:about="#NewAirQualityManagementArea"/>
+					<owl:Class rdf:about="#RevokeAirQualityManagementArea"/>
+					<owl:Class rdf:about="#VariationOfAirQualityManagementArea"/>
+				</owl:unionOf>
+			</owl:Class>
+		</owl:equivalentClass>
+		<owl:disjointWith rdf:resource="#DesignateNoiseAbatementZone"/>
+		<owl:disjointWith rdf:resource="#ChangeOfNationalNatureReserve"/>
+		<owl:disjointWith rdf:resource="#OperationOfInstallation"/>
+		<owl:disjointWith rdf:resource="#ChangeOfFootpath"/>
+		<owl:disjointWith rdf:resource="#CoastalProtectionWork"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="#NewAirQualityManagementArea">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">designation of a new air quality management area</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NewAirQualityManagementArea class</rdfs:label>
+		<rdfs:subClassOf rdf:resource="#ChangeAirQualityManagementArea"/>
+		<owl:disjointWith rdf:resource="#RevokeAirQualityManagementArea"/>
+		<owl:disjointWith rdf:resource="#VariationOfAirQualityManagementArea"/>
+	</owl:Class>	
+
+	<owl:Class rdf:about="#RevokeAirQualityManagementArea">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">revoke an existing air quality management area</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RevokeAirQualityManagementArea class</rdfs:label>
+		<rdfs:subClassOf rdf:resource="#ChangeAirQualityManagementArea"/>
+		<owl:disjointWith rdf:resource="#NewAirQualityManagementArea"/>
+		<owl:disjointWith rdf:resource="#VariationOfAirQualityManagementArea"/>
+	</owl:Class>	
+	
+	<owl:Class rdf:about="#VariationOfAirQualityManagementArea">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">variation an existing air quality management area</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RevokeAirQualityManagementArea class</rdfs:label>
+		<rdfs:subClassOf rdf:resource="#ChangeAirQualityManagementArea"/>
+		<owl:disjointWith rdf:resource="#NewAirQualityManagementArea"/>
+		<owl:disjointWith rdf:resource="#RevokeAirQualityManagementArea"/>
+	</owl:Class>	
+
+
+	
+	<owl:ObjectProperty rdf:ID="hasAirQualityManagementAreaBoundaries">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">locations that mark the boundaries to an Air Quality Management Area</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasAirQualityManagementAreaBoundaries property</rdfs:label>
+		<rdfs:domain rdf:resource="#ChangeAirQualityManagementArea"/>
+		<rdfs:range rdf:resource="http://www.geonames.org/ontology#Feature"/>
+	</owl:ObjectProperty>	
+
+
+
+
+	<owl:Class rdf:about="#OperationOfInstallation">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">an operation of an installation</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OperationOfInstallation class</rdfs:label>
+		<rdfs:subClassOf rdf:resource="&consultation;ConsultationThing"/>
+		<owl:disjointWith rdf:resource="#DesignateNoiseAbatementZone"/>
+		<owl:disjointWith rdf:resource="#ChangeOfNationalNatureReserve"/>
+		<owl:disjointWith rdf:resource="#ChangeOfSmokeControl"/>
+		<owl:disjointWith rdf:resource="#CoastalProtectionWork"/>
+		<owl:disjointWith rdf:resource="#ChangeOfFootpath"/>
+	</owl:Class>
+
+	<owl:DatatypeProperty rdf:ID="typeOfInstallation">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">type of installation</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">typeOfInstallation property</rdfs:label>
+		<rdfs:domain rdf:resource="#OperationOfInstallation"/>
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+	</owl:DatatypeProperty>	
+
+	<owl:Class rdf:about="#DesignateNoiseAbatementZone">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">designated noise abatement zone</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DesignateNoiseAbatementZone class</rdfs:label>
+		<rdfs:subClassOf rdf:resource="&consultation;ConsultationThing"/>
+		<owl:disjointWith rdf:resource="#OperationOfInstallation"/>
+		<owl:disjointWith rdf:resource="#ChangeOfNationalNatureReserve"/>
+		<owl:disjointWith rdf:resource="#ChangeOfSmokeControl"/>
+		<owl:disjointWith rdf:resource="#CoastalProtectionWork"/>
+		<owl:disjointWith rdf:resource="#ChangeOfFootpath"/>
+	</owl:Class>
+
+	<!--NATIONAL PARKS-->
+
+
+
+	<owl:Class rdf:about="#ChangeOfNationalNatureReserve">
+		<!--maybe this should be a subclass to geoName:Feature -->
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">national nature reserve</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NationalNatureReserve class</rdfs:label>
+		<rdfs:subClassOf rdf:resource="&consultation;ConsultationThing"/>
+		<owl:equivalentClass>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<owl:Class rdf:about="#NewNationalNatureReserve"/>
+					<owl:Class rdf:about="#RevokeNationalNatureReserve"/>
+					<owl:Class rdf:about="#VariationOfNationalNatureReserve"/>
+				</owl:unionOf>
+			</owl:Class>
+		</owl:equivalentClass>
+		<owl:disjointWith rdf:resource="#DesignateNoiseAbatementZone"/>
+		<owl:disjointWith rdf:resource="#OperationOfInstallation"/>
+		<owl:disjointWith rdf:resource="#ChangeOfSmokeControl"/>
+		<owl:disjointWith rdf:resource="#CoastalProtectionWork"/>
+		<owl:disjointWith rdf:resource="#ChangeOfFootpath"/>
+	</owl:Class>
+
+	<owl:Class rdf:about="#NewNationalNatureReserve">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">new national nature reserve</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NewNationalNatureReserve class</rdfs:label>
+		<rdfs:subClassOf rdf:resource="#ChangeOfNationalNatureReserve"/>
+		<owl:disjointWith rdf:resource="#RevokeNationalNatureReserve"/>
+		<owl:disjointWith rdf:resource="#VariationOfNationalNatureReserve"/>
+	</owl:Class>	
+
+	<owl:Class rdf:about="#RevokeNationalNatureReserve">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">revoke existing national nature reserve</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RevokeNationalNatureReserve class</rdfs:label>
+		<rdfs:subClassOf rdf:resource="#ChangeOfNationalNatureReserve"/>
+		<owl:disjointWith rdf:resource="#VariationOfNationalNatureReserve"/>
+		<owl:disjointWith rdf:resource="#NewNationalNatureReserve"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="#VariationOfNationalNatureReserve">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">variation of national nature reserve boundaries</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">VariationOfNationalNatureReserve class</rdfs:label>
+		<rdfs:subClassOf rdf:resource="#ChangeOfNationalNatureReserve"/>
+		<owl:disjointWith rdf:resource="#RevokeNationalNatureReserve"/>
+		<owl:disjointWith rdf:resource="#NewNationalNatureReserve"/>
+	</owl:Class>
+	
+	<owl:DatatypeProperty rdf:ID="totalArea">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">approx total area of nature reserve</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">totalArea property</rdfs:label>
+		<rdfs:domain rdf:resource="#ChangeOfNationalNatureReserve"/>
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+	</owl:DatatypeProperty>		
+
+	<!--COASTAL PROTECTION-->
+
+	<owl:Class rdf:about="#CoastalProtectionWork">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Coastal protection work</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CoastalProtectionWork class</rdfs:label>
+		<rdfs:subClassOf rdf:resource="&consultation;ConsultationThing"/>
+		<owl:disjointWith rdf:resource="#DesignateNoiseAbatementZone"/>
+		<owl:disjointWith rdf:resource="#OperationOfInstallation"/>
+		<owl:disjointWith rdf:resource="#ChangeOfSmokeControl"/>
+		<owl:disjointWith rdf:resource="#ChangeOfNationalNatureReserve"/>
+		<owl:disjointWith rdf:resource="#ChangeOfFootpath"/>
+	</owl:Class>
+
+	<owl:DatatypeProperty rdf:ID="estimatedCost">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">estimated cost of coastal protection work</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">estimatedCost property</rdfs:label>
+		<rdfs:domain rdf:resource="#CoastalProtectionWork"/>
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+	</owl:DatatypeProperty>	
+
+	<!--CFOOTPATHS-->
+
+	<owl:Class rdf:about="#ChangeOfFootpath">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">superclass for all changes of footpath classes</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ChangeOfFootpath class</rdfs:label>
+		<rdfs:subClassOf rdf:resource="&consultation;ConsultationThing"/>
+		<owl:equivalentClass>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<owl:Class rdf:about="#NewFootpath"/>
+					<owl:Class rdf:about="#RevokeFootpath"/>
+				</owl:unionOf>
+			</owl:Class>
+		</owl:equivalentClass>
+		<owl:disjointWith rdf:resource="#DesignateNoiseAbatementZone"/>
+		<owl:disjointWith rdf:resource="#OperationOfInstallation"/>
+		<owl:disjointWith rdf:resource="#ChangeOfSmokeControl"/>
+		<owl:disjointWith rdf:resource="#ChangeOfNationalNatureReserve"/>
+		<owl:disjointWith rdf:resource="#CoastalProtectionWork"/>
+	</owl:Class>
+
+	<owl:Class rdf:about="#NewFootpath">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">declare a new footpath</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NewFootpath class</rdfs:label>
+		<rdfs:subClassOf rdf:resource="#ChangeOfFootpath"/>
+		<owl:disjointWith rdf:resource="#RevokeFootpath"/>
+	</owl:Class>
+
+	<owl:Class rdf:about="#RevokeFootpath">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">revoke existing footpath</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RevokeFootpath class</rdfs:label>
+		<rdfs:subClassOf rdf:resource="#ChangeOfFootpath"/>
+		<owl:disjointWith rdf:resource="#NewFootpath"/>
+	</owl:Class>
+
+	<owl:DatatypeProperty rdf:ID="footpathName">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name of footpath</rdfs:comment>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">footpathName property</rdfs:label>
+		<rdfs:domain rdf:resource="#ChangeOfFootpath"/>
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+	</owl:DatatypeProperty>	
+
+</rdf:RDF>

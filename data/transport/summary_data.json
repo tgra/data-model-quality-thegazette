@@ -1,0 +1,952 @@
+{
+    "classes": {
+        "http://www.geonames.org/ontology#Country": {
+            "label": null,
+            "comment": null
+        },
+        "http://www.geonames.org/ontology#Feature": {
+            "label": null,
+            "comment": null
+        },
+        "http://www.thegazette.co.uk/def/transport#RailwayStation": {
+            "label": null,
+            "comment": null
+        },
+        "http://www.thegazette.co.uk/def/water#DrainageDistrict": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/consultation#ConsultationThing": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/consultation#Schedule": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/consultation#StatutoryConsultationNotification": {
+            "label": "StatutoryConsultationNotification",
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/duration#Period": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/duration#Times": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/location#ArbitraryLocation": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/location#Building": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/location#CivicCentre": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/location#DisabledParkingBay": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/location#Docks": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/location#Guildhall": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/location#InternalFeature": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/location#Library": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/location#Locality": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/location#ParkingBay": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/location#PermitParkingBay": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/location#PostOffice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/location#Road": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/location#WaterCourse": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/location#Zoo": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/organisation#Office": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/organisation#Organisation": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/publication#PNBNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/publication#PNBThing": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#Aerodrome": {
+            "label": "Aerodrome class",
+            "comment": "Spatial thing concerning aerodrome, airport"
+        },
+        "https://www.thegazette.co.uk/def/transport#AmendAtAnyTimeWaitingRestriction": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#AmendBusLane": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#AmendBusStop": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#AmendCyclePath": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#AmendDisabledParkingBay": {
+            "label": "AmendDisabledParkingBay class",
+            "comment": "Amend existing disabled parking bay"
+        },
+        "https://www.thegazette.co.uk/def/transport#AmendParkingBay": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#AmendPermitParkingBay": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#AmendSpeedLimit": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#AmendWaitingRestriction": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#AppointmentOfStanding": {
+            "label": "AppointmentOfStanding class",
+            "comment": "Appointment of Hackney Carriage Standing"
+        },
+        "https://www.thegazette.co.uk/def/transport#AtAnyTimeWaitingRestriction": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#BranchLine": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#BridgeConstruction": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#BroadGauge": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#CarriagewayResurfacing": {
+            "label": "CarriagewayResurfacing class",
+            "comment": "Carriageway Resurfacing"
+        },
+        "https://www.thegazette.co.uk/def/transport#ChangeOfBusLane": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#ChangeOfBusStop": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#ChangeOfCyclePath": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#ChangeOfDisabledParkingBay": {
+            "label": "ChangeOfDisabledParkingBay class",
+            "comment": "superclass for change of disabled parking rule classes"
+        },
+        "https://www.thegazette.co.uk/def/transport#ChangeOfParkingBay": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#ChangeOfParkingRule": {
+            "label": "ChangeOfParkingRule class",
+            "comment": "superclass for change of parking rule classes"
+        },
+        "https://www.thegazette.co.uk/def/transport#ChangeOfPermitParkingBay": {
+            "label": "ChangeOfPermitParkingBay class",
+            "comment": "super class for change of permit parking bays"
+        },
+        "https://www.thegazette.co.uk/def/transport#ChangeOfRaisedTable": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#ChangeOfRoadFeature": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#ChangeOfRoadHump": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#ChangeOfRoadUse": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#ChangeOfSpecification": {
+            "label": "ChangeOfSpecification class",
+            "comment": "Change of Specification"
+        },
+        "https://www.thegazette.co.uk/def/transport#ChangeOfSpeedLimit": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#ChangeOfWaitingRestriction": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#ChangeOfZebraCrossing": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#CivilAviation": {
+            "label": "CivilAviation class",
+            "comment": "Civil Aviation Thing - generally concerning change of specification"
+        },
+        "https://www.thegazette.co.uk/def/transport#CivilAviationNotice": {
+            "label": "CivilAviationNotice class",
+            "comment": "Civil Aviation Notice (Type 1508)"
+        },
+        "https://www.thegazette.co.uk/def/transport#CompulsoryPurchase": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#Construction": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#Contraflow": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#CycleTracksNotice": {
+            "label": "CycleTracksNotice class",
+            "comment": "Cycle Tracks Notice (Type 1509)"
+        },
+        "https://www.thegazette.co.uk/def/transport#DesignateHarbourAuthority": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#FootBridgeConstruction": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#FootwayRelay": {
+            "label": "FootwayRelay class",
+            "comment": "Footway Relay is a term used to describe the combination of footway resurfacing and kerb realignment"
+        },
+        "https://www.thegazette.co.uk/def/transport#FootwayResurfacing": {
+            "label": "FootwayResurfacing class",
+            "comment": "Footway Resurfacing"
+        },
+        "https://www.thegazette.co.uk/def/transport#Funicular": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#Gauge": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#HighwaysNotice": {
+            "label": "HighwaysNotice class",
+            "comment": "Highways Notice (Type 1503)"
+        },
+        "https://www.thegazette.co.uk/def/transport#KerbRealignment": {
+            "label": "KerbRealignment class",
+            "comment": "Kerb Realignment"
+        },
+        "https://www.thegazette.co.uk/def/transport#LightRailway": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#Line": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#LineExtension": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#LondonHackneyCarriageStanding": {
+            "label": "LondonHackneyCarriageStanding class",
+            "comment": "London Hackney Carriage Standing"
+        },
+        "https://www.thegazette.co.uk/def/transport#LondonHackneyCarriagesNotice": {
+            "label": "LondonHackneyCarriagesNotice class",
+            "comment": "LondonHackney Carriages Notice (Type 1504)"
+        },
+        "https://www.thegazette.co.uk/def/transport#MainLine": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#Monorail": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#NarrowGauge": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#NewAtAnyTimeWaitingRestriction": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#NewBusLane": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#NewBusStop": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#NewCyclePath": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#NewDisabledParkingBay": {
+            "label": "NewDisabledParkingBay class",
+            "comment": "New disabled parking bay"
+        },
+        "https://www.thegazette.co.uk/def/transport#NewParkingBay": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#NewPermitParkingBay": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#NewRaisedTable": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#NewRoadHump": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#NewRoadsAndStreetWorks": {
+            "label": "NewRoadsAndStreetWorks class",
+            "comment": "New Roads And Street Works Thing - doesnt require an order - this is for ntoification by a local authority that street works are due to be carried out"
+        },
+        "https://www.thegazette.co.uk/def/transport#NewRoadsAndStreetWorksNotice": {
+            "label": "NewRoadsAndStreetWorksNotice class",
+            "comment": "New Roads And Street Works Notice (Type 1502)"
+        },
+        "https://www.thegazette.co.uk/def/transport#NewSpecification": {
+            "label": "NewSpecification class",
+            "comment": "New Specification"
+        },
+        "https://www.thegazette.co.uk/def/transport#NewSpeedLimit": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#NewWaitingRestriction": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#NewZebraCrossing": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#PlatformConstruction": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#Ports": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#PortsNotice": {
+            "label": "PortsNotice class",
+            "comment": "Ports Notice (Type 1507)"
+        },
+        "https://www.thegazette.co.uk/def/transport#Prohibition": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#ProhibitionOfStopping": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#ProhibitionOfTraffic": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#ProhibitionOfTurning": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#ProhibitionOfUse": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#RailBridgeConstruction": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#Railway": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#RailwayConstruction": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#RailwayStation": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#RailwaysNotice": {
+            "label": "RailwaysNotice class",
+            "comment": "Railways Notice (Type 1505)"
+        },
+        "https://www.thegazette.co.uk/def/transport#RapidTransitSystem": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#RemoveRaisedTable": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#RemoveRoadHump": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#Resurfacing": {
+            "label": "StreetWork class",
+            "comment": "Recurfacing superclass"
+        },
+        "https://www.thegazette.co.uk/def/transport#RevokeAtAnyTimeWaitingRestriction": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#RevokeBusLane": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#RevokeBusStop": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#RevokeCyclePath": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#RevokeDisabledParkingBay": {
+            "label": "RevokeDisabledParkingBay class",
+            "comment": "Revoke existing disabled parking bay"
+        },
+        "https://www.thegazette.co.uk/def/transport#RevokeParkingBay": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#RevokePermitParkingBay": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#RevokeSpecification": {
+            "label": "RevokeSpecification class",
+            "comment": "Revoke existing Specification"
+        },
+        "https://www.thegazette.co.uk/def/transport#RevokeSpeedLimit": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#RevokeWaitingRestriction": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#RevokeZebraCrossing": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#RoadBridgeConstruction": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#RoadClosure": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#RoadConstruction": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#RoadTrafficActsNotice": {
+            "label": "RoadTrafficActsNotice class",
+            "comment": "Road Traffic Acts Notice (Type 1501)"
+        },
+        "https://www.thegazette.co.uk/def/transport#RoadWidthRestriction": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#RoadsNIOrderNotice": {
+            "label": "RoadsNIOrderNotice class",
+            "comment": "Roads NI Order Notice (Type 1510)"
+        },
+        "https://www.thegazette.co.uk/def/transport#StandardGauge": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#StationConstruction": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#StoppingUp": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#StreetWork": {
+            "label": "StreetWork class",
+            "comment": "Street Work"
+        },
+        "https://www.thegazette.co.uk/def/transport#TrafficRestriction": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#SubjectElement": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#Tram": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#TransferOfOperator": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#TransportActsNotice": {
+            "label": "TransportActsNotice class",
+            "comment": "Transport Acts Notice (Type 1506)"
+        },
+        "https://www.thegazette.co.uk/def/transport#TransportNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#TransportThing": {
+            "label": "TransportThing class",
+            "comment": "Transport Things"
+        },
+        "https://www.thegazette.co.uk/def/transport#TunnelConstruction": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#Underground": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#UrbanTransit": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/transport#VehicleImpoundingNotice": {
+            "label": "VehicleImpoundingNotice class",
+            "comment": "Vehicle Impounding Notice (Type 1511)"
+        },
+        "https://www.thegazette.co.uk/def/transport#WaitingRestrictionDuration": {
+            "label": null,
+            "comment": null
+        }
+    },
+    "object_properties": {
+        "http://www.geonames.org/ontology#featureClass": {
+            "label": null,
+            "comment": null,
+            "domain": null,
+            "range": null
+        },
+        "http://www.geonames.org/ontology#featureCode": {
+            "label": null,
+            "comment": null,
+            "domain": null,
+            "range": null
+        },
+        "https://www.thegazette.co.uk/def/publication#isAbout": {
+            "label": null,
+            "comment": null,
+            "domain": null,
+            "range": null
+        },
+        "https://www.thegazette.co.uk/def/transport#addsBusLane": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/transport#NewBusLane",
+            "range": "http://www.geonames.org/ontology#Feature"
+        },
+        "https://www.thegazette.co.uk/def/transport#addsDisabledParkingBay": {
+            "label": "addsDisabledParkingBay property",
+            "comment": "location of new disabled parking bay",
+            "domain": "https://www.thegazette.co.uk/def/transport#NewDisabledParkingBay",
+            "range": "https://www.thegazette.co.uk/def/location#DisabledParkingBay"
+        },
+        "https://www.thegazette.co.uk/def/transport#addsParkingBay": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/transport#NewParkingBay",
+            "range": "https://www.thegazette.co.uk/def/location#ParkingBay"
+        },
+        "https://www.thegazette.co.uk/def/transport#addsPermitParkingBay": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/transport#NewPermitParkingBay",
+            "range": "https://www.thegazette.co.uk/def/location#PermitParkingBay"
+        },
+        "https://www.thegazette.co.uk/def/transport#addsSpeedLimitFrom": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/transport#NewSpeedLimit",
+            "range": "http://www.geonames.org/ontology#Feature"
+        },
+        "https://www.thegazette.co.uk/def/transport#addsSpeedLimitTo": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/transport#NewSpeedLimit",
+            "range": "http://www.geonames.org/ontology#Feature"
+        },
+        "https://www.thegazette.co.uk/def/transport#amendsBusLane": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/transport#AmendBusLane",
+            "range": "http://www.geonames.org/ontology#Feature"
+        },
+        "https://www.thegazette.co.uk/def/transport#amendsDisabledParkingBay": {
+            "label": "amendsDisabledParkingBay property",
+            "comment": "location of amended disabled parking bay",
+            "domain": "https://www.thegazette.co.uk/def/transport#AmendDisabledParkingBay",
+            "range": "https://www.thegazette.co.uk/def/location#DisabledParkingBay"
+        },
+        "https://www.thegazette.co.uk/def/transport#amendsParkingBay": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/transport#AmendParkingBay",
+            "range": "https://www.thegazette.co.uk/def/location#ParkingBay"
+        },
+        "https://www.thegazette.co.uk/def/transport#amendsPermitParkingBay": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/transport#AmendPermitParkingBay",
+            "range": "https://www.thegazette.co.uk/def/location#PermitParkingBay"
+        },
+        "https://www.thegazette.co.uk/def/transport#amendsSpeedLimitFrom": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/transport#AmendSpeedLimit",
+            "range": "http://www.geonames.org/ontology#Feature"
+        },
+        "https://www.thegazette.co.uk/def/transport#amendsSpeedLimitTo": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/transport#AmendSpeedLimit",
+            "range": "http://www.geonames.org/ontology#Feature"
+        },
+        "https://www.thegazette.co.uk/def/transport#changesParkingRuleTimesTo": {
+            "label": "hasParkingRuleTimes property",
+            "comment": "Times allocated to the parking rule",
+            "domain": "N223771be7d28498da464620ce777a437",
+            "range": "https://www.thegazette.co.uk/def/duration#Times"
+        },
+        "https://www.thegazette.co.uk/def/transport#concernsAerodrome": {
+            "label": "concernsAerodrome property",
+            "comment": "Aerodromes that specification concerns",
+            "domain": "https://www.thegazette.co.uk/def/transport#ChangeOfSpecification",
+            "range": "https://www.thegazette.co.uk/def/transport#Aerodrome"
+        },
+        "https://www.thegazette.co.uk/def/transport#concernsCountry": {
+            "label": "concernsCountry property",
+            "comment": "Country that specification concerns",
+            "domain": "https://www.thegazette.co.uk/def/transport#ChangeOfSpecification",
+            "range": "http://www.geonames.org/ontology#Country"
+        },
+        "https://www.thegazette.co.uk/def/transport#hasAmendedDuration": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/transport#WaitingRestrictionDuration",
+            "range": "https://www.thegazette.co.uk/def/duration#Times"
+        },
+        "https://www.thegazette.co.uk/def/transport#hasCompulsoryPurchaseOfProperty": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/transport#CompulsoryPurchase",
+            "range": "http://www.geonames.org/ontology#Feature"
+        },
+        "https://www.thegazette.co.uk/def/transport#hasDesignatedHarbourAuthority": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/transport#DesignateHarbourAuthority",
+            "range": "https://www.thegazette.co.uk/def/organisation#Organisation"
+        },
+        "https://www.thegazette.co.uk/def/transport#hasExistingOperator": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/transport#TransferOfOperator",
+            "range": "https://www.thegazette.co.uk/def/organisation#Organisation"
+        },
+        "https://www.thegazette.co.uk/def/transport#hasNewOperator": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/transport#TransferOfOperator",
+            "range": "https://www.thegazette.co.uk/def/organisation#Organisation"
+        },
+        "https://www.thegazette.co.uk/def/transport#hasOperationDuration": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/consultation#ConsultationThing",
+            "range": "https://www.thegazette.co.uk/def/duration#Period"
+        },
+        "https://www.thegazette.co.uk/def/transport#hasOperationTimes": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/consultation#ConsultationThing",
+            "range": "https://www.thegazette.co.uk/def/duration#Times"
+        },
+        "https://www.thegazette.co.uk/def/transport#hasParkingRuleDuration": {
+            "label": "hasParkingRuleTimes property",
+            "comment": "Duration for which parking rule applies",
+            "domain": "https://www.thegazette.co.uk/def/transport#ChangeOfParkingRule",
+            "range": "https://www.thegazette.co.uk/def/duration#Period"
+        },
+        "https://www.thegazette.co.uk/def/transport#hasParkingRuleTimes": {
+            "label": "hasParkingRuleTimes property",
+            "comment": "Times allocated to the parking rule",
+            "domain": "https://www.thegazette.co.uk/def/transport#ChangeOfParkingRule",
+            "range": "https://www.thegazette.co.uk/def/duration#Times"
+        },
+        "https://www.thegazette.co.uk/def/transport#hasProhibitionLocation": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/transport#Prohibition",
+            "range": "http://www.geonames.org/ontology#Feature"
+        },
+        "https://www.thegazette.co.uk/def/transport#hasRelinquishedHarbourAuthority": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/transport#DesignateHarbourAuthority",
+            "range": "https://www.thegazette.co.uk/def/organisation#Organisation"
+        },
+        "https://www.thegazette.co.uk/def/transport#hasSchedule": {
+            "label": "hasSchedule class",
+            "comment": "Schedule of work associated with Transport Thing",
+            "domain": "https://www.thegazette.co.uk/def/transport#TransportThing",
+            "range": "https://www.thegazette.co.uk/def/consultation#Schedule"
+        },
+        "https://www.thegazette.co.uk/def/transport#hasSubjectElement": {
+            "label": "hasSubjectElement",
+            "comment": "Subject element for Transport Thing",
+            "domain": "https://www.thegazette.co.uk/def/transport#TransportThing",
+            "range": "https://www.thegazette.co.uk/def/transport#SubjectElement"
+        },
+        "https://www.thegazette.co.uk/def/transport#hasStandLocation": {
+            "label": "hasStandLocation property",
+            "comment": "location of hackney carriage stand",
+            "domain": "https://www.thegazette.co.uk/def/transport#LondonHackneyCarriageStanding",
+            "range": "http://www.geonames.org/ontology#Feature"
+        },
+        "https://www.thegazette.co.uk/def/transport#hasStreetWork": {
+            "label": "hasStreetWork class",
+            "comment": "Street Work associated with new roads and street works thing",
+            "domain": "https://www.thegazette.co.uk/def/transport#NewRoadsAndStreetWorks",
+            "range": "https://www.thegazette.co.uk/def/transport#StreetWork"
+        },
+        "https://www.thegazette.co.uk/def/transport#hasWaitingRestrictionDuration": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/transport#ChangeOfWaitingRestriction",
+            "range": "https://www.thegazette.co.uk/def/duration#Period"
+        },
+        "https://www.thegazette.co.uk/def/transport#hasWaitingRestrictionTimes": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/transport#ChangeOfWaitingRestriction",
+            "range": "https://www.thegazette.co.uk/def/duration#Times"
+        },
+        "https://www.thegazette.co.uk/def/transport#isAboutChangeOfSpecification": {
+            "label": "isAboutChangeOfSpecification property",
+            "comment": "specification related to the Civil Avaition Thing",
+            "domain": "https://www.thegazette.co.uk/def/transport#CivilAviation",
+            "range": "https://www.thegazette.co.uk/def/transport#ChangeOfSpecification"
+        },
+        "https://www.thegazette.co.uk/def/transport#isOfType": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/transport#RailwayConstruction",
+            "range": "https://www.thegazette.co.uk/def/transport#Railway"
+        },
+        "https://www.thegazette.co.uk/def/transport#isPartOfRailway": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/transport#RailwayConstruction",
+            "range": "https://www.thegazette.co.uk/def/transport#Railway"
+        },
+        "https://www.thegazette.co.uk/def/transport#isPartOfStation": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/transport#PlatformConstruction",
+            "range": "https://www.thegazette.co.uk/def/transport#RailwayStation"
+        },
+        "https://www.thegazette.co.uk/def/transport#revokesBusLane": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/transport#RevokeBusLane",
+            "range": "http://www.geonames.org/ontology#Feature"
+        },
+        "https://www.thegazette.co.uk/def/transport#revokesDisabledParkingBay": {
+            "label": "revokesDisabledParkingBay property",
+            "comment": "location of revoked disabled parking bay",
+            "domain": "https://www.thegazette.co.uk/def/transport#RevokeDisabledParkingBay",
+            "range": "https://www.thegazette.co.uk/def/location#DisabledParkingBay"
+        },
+        "https://www.thegazette.co.uk/def/transport#revokesParkingBay": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/transport#RevokeParkingBay",
+            "range": "https://www.thegazette.co.uk/def/location#ParkingBay"
+        },
+        "https://www.thegazette.co.uk/def/transport#revokesPermitParkingBay": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/transport#RevokePermitParkingBay",
+            "range": "https://www.thegazette.co.uk/def/location#PermitParkingBay"
+        },
+        "https://www.thegazette.co.uk/def/transport#revokesSpeedLimitFrom": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/transport#RevokeSpeedLimit",
+            "range": "http://www.geonames.org/ontology#Feature"
+        },
+        "https://www.thegazette.co.uk/def/transport#revokesSpeedLimitTo": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/transport#RevokeSpeedLimit",
+            "range": "http://www.geonames.org/ontology#Feature"
+        }
+    },
+    "data_properties": {
+        "https://www.thegazette.co.uk/def/publication#hasNoticeCode": {
+            "label": null,
+            "comment": null,
+            "domain": "",
+            "range": null
+        },
+        "https://www.thegazette.co.uk/def/transport#completionDate": {
+            "label": "completionDate property",
+            "comment": "Street work completion date",
+            "domain": "https://www.thegazette.co.uk/def/transport#StreetWork",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/transport#dateTakesEffectFrom": {
+            "label": "dateTakesEffectFrom property",
+            "comment": "Date the specification takes effect from",
+            "domain": "https://www.thegazette.co.uk/def/transport#NewSpecification",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/transport#dateTookEffectFrom": {
+            "label": "dateTookEffectFrom property",
+            "comment": "Date revoked specification took effect from",
+            "domain": "https://www.thegazette.co.uk/def/transport#RevokeSpecification",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/transport#duration": {
+            "label": "duration property",
+            "comment": "Duration of street works",
+            "domain": "https://www.thegazette.co.uk/def/transport#StreetWork",
+            "range": "http://www.w3.org/2001/XMLSchema#duration"
+        },
+        "https://www.thegazette.co.uk/def/transport#height": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/transport#NewRaisedTable",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/transport#length": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/transport#NewRaisedTable",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/transport#limitOfWork": {
+            "label": "limitOfWork property",
+            "comment": "Limit of street work",
+            "domain": "https://www.thegazette.co.uk/def/transport#StreetWork",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/transport#hasSubheading": {
+            "label": "hasSubheading",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/transport#SubjectElement",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/transport#numberOfCabs": {
+            "label": "numberOfCabs property",
+            "comment": "Number of cabs specified per stand",
+            "domain": "https://www.thegazette.co.uk/def/transport#LondonHackneyCarriageStanding",
+            "range": "http://www.w3.org/2001/XMLSchema#integer"
+        },
+        "https://www.thegazette.co.uk/def/transport#plotCode": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/transport#CompulsoryPurchase",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/transport#railwayName": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/transport#Railway",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/transport#restrictedWidth": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/transport#RoadWidthRestriction",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/transport#speedLimit": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/transport#ChangeOfSpeedLimit",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/transport#startDate": {
+            "label": "startDate property",
+            "comment": "STreet work start date",
+            "domain": "https://www.thegazette.co.uk/def/transport#StreetWork",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        }
+    }
+}

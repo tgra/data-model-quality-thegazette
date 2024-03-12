@@ -1,0 +1,1 @@
+[{"http://www.gazettes-online.co.uk/ontology#dateAuthorisationSigned": {"label": "dateAuthorisationSigned property", "comment": "Date that an Authority Notice has been signed", "domain": "http://www.gazettes-online.co.uk/ontology#Authoriser", "range": "http://www.w3.org/2001/XMLSchema#date"}}]

@@ -1,0 +1,78 @@
+{
+    "classes": {
+        "https://www.thegazette.co.uk/def/state#StateNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/state#StateThing": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/state#ChangeOfNameAndArms": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/state#ChangeOfNameAndArmsNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/state#Immigration": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/state#ImmigrationNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/state#LoyalAddresses": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/state#LoyalAddressesNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/state#ChancellorOfExchequer": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/state#ChancellorOfExchequerNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/state#NoticeConcerningRoyalFamily": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/state#NoticeConcerningRoyalFamilyNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/state#PrivyCouncilOffice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/state#PrivyCouncilOfficeNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/state#Proclamation": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/state#ProclamationNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/state#RoyalCommission": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/state#RoyalCommissionNotice": {
+            "label": null,
+            "comment": null
+        }
+    },
+    "object_properties": {},
+    "data_properties": {}
+}

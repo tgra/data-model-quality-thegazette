@@ -1,0 +1,174 @@
+{
+    "classes": {
+        "https://www.thegazette.co.uk/def/legislation#Legislation": {
+            "label": "Legislation",
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/legislation#LegislationSection": {
+            "label": "LegislationSection",
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/legislation#LegislationPart": {
+            "label": "LegislationPart",
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/legislation#Act": {
+            "label": "Act",
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/organisation#Organisation": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/person#Person": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/person#Role": {
+            "label": null,
+            "comment": null
+        }
+    },
+    "object_properties": {
+        "https://www.thegazette.co.uk/def/legislation#containsLegislationPart": {
+            "label": null,
+            "comment": null,
+            "domain": null,
+            "range": null
+        },
+        "https://www.thegazette.co.uk/def/legislation#hasObjectionOrganisationContact": {
+            "label": null,
+            "comment": null,
+            "domain": null,
+            "range": "https://www.thegazette.co.uk/def/organisation#Organisation"
+        },
+        "https://www.thegazette.co.uk/def/legislation#hasObjectionPersonContact": {
+            "label": "hasObjectioncontact property",
+            "comment": "Person associated with objections",
+            "domain": null,
+            "range": "https://www.thegazette.co.uk/def/person#Person"
+        },
+        "https://www.thegazette.co.uk/def/legislation#hasObjectionRoleContact": {
+            "label": "hasObjectioncontact property",
+            "comment": "Role associated with objections",
+            "domain": null,
+            "range": "https://www.thegazette.co.uk/def/person#Role"
+        },
+        "https://www.thegazette.co.uk/def/legislation#hasOrderObjection": {
+            "label": null,
+            "comment": null,
+            "domain": null,
+            "range": null
+        },
+        "https://www.thegazette.co.uk/def/legislation#isPartOfLegislation": {
+            "label": null,
+            "comment": null,
+            "domain": null,
+            "range": null
+        },
+        "https://www.thegazette.co.uk/def/legislation#isPartOfLegislationPart": {
+            "label": null,
+            "comment": null,
+            "domain": null,
+            "range": null
+        },
+        "https://www.thegazette.co.uk/def/legislation#isPursuantToLegislation": {
+            "label": "isPursuantToLegislation",
+            "comment": "Legislation item(s) pursuant to which the notice is placed",
+            "domain": null,
+            "range": "N065ff045255e42eaae0a73bdc9447777"
+        }
+    },
+    "data_properties": {
+        "http://purl.org/dc/elements/1.1/title": {
+            "label": null,
+            "comment": null,
+            "domain": "",
+            "range": null
+        },
+        "https://www.thegazette.co.uk/def/legislation#dateDeclarationMade": {
+            "label": "dateDeclarationMade property",
+            "comment": "date the declaration was made",
+            "domain": "",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/legislation#dateOrderComesIntoEffect": {
+            "label": "dateOrderComesIntoEffect property",
+            "comment": "date the order comes into operation",
+            "domain": "",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/legislation#dateOrderMade": {
+            "label": "dateOrderMade property",
+            "comment": "date the order was made",
+            "domain": "",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/legislation#dateProposedOrderComesIntoEffect": {
+            "label": "dateOrderComesIntoEffect property",
+            "comment": "date the order comes into operation",
+            "domain": "",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/legislation#hasLegislationNumber": {
+            "label": null,
+            "comment": null,
+            "domain": "",
+            "range": "http://www.w3.org/2001/XMLSchema#integer"
+        },
+        "https://www.thegazette.co.uk/def/legislation#hasLegislationPartNumber": {
+            "label": null,
+            "comment": null,
+            "domain": "",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/legislation#hasLegislationYear": {
+            "label": null,
+            "comment": "The year in which an Act was enacted or an SI came into force.",
+            "domain": "",
+            "range": "http://www.w3.org/2001/XMLSchema#gYear"
+        },
+        "https://www.thegazette.co.uk/def/legislation#hasSSInumber": {
+            "label": null,
+            "comment": "The number of the legislation under the UK SI numbering scheme. A given piece of legislation may have numbers under a number of legislation numbering schemes.",
+            "domain": "",
+            "range": "http://www.w3.org/2001/XMLSchema#integer"
+        },
+        "https://www.thegazette.co.uk/def/legislation#isRepealed": {
+            "label": null,
+            "comment": null,
+            "domain": "",
+            "range": "http://www.w3.org/2001/XMLSchema#boolean"
+        },
+        "https://www.thegazette.co.uk/def/legislation#objectionCommencementDate": {
+            "label": "objectionCommencementDate property",
+            "comment": "commencement date objections can be placed",
+            "domain": "",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/legislation#objectionDeadline": {
+            "label": null,
+            "comment": null,
+            "domain": "",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/legislation#objectionDuration": {
+            "label": null,
+            "comment": null,
+            "domain": "",
+            "range": "http://www.w3.org/2001/XMLSchema#duration"
+        },
+        "https://www.thegazette.co.uk/def/legislation#shortTitle": {
+            "label": "shortTitle property",
+            "comment": null,
+            "domain": "",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/legislation#legislationTitle": {
+            "label": "legislationTitle",
+            "comment": null,
+            "domain": "",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        }
+    }
+}

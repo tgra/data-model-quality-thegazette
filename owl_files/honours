@@ -1,0 +1,3644 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY dcterms "http://purl.org/dc/terms/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY ontology "https://www.thegazette.co.uk/def/publication#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY planning "https://www.thegazette.co.uk/def/planning#" >
+    <!ENTITY transport "https://www.thegazette.co.uk/def/transport#" >
+    <!ENTITY legislation "https://www.thegazette.co.uk/def/legislation#" >
+    <!ENTITY organisation "https://www.thegazette.co.uk/def/organisation#" >
+    <!ENTITY consultation "https://www.thegazette.co.uk/def/consultation#" >
+	<!ENTITY honours "https://www.thegazette.co.uk/def/honours#" >
+	<!ENTITY person "https://www.thegazette.co.uk/def/person#" >
+	<!ENTITY military "https://www.thegazette.co.uk/def/military#" >
+    <!ENTITY england-and-wales "http://www.legislation.gov.uk/id/#environmental-permitting-(england-and-wales)-" >
+]>
+
+ 
+
+<rdf:RDF xmlns="https://www.thegazette.co.uk/def/honours#"
+     xml:base="https://www.thegazette.co.uk/def/honours"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:ontology="https://www.thegazette.co.uk/def/publication#"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	 xmlns:honours="https://www.thegazette.co.uk/def/honours"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="https://www.thegazette.co.uk/def/honours">
+		<dcterms:license rdf:resource="http://creativecommons.org/licenses/by-nc-sa/2.0/uk/"/>
+		<dc:description xml:lang="en">
+    	UK Honours and Awards
+
+    	This is a beta version, and you should expect it to change.
+		</dc:description>
+		
+		<dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >2008-08-28</dcterms:created>
+	<dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2015-10-15</dc:modified> 
+		<dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Honours and Awards</dc:title>
+		<dcterms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Griff Chamberlain, The Stationery Office, mark.chamberlain@tso.co.uk</dcterms:creator>
+	<dcterms:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Terry Panagoulis, The Stationery Office, terry.panagoulis@tso.co.uk</dcterms:contributor>
+	</owl:Ontology>
+
+
+	<owl:Class rdf:ID="Order">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Order Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Order</rdfs:comment>
+		<owl:disjointWith rdf:resource="#Award"/>
+        <owl:disjointWith rdf:resource="#OrderDivision"/>
+	</owl:Class>
+
+	<owl:Class rdf:ID="Award">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Award Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Award</rdfs:comment>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:maxCardinality>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#isAwardedTo"/>
+				<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:maxCardinality>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#Order"/>
+		<owl:disjointWith rdf:resource="#OrderDivision"/>
+	</owl:Class>	
+
+	
+	<owl:Class rdf:ID="Honour">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Honour Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Honour</rdfs:comment>
+		<dc:description xml:lang="en">Honours are used to recognise merit in terms of achievement and service.</dc:description>
+		<owl:disjointWith rdf:resource="#Bar"/>
+		<owl:disjointWith rdf:resource="#Decoration"/>
+        <owl:disjointWith rdf:resource="#Medal"/>
+        <owl:disjointWith rdf:resource="#Commendation"/>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Award"/>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<owl:Class rdf:ID="Decoration">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Decoration Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Decoration</rdfs:comment>
+		<dc:description xml:lang="en">Decorations tend to be used to recognise specific deeds;</dc:description>
+		<owl:disjointWith rdf:resource="#Bar"/>
+		<owl:disjointWith rdf:resource="#Honour"/>
+        <owl:disjointWith rdf:resource="#Medal"/>
+        <owl:disjointWith rdf:resource="#Commendation"/>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Award"/>
+		</rdfs:subClassOf>
+	</owl:Class>
+	
+	
+	<owl:Class rdf:ID="Medal">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Medal Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Medal</rdfs:comment>
+		<dc:description xml:lang="en">Medals are used to recognise bravery, long and/or valuable service and/or good conduct.</dc:description>
+		<owl:disjointWith rdf:resource="#Bar"/>
+		<owl:disjointWith rdf:resource="#Honour"/>
+        <owl:disjointWith rdf:resource="#Decoration"/>
+        <owl:disjointWith rdf:resource="#Commendation"/>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Award"/>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<owl:Class rdf:ID="Commendation">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Commendation Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Commendation</rdfs:comment>
+		<owl:disjointWith rdf:resource="#Bar"/>
+		<owl:disjointWith rdf:resource="#Honour"/>
+        <owl:disjointWith rdf:resource="#Decoration"/>
+        <owl:disjointWith rdf:resource="#Medal"/>
+        <rdfs:subClassOf>
+			<owl:Class rdf:about="#Award"/>
+		</rdfs:subClassOf>
+	</owl:Class>	
+
+
+	<owl:Class rdf:ID="AppointmentsToTheMonarch">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AppointmentsToTheMonarch Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Appointments To The Monarch</rdfs:comment>
+		<owl:disjointWith rdf:resource="#LifePeer"/>
+        <owl:disjointWith rdf:resource="#Knight"/>
+        <owl:disjointWith rdf:resource="#Dame"/>
+        <owl:disjointWith rdf:resource="#Lady"/>
+        <owl:disjointWith rdf:resource="#Commander"/>
+        <owl:disjointWith rdf:resource="#Lieutenant"/>
+        <owl:disjointWith rdf:resource="#Officer"/>
+        <owl:disjointWith rdf:resource="#Member"/>
+        <owl:disjointWith rdf:resource="#Companion"/>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Honour"/>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<owl:Class rdf:ID="LifePeer">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LifePeer Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Life Peer</rdfs:comment>
+		<owl:disjointWith rdf:resource="#AppointmentsToTheMonarch"/>
+		<owl:disjointWith rdf:resource="#Knight"/>
+        <owl:disjointWith rdf:resource="#Dame"/>
+        <owl:disjointWith rdf:resource="#Lady"/>
+        <owl:disjointWith rdf:resource="#Commander"/>
+        <owl:disjointWith rdf:resource="#Lieutenant"/>
+        <owl:disjointWith rdf:resource="#Officer"/>
+        <owl:disjointWith rdf:resource="#Member"/>
+        <owl:disjointWith rdf:resource="#Companion"/>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Honour"/>
+		</rdfs:subClassOf>
+	</owl:Class>
+	
+	<owl:Class rdf:ID="Knight">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Knight Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Knight</rdfs:comment>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#isAwardedTo"/>
+				<owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/person#Male"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#AppointmentsToTheMonarch"/>
+		<owl:disjointWith rdf:resource="#LifePeer"/>
+        <owl:disjointWith rdf:resource="#Dame"/>
+        <owl:disjointWith rdf:resource="#Lady"/>
+        <owl:disjointWith rdf:resource="#Commander"/>
+        <owl:disjointWith rdf:resource="#Lieutenant"/>
+        <owl:disjointWith rdf:resource="#Officer"/>
+        <owl:disjointWith rdf:resource="#Member"/>
+        <owl:disjointWith rdf:resource="#Companion"/>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Honour"/>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<owl:Class rdf:ID="Dame">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dame Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dame</rdfs:comment>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#isAwardedTo"/>
+				<owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/person#Female"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#AppointmentsToTheMonarch"/>
+		<owl:disjointWith rdf:resource="#LifePeer"/>
+        <owl:disjointWith rdf:resource="#Knight"/>
+        <owl:disjointWith rdf:resource="#Lady"/>
+        <owl:disjointWith rdf:resource="#Commander"/>
+        <owl:disjointWith rdf:resource="#Lieutenant"/>
+        <owl:disjointWith rdf:resource="#Officer"/>
+        <owl:disjointWith rdf:resource="#Member"/>
+        <owl:disjointWith rdf:resource="#Companion"/>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Honour"/>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<owl:Class rdf:ID="Lady">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lady Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lady</rdfs:comment>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#isAwardedTo"/>
+				<owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/person#Female"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#AppointmentsToTheMonarch"/>
+		<owl:disjointWith rdf:resource="#LifePeer"/>
+        <owl:disjointWith rdf:resource="#Knight"/>
+        <owl:disjointWith rdf:resource="#Dame"/>
+        <owl:disjointWith rdf:resource="#Commander"/>
+        <owl:disjointWith rdf:resource="#Lieutenant"/>
+        <owl:disjointWith rdf:resource="#Officer"/>
+        <owl:disjointWith rdf:resource="#Member"/>
+        <owl:disjointWith rdf:resource="#Companion"/>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Honour"/>
+		</rdfs:subClassOf>
+	</owl:Class>		
+	
+	<owl:Class rdf:ID="Commander">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Commander Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Commander</rdfs:comment>
+		<owl:disjointWith rdf:resource="#AppointmentsToTheMonarch"/>
+		<owl:disjointWith rdf:resource="#LifePeer"/>
+        <owl:disjointWith rdf:resource="#Knight"/>
+        <owl:disjointWith rdf:resource="#Dame"/>
+        <owl:disjointWith rdf:resource="#Lady"/>
+        <owl:disjointWith rdf:resource="#Lieutenant"/>
+        <owl:disjointWith rdf:resource="#Officer"/>
+        <owl:disjointWith rdf:resource="#Member"/>
+        <owl:disjointWith rdf:resource="#Companion"/>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Honour"/>
+		</rdfs:subClassOf>
+	</owl:Class>	
+
+	<owl:Class rdf:ID="Lieutenant">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lieutenant Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lieutenant</rdfs:comment>
+		<owl:disjointWith rdf:resource="#AppointmentsToTheMonarch"/>
+		<owl:disjointWith rdf:resource="#LifePeer"/>
+        <owl:disjointWith rdf:resource="#Knight"/>
+        <owl:disjointWith rdf:resource="#Dame"/>
+        <owl:disjointWith rdf:resource="#Lady"/>
+        <owl:disjointWith rdf:resource="#Commander"/>
+        <owl:disjointWith rdf:resource="#Officer"/>
+        <owl:disjointWith rdf:resource="#Member"/>
+        <owl:disjointWith rdf:resource="#Companion"/>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Honour"/>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<owl:Class rdf:ID="Officer">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Officer Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Officer</rdfs:comment>
+		<owl:disjointWith rdf:resource="#AppointmentsToTheMonarch"/>
+		<owl:disjointWith rdf:resource="#LifePeer"/>
+        <owl:disjointWith rdf:resource="#Knight"/>
+        <owl:disjointWith rdf:resource="#Dame"/>
+        <owl:disjointWith rdf:resource="#Lady"/>
+        <owl:disjointWith rdf:resource="#Commander"/>
+        <owl:disjointWith rdf:resource="#Lieutenant"/>
+        <owl:disjointWith rdf:resource="#Member"/>
+        <owl:disjointWith rdf:resource="#Companion"/>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Honour"/>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<owl:Class rdf:ID="Member">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Member Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Member</rdfs:comment>
+		<owl:disjointWith rdf:resource="#AppointmentsToTheMonarch"/>
+		<owl:disjointWith rdf:resource="#LifePeer"/>
+        <owl:disjointWith rdf:resource="#Knight"/>
+        <owl:disjointWith rdf:resource="#Dame"/>
+        <owl:disjointWith rdf:resource="#Lady"/>
+        <owl:disjointWith rdf:resource="#Commander"/>
+        <owl:disjointWith rdf:resource="#Lieutenant"/>
+        <owl:disjointWith rdf:resource="#Officer"/>
+        <owl:disjointWith rdf:resource="#Companion"/>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Honour"/>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<owl:Class rdf:ID="Companion">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Companion Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Companion</rdfs:comment>
+		<owl:disjointWith rdf:resource="#AppointmentsToTheMonarch"/>
+		<owl:disjointWith rdf:resource="#LifePeer"/>
+        <owl:disjointWith rdf:resource="#Knight"/>
+        <owl:disjointWith rdf:resource="#Dame"/>
+        <owl:disjointWith rdf:resource="#Lady"/>
+        <owl:disjointWith rdf:resource="#Commander"/>
+        <owl:disjointWith rdf:resource="#Lieutenant"/>
+        <owl:disjointWith rdf:resource="#Officer"/>
+        <owl:disjointWith rdf:resource="#Member"/>
+       <rdfs:subClassOf>
+			<owl:Class rdf:about="#Honour"/>
+		</rdfs:subClassOf>
+	</owl:Class>
+	
+	<owl:Class rdf:ID="Bar">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bar Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bar</rdfs:comment>
+		<dc:description xml:lang="en">A bar or clasp is a thin metal bar attached to the ribbon of a military decoration, civil decoration, or other medal. It is most commonly used to indicate the campaign or operation the recipient received the award for, and multiple bars on the same medal are used to indicate that the recipient has met the criteria for receiving the medal in multiple theatres.</dc:description>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Award"/>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#Honour"/>
+        <owl:disjointWith rdf:resource="#Decoration"/>
+        <owl:disjointWith rdf:resource="#Medal"/>
+        <owl:disjointWith rdf:resource="#Commendation"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#isAssociatedWithAward"/>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<owl:Class rdf:about="#Honour"/>
+							<owl:Class rdf:about="#Decoration"/>
+							<owl:Class rdf:about="#Medal"/>
+						</owl:unionOf>
+					</owl:Class>
+				</owl:allValuesFrom>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<owl:Class rdf:ID="CampaignBar">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CampaignBar Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Campaign Bar</rdfs:comment>
+		<dc:description xml:lang="en">Campaign Bars or Battle Bars are used to denote the particular campaign, battle, or region the recipient operated in to receive the award.</dc:description>
+		<owl:disjointWith rdf:resource="#AchievementBar"/>
+        <owl:disjointWith rdf:resource="#MultipleAwardBar"/>
+		<owl:disjointWith rdf:resource="#ServiceBar"/>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Bar"/>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<owl:Class rdf:ID="AchievementBar">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AchievementBar Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Achievement Bar</rdfs:comment>
+		<dc:description xml:lang="en">Achievement Bars are used to indicate a particular or additional feat associated with the medal. </dc:description>
+		<owl:disjointWith rdf:resource="#CampaignBar"/>
+        <owl:disjointWith rdf:resource="#MultipleAwardBar"/>
+		<owl:disjointWith rdf:resource="#ServiceBar"/>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Bar"/>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<owl:Class rdf:ID="MultipleAwardBar">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MultipleAwardBar Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MultipleAward Bar</rdfs:comment>
+		<dc:description xml:lang="en">Multiple Award Bars display the number of times a decoration for merit or distinguished service has been awarded. Each bar is indicated by a rosette when the ribbon alone is worn (or, in the case of the Victoria Cross or George Cross, by an additional miniature model of the cross itself, since one of these is always worn on the ribbon of these two awards).</dc:description>
+		<owl:disjointWith rdf:resource="#CampaignBar"/>
+        <owl:disjointWith rdf:resource="#AchievementBar"/>
+        <owl:disjointWith rdf:resource="#ServiceBar"/>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Bar"/>
+		</rdfs:subClassOf>
+	</owl:Class>		
+
+	<owl:Class rdf:ID="ServiceBar">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ServiceBar Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Service Bar</rdfs:comment>
+		<dc:description xml:lang="en">Service Bars indicate the length of service a person has provided to the organisation presenting the award.  </dc:description>
+		<owl:disjointWith rdf:resource="#CampaignBar"/>
+        <owl:disjointWith rdf:resource="#AchievementBar"/>
+        <owl:disjointWith rdf:resource="#MultipleAwardBar"/>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Bar"/>
+		</rdfs:subClassOf>
+	</owl:Class>
+	
+	
+	
+	<owl:Class rdf:ID="OrderOfChivalry">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OrderOfChivalry Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Order of Chivalry</rdfs:comment>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Order"/>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<owl:Class rdf:ID="Baroness">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Baroness Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Baroness</rdfs:comment>
+		<dc:description xml:lang="en"></dc:description>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#LifePeer"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>Bt</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#isAwardedTo"/>
+				<owl:allValuesFrom rdf:resource="&person;Male"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#Baron"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Baroness</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<owl:Class rdf:ID="Baron">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Baron Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Baron</rdfs:comment>
+		<dc:description xml:lang="en"></dc:description>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#LifePeer"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>Bt</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#isAwardedTo"/>
+				<owl:allValuesFrom rdf:resource="&person;Female"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#Baroness"/>
+        <rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Baron</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<owl:Class rdf:ID="PrivyCounsellor">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PrivyCounsellor Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Privy Counsellor</rdfs:comment>
+		<dc:description xml:lang="en">The Privy Council of senior advisers to the Sovereign date back to the 14th Century. The Privy Counsellors include all members of the Cabinet, other senior ministers, leaders of opposition parties, Lords Justice of Appeal, and the Archbishops of Canterbury and York. The appointment is for life, but under modern convention only members of the Government are normally summoned to meetings, together with new Privy Counsellors who have to take part in a short ceremony involving swearing an oath of allegiance and kissing of The Queen's hand. Should there be a need for The Privy Council to meet in The Queen's absence, Her Majesty, by Letters Patent, creates senior members of the Royal Family Councillors of State, enabling them to represent her in summoning a Privy Council meeting.</dc:description>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#AppointmentsToTheMonarch"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>PC</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf rdf:resource="&honours;AwardandHonourThing"/>
+		<owl:disjointWith rdf:resource="#AideDeCamp"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Privy Counsellor</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<owl:Class rdf:ID="AideDeCamp">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AideDeCamp Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aide de Camp</rdfs:comment>
+		<dc:description xml:lang="en">Queen Victoria instituted the appointment of a small group of personal Aide-de-Camp (ADC) positions, an honorary appointment with few duties. The Prince is one of The Queen's personal ADCs. Principal ADC, an office held by some high-ranking officers in the armed services, carries duties including attendance on The Queen at the State Opening of Parliament. Other ADCs, rarely asked to perform any duties, are chosen from the Armed Services.</dc:description>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#AppointmentsToTheMonarch"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>ADC</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#PrivyCounsellor"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Aide de Camp</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<owl:Class rdf:ID="KnightBatchelor">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">KnightBatchelor Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Knight Batchelor</rdfs:comment>
+		<dc:description xml:lang="en">The appointment of Knight Bachelor (to men only) originates from the medieval period and recipients are called 'Sir' but have no post nominal letters. There is no equivalent appointment for women (the DBE is awarded instead).</dc:description>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Knight"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf rdf:resource="&honours;AwardandHonourThing"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Knight Batchelor</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#KnightOfTheGarter"/>
+        <owl:disjointWith rdf:resource="#KnightOfTheThistle"/>
+        <owl:disjointWith rdf:resource="#KnightGrandCrossVictorianOrder"/>
+        <owl:disjointWith rdf:resource="#KnightCommanderVictorianOrder"/>
+        <owl:disjointWith rdf:resource="#KnightGrandCrossOrderOfBath"/>
+        <owl:disjointWith rdf:resource="#KnightCommmanderOrderOfBath"/>
+        <owl:disjointWith rdf:resource="#KnightGrandCrossOrderOfStMichaelAndStGeorge"/>
+        <owl:disjointWith rdf:resource="#KnightCommanderOrderOfStMichaelAndStGeorge"/>
+        <owl:disjointWith rdf:resource="#KnightGrandCrossOrderOfTheBritishEmpire"/>
+        <owl:disjointWith rdf:resource="#KnightCommanderOrderOfTheBritishEmpire"/>
+	</owl:Class>
+
+	<!--The Most Noble Order of the Garter -->
+	
+	<owl:Class rdf:ID="TheMostNobleOrderOfTheGarter">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TheMostNobleOrderOfTheGarter Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Most Noble Order of the Garter</rdfs:comment>
+		<dc:description xml:lang="en">Motto: Honi soit qui mal y pense (Shame on him who thinks this evil)
+Date created: 1348
+The Order of the Garter is the oldest and most prestigious of the meritorious orders. The Order was founded by Edward III in the 14th century. The origins of its name and motto are obscure. The chapel of the order is St George's Chapel in Windsor Castle.</dc:description>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#hasRecipients"/>
+				<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">25</owl:maxCardinality>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#hasRecipients"/>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<owl:Class rdf:about="#KnightOfTheGarter"/>
+							<owl:Class rdf:about="#LadyOfTheGarter"/>
+						</owl:unionOf>
+					</owl:Class>
+				</owl:allValuesFrom>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#orderName"/>
+				<owl:hasValue>The Most Noble Order of the Garter</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#DistinguishedServiceOrder"/>
+		<owl:disjointWith rdf:resource="#TheMostAncientAndNobleOrderOfTheThistle"/>
+        <owl:disjointWith rdf:resource="#TheOrderOfMerit"/>
+        <owl:disjointWith rdf:resource="#TheRoyalVictorianOrder"/>
+        <owl:disjointWith rdf:resource="#TheMostHonourableOrderOfTheBath"/>
+        <owl:disjointWith rdf:resource="#TheOrderOfStMichaelAndStGeorge"/>
+        <owl:disjointWith rdf:resource="#TheOrderOfTheBritishEmpire"/>
+        <owl:disjointWith rdf:resource="#TheOrderOfTheCompanionsOfHonour"/>
+        <owl:disjointWith rdf:resource="#ImperialServiceOrder"/>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#OrderOfChivalry"/>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<owl:Class rdf:ID="KnightOfTheGarter">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">KnightOfTheGarter Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Knight of the Garter</rdfs:comment>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Knight"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#isMemberOfOrder"/>
+				<owl:allValuesFrom rdf:resource="#TheMostNobleOrderOfTheGarter"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>KG</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Knight of the Garter</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#isMemberOfOrder"/>
+				<owl:allValuesFrom rdf:resource="#TheMostNobleOrderOfTheGarter"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#KnightBatchelor"/>
+		<owl:disjointWith rdf:resource="#KnightOfTheThistle"/>
+        <owl:disjointWith rdf:resource="#KnightGrandCrossVictorianOrder"/>
+        <owl:disjointWith rdf:resource="#KnightCommanderVictorianOrder"/>
+        <owl:disjointWith rdf:resource="#KnightGrandCrossOrderOfBath"/>
+        <owl:disjointWith rdf:resource="#KnightCommmanderOrderOfBath"/>
+        <owl:disjointWith rdf:resource="#KnightGrandCrossOrderOfStMichaelAndStGeorge"/>
+        <owl:disjointWith rdf:resource="#KnightCommanderOrderOfStMichaelAndStGeorge"/>
+        <owl:disjointWith rdf:resource="#KnightGrandCrossOrderOfTheBritishEmpire"/>
+        <owl:disjointWith rdf:resource="#KnightCommanderOrderOfTheBritishEmpire"/>
+	</owl:Class>
+
+	<owl:Class rdf:ID="LadyOfTheGarter">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LadyOfTheGarter Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lady of the Garter</rdfs:comment>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Lady"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#isMemberOfOrder"/>
+				<owl:allValuesFrom rdf:resource="#TheMostNobleOrderOfTheGarter"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>LG</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Lady of the Garter</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#isMemberOfOrder"/>
+				<owl:allValuesFrom rdf:resource="#TheMostNobleOrderOfTheGarter"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#LadyOfTheThistle"/>
+	</owl:Class>
+
+	<!--  The Most Ancient and Noble Order of the Thistle  -->
+	<owl:Class rdf:ID="TheMostAncientAndNobleOrderOfTheThistle">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TheMostAncientAndNobleOrderOfTheThistle Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Most Ancient and Noble Order of the Thistle</rdfs:comment>
+		<dc:description xml:lang="en">Motto: Nemo me impune lacessit (No one provokes me with impunity)
+Date created: 1687
+The Order of the Thistle has ancient roots, but was only established on a statutory basis by James II in 1687. It is limited to 16 Knights (women were admitted in 1987), all of whom must be Scottish.</dc:description>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#hasRecipients"/>
+				<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">16</owl:maxCardinality>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#orderName"/>
+				<owl:hasValue>The Most Ancient and Noble Order of the Thistle</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#hasRecipients"/>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<owl:Class rdf:about="#KnightOfTheThistle"/>
+							<owl:Class rdf:about="#LadyOfTheThistle"/>
+						</owl:unionOf>
+					</owl:Class>
+				</owl:allValuesFrom>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#DistinguishedServiceOrder"/>
+		<owl:disjointWith rdf:resource="#TheMostNobleOrderOfTheGarter"/>
+        <owl:disjointWith rdf:resource="#TheOrderOfMerit"/>
+        <owl:disjointWith rdf:resource="#TheRoyalVictorianOrder"/>
+        <owl:disjointWith rdf:resource="#TheMostHonourableOrderOfTheBath"/>
+        <owl:disjointWith rdf:resource="#TheOrderOfStMichaelAndStGeorge"/>
+        <owl:disjointWith rdf:resource="#TheOrderOfTheBritishEmpire"/>
+        <owl:disjointWith rdf:resource="#TheOrderOfTheCompanionsOfHonour"/>
+        <owl:disjointWith rdf:resource="#ImperialServiceOrder"/>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#OrderOfChivalry"/>
+		</rdfs:subClassOf>
+	</owl:Class>	
+
+<owl:Class rdf:ID="KnightOfTheThistle">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">KnightOfTheThistle Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Knight of the Thistle</rdfs:comment>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Knight"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#isMemberOfOrder"/>
+				<owl:allValuesFrom rdf:resource="#TheMostAncientAndNobleOrderOfTheThistle"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>KT</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Knight of the Thistle</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#KnightBatchelor"/>
+		<owl:disjointWith rdf:resource="#KnightOfTheGarter"/>
+        <owl:disjointWith rdf:resource="#KnightGrandCrossVictorianOrder"/>
+        <owl:disjointWith rdf:resource="#KnightCommanderVictorianOrder"/>
+        <owl:disjointWith rdf:resource="#KnightGrandCrossOrderOfBath"/>
+        <owl:disjointWith rdf:resource="#KnightCommmanderOrderOfBath"/>
+        <owl:disjointWith rdf:resource="#KnightGrandCrossOrderOfStMichaelAndStGeorge"/>
+        <owl:disjointWith rdf:resource="#KnightCommanderOrderOfStMichaelAndStGeorge"/>
+        <owl:disjointWith rdf:resource="#KnightGrandCrossOrderOfTheBritishEmpire"/>
+        <owl:disjointWith rdf:resource="#KnightCommanderOrderOfTheBritishEmpire"/>
+	</owl:Class>
+
+	<owl:Class rdf:ID="LadyOfTheThistle">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LadyOfTheThistle Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lady of the Thistle</rdfs:comment>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Lady"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#isMemberOfOrder"/>
+				<owl:allValuesFrom rdf:resource="#TheMostAncientAndNobleOrderOfTheThistle"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>LT</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Lady of the Thistle</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#LadyOfTheGarter"/>
+	</owl:Class>
+
+
+
+
+	<!--  The Order of Merit  -->
+	
+	<owl:Class rdf:ID="TheOrderOfMerit">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TheOrderOfMerit Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Order of Merit</rdfs:comment>
+		<dc:description xml:lang="en">Date created: 1902
+This order was created by Edward VII to recognise nationally distinguished contributions in science, art, music, literature and public life. There is also a military division which is used to award exceptional military leaders in time of war. The order is limited to 24 members.</dc:description>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#hasRecipients"/>
+				<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">24</owl:maxCardinality>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#hasRecipients"/>
+				<owl:allValuesFrom rdf:resource="#MemberOfTheOrderOfMerit"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#orderName"/>
+				<owl:hasValue>The Order of Merit</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#DistinguishedServiceOrder"/>
+		<owl:disjointWith rdf:resource="#TheMostNobleOrderOfTheGarter"/>
+        <owl:disjointWith rdf:resource="#TheMostAncientAndNobleOrderOfTheThistle"/>
+        <owl:disjointWith rdf:resource="#TheRoyalVictorianOrder"/>
+        <owl:disjointWith rdf:resource="#TheMostHonourableOrderOfTheBath"/>
+        <owl:disjointWith rdf:resource="#TheOrderOfStMichaelAndStGeorge"/>
+        <owl:disjointWith rdf:resource="#TheOrderOfTheBritishEmpire"/>
+        <owl:disjointWith rdf:resource="#TheOrderOfTheCompanionsOfHonour"/>
+        <owl:disjointWith rdf:resource="#ImperialServiceOrder"/>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#OrderOfChivalry"/>
+		</rdfs:subClassOf>
+	</owl:Class>		
+
+	<owl:Class rdf:ID="MemberOfTheOrderOfMerit">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MemberOfTheOrderOfMerit Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Member of the Order of Merit</rdfs:comment>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Member"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#isMemberOfOrder"/>
+				<owl:allValuesFrom rdf:resource="#MemberOfTheOrderOfMerit"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>OM</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Member of the Order of Merit</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#MemberVictorianOrder"/>
+        <owl:disjointWith rdf:resource="#MemberOrderOfTheBritishEmpire"/>
+	</owl:Class>	
+	
+	
+	
+	<owl:Class rdf:ID="TheRoyalVictorianOrder">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TheRoyalVictorianOrder Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Royal Victorian Order</rdfs:comment>
+		<dc:description xml:lang="en">Date created: 1896
+Given for services to The Queen and other members of the Royal Family. There is also a medal, the Royal Victorian Medal, with three grades, gold, silver and bronze. The chapel of the order is The Queen's Chapel of the Savoy.</dc:description>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#hasRecipients"/>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<owl:Class rdf:about="#KnightGrandCrossVictorianOrder"/>
+							<owl:Class rdf:about="#DameGrandCrossVictorianOrder"/>
+							<owl:Class rdf:about="#KnightCommanderVictorianOrder"/>
+							<owl:Class rdf:about="#DameCommanderVictorianOrder"/>
+							<owl:Class rdf:about="#LieutenantVictorianOrder"/>
+							<owl:Class rdf:about="#MemberVictorianOrder"/>
+						</owl:unionOf>
+					</owl:Class>
+				</owl:allValuesFrom>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf rdf:resource="&honours;AwardandHonourThing"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#orderName"/>
+				<owl:hasValue>The Royal Victorian Order</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#DistinguishedServiceOrder"/>
+		<owl:disjointWith rdf:resource="#TheMostNobleOrderOfTheGarter"/>
+        <owl:disjointWith rdf:resource="#TheMostAncientAndNobleOrderOfTheThistle"/>
+        <owl:disjointWith rdf:resource="#TheOrderOfMerit"/>
+        <owl:disjointWith rdf:resource="#TheMostHonourableOrderOfTheBath"/>
+        <owl:disjointWith rdf:resource="#TheOrderOfStMichaelAndStGeorge"/>
+        <owl:disjointWith rdf:resource="#TheOrderOfTheBritishEmpire"/>
+        <owl:disjointWith rdf:resource="#TheOrderOfTheCompanionsOfHonour"/>
+        <owl:disjointWith rdf:resource="#ImperialServiceOrder"/>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#OrderOfChivalry"/>
+		</rdfs:subClassOf>
+	</owl:Class>		
+
+	<owl:Class rdf:ID="KnightGrandCrossVictorianOrder">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">KnightGrandCrossVictorianOrder Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Knight Grand Cross Victorian Order</rdfs:comment>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Knight"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#isMemberOfOrder"/>
+				<owl:allValuesFrom rdf:resource="#TheRoyalVictorianOrder"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>GCVO</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Knight Grand Cross</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#KnightBatchelor"/>
+		<owl:disjointWith rdf:resource="#KnightOfTheGarter"/>
+        <owl:disjointWith rdf:resource="#KnightOfTheThistle"/>
+        <owl:disjointWith rdf:resource="#KnightCommanderVictorianOrder"/>
+        <owl:disjointWith rdf:resource="#KnightGrandCrossOrderOfBath"/>
+        <owl:disjointWith rdf:resource="#KnightCommmanderOrderOfBath"/>
+        <owl:disjointWith rdf:resource="#KnightGrandCrossOrderOfStMichaelAndStGeorge"/>
+        <owl:disjointWith rdf:resource="#KnightCommanderOrderOfStMichaelAndStGeorge"/>
+        <owl:disjointWith rdf:resource="#KnightGrandCrossOrderOfTheBritishEmpire"/>
+        <owl:disjointWith rdf:resource="#KnightCommanderOrderOfTheBritishEmpire"/>
+	</owl:Class>	
+
+	<owl:Class rdf:ID="DameGrandCrossVictorianOrder">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DameGrandCrossVictorianOrder Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dame Grand Cross Victorian Order</rdfs:comment>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Dame"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#isMemberOfOrder"/>
+				<owl:allValuesFrom rdf:resource="#TheRoyalVictorianOrder"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>GCVO</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Dame Grand Cross</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#DameCommanderOrderOfStMichaelAndStGeorge"/>
+		<owl:disjointWith rdf:resource="#DameCommanderVictorianOrder"/>
+        <owl:disjointWith rdf:resource="#DameGrandCrossOrderOfBath"/>
+        <owl:disjointWith rdf:resource="#DameCommmanderOrderOfBath"/>
+        <owl:disjointWith rdf:resource="#DameGrandCrossOrderOfStMichaelAndStGeorge"/>
+        <owl:disjointWith rdf:resource="#DameGrandCrossOrderOfTheBritishEmpire"/>
+        <owl:disjointWith rdf:resource="#DameCommanderOrderOfTheBritishEmpire"/>
+	</owl:Class>	
+
+	<owl:Class rdf:ID="KnightCommanderVictorianOrder">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">KnightCommanderVictorianOrder Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Knight Commander Victorian Order</rdfs:comment>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Knight"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#isMemberOfOrder"/>
+				<owl:allValuesFrom rdf:resource="#TheRoyalVictorianOrder"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Knight Commander</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>KCVO</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#KnightBatchelor"/>
+		<owl:disjointWith rdf:resource="#KnightOfTheGarter"/>
+        <owl:disjointWith rdf:resource="#KnightOfTheThistle"/>
+        <owl:disjointWith rdf:resource="#KnightGrandCrossVictorianOrder"/>
+        <owl:disjointWith rdf:resource="#KnightGrandCrossOrderOfBath"/>
+        <owl:disjointWith rdf:resource="#KnightCommmanderOrderOfBath"/>
+        <owl:disjointWith rdf:resource="#KnightGrandCrossOrderOfStMichaelAndStGeorge"/>
+        <owl:disjointWith rdf:resource="#KnightCommanderOrderOfStMichaelAndStGeorge"/>
+        <owl:disjointWith rdf:resource="#KnightGrandCrossOrderOfTheBritishEmpire"/>
+        <owl:disjointWith rdf:resource="#KnightCommanderOrderOfTheBritishEmpire"/>
+	</owl:Class>	
+
+	<owl:Class rdf:ID="DameCommanderVictorianOrder">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DameCommanderVictorianOrder Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dame Commander Victorian Order</rdfs:comment>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Dame"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#isMemberOfOrder"/>
+				<owl:allValuesFrom rdf:resource="#TheRoyalVictorianOrder"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Dame Commander</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>DCVO</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#DameCommanderOrderOfStMichaelAndStGeorge"/>
+		<owl:disjointWith rdf:resource="#DameGrandCrossVictorianOrder"/>
+        <owl:disjointWith rdf:resource="#DameGrandCrossOrderOfBath"/>
+        <owl:disjointWith rdf:resource="#DameCommmanderOrderOfBath"/>
+        <owl:disjointWith rdf:resource="#DameGrandCrossOrderOfStMichaelAndStGeorge"/>
+        <owl:disjointWith rdf:resource="#DameGrandCrossOrderOfTheBritishEmpire"/>
+        <owl:disjointWith rdf:resource="#DameCommanderOrderOfTheBritishEmpire"/>
+	</owl:Class>	
+
+	<owl:Class rdf:ID="LieutenantVictorianOrder">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LieutenantVictorianOrder Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lieutenant Victorian Order</rdfs:comment>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Lieutenant"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#isMemberOfOrder"/>
+				<owl:allValuesFrom rdf:resource="#TheRoyalVictorianOrder"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Lieutenant</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>LVO</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+
+	<owl:Class rdf:ID="MemberVictorianOrder">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MemberVictorianOrder Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Member Victorian Order</rdfs:comment>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Member"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#isMemberOfOrder"/>
+				<owl:allValuesFrom rdf:resource="#TheRoyalVictorianOrder"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Member</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>MVO</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#MemberOfTheOrderOfMerit"/>
+		<owl:disjointWith rdf:resource="#MemberOrderOfTheBritishEmpire"/>
+	</owl:Class>	
+
+
+
+
+
+
+
+
+
+
+	<!--  The Most Honourable Order of the Bath  -->
+
+	
+	<owl:Class rdf:ID="TheMostHonourableOrderOfTheBath">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TheMostHonourableOrderOfTheBath Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Most Honourable Order of the Bath</rdfs:comment>
+		<dc:description xml:lang="en">Motto: Tria Juncta in uno (Three joined in one)
+Date Created: 1725
+The Order of the Bath is another order with ancient roots. It takes it name from the ceremonial bathing that preceded investiture in medieval times. The order was formally established in 1725 and is awarded to state servants (including members of the Armed Forces). It has a military division and a civil division. The chapel of the Order is in Westminster Abbey.</dc:description>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#hasRecipients"/>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<owl:Class rdf:about="#KnightGrandCrossOrderOfBath"/>
+							<owl:Class rdf:about="#DameGrandCrossOrderOfBath"/>
+							<owl:Class rdf:about="#KnightCommmanderOrderOfBath"/>
+							<owl:Class rdf:about="#DameCommmanderOrderOfBath"/>
+							<owl:Class rdf:about="#CompanionOrderOfBath"/>
+						</owl:unionOf>
+					</owl:Class>
+				</owl:allValuesFrom>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf rdf:resource="&honours;AwardandHonourThing"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#orderName"/>
+				<owl:hasValue>The Most Honourable Order of the Bath</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#DistinguishedServiceOrder"/>
+		<owl:disjointWith rdf:resource="#TheMostNobleOrderOfTheGarter"/>
+        <owl:disjointWith rdf:resource="#TheMostAncientAndNobleOrderOfTheThistle"/>
+        <owl:disjointWith rdf:resource="#TheOrderOfMerit"/>
+        <owl:disjointWith rdf:resource="#TheRoyalVictorianOrder"/>
+        <owl:disjointWith rdf:resource="#TheOrderOfStMichaelAndStGeorge"/>
+        <owl:disjointWith rdf:resource="#TheOrderOfTheBritishEmpire"/>
+        <owl:disjointWith rdf:resource="#TheOrderOfTheCompanionsOfHonour"/>
+        <owl:disjointWith rdf:resource="#ImperialServiceOrder"/>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#OrderOfChivalry"/>
+		</rdfs:subClassOf>
+	</owl:Class>	
+
+	
+	<owl:Class rdf:ID="KnightGrandCrossOrderOfBath">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">KnightGrandCrossOrderOfBath Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Knight Grand Cross Order Of Bath</rdfs:comment>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Knight"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#isMemberOfOrder"/>
+				<owl:allValuesFrom rdf:resource="#TheMostHonourableOrderOfTheBath"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Knight Grand Cross</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>GCB</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#KnightBatchelor"/>
+		<owl:disjointWith rdf:resource="#KnightOfTheGarter"/>
+        <owl:disjointWith rdf:resource="#KnightOfTheThistle"/>
+        <owl:disjointWith rdf:resource="#KnightGrandCrossVictorianOrder"/>
+        <owl:disjointWith rdf:resource="#KnightCommanderVictorianOrder"/>
+        <owl:disjointWith rdf:resource="#KnightCommmanderOrderOfBath"/>
+        <owl:disjointWith rdf:resource="#KnightGrandCrossOrderOfStMichaelAndStGeorge"/>
+        <owl:disjointWith rdf:resource="#KnightCommanderOrderOfStMichaelAndStGeorge"/>
+        <owl:disjointWith rdf:resource="#KnightGrandCrossOrderOfTheBritishEmpire"/>
+        <owl:disjointWith rdf:resource="#KnightCommanderOrderOfTheBritishEmpire"/>
+	</owl:Class>	
+	
+	<owl:Class rdf:ID="DameGrandCrossOrderOfBath">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DameGrandCrossOrderOfBath Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dame Grand Cross Order Of Bath</rdfs:comment>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Dame"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#isMemberOfOrder"/>
+				<owl:allValuesFrom rdf:resource="#TheMostHonourableOrderOfTheBath"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Dame Grand Cross</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>GCB</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#DameCommanderOrderOfStMichaelAndStGeorge"/>
+		<owl:disjointWith rdf:resource="#DameGrandCrossVictorianOrder"/>
+        <owl:disjointWith rdf:resource="#DameCommanderVictorianOrder"/>
+        <owl:disjointWith rdf:resource="#DameCommmanderOrderOfBath"/>
+        <owl:disjointWith rdf:resource="#DameGrandCrossOrderOfStMichaelAndStGeorge"/>
+        <owl:disjointWith rdf:resource="#DameGrandCrossOrderOfTheBritishEmpire"/>
+        <owl:disjointWith rdf:resource="#DameCommanderOrderOfTheBritishEmpire"/>
+	</owl:Class>		
+	
+	<owl:Class rdf:ID="KnightCommmanderOrderOfBath">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">KnightCommmanderOrderOfBath Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Knight Commmander Order Of Bath</rdfs:comment>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Knight"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#isMemberOfOrder"/>
+				<owl:allValuesFrom rdf:resource="#TheMostHonourableOrderOfTheBath"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Knight Commmander</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>KCB</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#KnightBatchelor"/>
+		<owl:disjointWith rdf:resource="#KnightOfTheGarter"/>
+        <owl:disjointWith rdf:resource="#KnightOfTheThistle"/>
+        <owl:disjointWith rdf:resource="#KnightGrandCrossVictorianOrder"/>
+        <owl:disjointWith rdf:resource="#KnightCommanderVictorianOrder"/>
+        <owl:disjointWith rdf:resource="#KnightGrandCrossOrderOfBath"/>
+        <owl:disjointWith rdf:resource="#KnightGrandCrossOrderOfStMichaelAndStGeorge"/>
+        <owl:disjointWith rdf:resource="#KnightCommanderOrderOfStMichaelAndStGeorge"/>
+        <owl:disjointWith rdf:resource="#KnightGrandCrossOrderOfTheBritishEmpire"/>
+        <owl:disjointWith rdf:resource="#KnightCommanderOrderOfTheBritishEmpire"/>
+	</owl:Class>	
+	
+	<owl:Class rdf:ID="DameCommmanderOrderOfBath">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DameCommmanderOrderOfBath Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dame Commmander Order Of Bath</rdfs:comment>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Dame"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#isMemberOfOrder"/>
+				<owl:allValuesFrom rdf:resource="#TheMostHonourableOrderOfTheBath"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Dame Commmander</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>DCB</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#DameCommanderOrderOfStMichaelAndStGeorge"/>
+		<owl:disjointWith rdf:resource="#DameGrandCrossVictorianOrder"/>
+        <owl:disjointWith rdf:resource="#DameCommanderVictorianOrder"/>
+        <owl:disjointWith rdf:resource="#DameGrandCrossOrderOfBath"/>
+        <owl:disjointWith rdf:resource="#DameGrandCrossOrderOfStMichaelAndStGeorge"/>
+        <owl:disjointWith rdf:resource="#DameGrandCrossOrderOfTheBritishEmpire"/>
+        <owl:disjointWith rdf:resource="#DameCommanderOrderOfTheBritishEmpire"/>
+	</owl:Class>	
+	
+	<owl:Class rdf:ID="CompanionOrderOfBath">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CompanionOrderOfBath Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Companion Order Of Bath</rdfs:comment>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Companion"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#isMemberOfOrder"/>
+				<owl:allValuesFrom rdf:resource="#TheMostHonourableOrderOfTheBath"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Companion</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>CB</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#CompanionDistinguishedServiceOrder"/>
+		<owl:disjointWith rdf:resource="#CompanionOrderOfStMichaelAndStGeorge"/>
+        <owl:disjointWith rdf:resource="#CompanionOrderOfTheCompanionsOfHonour"/>
+        <owl:disjointWith rdf:resource="#CompanionImperialServiceOrder"/>
+	</owl:Class>		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!--  The Order of St Michael and St George  -->
+	
+	<owl:Class rdf:ID="TheOrderOfStMichaelAndStGeorge">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TheOrderOfStMichaelAndStGeorge Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Order of St Michael and St George</rdfs:comment>
+		<dc:description xml:lang="en">Motto: Auspicium Melioris Aevi (Token of a better age)
+Date Created: 1818
+This order was created in the early part of the 19th century to reward service in Malta and the Ionian islands. It has since evolved to encompass any members of the Diplomatic Service and those who render service to UK interests overseas. The chapel of the order is in St Paul's cathedral.</dc:description>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#hasRecipients"/>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<owl:Class rdf:about="#KnightGrandCrossOrderOfStMichaelAndStGeorge"/>
+							<owl:Class rdf:about="#DameGrandCrossOrderOfStMichaelAndStGeorge"/>
+							<owl:Class rdf:about="#KnightCommanderOrderOfStMichaelAndStGeorge"/>
+							<owl:Class rdf:about="#DameCommanderOrderOfStMichaelAndStGeorge"/>
+							<owl:Class rdf:about="#CompanionOrderOfStMichaelAndStGeorge"/>
+						</owl:unionOf>
+					</owl:Class>
+				</owl:allValuesFrom>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf rdf:resource="&honours;AwardandHonourThing"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#orderName"/>
+				<owl:hasValue>The Order of St Michael and St George</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#DistinguishedServiceOrder"/>
+		<owl:disjointWith rdf:resource="#TheMostNobleOrderOfTheGarter"/>
+        <owl:disjointWith rdf:resource="#TheMostAncientAndNobleOrderOfTheThistle"/>
+        <owl:disjointWith rdf:resource="#TheOrderOfMerit"/>
+        <owl:disjointWith rdf:resource="#TheRoyalVictorianOrder"/>
+        <owl:disjointWith rdf:resource="#TheMostHonourableOrderOfTheBath"/>
+        <owl:disjointWith rdf:resource="#TheOrderOfTheBritishEmpire"/>
+        <owl:disjointWith rdf:resource="#TheOrderOfTheCompanionsOfHonour"/>
+        <owl:disjointWith rdf:resource="#ImperialServiceOrder"/>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#OrderOfChivalry"/>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<owl:Class rdf:ID="KnightGrandCrossOrderOfStMichaelAndStGeorge">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">KnightGrandCrossOrderOfStMichaelAndStGeorge Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Knight Grand Cross Order Of St Michael And St George</rdfs:comment>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Knight"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#isMemberOfOrder"/>
+				<owl:allValuesFrom rdf:resource="#TheOrderOfStMichaelAndStGeorge"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Knight Grand Cross</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>GCMG</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#KnightBatchelor"/>
+		<owl:disjointWith rdf:resource="#KnightOfTheGarter"/>
+        <owl:disjointWith rdf:resource="#KnightOfTheThistle"/>
+        <owl:disjointWith rdf:resource="#KnightGrandCrossVictorianOrder"/>
+        <owl:disjointWith rdf:resource="#KnightCommanderVictorianOrder"/>
+        <owl:disjointWith rdf:resource="#KnightGrandCrossOrderOfBath"/>
+        <owl:disjointWith rdf:resource="#KnightCommmanderOrderOfBath"/>
+        <owl:disjointWith rdf:resource="#KnightCommanderOrderOfStMichaelAndStGeorge"/>
+        <owl:disjointWith rdf:resource="#KnightGrandCrossOrderOfTheBritishEmpire"/>
+        <owl:disjointWith rdf:resource="#KnightCommanderOrderOfTheBritishEmpire"/>
+	</owl:Class>	
+	
+	<owl:Class rdf:ID="DameGrandCrossOrderOfStMichaelAndStGeorge">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DameGrandCrossOrderOfStMichaelAndStGeorge Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dame Grand Cross Order Of St Michael And St George</rdfs:comment>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Dame"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#isMemberOfOrder"/>
+				<owl:allValuesFrom rdf:resource="#TheOrderOfStMichaelAndStGeorge"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Knight Grand Cross</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>GCMG</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#DameCommanderOrderOfStMichaelAndStGeorge"/>
+		<owl:disjointWith rdf:resource="#DameGrandCrossVictorianOrder"/>
+        <owl:disjointWith rdf:resource="#DameCommanderVictorianOrder"/>
+        <owl:disjointWith rdf:resource="#DameGrandCrossOrderOfBath"/>
+        <owl:disjointWith rdf:resource="#DameCommmanderOrderOfBath"/>
+        <owl:disjointWith rdf:resource="#DameGrandCrossOrderOfTheBritishEmpire"/>
+        <owl:disjointWith rdf:resource="#DameCommanderOrderOfTheBritishEmpire"/>
+	</owl:Class>	
+	
+	<owl:Class rdf:ID="KnightCommanderOrderOfStMichaelAndStGeorge">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">KnightCommanderOrderOfStMichaelAndStGeorge Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Knight Commander Order Of St Michael And St George</rdfs:comment>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Knight"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#isMemberOfOrder"/>
+				<owl:allValuesFrom rdf:resource="#TheOrderOfStMichaelAndStGeorge"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Knight Commander</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>KCMG</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#KnightBatchelor"/>
+		<owl:disjointWith rdf:resource="#KnightOfTheGarter"/>
+        <owl:disjointWith rdf:resource="#KnightOfTheThistle"/>
+        <owl:disjointWith rdf:resource="#KnightGrandCrossVictorianOrder"/>
+        <owl:disjointWith rdf:resource="#KnightCommanderVictorianOrder"/>
+        <owl:disjointWith rdf:resource="#KnightGrandCrossOrderOfBath"/>
+        <owl:disjointWith rdf:resource="#KnightCommmanderOrderOfBath"/>
+        <owl:disjointWith rdf:resource="#KnightGrandCrossOrderOfStMichaelAndStGeorge"/>
+        <owl:disjointWith rdf:resource="#KnightGrandCrossOrderOfTheBritishEmpire"/>
+        <owl:disjointWith rdf:resource="#KnightCommanderOrderOfTheBritishEmpire"/>
+	</owl:Class>	
+	
+	<owl:Class rdf:ID="DameCommanderOrderOfStMichaelAndStGeorge">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DameCommanderOrderOfStMichaelAndStGeorge Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dame Commander Order Of St Michael And St George</rdfs:comment>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Dame"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#isMemberOfOrder"/>
+				<owl:allValuesFrom rdf:resource="#TheOrderOfStMichaelAndStGeorge"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Dame Commander</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>DCMG</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#DameGrandCrossVictorianOrder"/>
+        <owl:disjointWith rdf:resource="#DameCommanderVictorianOrder"/>
+        <owl:disjointWith rdf:resource="#DameGrandCrossOrderOfBath"/>
+        <owl:disjointWith rdf:resource="#DameCommmanderOrderOfBath"/>
+        <owl:disjointWith rdf:resource="#DameGrandCrossOrderOfStMichaelAndStGeorge"/>
+        <owl:disjointWith rdf:resource="#DameGrandCrossOrderOfTheBritishEmpire"/>
+        <owl:disjointWith rdf:resource="#DameCommanderOrderOfTheBritishEmpire"/>
+	</owl:Class>		
+	
+	<owl:Class rdf:ID="CompanionOrderOfStMichaelAndStGeorge">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CompanionOrderOfStMichaelAndStGeorge Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Companion Order Of St Michael And St George</rdfs:comment>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Companion"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#isMemberOfOrder"/>
+				<owl:allValuesFrom rdf:resource="#TheOrderOfStMichaelAndStGeorge"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Companion</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>CMG</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#CompanionDistinguishedServiceOrder"/>
+		<owl:disjointWith rdf:resource="#CompanionOrderOfBath"/>
+        <owl:disjointWith rdf:resource="#CompanionOrderOfTheCompanionsOfHonour"/>
+        <owl:disjointWith rdf:resource="#CompanionImperialServiceOrder"/>
+	</owl:Class>		
+	
+	
+	
+	
+	
+	<!--  The Order of the British Empire  -->
+	
+	<owl:Class rdf:ID="TheOrderOfTheBritishEmpire">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TheOrderOfTheBritishEmpire Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Order of the British Empire</rdfs:comment>
+		<dc:description xml:lang="en">Motto: For God and the Empire
+Date Created: 1917
+This order was instituted by George V to recognise all levels of service to the country during the first 'total' war. It has evolved to embrace service and achievement in all fields. The Order has a military division and a civil division. The chapel of the order is in St Paul's Cathedral. The British Empire Medal has not been used in the United Kingdom since 1993.</dc:description>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#hasRecipients"/>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<owl:Class rdf:about="#KnightGrandCrossOrderOfTheBritishEmpire"/>
+							<owl:Class rdf:about="#DameGrandCrossOrderOfTheBritishEmpire"/>
+							<owl:Class rdf:about="#KnightCommanderOrderOfTheBritishEmpire"/>
+							<owl:Class rdf:about="#DameCommanderOrderOfTheBritishEmpire"/>
+							<owl:Class rdf:about="#CommanderOrderOfTheBritishEmpire"/>
+							<owl:Class rdf:about="#OfficerOrderOfTheBritishEmpire"/>
+							<owl:Class rdf:about="#MemberOrderOfTheBritishEmpire"/>
+						</owl:unionOf>
+					</owl:Class>
+				</owl:allValuesFrom>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#orderName"/>
+				<owl:hasValue>The Order of the British Empire</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf rdf:resource="&honours;AwardandHonourThing"/>
+		<owl:disjointWith rdf:resource="#DistinguishedServiceOrder"/>
+		<owl:disjointWith rdf:resource="#TheMostNobleOrderOfTheGarter"/>
+        <owl:disjointWith rdf:resource="#TheMostAncientAndNobleOrderOfTheThistle"/>
+        <owl:disjointWith rdf:resource="#TheOrderOfMerit"/>
+        <owl:disjointWith rdf:resource="#TheRoyalVictorianOrder"/>
+        <owl:disjointWith rdf:resource="#TheMostHonourableOrderOfTheBath"/>
+        <owl:disjointWith rdf:resource="#TheOrderOfStMichaelAndStGeorge"/>
+        <owl:disjointWith rdf:resource="#TheOrderOfTheCompanionsOfHonour"/>
+        <owl:disjointWith rdf:resource="#ImperialServiceOrder"/>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#OrderOfChivalry"/>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<owl:Class rdf:ID="KnightGrandCrossOrderOfTheBritishEmpire">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">KnightGrandCrossOrderOfTheBritishEmpire Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Knight Grand Cross Order Of The British Empire</rdfs:comment>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Knight"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#isMemberOfOrder"/>
+				<owl:allValuesFrom rdf:resource="#TheOrderOfTheBritishEmpire"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Knight</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>GBE</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#KnightBatchelor"/>
+		<owl:disjointWith rdf:resource="#KnightOfTheGarter"/>
+        <owl:disjointWith rdf:resource="#KnightOfTheThistle"/>
+        <owl:disjointWith rdf:resource="#KnightGrandCrossVictorianOrder"/>
+        <owl:disjointWith rdf:resource="#KnightCommanderVictorianOrder"/>
+        <owl:disjointWith rdf:resource="#KnightGrandCrossOrderOfBath"/>
+        <owl:disjointWith rdf:resource="#KnightCommmanderOrderOfBath"/>
+        <owl:disjointWith rdf:resource="#KnightGrandCrossOrderOfStMichaelAndStGeorge"/>
+        <owl:disjointWith rdf:resource="#KnightCommanderOrderOfStMichaelAndStGeorge"/>
+        <owl:disjointWith rdf:resource="#KnightCommanderOrderOfTheBritishEmpire"/>
+	</owl:Class>		
+	
+	<owl:Class rdf:ID="DameGrandCrossOrderOfTheBritishEmpire">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DameGrandCrossOrderOfTheBritishEmpire Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dame Grand Cross Order Of The British Empire</rdfs:comment>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Dame"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#isMemberOfOrder"/>
+				<owl:allValuesFrom rdf:resource="#TheOrderOfTheBritishEmpire"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Dame</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>GBE</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#DameCommanderOrderOfStMichaelAndStGeorge"/>
+		<owl:disjointWith rdf:resource="#DameGrandCrossVictorianOrder"/>
+        <owl:disjointWith rdf:resource="#DameCommanderVictorianOrder"/>
+        <owl:disjointWith rdf:resource="#DameGrandCrossOrderOfBath"/>
+        <owl:disjointWith rdf:resource="#DameCommmanderOrderOfBath"/>
+        <owl:disjointWith rdf:resource="#DameGrandCrossOrderOfStMichaelAndStGeorge"/>
+        <owl:disjointWith rdf:resource="#DameCommanderOrderOfTheBritishEmpire"/>
+	</owl:Class>	
+	
+	<owl:Class rdf:ID="KnightCommanderOrderOfTheBritishEmpire">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">KnightCommanderOrderOfTheBritishEmpire Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Knight Commander Order Of The British Empire</rdfs:comment>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Knight"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#isMemberOfOrder"/>
+				<owl:allValuesFrom rdf:resource="#TheOrderOfTheBritishEmpire"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Knight Commander</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>KBE</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#KnightBatchelor"/>
+		<owl:disjointWith rdf:resource="#KnightOfTheGarter"/>
+        <owl:disjointWith rdf:resource="#KnightOfTheThistle"/>
+        <owl:disjointWith rdf:resource="#KnightGrandCrossVictorianOrder"/>
+        <owl:disjointWith rdf:resource="#KnightCommanderVictorianOrder"/>
+        <owl:disjointWith rdf:resource="#KnightGrandCrossOrderOfBath"/>
+        <owl:disjointWith rdf:resource="#KnightCommmanderOrderOfBath"/>
+        <owl:disjointWith rdf:resource="#KnightGrandCrossOrderOfStMichaelAndStGeorge"/>
+        <owl:disjointWith rdf:resource="#KnightCommanderOrderOfStMichaelAndStGeorge"/>
+        <owl:disjointWith rdf:resource="#KnightGrandCrossOrderOfTheBritishEmpire"/>
+    </owl:Class>		
+	
+	<owl:Class rdf:ID="DameCommanderOrderOfTheBritishEmpire">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DameCommanderOrderOfTheBritishEmpire Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dame Commander Order Of The British Empire</rdfs:comment>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Dame"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#isMemberOfOrder"/>
+				<owl:allValuesFrom rdf:resource="#TheOrderOfTheBritishEmpire"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Dame Commander</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>DBE</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#DameCommanderOrderOfStMichaelAndStGeorge"/>
+		<owl:disjointWith rdf:resource="#DameGrandCrossVictorianOrder"/>
+        <owl:disjointWith rdf:resource="#DameCommanderVictorianOrder"/>
+        <owl:disjointWith rdf:resource="#DameGrandCrossOrderOfBath"/>
+        <owl:disjointWith rdf:resource="#DameCommmanderOrderOfBath"/>
+        <owl:disjointWith rdf:resource="#DameGrandCrossOrderOfStMichaelAndStGeorge"/>
+        <owl:disjointWith rdf:resource="#DameGrandCrossOrderOfTheBritishEmpire"/>
+    </owl:Class>		
+	
+	<owl:Class rdf:ID="CommanderOrderOfTheBritishEmpire">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CommanderOrderOfTheBritishEmpire Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Commander Order Of The British Empire</rdfs:comment>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Commander"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#isMemberOfOrder"/>
+				<owl:allValuesFrom rdf:resource="#TheOrderOfTheBritishEmpire"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Commander</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>CBE</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>		
+	
+	<owl:Class rdf:ID="OfficerOrderOfTheBritishEmpire">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OfficerOrderOfTheBritishEmpire Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Officer Order Of The British Empire</rdfs:comment>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Officer"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#isMemberOfOrder"/>
+				<owl:allValuesFrom rdf:resource="#TheOrderOfTheBritishEmpire"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Officer</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>OBE</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>		
+	
+	<owl:Class rdf:ID="MemberOrderOfTheBritishEmpire">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MemberOrderOfTheBritishEmpire Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Member Order Of The British Empire</rdfs:comment>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Member"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#isMemberOfOrder"/>
+				<owl:allValuesFrom rdf:resource="#TheOrderOfTheBritishEmpire"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Member</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>MBE</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#MemberOfTheOrderOfMerit"/>
+		<owl:disjointWith rdf:resource="#MemberVictorianOrder"/>
+    </owl:Class>	
+	
+	
+	<!--  The Order of the Companions of Honour  -->
+	
+	<owl:Class rdf:ID="TheOrderOfTheCompanionsOfHonour">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TheOrderOfTheCompanionsOfHonour Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Order of the Companions of Honour</rdfs:comment>
+		<dc:description xml:lang="en">Motto: In action faithful, in honour clear
+Date Created: 1917
+This order is similar to the Order of Merit in that it is awarded to people who perform important service to the nation in select fields. Its membership is limited to 65 companions</dc:description>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#hasRecipients"/>
+				<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">65</owl:maxCardinality>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf rdf:resource="&honours;AwardandHonourThing"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#hasRecipients"/>
+				<owl:allValuesFrom rdf:resource="#CompanionOrderOfTheCompanionsOfHonour"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#orderName"/>
+				<owl:hasValue>The Order of the Companions of Honour</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#DistinguishedServiceOrder"/>
+		<owl:disjointWith rdf:resource="#TheMostNobleOrderOfTheGarter"/>
+        <owl:disjointWith rdf:resource="#TheMostAncientAndNobleOrderOfTheThistle"/>
+        <owl:disjointWith rdf:resource="#TheOrderOfMerit"/>
+        <owl:disjointWith rdf:resource="#TheRoyalVictorianOrder"/>
+        <owl:disjointWith rdf:resource="#TheMostHonourableOrderOfTheBath"/>
+        <owl:disjointWith rdf:resource="#TheOrderOfStMichaelAndStGeorge"/>
+        <owl:disjointWith rdf:resource="#TheOrderOfTheBritishEmpire"/>
+        <owl:disjointWith rdf:resource="#ImperialServiceOrder"/>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#OrderOfChivalry"/>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<owl:Class rdf:ID="CompanionOrderOfTheCompanionsOfHonour">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CompanionOrderOfTheCompanionsOfHonour Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Companion Order Of The Companions Of Honour</rdfs:comment>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Companion"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#isMemberOfOrder"/>
+				<owl:allValuesFrom rdf:resource="#TheOrderOfTheCompanionsOfHonour"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Companion</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>CH</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#CompanionDistinguishedServiceOrder"/>
+		<owl:disjointWith rdf:resource="#CompanionOrderOfBath"/>
+        <owl:disjointWith rdf:resource="#CompanionOrderOfStMichaelAndStGeorge"/>
+        <owl:disjointWith rdf:resource="#CompanionImperialServiceOrder"/>
+	</owl:Class>
+
+
+	
+	<!--  The Order of the Companions of Honour  -->
+	
+	<owl:Class rdf:ID="ImperialServiceOrder">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ImperialServiceOrder Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Imperial Service Order</rdfs:comment>
+		<dc:description xml:lang="en">The Imperial Service Order was created in 1902 with one level of award - Companion - and a medal for civil servants. The Companion award ceased to be used in the United Kingdom in 1993, but the Imperial Service Medal continues to be awarded to civil servants who have completed 25 years of service in a non-managerial grade.</dc:description>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#hasRecipients"/>
+				<owl:allValuesFrom rdf:resource="#CompanionImperialServiceOrder"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#orderName"/>
+				<owl:hasValue>Imperial Service Order</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#DistinguishedServiceOrder"/>
+		<owl:disjointWith rdf:resource="#TheMostNobleOrderOfTheGarter"/>
+        <owl:disjointWith rdf:resource="#TheMostAncientAndNobleOrderOfTheThistle"/>
+        <owl:disjointWith rdf:resource="#TheOrderOfMerit"/>
+        <owl:disjointWith rdf:resource="#TheRoyalVictorianOrder"/>
+        <owl:disjointWith rdf:resource="#TheMostHonourableOrderOfTheBath"/>
+        <owl:disjointWith rdf:resource="#TheOrderOfStMichaelAndStGeorge"/>
+        <owl:disjointWith rdf:resource="#TheOrderOfTheBritishEmpire"/>
+        <owl:disjointWith rdf:resource="#TheOrderOfTheCompanionsOfHonour"/>
+        <rdfs:subClassOf>
+			<owl:Class rdf:about="#OrderOfChivalry"/>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<owl:Class rdf:ID="CompanionImperialServiceOrder">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CompanionImperialServiceOrder Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Companion Imperial Service Order</rdfs:comment>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Companion"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#isMemberOfOrder"/>
+				<owl:allValuesFrom rdf:resource="#ImperialServiceOrder"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Companion</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>ISO</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#CompanionDistinguishedServiceOrder"/>
+		<owl:disjointWith rdf:resource="#CompanionOrderOfBath"/>
+        <owl:disjointWith rdf:resource="#CompanionOrderOfStMichaelAndStGeorge"/>
+        <owl:disjointWith rdf:resource="#CompanionOrderOfTheCompanionsOfHonour"/>
+    </owl:Class>	
+	
+	<!--  The Order of the Companions of Honour  -->
+	
+	<owl:Class rdf:ID="DistinguishedServiceOrder">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DistinguishedServiceOrder Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Distinguished Service Order</rdfs:comment>
+		<dc:description xml:lang="en">The Distinguished Service Order was created in 1886 and has only one level of award - Companion. It is awarded to officers of the armed forces for gallantry and leadership in action. It can be awarded to officers of the Merchant Navy in time of war.</dc:description>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#hasRecipients"/>
+				<owl:allValuesFrom rdf:resource="#CompanionOrderOfTheCompanionsOfHonour"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#orderName"/>
+				<owl:hasValue>The Distinguished Service Order</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#TheMostNobleOrderOfTheGarter"/>
+        <owl:disjointWith rdf:resource="#TheMostAncientAndNobleOrderOfTheThistle"/>
+        <owl:disjointWith rdf:resource="#TheOrderOfMerit"/>
+        <owl:disjointWith rdf:resource="#TheRoyalVictorianOrder"/>
+        <owl:disjointWith rdf:resource="#TheMostHonourableOrderOfTheBath"/>
+        <owl:disjointWith rdf:resource="#TheOrderOfStMichaelAndStGeorge"/>
+        <owl:disjointWith rdf:resource="#TheOrderOfTheBritishEmpire"/>
+        <owl:disjointWith rdf:resource="#TheOrderOfTheCompanionsOfHonour"/>
+        <owl:disjointWith rdf:resource="#ImperialServiceOrder"/>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#OrderOfChivalry"/>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+	<owl:Class rdf:ID="CompanionDistinguishedServiceOrder">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CompanionDistinguishedServiceOrder Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Companion Distinguished Service Order</rdfs:comment>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Companion"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#isMemberOfOrder"/>
+				<owl:allValuesFrom rdf:resource="#DistinguishedServiceOrder"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Companion</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>DSO</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#CompanionOrderOfBath"/>
+        <owl:disjointWith rdf:resource="#CompanionOrderOfStMichaelAndStGeorge"/>
+        <owl:disjointWith rdf:resource="#CompanionOrderOfTheCompanionsOfHonour"/>
+        <owl:disjointWith rdf:resource="#CompanionImperialServiceOrder"/>
+	</owl:Class>		
+	
+	
+		<!-- Medals and Decorations -->
+
+	<owl:Class rdf:ID="VictoriaCross">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">VictoriaCross Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Victoria Cross</rdfs:comment>
+		<dc:description xml:lang="en">The Victoria Cross is the highest military decoration which is awarded for valour "in the face of the enemy" to members of the armed forces. It takes precedence over all other orders, decorations and medals. The VC was introduced on 29 January 1856 by Queen Victoria to reward acts of valour during the Crimean War. </dc:description>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Decoration"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Victoria Cross</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>VC</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#AirForceCross"/>
+		<owl:disjointWith rdf:resource="#GeorgeCross"/>
+        <owl:disjointWith rdf:resource="#ConspicuousGallantryCross"/>
+        <owl:disjointWith rdf:resource="#MemberRoyalRedCross"/>
+        <owl:disjointWith rdf:resource="#AssociateRoyalRedCross"/>
+        <owl:disjointWith rdf:resource="#DistinguishedServiceCross"/>
+        <owl:disjointWith rdf:resource="#MilitaryCross"/>
+        <owl:disjointWith rdf:resource="#DistinguishedFlyingCross"/>
+	</owl:Class>	
+
+		<owl:Class rdf:ID="GeorgeCross">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GeorgeCross Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">George Cross</rdfs:comment>
+		<dc:description xml:lang="en">The George Cross is the highest civil decoration of the United Kingdom. The GC is the civilian counterpart of the Victoria Cross and the highest gallantry award for civilians as well as for military personnel in actions which are not in the face of the enemy or for which purely military honours would not normally be granted.</dc:description>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Decoration"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>George Cross</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>CGC</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#AirForceCross"/>
+		<owl:disjointWith rdf:resource="#VictoriaCross"/>
+        <owl:disjointWith rdf:resource="#ConspicuousGallantryCross"/>
+        <owl:disjointWith rdf:resource="#MemberRoyalRedCross"/>
+        <owl:disjointWith rdf:resource="#AssociateRoyalRedCross"/>
+        <owl:disjointWith rdf:resource="#DistinguishedServiceCross"/>
+        <owl:disjointWith rdf:resource="#MilitaryCross"/>
+        <owl:disjointWith rdf:resource="#DistinguishedFlyingCross"/>
+	</owl:Class>	
+
+
+
+		
+	<owl:Class rdf:ID="ConspicuousGallantryCross">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ConspicuousGallantryCross Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Conspicuous Gallantry Cross</rdfs:comment>
+		<dc:description xml:lang="en">The CGC was instituted in the aftermath of the 1993 review of the honours system. As part of the drive to remove distinctions of rank in awards for bravery, the CGC replaced both the Distinguished Conduct Medal (Army) and the Conspicuous Gallantry Medal (Air and Naval) as second level awards to Other Ranks and ratings. The CGC also replaced the Distinguished Service Order, in its role as an award to officers for gallantry (although the DSO was retained as an award for outstanding leadership). The CGC now serves as the second level award for gallantry for all ranks across the whole armed forces.
+The CGC, which may be awarded posthumously, is awarded "in recognition of an act or acts of conspicuous gallantry during active operations against the enemy".</dc:description>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Decoration"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Conspicuous Gallantry Cross</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>CGC</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#AirForceCross"/>
+		<owl:disjointWith rdf:resource="#VictoriaCross"/>
+        <owl:disjointWith rdf:resource="#GeorgeCross"/>
+        <owl:disjointWith rdf:resource="#MemberRoyalRedCross"/>
+        <owl:disjointWith rdf:resource="#AssociateRoyalRedCross"/>
+        <owl:disjointWith rdf:resource="#DistinguishedServiceCross"/>
+        <owl:disjointWith rdf:resource="#MilitaryCross"/>
+        <owl:disjointWith rdf:resource="#DistinguishedFlyingCross"/>
+	</owl:Class>	
+
+	<owl:Class rdf:ID="MemberRoyalRedCross">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MemberRoyalRedCross Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Member Royal Red Cross</rdfs:comment>
+		<dc:description xml:lang="en">The Royal Red Cross is a military decoration awarded in the United Kingdom and Commonwealth for exceptional services in military nursing. The award was established on 27 April 1883 by Queen Victoria, with a single class of Member. A second and lower class, Associate, was added during World War I in 1917.</dc:description>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Decoration"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf rdf:resource="&honours;AwardandHonourThing"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Royal Red Cross Class I</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>RRC</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#AirForceCross"/>
+		<owl:disjointWith rdf:resource="#VictoriaCross"/>
+        <owl:disjointWith rdf:resource="#GeorgeCross"/>
+        <owl:disjointWith rdf:resource="#ConspicuousGallantryCross"/>
+        <owl:disjointWith rdf:resource="#AssociateRoyalRedCross"/>
+        <owl:disjointWith rdf:resource="#DistinguishedServiceCross"/>
+        <owl:disjointWith rdf:resource="#MilitaryCross"/>
+        <owl:disjointWith rdf:resource="#DistinguishedFlyingCross"/>
+	</owl:Class>	
+	
+	<owl:Class rdf:ID="AssociateRoyalRedCross">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AssociateRoyalRedCross Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Associate Royal Red Cross</rdfs:comment>
+		<dc:description xml:lang="en">The Royal Red Cross is a military decoration awarded in the United Kingdom and Commonwealth for exceptional services in military nursing. The award was established on 27 April 1883 by Queen Victoria, with a single class of Member. A second and lower class, Associate, was added during World War I in 1917.</dc:description>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Decoration"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Royal Red Cross Class II</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>ARRC</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#AirForceCross"/>
+		<owl:disjointWith rdf:resource="#VictoriaCross"/>
+        <owl:disjointWith rdf:resource="#GeorgeCross"/>
+        <owl:disjointWith rdf:resource="#ConspicuousGallantryCross"/>
+        <owl:disjointWith rdf:resource="#MemberRoyalRedCross"/>
+        <owl:disjointWith rdf:resource="#DistinguishedServiceCross"/>
+        <owl:disjointWith rdf:resource="#MilitaryCross"/>
+        <owl:disjointWith rdf:resource="#DistinguishedFlyingCross"/>
+	</owl:Class>		
+	
+	<owl:Class rdf:ID="DistinguishedServiceCross">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DistinguishedServiceCross Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Distinguished Service Cross</rdfs:comment>
+		<dc:description xml:lang="en">The Distinguished Service Cross is the third level military decoration awarded to officers, and (since 1993) other ranks, of the British Armed Forces, Royal Fleet Auxiliary and British Merchant Navy and formerly also to officers of other Commonwealth countries.</dc:description>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Decoration"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Distinguished Service Cross</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>DSC</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#AirForceCross"/>
+		<owl:disjointWith rdf:resource="#VictoriaCross"/>
+        <owl:disjointWith rdf:resource="#GeorgeCross"/>
+        <owl:disjointWith rdf:resource="#ConspicuousGallantryCross"/>
+        <owl:disjointWith rdf:resource="#MemberRoyalRedCross"/>
+        <owl:disjointWith rdf:resource="#AssociateRoyalRedCross"/>
+        <owl:disjointWith rdf:resource="#MilitaryCross"/>
+        <owl:disjointWith rdf:resource="#DistinguishedFlyingCross"/>
+	</owl:Class>		
+	
+	<owl:Class rdf:ID="MilitaryCross">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MilitaryCross Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Military Cross</rdfs:comment>
+		<dc:description xml:lang="en">The Military Cross is the third level military decoration awarded to officers and (since 1993) other ranks of the British Armed Forces and formerly also to officers of other Commonwealth countries.</dc:description>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Decoration"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Military Cross</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>MC</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#AirForceCross"/>
+		<owl:disjointWith rdf:resource="#VictoriaCross"/>
+        <owl:disjointWith rdf:resource="#GeorgeCross"/>
+        <owl:disjointWith rdf:resource="#ConspicuousGallantryCross"/>
+        <owl:disjointWith rdf:resource="#MemberRoyalRedCross"/>
+        <owl:disjointWith rdf:resource="#AssociateRoyalRedCross"/>
+        <owl:disjointWith rdf:resource="#DistinguishedServiceCross"/>
+        <owl:disjointWith rdf:resource="#DistinguishedFlyingCross"/>
+	</owl:Class>		
+	
+	<owl:Class rdf:ID="DistinguishedFlyingCross">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DistinguishedFlyingCross Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Distinguished Flying Cross</rdfs:comment>
+		<dc:description xml:lang="en">The Distinguished Flying Cross is a military decoration awarded to personnel of the Royal Air Force and other services, and formerly to officers of other Commonwealth countries, for "an act or acts of valour, courage or devotion to duty whilst flying in active operations against the enemy".</dc:description>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Decoration"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Distinguished Flying Cross</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>DFC</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#AirForceCross"/>
+		<owl:disjointWith rdf:resource="#VictoriaCross"/>
+        <owl:disjointWith rdf:resource="#GeorgeCross"/>
+        <owl:disjointWith rdf:resource="#ConspicuousGallantryCross"/>
+        <owl:disjointWith rdf:resource="#MemberRoyalRedCross"/>
+        <owl:disjointWith rdf:resource="#AssociateRoyalRedCross"/>
+        <owl:disjointWith rdf:resource="#DistinguishedServiceCross"/>
+        <owl:disjointWith rdf:resource="#MilitaryCross"/>
+    </owl:Class>		
+	
+	<owl:Class rdf:ID="AirForceCross">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AirForceCross Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Air Force Cross</rdfs:comment>
+		<dc:description xml:lang="en">The Air Force Cross is a military decoration awarded to personnel of the Armed Forces for "an act or acts of valour, courage or devotion to duty whilst flying, though not in active operations against the enemy".</dc:description>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Decoration"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Air Force Cross</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>AFC</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#VictoriaCross"/>
+        <owl:disjointWith rdf:resource="#GeorgeCross"/>
+        <owl:disjointWith rdf:resource="#ConspicuousGallantryCross"/>
+        <owl:disjointWith rdf:resource="#MemberRoyalRedCross"/>
+        <owl:disjointWith rdf:resource="#AssociateRoyalRedCross"/>
+        <owl:disjointWith rdf:resource="#DistinguishedServiceCross"/>
+        <owl:disjointWith rdf:resource="#MilitaryCross"/>
+        <owl:disjointWith rdf:resource="#DistinguishedFlyingCross"/>
+	</owl:Class>	
+
+	<owl:Class rdf:ID="DistinguishedConductMedal">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DistinguishedConductMedal Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Distinguished Conduct Medal</rdfs:comment>
+		<dc:description xml:lang="en">The Distinguished Conduct Medal was (until 1993) the second level military decoration awarded other ranks of the British Army and formerly also to non-commissioned personnel of other Commonwealth countries. The medal was instituted in 1854, during the Crimean War, to recognise gallantry within the other ranks. The medal was the other ranks' equivalent of the Distinguished Service Order when awarded for bravery to commissioned officers, although it ranked well below that order in precedence. In the aftermath of the 1993 review of the honours system, as part of the drive to remove distinctions of rank in awards for bravery, the DCM was discontinued (along with the award of the DSO for gallantry and the Conspicuous Gallantry Medal). These three decorations were replaced by the Conspicuous Gallantry Cross, which now serves as the second level award for gallantry for all ranks across the whole armed forces.</dc:description>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Medal"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Distinguished Conduct Medal</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>DCM</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#BritishEmpireMedal"/>
+		<owl:disjointWith rdf:resource="#ConspicuousGallantryMedal"/>
+        <owl:disjointWith rdf:resource="#ConspicuousGallantryMedalFlying"/>
+        <owl:disjointWith rdf:resource="#GeorgeMedal"/>
+        <owl:disjointWith rdf:resource="#KingsPoliceMedal"/>
+        <owl:disjointWith rdf:resource="#KingsFireServiceMedal"/>
+        <owl:disjointWith rdf:resource="#ColonialPoliceMedal"/>
+        <owl:disjointWith rdf:resource="#QueensGallantryMedal"/>
+        <owl:disjointWith rdf:resource="#SeaGallantryMedal"/>
+        <owl:disjointWith rdf:resource="#RoyalVictorianMedal"/>
+        <owl:disjointWith rdf:resource="#KingsVolunteerReservesMedal"/>
+        <owl:disjointWith rdf:resource="#ImperialServiceMedal"/>
+        <owl:disjointWith rdf:resource="#MilitaryMedal"/>
+	</owl:Class>
+
+	<owl:Class rdf:ID="ConspicuousGallantryMedal">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ConspicuousGallantryMedal Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Conspicuous Gallantry Medal</rdfs:comment>
+		<dc:description xml:lang="en">The Conspicuous Gallantry Medal (CGM) was, until 1993, a military decoration awarded to personnel of the British Armed Forces (and from September 1942 to personnel of the Merchant Navy of rank equivalent to that of Petty Officer or Seaman) and formerly also to personnel of other Commonwealth countries, below commissioned rank, for conspicuous gallantry in action against the enemy at sea or in the air.</dc:description>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Medal"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Conspicuous Gallantry Medal</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>CGM</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#BritishEmpireMedal"/>
+		<owl:disjointWith rdf:resource="#DistinguishedConductMedal"/>
+        <owl:disjointWith rdf:resource="#ConspicuousGallantryMedalFlying"/>
+        <owl:disjointWith rdf:resource="#GeorgeMedal"/>
+        <owl:disjointWith rdf:resource="#KingsPoliceMedal"/>
+        <owl:disjointWith rdf:resource="#KingsFireServiceMedal"/>
+        <owl:disjointWith rdf:resource="#ColonialPoliceMedal"/>
+        <owl:disjointWith rdf:resource="#QueensGallantryMedal"/>
+        <owl:disjointWith rdf:resource="#SeaGallantryMedal"/>
+        <owl:disjointWith rdf:resource="#RoyalVictorianMedal"/>
+        <owl:disjointWith rdf:resource="#KingsVolunteerReservesMedal"/>
+        <owl:disjointWith rdf:resource="#ImperialServiceMedal"/>
+        <owl:disjointWith rdf:resource="#MilitaryMedal"/>
+	</owl:Class>		
+
+	<owl:Class rdf:ID="ConspicuousGallantryMedalFlying">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ConspicuousGallantryMedalFlying Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Conspicuous Gallantry Medal Flying</rdfs:comment>
+		<dc:description xml:lang="en">Royal Air Force medal - the Conspicuous Gallantry Medal (Flying) - was added to the Conspicuous Gallantry Medal from 1943</dc:description>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Medal"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Conspicuous Gallantry Medal Flying</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>CGM (Flying)</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#BritishEmpireMedal"/>
+		<owl:disjointWith rdf:resource="#DistinguishedConductMedal"/>
+        <owl:disjointWith rdf:resource="#ConspicuousGallantryMedal"/>
+        <owl:disjointWith rdf:resource="#GeorgeMedal"/>
+        <owl:disjointWith rdf:resource="#KingsPoliceMedal"/>
+        <owl:disjointWith rdf:resource="#KingsFireServiceMedal"/>
+        <owl:disjointWith rdf:resource="#ColonialPoliceMedal"/>
+        <owl:disjointWith rdf:resource="#QueensGallantryMedal"/>
+        <owl:disjointWith rdf:resource="#SeaGallantryMedal"/>
+        <owl:disjointWith rdf:resource="#RoyalVictorianMedal"/>
+        <owl:disjointWith rdf:resource="#KingsVolunteerReservesMedal"/>
+        <owl:disjointWith rdf:resource="#ImperialServiceMedal"/>
+        <owl:disjointWith rdf:resource="#MilitaryMedal"/>
+	</owl:Class>	
+
+	<owl:Class rdf:ID="GeorgeMedal">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GeorgeMedal Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">George Medal</rdfs:comment>
+		<dc:description xml:lang="en">The George Medal is the second level civil decoration of the United Kingdom and Commonwealth. The GM was instituted on 24 September 1940 by King George VI. The medal is granted in recognition of "acts of great bravery."</dc:description>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Medal"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf rdf:resource="&honours;AwardandHonourThing"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>George Medal</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>GM</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#BritishEmpireMedal"/>
+		<owl:disjointWith rdf:resource="#DistinguishedConductMedal"/>
+        <owl:disjointWith rdf:resource="#ConspicuousGallantryMedal"/>
+        <owl:disjointWith rdf:resource="#ConspicuousGallantryMedalFlying"/>
+        <owl:disjointWith rdf:resource="#KingsPoliceMedal"/>
+        <owl:disjointWith rdf:resource="#KingsFireServiceMedal"/>
+        <owl:disjointWith rdf:resource="#ColonialPoliceMedal"/>
+        <owl:disjointWith rdf:resource="#QueensGallantryMedal"/>
+        <owl:disjointWith rdf:resource="#SeaGallantryMedal"/>
+        <owl:disjointWith rdf:resource="#RoyalVictorianMedal"/>
+        <owl:disjointWith rdf:resource="#KingsVolunteerReservesMedal"/>
+        <owl:disjointWith rdf:resource="#ImperialServiceMedal"/>
+        <owl:disjointWith rdf:resource="#MilitaryMedal"/>
+	</owl:Class>	
+
+	<owl:Class rdf:ID="KingsPoliceMedal">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">KingsPoliceMedal Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The King's Police Medal</rdfs:comment>
+		<dc:description xml:lang="en">The King's Police Medal is awarded to police officers for gallantry or distinguished service. It was created on 19 May 1954, when it replaced the King's Police and Fire Services Medal (KPFSM), which itself replaced the King's Police Medal (KPM) in 1940.</dc:description>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Medal"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf rdf:resource="&honours;AwardandHonourThing"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>The King's Police Medal</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>KPM</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#BritishEmpireMedal"/>
+		<owl:disjointWith rdf:resource="#DistinguishedConductMedal"/>
+        <owl:disjointWith rdf:resource="#ConspicuousGallantryMedal"/>
+        <owl:disjointWith rdf:resource="#ConspicuousGallantryMedalFlying"/>
+        <owl:disjointWith rdf:resource="#GeorgeMedal"/>
+        <owl:disjointWith rdf:resource="#KingsFireServiceMedal"/>
+        <owl:disjointWith rdf:resource="#ColonialPoliceMedal"/>
+        <owl:disjointWith rdf:resource="#QueensGallantryMedal"/>
+        <owl:disjointWith rdf:resource="#SeaGallantryMedal"/>
+        <owl:disjointWith rdf:resource="#RoyalVictorianMedal"/>
+        <owl:disjointWith rdf:resource="#KingsVolunteerReservesMedal"/>
+        <owl:disjointWith rdf:resource="#ImperialServiceMedal"/>
+        <owl:disjointWith rdf:resource="#MilitaryMedal"/>
+	</owl:Class>		
+	
+	<owl:Class rdf:ID="KingsFireServiceMedal">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">KingsFireServiceMedal Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The King's Fire Service Medal</rdfs:comment>
+		<dc:description xml:lang="en">The King's Fire Service Medal is awarded to members of the fire services for distinguished service or gallantry. It was introduced on 19 May 1954 when it replaced the King's Fire Service Medal.</dc:description>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Medal"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>The Kings's Fire Service Medal</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf rdf:resource="&honours;AwardandHonourThing"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>KFSM</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#BritishEmpireMedal"/>
+		<owl:disjointWith rdf:resource="#DistinguishedConductMedal"/>
+        <owl:disjointWith rdf:resource="#ConspicuousGallantryMedal"/>
+        <owl:disjointWith rdf:resource="#ConspicuousGallantryMedalFlying"/>
+        <owl:disjointWith rdf:resource="#GeorgeMedal"/>
+        <owl:disjointWith rdf:resource="#KingsPoliceMedal"/>
+        <owl:disjointWith rdf:resource="#ColonialPoliceMedal"/>
+        <owl:disjointWith rdf:resource="#QueensGallantryMedal"/>
+        <owl:disjointWith rdf:resource="#SeaGallantryMedal"/>
+        <owl:disjointWith rdf:resource="#RoyalVictorianMedal"/>
+        <owl:disjointWith rdf:resource="#KingsVolunteerReservesMedal"/>
+        <owl:disjointWith rdf:resource="#ImperialServiceMedal"/>
+        <owl:disjointWith rdf:resource="#MilitaryMedal"/>
+	</owl:Class>	
+
+	<owl:Class rdf:ID="ColonialPoliceMedal">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ColonialPoliceMedal Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Colonial Police Medal</rdfs:comment>
+		<dc:description xml:lang="en"></dc:description>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Medal"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf rdf:resource="&honours;AwardandHonourThing"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Colonial Police Medal</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>CPM</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#BritishEmpireMedal"/>
+		<owl:disjointWith rdf:resource="#DistinguishedConductMedal"/>
+        <owl:disjointWith rdf:resource="#ConspicuousGallantryMedal"/>
+        <owl:disjointWith rdf:resource="#ConspicuousGallantryMedalFlying"/>
+        <owl:disjointWith rdf:resource="#GeorgeMedal"/>
+        <owl:disjointWith rdf:resource="#KingsPoliceMedal"/>
+        <owl:disjointWith rdf:resource="#KingsFireServiceMedal"/>
+        <owl:disjointWith rdf:resource="#QueensGallantryMedal"/>
+        <owl:disjointWith rdf:resource="#SeaGallantryMedal"/>
+        <owl:disjointWith rdf:resource="#RoyalVictorianMedal"/>
+        <owl:disjointWith rdf:resource="#KingsVolunteerReservesMedal"/>
+        <owl:disjointWith rdf:resource="#ImperialServiceMedal"/>
+        <owl:disjointWith rdf:resource="#MilitaryMedal"/>
+	</owl:Class>		
+	
+	<owl:Class rdf:ID="QueensGallantryMedal">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">QueensGallantryMedal Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Queen's Gallantry Medal</rdfs:comment>
+		<dc:description xml:lang="en">The Queen's Gallantry Medal (QGM) is the third level civil decoration of the United Kingdom and Commonwealth. </dc:description>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Medal"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf rdf:resource="&honours;AwardandHonourThing"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Queen's Gallantry Medal</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>QGM</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#BritishEmpireMedal"/>
+		<owl:disjointWith rdf:resource="#DistinguishedConductMedal"/>
+        <owl:disjointWith rdf:resource="#ConspicuousGallantryMedal"/>
+        <owl:disjointWith rdf:resource="#ConspicuousGallantryMedalFlying"/>
+        <owl:disjointWith rdf:resource="#GeorgeMedal"/>
+        <owl:disjointWith rdf:resource="#KingsPoliceMedal"/>
+        <owl:disjointWith rdf:resource="#KingsFireServiceMedal"/>
+        <owl:disjointWith rdf:resource="#ColonialPoliceMedal"/>
+        <owl:disjointWith rdf:resource="#SeaGallantryMedal"/>
+        <owl:disjointWith rdf:resource="#RoyalVictorianMedal"/>
+        <owl:disjointWith rdf:resource="#KingsVolunteerReservesMedal"/>
+        <owl:disjointWith rdf:resource="#ImperialServiceMedal"/>
+        <owl:disjointWith rdf:resource="#MilitaryMedal"/>
+	</owl:Class>	
+
+	
+	<owl:Class rdf:ID="SeaGallantryMedal">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SeaGallantryMedal Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sea Gallantry Medal</rdfs:comment>
+		<dc:description xml:lang="en">The Sea Gallantry Medal, the official Board of Trade Medal for Saving Life at Sea, is an award for civil gallantry at sea in Great Britain and the Commonwealth.</dc:description>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Medal"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Sea Gallantry Medal</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>SGM</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#BritishEmpireMedal"/>
+		<owl:disjointWith rdf:resource="#DistinguishedConductMedal"/>
+        <owl:disjointWith rdf:resource="#ConspicuousGallantryMedal"/>
+        <owl:disjointWith rdf:resource="#ConspicuousGallantryMedalFlying"/>
+        <owl:disjointWith rdf:resource="#GeorgeMedal"/>
+        <owl:disjointWith rdf:resource="#KingsPoliceMedal"/>
+        <owl:disjointWith rdf:resource="#KingsFireServiceMedal"/>
+        <owl:disjointWith rdf:resource="#ColonialPoliceMedal"/>
+        <owl:disjointWith rdf:resource="#QueensGallantryMedal"/>
+        <owl:disjointWith rdf:resource="#RoyalVictorianMedal"/>
+        <owl:disjointWith rdf:resource="#KingsVolunteerReservesMedal"/>
+        <owl:disjointWith rdf:resource="#ImperialServiceMedal"/>
+        <owl:disjointWith rdf:resource="#MilitaryMedal"/>
+	</owl:Class>
+
+	<owl:Class rdf:ID="RoyalVictorianMedal">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RoyalVictorianMedal Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Royal Victorian Medal</rdfs:comment>
+		<dc:description xml:lang="en">The Royal Victorian Medal is a British Commonwealth medal established by Queen Victoria in April 1896. It is a reward for personal service to the Sovereign or the Royal Family, and as a mark of royal esteem. The Medal is conferred upon civilians and non-commissioned military personnel.</dc:description>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Medal"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf rdf:resource="&honours;AwardandHonourThing"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Royal Victorian Medal</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#isAffiliatedToOrder"/>
+				<owl:allValuesFrom rdf:resource="#TheRoyalVictorianOrder"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>RVM</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#BritishEmpireMedal"/>
+		<owl:disjointWith rdf:resource="#DistinguishedConductMedal"/>
+        <owl:disjointWith rdf:resource="#ConspicuousGallantryMedal"/>
+        <owl:disjointWith rdf:resource="#ConspicuousGallantryMedalFlying"/>
+        <owl:disjointWith rdf:resource="#GeorgeMedal"/>
+        <owl:disjointWith rdf:resource="#KingsPoliceMedal"/>
+        <owl:disjointWith rdf:resource="#KingsFireServiceMedal"/>
+        <owl:disjointWith rdf:resource="#ColonialPoliceMedal"/>
+        <owl:disjointWith rdf:resource="#QueensGallantryMedal"/>
+        <owl:disjointWith rdf:resource="#SeaGallantryMedal"/>
+        <owl:disjointWith rdf:resource="#KingsVolunteerReservesMedal"/>
+        <owl:disjointWith rdf:resource="#ImperialServiceMedal"/>
+        <owl:disjointWith rdf:resource="#MilitaryMedal"/>
+	</owl:Class>
+
+	<owl:Class rdf:ID="RoyalVictorianMedalBronze">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RoyalVictorianMedalBronze Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Royal Victorian Medal Bronze</rdfs:comment>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#RoyalVictorianMedal"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Royal Victorian Medal Bronze</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#RoyalVictorianMedalSilver"/>
+        <owl:disjointWith rdf:resource="#RoyalVictorianMedalGold"/>
+	</owl:Class>
+
+	<owl:Class rdf:ID="RoyalVictorianMedalSilver">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RoyalVictorianMedalSilver Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Royal Victorian Medal Silver</rdfs:comment>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#RoyalVictorianMedal"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Royal Victorian Medal Silver</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#RoyalVictorianMedalBronze"/>
+        <owl:disjointWith rdf:resource="#RoyalVictorianMedalGold"/>
+	</owl:Class>
+	
+	<owl:Class rdf:ID="RoyalVictorianMedalGold">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RoyalVictorianMedalGold Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Royal Victorian Medal Gold</rdfs:comment>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#RoyalVictorianMedal"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Royal Victorian Medal Gold</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#RoyalVictorianMedalBronze"/>
+        <owl:disjointWith rdf:resource="#RoyalVictorianMedalSilver"/>
+    </owl:Class>
+
+	<owl:Class rdf:ID="BritishEmpireMedal">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BritishEmpireMedal Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">British Empire Medal</rdfs:comment>
+		<dc:description xml:lang="en">The British Empire Medal, officially the Medal of the Order of the British Empire for Meritorious Service, is a British medal awarded for meritorious civil or military service worthy of recognition by the crown.</dc:description>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Medal"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>British Empire Medal</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#isAffiliatedToOrder"/>
+				<owl:allValuesFrom rdf:resource="#TheOrderOfTheBritishEmpire"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>BEM</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#DistinguishedConductMedal"/>
+        <owl:disjointWith rdf:resource="#ConspicuousGallantryMedal"/>
+        <owl:disjointWith rdf:resource="#ConspicuousGallantryMedalFlying"/>
+        <owl:disjointWith rdf:resource="#GeorgeMedal"/>
+        <owl:disjointWith rdf:resource="#KingsPoliceMedal"/>
+        <owl:disjointWith rdf:resource="#KingsFireServiceMedal"/>
+        <owl:disjointWith rdf:resource="#ColonialPoliceMedal"/>
+        <owl:disjointWith rdf:resource="#QueensGallantryMedal"/>
+        <owl:disjointWith rdf:resource="#SeaGallantryMedal"/>
+        <owl:disjointWith rdf:resource="#RoyalVictorianMedal"/>
+        <owl:disjointWith rdf:resource="#KingsVolunteerReservesMedal"/>
+        <owl:disjointWith rdf:resource="#ImperialServiceMedal"/>
+        <owl:disjointWith rdf:resource="#MilitaryMedal"/>
+	</owl:Class>
+
+	<owl:Class rdf:ID="KingsVolunteerReservesMedal">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">KingsVolunteerReservesMedal Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">King's Volunteer Reserves Medal</rdfs:comment>
+		<dc:description xml:lang="en"></dc:description>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Medal"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>King's Volunteer Reserves Medal</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>KVRM</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#BritishEmpireMedal"/>
+		<owl:disjointWith rdf:resource="#DistinguishedConductMedal"/>
+        <owl:disjointWith rdf:resource="#ConspicuousGallantryMedal"/>
+        <owl:disjointWith rdf:resource="#ConspicuousGallantryMedalFlying"/>
+        <owl:disjointWith rdf:resource="#GeorgeMedal"/>
+        <owl:disjointWith rdf:resource="#KingsPoliceMedal"/>
+        <owl:disjointWith rdf:resource="#KingsFireServiceMedal"/>
+        <owl:disjointWith rdf:resource="#ColonialPoliceMedal"/>
+        <owl:disjointWith rdf:resource="#QueensGallantryMedal"/>
+        <owl:disjointWith rdf:resource="#SeaGallantryMedal"/>
+        <owl:disjointWith rdf:resource="#RoyalVictorianMedal"/>
+        <owl:disjointWith rdf:resource="#ImperialServiceMedal"/>
+        <owl:disjointWith rdf:resource="#MilitaryMedal"/>
+	</owl:Class>
+	
+	<owl:Class rdf:ID="ImperialServiceMedal">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ImperialServiceMedal Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Imperial Service Medal</rdfs:comment>
+		<dc:description xml:lang="en">Non-managerial civil servants who complete 25 years service are eligible for the Imperial Service Medal (ISM) upon retirement.</dc:description>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Medal"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf rdf:resource="&honours;AwardandHonourThing"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Imperial Service Medal</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#isAffiliatedToOrder"/>
+				<owl:allValuesFrom rdf:resource="#ImperialServiceOrder"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>ISM</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#BritishEmpireMedal"/>
+		<owl:disjointWith rdf:resource="#DistinguishedConductMedal"/>
+        <owl:disjointWith rdf:resource="#ConspicuousGallantryMedal"/>
+        <owl:disjointWith rdf:resource="#ConspicuousGallantryMedalFlying"/>
+        <owl:disjointWith rdf:resource="#GeorgeMedal"/>
+        <owl:disjointWith rdf:resource="#KingsPoliceMedal"/>
+        <owl:disjointWith rdf:resource="#KingsFireServiceMedal"/>
+        <owl:disjointWith rdf:resource="#ColonialPoliceMedal"/>
+        <owl:disjointWith rdf:resource="#QueensGallantryMedal"/>
+        <owl:disjointWith rdf:resource="#SeaGallantryMedal"/>
+        <owl:disjointWith rdf:resource="#RoyalVictorianMedal"/>
+        <owl:disjointWith rdf:resource="#KingsVolunteerReservesMedal"/>
+        <owl:disjointWith rdf:resource="#MilitaryMedal"/>
+	</owl:Class>	
+	
+	<owl:Class rdf:ID="MilitaryMedal">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MilitaryMedal Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Military Medal</rdfs:comment>
+		<dc:description xml:lang="en">The Military Medal is a military decoration awarded to personnel of the British Army and other services below commissioned rank, for bravery in battle on land. The medal was established on 25 March 1916. It was the other ranks equivalent to the Military Cross, which was awarded to commissioned officers and Warrant Officers, although it took precedence below that decoration as well as the Distinguished Conduct Medal, also awarded to non-commissioned members of the Army.</dc:description>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Medal"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Military Medal</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#nominalLetter"/>
+				<owl:hasValue>MM</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#BritishEmpireMedal"/>
+		<owl:disjointWith rdf:resource="#DistinguishedConductMedal"/>
+        <owl:disjointWith rdf:resource="#ConspicuousGallantryMedal"/>
+        <owl:disjointWith rdf:resource="#ConspicuousGallantryMedalFlying"/>
+        <owl:disjointWith rdf:resource="#GeorgeMedal"/>
+        <owl:disjointWith rdf:resource="#KingsPoliceMedal"/>
+        <owl:disjointWith rdf:resource="#KingsFireServiceMedal"/>
+        <owl:disjointWith rdf:resource="#ColonialPoliceMedal"/>
+        <owl:disjointWith rdf:resource="#QueensGallantryMedal"/>
+        <owl:disjointWith rdf:resource="#SeaGallantryMedal"/>
+        <owl:disjointWith rdf:resource="#RoyalVictorianMedal"/>
+        <owl:disjointWith rdf:resource="#KingsVolunteerReservesMedal"/>
+        <owl:disjointWith rdf:resource="#ImperialServiceMedal"/>
+    </owl:Class>		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<owl:Class rdf:ID="MentionInDespatches">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MentionInDespatches Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mention in Despatches</rdfs:comment>
+		<dc:description xml:lang="en">Mentioned in Despatches is a military award for gallantry or otherwise commendable service. A despatch is an official report from a senior commander, usually of an army, to his superiors, detailing the conduct of military operations.</dc:description>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Mention in Despatches</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Commendation"/>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#QueensCommendationForBravery"/>
+        <owl:disjointWith rdf:resource="#QueensCommendationForBraveryInTheAir"/>
+        <owl:disjointWith rdf:resource="#QueensCommendationForValuableService"/>
+	</owl:Class>		
+	
+	<owl:Class rdf:ID="QueensCommendationForBravery">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">QueensCommendationForBravery Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Queen's Commendation for Bravery</rdfs:comment>
+		<dc:description xml:lang="en">The Queen's Commendation for Bravery is an award granted for bravery entailing risk to life and meriting national recognition. </dc:description>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Queen's Commendation for Bravery</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf rdf:resource="&honours;AwardandHonourThing"/>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Commendation"/>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#MentionInDespatches"/>
+		<owl:disjointWith rdf:resource="#QueensCommendationForBraveryInTheAir"/>
+        <owl:disjointWith rdf:resource="#QueensCommendationForValuableService"/>
+	</owl:Class>	
+
+	<owl:Class rdf:ID="QueensCommendationForBraveryInTheAir">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">QueensCommendationForBraveryInTheAir Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Queen's Commendation for Bravery in the Air</rdfs:comment>
+		<dc:description xml:lang="en">The Queen's Commendation for Bravery in the Air is an award granted for bravery entailing risk to life and meriting national recognition. </dc:description>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Queen's Commendation for Bravery in the Air</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Commendation"/>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#MentionInDespatches"/>
+		<owl:disjointWith rdf:resource="#QueensCommendationForBravery"/>
+        <owl:disjointWith rdf:resource="#QueensCommendationForValuableService"/>
+	</owl:Class>	
+
+	<owl:Class rdf:ID="QueensCommendationForValuableService">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">QueensCommendationForValuableService Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Queen's Commendation for Valuable Service</rdfs:comment>
+		<dc:description xml:lang="en">The Queen's Commendation for Valuable Service is a British military award that recognises meritorious service during, or in support of, operations.</dc:description>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Commendation"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf rdf:resource="&honours;AwardandHonourThing"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>Queen's Commendation for Valuable Service</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<owl:disjointWith rdf:resource="#MentionInDespatches"/>
+		<owl:disjointWith rdf:resource="#QueensCommendationForBravery"/>
+        <owl:disjointWith rdf:resource="#QueensCommendationForBraveryInTheAir"/>
+   </owl:Class>
+
+
+	<owl:Class rdf:ID="OrderDivision">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OrderDivision Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An Order can be subdivided into Divisions</rdfs:comment>
+		<owl:disjointWith rdf:resource="#Order"/>
+		<owl:disjointWith rdf:resource="#Award"/>
+    </owl:Class>
+
+	<honours:OrderDivision rdf:ID="MilitaryDivision">
+		<honours:orderDivisionName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Military Division</honours:orderDivisionName>
+	</honours:OrderDivision>
+
+	<honours:OrderDivision rdf:ID="CivilDivision">
+		<honours:orderDivisionName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Civil Division</honours:orderDivisionName>
+	</honours:OrderDivision>
+
+
+	<owl:ObjectProperty rdf:about="#forMilitaryService">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">forMilitaryService property</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the awarded thing is for military service</rdfs:comment>
+		<rdfs:domain rdf:resource="#AwardandHonourThing"/>
+		<rdfs:range rdf:resource="https://www.thegazette.co.uk/def/military#Service"/>
+	</owl:ObjectProperty> 	
+	
+	<owl:ObjectProperty rdf:about="#isAppointedTo">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isAppointedTo property</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the Order an appointment has been made to</rdfs:comment>
+		<rdfs:domain rdf:resource="#AwardandHonourThing"/>
+		<rdfs:range rdf:resource="#Order"/>
+	</owl:ObjectProperty> 	
+	
+	<owl:ObjectProperty rdf:about="#isAppointedAs">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isAppointedAs property</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the Honour that has been appointed ie OBE, MBE etc</rdfs:comment>
+		<rdfs:domain rdf:resource="#AwardandHonourThing"/>
+		<rdfs:range rdf:resource="#Honour"/>
+	</owl:ObjectProperty> 	
+	
+	<owl:ObjectProperty rdf:about="#isAwarded">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isAwarded property</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the award that has been approved</rdfs:comment>
+		<rdfs:domain rdf:resource="#AwardandHonourThing"/>
+		<rdfs:range rdf:resource="#Medal"/>
+	</owl:ObjectProperty> 	
+	
+	<owl:ObjectProperty rdf:about="#isCommended">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isCommended property</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the Commendation that has been approved</rdfs:comment>
+		<rdfs:domain rdf:resource="#AwardandHonourThing"/>
+		<rdfs:range rdf:resource="#Commendation"/>
+	</owl:ObjectProperty> 	
+	
+	<owl:DatatypeProperty rdf:ID="dateAwarded">
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+		<rdfs:domain rdf:resource="#AwardandHonourThing"/>
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+	</owl:DatatypeProperty>	
+
+	<owl:ObjectProperty rdf:about="#isAwardedTo">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isAwardedTo property</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">property to designate a person the honour is awarded to</rdfs:comment>
+		<rdfs:domain rdf:resource="#Award"/>
+		<rdfs:range rdf:resource="https://www.thegazette.co.uk/def/person#Person"/>
+		<owl:inverseOf rdf:resource="#hasAward"/>
+	</owl:ObjectProperty> 
+
+	<owl:ObjectProperty rdf:about="#hasAward">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isAwardedTo property</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">property to associate a person with a particular award</rdfs:comment>
+		<rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/person#Person"/>
+		<rdfs:range rdf:resource="#Award"/>
+		<owl:inverseOf rdf:resource="#isAwardedTo"/>
+	</owl:ObjectProperty> 	
+
+	<owl:ObjectProperty rdf:about="#belongsToOrderDivision">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">belongsToOrderDivision property</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">an Award can be an appointment to a Division within an Order</rdfs:comment>
+		<rdfs:domain rdf:resource="#Honour"/>
+		<rdfs:range rdf:resource="#OrderDivision"/>
+	</owl:ObjectProperty> 
+
+	<owl:ObjectProperty rdf:about="#hasOrderDivision">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasOrderDivision property</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">an Order can be composed of Divisions</rdfs:comment>
+		<rdfs:domain rdf:resource="#Order"/>
+		<rdfs:range rdf:resource="#OrderDivision"/>
+	</owl:ObjectProperty> 	
+
+	<owl:ObjectProperty rdf:about="#isMemberOfOrder">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isMemberOfOrder property</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">an Award can be an appointment to an Order</rdfs:comment>
+		<rdfs:domain rdf:resource="#Honour"/>
+		<rdfs:range rdf:resource="#Order"/>
+		<owl:inverseOf rdf:resource="#hasRecipients"/>
+	</owl:ObjectProperty> 	
+
+	<owl:ObjectProperty rdf:about="#hasRecipients">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasRecipients property</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">an Order has various levels which are awarded to people</rdfs:comment>
+		<rdfs:domain rdf:resource="#Order"/>
+		<rdfs:range rdf:resource="#Honour"/>
+		<owl:inverseOf rdf:resource="#isMemberOfOrder"/>
+	</owl:ObjectProperty> 		
+
+	<owl:ObjectProperty rdf:about="#isAffiliatedToOrder">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isMemberOfOrder property</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">an Award can be an appointment to an Order</rdfs:comment>
+		<rdfs:domain rdf:resource="#Medal"/>
+		<rdfs:range rdf:resource="#Order"/>
+		<owl:inverseOf rdf:resource="#hasAffiliation"/>
+	</owl:ObjectProperty> 	
+
+	<owl:ObjectProperty rdf:about="#hasAffiliation">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasRecipients property</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">an Order has various levels which are awarded to people</rdfs:comment>
+		<rdfs:domain rdf:resource="#Order"/>
+		<rdfs:range rdf:resource="#Medal"/>
+		<owl:inverseOf rdf:resource="#isAffiliatedToOrder"/>
+	</owl:ObjectProperty> 	
+
+	
+	<owl:ObjectProperty rdf:about="#isAssociatedWithAward">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isAssociatedWithAward property</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Each Bar is associated with an award</rdfs:comment>
+		<rdfs:domain rdf:resource="#Bar"/>
+		<rdfs:range rdf:resource="#Award"/>
+	</owl:ObjectProperty> 	
+	
+	<owl:ObjectProperty rdf:about="#hasAppointee">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasAppointee property</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Honour appointed to person</rdfs:comment>
+		<rdfs:domain rdf:resource="#AwardandHonourThing"/>
+		<rdfs:range rdf:resource="&person;Person"/>
+	</owl:ObjectProperty> 	
+	
+		<owl:ObjectProperty rdf:about="#hasAwardee">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasAwardee property</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Award appointed to person</rdfs:comment>
+		<rdfs:domain rdf:resource="#AwardandHonourThing"/>
+		<rdfs:range rdf:resource="&person;Person"/>
+	</owl:ObjectProperty> 	
+	
+	<owl:DatatypeProperty rdf:ID="nominalLetter">
+		<rdfs:domain rdf:resource="#Award"/>
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nominalLetter datatype property</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nominal letter associated with an Order</rdfs:comment>
+	</owl:DatatypeProperty>	
+	
+	<owl:DatatypeProperty rdf:ID="awardName">
+		<rdfs:domain rdf:resource="#Award"/>
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">awardName datatype property</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name award is known by</rdfs:comment>
+	</owl:DatatypeProperty>	
+
+	<owl:DatatypeProperty rdf:ID="orderName">
+		<rdfs:domain rdf:resource="#Order"/>
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">orderName datatype property</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name of the Order</rdfs:comment>
+	</owl:DatatypeProperty>	
+
+	<owl:DatatypeProperty rdf:ID="orderDivisionName">
+		<rdfs:domain rdf:resource="#OrderDivision"/>
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">orderDivisionName datatype property</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name of the Order Division</rdfs:comment>
+	</owl:DatatypeProperty>		
+	
+	
+		<!-- NOTICE TYPES -->
+	<owl:Class rdf:ID="AwardandHonourNotice">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+			>AwardandHonourNotice Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+			>Notices of awards and honours as contained in the Award and Honours Supplement</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="&ontology;PNBNotice"/>
+		<owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1105</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&honours;AwardandHonourNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&honours;AwardandHonourThing"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	</owl:Class>
+	
+	<owl:Class rdf:ID="AwardandHonourThing">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+			>AwardandHonourThing Class</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+			>Notifiable things that pertain to the awards and honours class of notices</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="&ontology;PNBThing"/>
+	</owl:Class>	
+	
+	
+    <!-- https://www.thegazette.co.uk/def/honours#ColonialPoliceMedalNotice -->
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/honours#ColonialPoliceMedalNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string"></owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&honours;AwardandHonourNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&honours;ColonialPoliceMedal"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+    <!-- https://www.thegazette.co.uk/def/honours#GeorgeMedalNotice -->
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/honours#GeorgeMedalNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string"></owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&honours;AwardandHonourNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&honours;GeorgeMedal"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+	    <!-- https://www.thegazette.co.uk/def/honours#ImperialServiceMedalNotice -->
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/honours#ImperialServiceMedalNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string"></owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&honours;AwardandHonourNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&honours;ImperialServiceMedal"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+		    <!-- https://www.thegazette.co.uk/def/honours#KnightsBatchelorNotice -->
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/honours#KnightsBatchelorNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1122</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&honours;AwardandHonourNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&honours;KnightBatchelor"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+			    <!-- https://www.thegazette.co.uk/def/honours#OrderStMichaelNotice -->
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/honours#OrderStMichaelNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string"></owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&honours;AwardandHonourNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&honours;TheOrderOfStMichaelAndStGeorge"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+				    <!-- https://www.thegazette.co.uk/def/honours#OrderStJohnNotice -->
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/honours#OrderStJohnNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1120</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&honours;AwardandHonourNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&honours;OrderStJohn"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+					    <!-- https://www.thegazette.co.uk/def/honours#CommonwealthHonoursNotice -->
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/honours#CommonwealthHonoursNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string"></owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&honours;AwardandHonourNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&honours;CommonwealthHonours"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+	
+				    <!-- https://www.thegazette.co.uk/def/honours#OrderOfBathNotice -->
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/honours#OrderOfBathNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1123</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&honours;AwardandHonourNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&honours;TheMostHonourableOrderOfTheBath"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>	
+	
+	<!-- https://www.thegazette.co.uk/def/honours#OrderBritishEmpireNotice -->
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/honours#OrderBritishEmpireNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1129</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&honours;AwardandHonourNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&honours;TheOrderOfTheBritishEmpire"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+	<!-- https://www.thegazette.co.uk/def/honours#OrderCompanionsNotice -->
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/honours#OrderCompanionsNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1128</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&honours;AwardandHonourNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&honours;TheOrderOfTheCompanionsOfHonour"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>	
+	
+	<!--
+	<owl:Class rdf:ID="OrderDivision">
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Order"/>
+		</rdfs:subClassOf>
+	</owl:Class>
+-->
+	
+	<owl:Class rdf:ID="OrderStJohn">
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Order"/>
+		</rdfs:subClassOf>
+	</owl:Class>
+	<!--
+	<owl:Class rdf:ID="Order">
+		<rdfs:subClassOf rdf:resource="#AwardandHonourThing"/>
+	</owl:Class>
+-->
+		<!-- https://www.thegazette.co.uk/def/honours#PeerageNotice -->
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/honours#PeerageNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string"></owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&honours;AwardandHonourNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&honours;Peerage"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>	
+	
+			<!-- https://www.thegazette.co.uk/def/honours#PolarMedalNotice -->
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/honours#PolarMedalNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string"></owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&honours;AwardandHonourNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&honours;PolarMedal"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>	
+	
+	<owl:Class rdf:ID="PolarMedal">
+		<rdfs:subClassOf rdf:resource="#AwardandHonourThing"/>
+	</owl:Class>
+	
+				<!-- https://www.thegazette.co.uk/def/honours#PrivyCounsellorsNotice -->
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/honours#PrivyCounsellorsNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string"></owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&honours;AwardandHonourNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&honours;PrivyCounsellor"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>	
+	
+	<!-- https://www.thegazette.co.uk/def/honours#QueensAwardEnterpriseNotice -->
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/honours#QueensAwardEnterpriseNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string"></owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&honours;AwardandHonourNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&honours;QueensAwardEnterprise"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>	
+	
+	<owl:Class rdf:ID="QueensAwardEnterprise">
+		<rdfs:subClassOf rdf:resource="#AwardandHonourThing"/>
+	</owl:Class>
+	
+	<owl:Class rdf:ID="QueensAwardVoluntaryService">
+		<rdfs:subClassOf rdf:resource="#AwardandHonourThing"/>
+	</owl:Class>
+	
+	<owl:Class rdf:ID="QueensCommendationBravery">
+		<rdfs:subClassOf rdf:resource="#AwardandHonourThing"/>
+	</owl:Class>
+	
+	<owl:Class rdf:ID="QueensFireMedal">
+		<rdfs:subClassOf rdf:resource="#AwardandHonourThing"/>
+	</owl:Class>
+		
+	<!-- https://www.thegazette.co.uk/def/honours#QueensAwardVoluntaryServiceNotice -->
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/honours#QueensAwardVoluntaryServiceNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1135</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&honours;AwardandHonourNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&honours;QueensAwardVoluntaryService"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+			
+	<!-- https://www.thegazette.co.uk/def/honours#QueensCommendationBraveryNotice -->
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/honours#QueensCommendationBraveryNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string"></owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&honours;AwardandHonourNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&honours;QueensCommendationBravery"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+		<!-- https://www.thegazette.co.uk/def/honours#KingsFireServiceMedalNotice -->
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/honours#KingsFireServiceMedalNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1133</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&honours;AwardandHonourNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&honours;KingsFireServiceMedal"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+		
+		<!-- https://www.thegazette.co.uk/def/honours#QueensGallantryMedalNotice -->
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/honours#QueensGallantryMedalNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string"></owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&honours;AwardandHonourNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&honours;QueensGallantryMedal"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+			
+		<!-- https://www.thegazette.co.uk/def/honours#KingsPoliceMedalNotice -->
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/honours#KingsPoliceMedalNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1132</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&honours;AwardandHonourNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&honours;KingsPoliceMedal"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+				
+		<!-- https://www.thegazette.co.uk/def/honours#RoyalRedCrossNotice -->
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/honours#RoyalRedCrossNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1131</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&honours;AwardandHonourNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&honours;RoyalRedCross"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+	<owl:Class rdf:ID="RoyalRedCross">
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RoyalRedCross</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RoyalRedCross</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="&honours;AwardandHonourThing"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#awardName"/>
+				<owl:hasValue>RoyalRedCross</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>	
+	
+
+					
+		<!-- https://www.thegazette.co.uk/def/honours#RoyalVictorianOrderNotice -->
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/honours#RoyalVictorianOrderNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1125</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&honours;AwardandHonourNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&honours;TheRoyalVictorianOrder"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+						
+		<!-- https://www.thegazette.co.uk/def/honours#RoyalVictorianMedalNotice -->
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/honours#RoyalVictorianMedalNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1127</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&honours;AwardandHonourNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&honours;RoyalVictorianMedal"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+		<!-- https://www.thegazette.co.uk/def/honours#BarRoyalVictorianMedal -->
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/honours#BarRoyalVictorianMedal">
+        <rdfs:subClassOf rdf:resource="&honours;AchievementBar"/>
+    </owl:Class>
+	
+		<!-- https://www.thegazette.co.uk/def/honours#BarRoyalVictorianMedalNotice -->
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/honours#BarRoyalVictorianMedalNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1126</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&honours;AwardandHonourNotice"/>
+    </owl:Class>
+	
+		<!-- https://www.thegazette.co.uk/def/honours#QueensAmbulanceServiceMedalNotice -->
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/honours#QueensAmbulanceServiceMedalNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1134</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&honours;AwardandHonourNotice"/>
+    </owl:Class>
+	
+		<!-- https://www.thegazette.co.uk/def/honours#OverseasTerritoriesPoliceFireServiceMedalNotice -->
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/honours#OverseasTerritoriesPoliceFireServiceMedalNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1136</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&honours;AwardandHonourNotice"/>
+    </owl:Class>
+	
+		<!-- https://www.thegazette.co.uk/def/honours#BritishEmpireMedalNotice -->
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/honours#BritishEmpireMedalNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1130</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&honours;AwardandHonourNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&honours;BritishEmpireMedal"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+			<!-- https://www.thegazette.co.uk/def/honours#OrderOfStMichaelAndStGeorgeNotice -->
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/honours#OrderOfStMichaelAndStGeorgeNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1124</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&honours;AwardandHonourNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&honours;TheOrderOfStMichaelAndStGeorge"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+</rdf:RDF>

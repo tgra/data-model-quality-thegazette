@@ -1,0 +1,525 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY dcterms "http://purl.org/dc/terms/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY ontology "http://www.geonames.org/ontology#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY person "https://www.thegazette.co.uk/def/person#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY organisation "https://www.thegazette.co.uk/def/organisation#" >
+]>
+
+
+<rdf:RDF xmlns="https://www.thegazette.co.uk/def/court#"
+     xml:base="https://www.thegazette.co.uk/def/court"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:person="https://www.thegazette.co.uk/def/person#"
+     xmlns:organisation="https://www.thegazette.co.uk/def/organisation#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:ontology="http://www.geonames.org/ontology#"
+     xmlns:dcterms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="https://www.thegazette.co.uk/def/court">
+        <dcterms:created rdf:datatype="&xsd;string">2008-08-28</dcterms:created>
+        <dc:title rdf:datatype="&xsd;string">Courts</dc:title>
+        <dcterms:creator rdf:datatype="&xsd;string">Griff Chamberlain, The Stationery Office, mark.chamberlain@tso.co.uk</dcterms:creator>
+        <dc:description xml:lang="en">
+    	List of courts in the UK.
+
+    	This is a beta version, and you should expect it to change.
+		</dc:description>
+        <dcterms:license rdf:resource="http://creativecommons.org/licenses/by-nc-sa/2.0/uk/"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#gYear -->
+
+    <rdfs:Datatype rdf:about="&xsd;gYear"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/court#hasCourt -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/court#hasCourt">
+        <rdfs:label rdf:datatype="&xsd;string">hasCourt property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Court associated with a Court Case
+			Inverse of hasCourtCase</rdfs:comment>
+        <rdfs:range rdf:resource="https://www.thegazette.co.uk/def/court#Court"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/court#CourtCase"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/court#hasCourtCase -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/court#hasCourtCase">
+        <rdfs:label rdf:datatype="&xsd;string">hasCourtCase property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Court Case associated with a Court
+			Inverse of hasCourt</rdfs:comment>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/court#Court"/>
+        <rdfs:range rdf:resource="https://www.thegazette.co.uk/def/court#CourtCase"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/court#hasFollowingCourtCase -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/court#hasFollowingCourtCase">
+        <rdfs:label rdf:datatype="&xsd;string">hasFollowingCourtCase property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">court case that follows on from this court case</rdfs:comment>
+        <rdfs:range rdf:resource="https://www.thegazette.co.uk/def/court#CourtCase"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/court#CourtCase"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/court#hasPreviousCourtCase -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/court#hasPreviousCourtCase">
+        <rdfs:label rdf:datatype="&xsd;string">hasPreviousCourtCase property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">previous court case</rdfs:comment>
+        <rdfs:range rdf:resource="https://www.thegazette.co.uk/def/court#CourtCase"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/court#CourtCase"/>
+        <owl:inverseOf rdf:resource="https://www.thegazette.co.uk/def/court#hasFollowingCourtCase"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/court#hasRelatedCourtCase -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/court#hasRelatedCourtCase">
+        <rdfs:label rdf:datatype="&xsd;string">hasRelatedCourtCase property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">related court case</rdfs:comment>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/court#CourtCase"/>
+        <rdfs:range rdf:resource="https://www.thegazette.co.uk/def/court#CourtCase"/>
+        <owl:inverseOf rdf:resource="https://www.thegazette.co.uk/def/court#isRelatedToCourtCase"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/court#involvedInCourtCase -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/court#involvedInCourtCase">
+        <rdfs:label rdf:datatype="&xsd;string">involvedInCourtCase property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Court Case that involves the organisation
+			Inverse of isAboutOrganisation</rdfs:comment>
+        <rdfs:range rdf:resource="https://www.thegazette.co.uk/def/court#OrganisationCourtCase"/>
+        <rdfs:domain rdf:resource="&organisation;Organisation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/court#involvedInPersonCourtCase -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/court#involvedInPersonCourtCase">
+        <rdfs:label rdf:datatype="&xsd;string">isAboutOrganisation property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Organisation involved in a Court Case
+			Inverse of involvedInCourtCase</rdfs:comment>
+        <rdfs:range rdf:resource="https://www.thegazette.co.uk/def/court#PersonCourtCase"/>
+        <owl:inverseOf rdf:resource="https://www.thegazette.co.uk/def/court#isAboutPerson"/>
+        <rdfs:domain rdf:resource="&person;Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/court#isAboutOrganisation -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/court#isAboutOrganisation">
+        <rdfs:label>implied Organisation</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Organisation involved in a Court Case
+			Inverse of involvedInCourtCase</rdfs:comment>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/court#OrganisationCourtCase"/>
+        <owl:inverseOf rdf:resource="https://www.thegazette.co.uk/def/court#involvedInCourtCase"/>
+        <rdfs:range rdf:resource="&organisation;Organisation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/court#isAboutPerson -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/court#isAboutPerson">
+        <rdfs:label rdf:datatype="&xsd;string">isAboutOrganisation property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Organisation involved in a Court Case
+			Inverse of involvedInCourtCase</rdfs:comment>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/court#PersonCourtCase"/>
+        <rdfs:range rdf:resource="&person;Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/court#isRelatedToCourtCase -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/court#isRelatedToCourtCase">
+        <rdfs:label rdf:datatype="&xsd;string">isRelatedToCourtCase property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">court case that is related this court case</rdfs:comment>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/court#CourtCase"/>
+        <rdfs:range rdf:resource="https://www.thegazette.co.uk/def/court#CourtCase"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/court#sitsAt -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/court#sitsAt">
+        <rdfs:label rdf:datatype="&xsd;string">residesAt property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">location at which the court sits</rdfs:comment>
+        <rdfs:range rdf:resource="&ontology;Feature"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/court#Court"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/court#caseNumber -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/court#caseNumber">
+        <rdfs:label>caseNumber</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Number issued to a Court Case</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/court#CourtCase"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/court#caseYear -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/court#caseYear">
+        <rdfs:label>caseYear</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Year specific to a Court Case</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;gYear"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/court#CourtCase"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/court#courtDistrict -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/court#courtDistrict">
+        <rdfs:label>courtDistrict</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">District the court resides in</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/court#Court"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/court#courtName -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/court#courtName">
+        <rdfs:label>courtName</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Name that court is known by</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/court#Court"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/court#courtNumber -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/court#courtNumber">
+        <rdfs:label rdf:datatype="&xsd;string">courtNumber property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Number of the court</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/court#Court"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.geonames.org/ontology#Feature -->
+
+    <owl:Class rdf:about="&ontology;Feature"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/court#ChanceryDivision -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/court#ChanceryDivision">
+        <rdfs:label rdf:datatype="&xsd;string">ChanceryDivision Class</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/court#HighCourt"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/court#FamilyDivision"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/court#QueensBenchDivision"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Chancery Division of the High Court</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/court#CompanyCourtCase -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/court#CompanyCourtCase">
+        <rdfs:label>CompanyCourtCase</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/court#OrganisationCourtCase"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.thegazette.co.uk/def/court#isAboutOrganisation"/>
+                <owl:allValuesFrom rdf:resource="&organisation;LimitedCompany"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/court#PartnershipCourtCase"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/court#PersonCourtCase"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/court#SoleTraderCourtCase"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Court case involving a limited company</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/court#CountyCourt -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/court#CountyCourt">
+        <rdfs:label rdf:datatype="&xsd;string">CountyCourt Class</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/court#Court"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/court#CrownCourt"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/court#DistrictRegistry"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/court#HighCourt"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/court#MagistratesCourt"/>
+        <rdfs:comment rdf:datatype="&xsd;string">County Court</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/court#Court -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/court#Court">
+        <rdfs:label>Court</rdfs:label>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/court#CourtCase"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Superclass for all types of Court</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/court#CourtCase -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/court#CourtCase">
+        <rdfs:label>CourtCase</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <rdfs:comment rdf:datatype="&xsd;string">A Court Case</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/court#CrownCourt -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/court#CrownCourt">
+        <rdfs:label rdf:datatype="&xsd;string">CrownCourt Class</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/court#Court"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/court#DistrictRegistry"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/court#HighCourt"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/court#MagistratesCourt"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Crown Court</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/court#DistrictRegistry -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/court#DistrictRegistry">
+        <rdfs:label rdf:datatype="&xsd;string">DistrictRegistry Class</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/court#Court"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/court#HighCourt"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/court#MagistratesCourt"/>
+        <rdfs:comment rdf:datatype="&xsd;string">A District Registry Court</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/court#FamilyDivision -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/court#FamilyDivision">
+        <rdfs:label rdf:datatype="&xsd;string">FamilyDivision Class</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/court#HighCourt"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/court#QueensBenchDivision"/>
+        <rdfs:comment rdf:datatype="&xsd;string">A FamilyDivision of the High Court</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/court#HighCourt -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/court#HighCourt">
+        <rdfs:label rdf:datatype="&xsd;string">HighCourt Class</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/court#Court"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/court#MagistratesCourt"/>
+        <rdfs:comment rdf:datatype="&xsd;string">The High Court</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/court#MagistratesCourt -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/court#MagistratesCourt">
+        <rdfs:label rdf:datatype="&xsd;string">MagistratesCourt Class</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/court#Court"/>
+        <rdfs:comment rdf:datatype="&xsd;string">A Magistrates Court</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/court#OrganisationCourtCase -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/court#OrganisationCourtCase">
+        <rdfs:label rdf:datatype="&xsd;string">OrganisationCourtCase Class</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/court#CourtCase"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.thegazette.co.uk/def/court#isAboutOrganisation"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/court#PersonCourtCase"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Court Case involving an organisationp</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/court#PartnershipCourtCase -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/court#PartnershipCourtCase">
+        <rdfs:label rdf:datatype="&xsd;string">PartnershipCourtCase Class</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/court#OrganisationCourtCase"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.thegazette.co.uk/def/court#isAboutOrganisation"/>
+                <owl:allValuesFrom rdf:resource="&organisation;Partnership"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/court#SoleTraderCourtCase"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Court Case involving a Partnership</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/court#PersonCourtCase -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/court#PersonCourtCase">
+        <rdfs:label rdf:datatype="&xsd;string">PersonCourtCase Class</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/court#CourtCase"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.thegazette.co.uk/def/court#isAboutPerson"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="&xsd;string">Court Case involving an individual</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/court#QueensBenchDivision -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/court#QueensBenchDivision">
+        <rdfs:label rdf:datatype="&xsd;string">QueensBenchDivision Class</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/court#HighCourt"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Queens Bench Division of the High Court</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/court#SoleTraderCourtCase -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/court#SoleTraderCourtCase">
+        <rdfs:label rdf:datatype="&xsd;string">SoleTraderCourtCase Class</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/court#OrganisationCourtCase"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.thegazette.co.uk/def/court#isAboutOrganisation"/>
+                <owl:allValuesFrom rdf:resource="&organisation;SoleTrader"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="&xsd;string">Court Case involving a Sole Trader</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#LimitedCompany -->
+
+    <owl:Class rdf:about="&organisation;LimitedCompany"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#Organisation -->
+
+    <owl:Class rdf:about="&organisation;Organisation"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#Partnership -->
+
+    <owl:Class rdf:about="&organisation;Partnership"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#SoleTrader -->
+
+    <owl:Class rdf:about="&organisation;SoleTrader"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/person#Person -->
+
+    <owl:Class rdf:about="&person;Person"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.2.1789) http://owlapi.sourceforge.net -->
+

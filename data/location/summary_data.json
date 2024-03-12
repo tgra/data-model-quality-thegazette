@@ -1,0 +1,202 @@
+{
+    "classes": {
+        "https://www.thegazette.co.uk/def/location#ParkingBay": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/location#DisabledParkingBay": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/location#PermitParkingBay": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/location#PostOffice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/location#Zoo": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/location#Library": {
+            "label": "Library class",
+            "comment": "Public library"
+        },
+        "https://www.thegazette.co.uk/def/location#InternalFeature": {
+            "label": "InternalFeature class",
+            "comment": "Internal location such as 'Reception', 'Concourse' etc"
+        },
+        "https://www.thegazette.co.uk/def/location#Locality": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/location#LocalRoad": {
+            "label": "LocalRoad class",
+            "comment": "Road with a street name"
+        },
+        "https://www.thegazette.co.uk/def/location#Road": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/organisation#Office": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/location#TrunkRoad": {
+            "label": "TrunkRoad class",
+            "comment": "Road classified by a letter 'A' or 'B'"
+        },
+        "https://www.thegazette.co.uk/def/location#CivicCentre": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/location#Guildhall": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/location#Docks": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/location#Building": {
+            "label": "Building class",
+            "comment": "General undesignated building class"
+        },
+        "https://www.thegazette.co.uk/def/location#ArbitraryLocation": {
+            "label": "ArbitaryLocation class",
+            "comment": "An arbitary descriptive location that is in context of another specific neaby or parent locatiion such as 'Parking Bay in front of house'"
+        },
+        "https://www.thegazette.co.uk/def/location#WaterCourse": {
+            "label": "WaterCourse class",
+            "comment": "Any natural or man-made stream, pond, lake, wetland, coastal wetland, swamp, or other body of water"
+        },
+        "https://www.thegazette.co.uk/def/organisation#Organisation": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/person#Person": {
+            "label": null,
+            "comment": null
+        }
+    },
+    "object_properties": {
+        "https://www.thegazette.co.uk/def/location#isPartOfTrunkRoad": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/location#LocalRoad",
+            "range": "https://www.thegazette.co.uk/def/location#TrunkRoad"
+        },
+        "https://www.thegazette.co.uk/def/location#hasSpatialLocation": {
+            "label": null,
+            "comment": null,
+            "domain": "http://www.w3.org/2006/vcard/ns#Address",
+            "range": "http://www.geonames.org/ontology#Feature"
+        },
+        "https://www.thegazette.co.uk/def/location#hasAddress": {
+            "label": null,
+            "comment": null,
+            "domain": "http://www.geonames.org/ontology#Feature",
+            "range": "http://www.w3.org/2006/vcard/ns#Address"
+        },
+        "https://www.thegazette.co.uk/def/location#incorporatesLocalRoad": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/location#TrunkRoad",
+            "range": "https://www.thegazette.co.uk/def/location#LocalRoad"
+        },
+        "https://www.thegazette.co.uk/def/location#isInCounty": {
+            "label": null,
+            "comment": null,
+            "domain": "http://www.geonames.org/ontology#Feature",
+            "range": "http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#County"
+        },
+        "https://www.thegazette.co.uk/def/location#mobileNumber": {
+            "label": null,
+            "comment": null,
+            "domain": "http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing",
+            "range": null
+        },
+        "https://www.thegazette.co.uk/def/location#phoneNumber": {
+            "label": null,
+            "comment": null,
+            "domain": "http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing",
+            "range": null
+        },
+        "https://www.thegazette.co.uk/def/location#faxNumber": {
+            "label": null,
+            "comment": null,
+            "domain": "http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing",
+            "range": null
+        },
+        "https://www.thegazette.co.uk/def/location#email": {
+            "label": null,
+            "comment": null,
+            "domain": "http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing",
+            "range": null
+        },
+        "https://www.thegazette.co.uk/def/location#uri": {
+            "label": null,
+            "comment": null,
+            "domain": "http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing",
+            "range": null
+        },
+        "https://www.thegazette.co.uk/def/location#hasOwner": {
+            "label": null,
+            "comment": null,
+            "domain": "http://www.geonames.org/ontology#Feature",
+            "range": "N6fee3a9f4940477c8b933b0b2a8d8e6f"
+        },
+        "https://www.thegazette.co.uk/def/location#ownsProperty": {
+            "label": null,
+            "comment": null,
+            "domain": "N864fae836f3a4ace8db3612ca96bc3b2",
+            "range": "http://www.geonames.org/ontology#Feature"
+        }
+    },
+    "data_properties": {
+        "https://www.thegazette.co.uk/def/location#hasRoadNumber": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/location#Road",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/location#hasRoadName": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/location#Road",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/location#isInTown": {
+            "label": null,
+            "comment": null,
+            "domain": "http://www.geonames.org/ontology#Feature",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/location#isInDistrict": {
+            "label": null,
+            "comment": null,
+            "domain": "http://www.geonames.org/ontology#Feature",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/location#isInParish": {
+            "label": null,
+            "comment": null,
+            "domain": "http://www.geonames.org/ontology#Feature",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/location#gridReference": {
+            "label": null,
+            "comment": null,
+            "domain": "http://www.geonames.org/ontology#Feature",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/location#countryName": {
+            "label": null,
+            "comment": null,
+            "domain": "http://www.geonames.org/ontology#Country",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        }
+    }
+}

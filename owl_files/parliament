@@ -1,0 +1,385 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY dcterms "http://purl.org/dc/terms/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY ontology "https://www.thegazette.co.uk/def/publication#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY water "https://www.thegazette.co.uk/def/water#" >
+    <!ENTITY planning "https://www.thegazette.co.uk/def/planning#" >
+    <!ENTITY transport "https://www.thegazette.co.uk/def/transport#" >
+    <!ENTITY legislation "https://www.thegazette.co.uk/def/legislation#" >
+    <!ENTITY organisation "https://www.thegazette.co.uk/def/organisation#" >
+    <!ENTITY consultation "https://www.thegazette.co.uk/def/consultation#" >
+	<!ENTITY parliament "https://www.thegazette.co.uk/def/parliament#" >
+    <!ENTITY england-and-wales "http://www.legislation.gov.uk/id/#environmental-permitting-(england-and-wales)-" >
+]>
+
+ 
+
+<rdf:RDF xmlns="https://www.thegazette.co.uk/def/parliament#"
+     xml:base="https://www.thegazette.co.uk/def/parliament"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:ontology="https://www.thegazette.co.uk/def/publication#"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	 xmlns:parliament="https://www.thegazette.co.uk/def/parliament"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="https://www.thegazette.co.uk/def/parliament">
+        <dcterms:created rdf:datatype="&xsd;string">2008-09-18</dcterms:created>
+        <dc:title rdf:datatype="&xsd;string">Gazette Environment Notice Ontology</dc:title>
+        <dcterms:creator rdf:datatype="&xsd;string">Griff Chamberlain, The Stationery Office, mark.chamberlain@tso.co.uk</dcterms:creator>
+        <dc:description xml:lang="en">parliament Notice module
+
+  		This is a beta version, and you should expect it to change.
+		</dc:description>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="&xsd;date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+	
+    <!-- https://www.thegazette.co.uk/def/parliament#ParliamentNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/parliament#ParliamentNotice">
+        <rdfs:subClassOf rdf:resource="&ontology;PNBNotice"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/parliament#ParliamentThing -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/parliament#ParliamentThing">
+        <rdfs:subClassOf rdf:resource="&ontology;PNBThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/parliament#HouseOfCommons -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/parliament#HouseOfCommons">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/parliament#ParliamentThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/parliament#HouseOfCommonsNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/parliament#HouseOfCommonsNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1207</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&parliament;ParliamentNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&parliament;HouseOfCommons"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+	<!-- https://www.thegazette.co.uk/def/parliament#LordChancellorsOffice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/parliament#LordChancellorsOffice">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/parliament#ParliamentThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/parliament#LordChancellorsOfficeNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/parliament#LordChancellorsOfficeNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1205</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&parliament;ParliamentNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&parliament;LordChancellorsOffice"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+	<!-- https://www.thegazette.co.uk/def/parliament#BillsInParliament -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/parliament#BillsInParliament">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/parliament#ParliamentThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/parliament#BillsInParliamentNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/parliament#BillsInParliamentNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1202</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&parliament;ParliamentNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&parliament;BillsInParliament"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+ 
+	<!-- https://www.thegazette.co.uk/def/parliament#BillsRoyalAssent -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/parliament#BillsRoyalAssent">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/parliament#ParliamentThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/parliament#BillsRoyalAssentNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/parliament#BillsRoyalAssentNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1201</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&parliament;ParliamentNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&parliament;BillsRoyalAssent"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+	<!-- https://www.thegazette.co.uk/def/parliament#BillsRoyalAssentNorthernIreland -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/parliament#BillsRoyalAssentNorthernIreland">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/parliament#ParliamentThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/parliament#BillsRoyalAssentNorthernIrelandNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/parliament#BillsRoyalAssentNorthernIrelandNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1209</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&parliament;ParliamentNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&parliament;BillsRoyalAssentNorthernIreland"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+	<!-- https://www.thegazette.co.uk/def/parliament#BillsRoyalAssentScotland -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/parliament#BillsRoyalAssentScotland">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/parliament#ParliamentThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/parliament#BillsRoyalAssentScotlandNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/parliament#BillsRoyalAssentScotlandNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1208</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&parliament;ParliamentNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&parliament;BillsRoyalAssentScotland"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+	
+	<!-- https://www.thegazette.co.uk/def/parliament#BillsRoyalAssentWales -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/parliament#BillsRoyalAssentWales">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/parliament#ParliamentThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/parliament#BillsRoyalAssentWalesNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/parliament#BillsRoyalAssentWalesNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1210</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&parliament;ParliamentNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&parliament;BillsRoyalAssentWales"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+	
+	<!-- https://www.thegazette.co.uk/def/parliament#RecordOfLegislation -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/parliament#RecordOfLegislation">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/parliament#ParliamentThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/parliament#RecordOfLegislationNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/parliament#RecordOfLegislationNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1211</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&parliament;ParliamentNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&parliament;RecordOfLegislation"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+		<!-- https://www.thegazette.co.uk/def/parliament#Speakers -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/parliament#Speakers">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/parliament#ParliamentThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/parliament#SpeakersNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/parliament#SpeakersNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1204</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&parliament;ParliamentNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&parliament;Speakers"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.2.1789) http://owlapi.sourceforge.net -->
+

@@ -1,0 +1,86 @@
+{
+    "classes": {
+        "https://www.thegazette.co.uk/def/parliament#ParliamentNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/parliament#ParliamentThing": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/parliament#HouseOfCommons": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/parliament#HouseOfCommonsNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/parliament#LordChancellorsOffice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/parliament#LordChancellorsOfficeNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/parliament#BillsInParliament": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/parliament#BillsInParliamentNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/parliament#BillsRoyalAssent": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/parliament#BillsRoyalAssentNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/parliament#BillsRoyalAssentNorthernIreland": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/parliament#BillsRoyalAssentNorthernIrelandNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/parliament#BillsRoyalAssentScotland": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/parliament#BillsRoyalAssentScotlandNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/parliament#BillsRoyalAssentWales": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/parliament#BillsRoyalAssentWalesNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/parliament#RecordOfLegislation": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/parliament#RecordOfLegislationNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/parliament#Speakers": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/parliament#SpeakersNotice": {
+            "label": null,
+            "comment": null
+        }
+    },
+    "object_properties": {},
+    "data_properties": {}
+}

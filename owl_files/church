@@ -1,0 +1,302 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY dcterms "http://purl.org/dc/terms/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY ontology "https://www.thegazette.co.uk/def/publication#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY water "http://www.gazettes-online.co.uk/ontology/water#" >
+    <!ENTITY planning "http://www.gazettes-online.co.uk/ontology/planning#" >
+    <!ENTITY transport "http://www.gazettes-online.co.uk/ontology/transport#" >
+    <!ENTITY legislation "http://www.gazettes-online.co.uk/ontology/legislation#" >
+    <!ENTITY organisation "http://www.gazettes-online.co.uk/ontology/organisation#" >
+    <!ENTITY consultation "http://www.gazettes-online.co.uk/ontology/consultation#" >
+	<!ENTITY church "https://www.thegazette.co.uk/def/church#" >
+    <!ENTITY england-and-wales "http://www.legislation.gov.uk/id/#environmental-permitting-(england-and-wales)-" >
+]>
+
+ 
+
+<rdf:RDF xmlns="https://www.thegazette.co.uk/def/church#"
+     xml:base="https://www.thegazette.co.uk/def/church"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:ontology="https://www.thegazette.co.uk/def/publication#"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	 xmlns:church="https://www.thegazette.co.uk/def/church"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="https://www.thegazette.co.uk/def/church">
+        <dcterms:created rdf:datatype="&xsd;string">2008-09-18</dcterms:created>
+        <dc:title rdf:datatype="&xsd;string">Gazette Environment Notice Ontology</dc:title>
+        <dcterms:creator rdf:datatype="&xsd;string">Griff Chamberlain, The Stationery Office, mark.chamberlain@tso.co.uk</dcterms:creator>
+        <dc:description xml:lang="en">church Notice module
+
+  		This is a beta version, and you should expect it to change.
+		</dc:description>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="&xsd;date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.gazettes-online.co.uk/ontology#isAbout -->
+
+    <owl:ObjectProperty rdf:about="&ontology;isAbout"/>
+    
+
+
+    <!-- http://www.gazettes-online.co.uk/ontology#isEnabledByLegislation -->
+
+    <owl:ObjectProperty rdf:about="&ontology;isEnabledByLegislation"/>
+    
+    <!-- https://www.thegazette.co.uk/def/church#hasChurch -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/church#hasChurch">
+        <rdfs:label>hasChurch</rdfs:label>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/church#ChurchThing"/>
+        <rdfs:range rdf:resource="https://www.thegazette.co.uk/def/church#Church"/>
+    </owl:ObjectProperty>
+ 
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.gazettes-online.co.uk/ontology#hasNoticeCode -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;hasNoticeCode"/>
+    
+    <!-- https://www.thegazette.co.uk/def/church#churchName -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/church#churchName">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>churchName</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/church#Church"/>
+    </owl:DatatypeProperty>
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.gazettes-online.co.uk/ontology#PNBNotice -->
+
+    <owl:Class rdf:about="&ontology;PNBNotice"/>
+    
+
+
+    <!-- http://www.gazettes-online.co.uk/ontology#PNBThing -->
+
+    <owl:Class rdf:about="&ontology;PNBThing"/>
+
+	
+    <!-- https://www.thegazette.co.uk/def/church#ChurchNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/church#ChurchNotice">
+        <rdfs:subClassOf rdf:resource="&ontology;PNBNotice"/>
+    </owl:Class>
+    
+    <!-- https://www.thegazette.co.uk/def/church#Church -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/church#Church">
+    </owl:Class>
+
+
+    <!-- https://www.thegazette.co.uk/def/church#ChurchThing -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/church#ChurchThing">
+        <rdfs:subClassOf rdf:resource="&ontology;PNBThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/church#ChurchOfScotland -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/church#ChurchOfScotland">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/church#ChurchThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/church#ChurchOfScotlandNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/church#ChurchOfScotlandNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1303</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&church;ChurchNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&church;ChurchOfScotland"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+    <!-- https://www.thegazette.co.uk/def/church#ChurchWork -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/church#ChurchWork">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/church#ChurchThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/church#ChurchWorkNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/church#ChurchWorkNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1304</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&church;ChurchNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&church;ChurchWork"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+    <!-- https://www.thegazette.co.uk/def/church#ChurchCommissioners -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/church#ChurchCommissioners">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/church#ChurchThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/church#ChurchCommissionersNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/church#ChurchCommissionersNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1301</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&church;ChurchNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&church;ChurchCommissioners"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+    <!-- https://www.thegazette.co.uk/def/church#PlaceOfMarriage-->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/church#PlaceOfMarriage">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/church#ChurchThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/church#PlaceOfMarriageNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/church#PlaceOfMarriageNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">1302</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&church;ChurchNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="&church;PlaceOfMarriage"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+    
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.2.1789) http://owlapi.sourceforge.net -->
+

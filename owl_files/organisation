@@ -1,0 +1,676 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY dcterms "http://purl.org/dc/terms/" >
+    <!ENTITY foaf "http://xmlns.com/foaf/0.1/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY ns "http://www.w3.org/2006/vcard/ns#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY ontology "http://www.gazettes.co.uk/ontology/" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY person "https://www.thegazette.co.uk/def/person#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY publication "https://www.thegazette.co.uk/def/publication#" >
+    <!ENTITY organisation "https://www.thegazette.co.uk/def/organisation#" >
+    <!ENTITY AdministrativeGeography "http://www.ordnancesurvey.co.uk/ontology/AdministrativeGeography/v2.0/AdministrativeGeography.rdf#" >
+]>
+
+
+<rdf:RDF xmlns="https://www.thegazette.co.uk/def/organisation"
+     xml:base="https://www.thegazette.co.uk/def/organisation"
+     xmlns:AdministrativeGeography="http://www.ordnancesurvey.co.uk/ontology/AdministrativeGeography/v2.0/AdministrativeGeography.rdf#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:person="https://www.thegazette.co.uk/def/person#"
+     xmlns:ns="http://www.w3.org/2006/vcard/ns#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:organisation="https://www.thegazette.co.uk/def/organisation#"
+     xmlns:ontology="http://www.gazettes.co.uk/ontology/"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:publication="https://www.thegazette.co.uk/def/publication#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="https://www.thegazette.co.uk/def/organisation">
+        <dcterms:created rdf:datatype="&xsd;string">2008-01-23</dcterms:created>
+        <dcterms:creator rdf:datatype="&xsd;string">Jeni Tennison, The Stationery Office, jeni.tennison@tso.co.uk</dcterms:creator>
+        <dc:title rdf:datatype="&xsd;string">Organisation Ontology</dc:title>
+        <dc:description xml:lang="en">
+  		Ontology for Organisations.
+
+  		This is a beta version, and you should expect it to change.
+		</dc:description>
+        <owl:imports rdf:resource="http://www.w3.org/2006/vcard/ns"/>
+        <owl:imports rdf:resource="https://www.thegazette.co.uk/def/person"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="&AdministrativeGeography;spatiallyContains">
+        <rdfs:label rdf:datatype="&xsd;string">spatially contains</rdfs:label>
+        <rdfs:comment>The interior and boundary of one region is completely contained in
+the interior of the other region, or the interior of one region is completely contained in the interior or the boundary of the other region and their boundaries intersect..</rdfs:comment>
+    </rdf:Description>
+    <owl:AnnotationProperty rdf:about="&AdministrativeGeography;completelySpatiallyContains">
+        <rdfs:label rdf:datatype="&xsd;string">completely spatially contains</rdfs:label>
+        <rdfs:comment>The interior and boundary of one region is completely contained in
+the interior of the other region.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&AdministrativeGeography;spatiallyContains"/>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="&AdministrativeGeography;hasVernacularName">
+        <rdfs:label rdf:datatype="&xsd;string">has vernacular name</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&AdministrativeGeography;hasName"/>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="&AdministrativeGeography;hasOfficialName">
+        <rdfs:label rdf:datatype="&xsd;string">has official name</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&AdministrativeGeography;hasName"/>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="&AdministrativeGeography;tangentiallySpatiallyContains">
+        <rdfs:label rdf:datatype="&xsd;string">tangentially spatially contains</rdfs:label>
+        <rdfs:comment>The interior of one region is completely contained in the interior or the boundary of the other region and their boundaries intersect.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&AdministrativeGeography;spatiallyContains"/>
+    </owl:AnnotationProperty>
+    <rdf:Description rdf:about="&AdministrativeGeography;hasName">
+        <rdfs:label rdf:datatype="&xsd;string">has name</rdfs:label>
+    </rdf:Description>
+    <owl:AnnotationProperty rdf:about="&AdministrativeGeography;hasBoundaryLineName">
+        <rdfs:label rdf:datatype="&xsd;string">has boundary line name</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&AdministrativeGeography;hasName"/>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="&AdministrativeGeography;hasOfficialWelshName">
+        <rdfs:label rdf:datatype="&xsd;string">has official Welsh name</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&AdministrativeGeography;hasName"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#hasArea -->
+
+    <owl:ObjectProperty rdf:about="&organisation;hasArea">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&organisation;RegionalAdministration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#hasDepartment -->
+
+    <owl:ObjectProperty rdf:about="&organisation;hasDepartment">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:range rdf:resource="&organisation;Department"/>
+        <rdfs:domain rdf:resource="&organisation;Organisation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#hasOfficeAddress -->
+
+    <owl:ObjectProperty rdf:about="&organisation;hasOfficeAddress">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>OfficeAddress</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">address associated with an office location</rdfs:comment>
+        <rdfs:range rdf:resource="&ns;Address"/>
+        <rdfs:domain rdf:resource="&organisation;Office"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#hasOrganisation -->
+
+    <owl:ObjectProperty rdf:about="&organisation;hasOrganisation">
+        <rdfs:label rdf:datatype="&xsd;string">hasOrganisation property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">organisation(s) associated with location</rdfs:comment>
+        <rdfs:range rdf:resource="&organisation;Organisation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#hasOrganisationMember -->
+
+    <owl:ObjectProperty rdf:about="&organisation;hasOrganisationMember">
+        <rdfs:label>correspondingOrganisation</rdfs:label>
+        <rdfs:range rdf:resource="&organisation;Organisation"/>
+        <owl:inverseOf rdf:resource="&organisation;isMemberOfOrganisation"/>
+        <rdfs:domain rdf:resource="&person;Position"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#hasPreviousRegisteredOffice -->
+
+    <owl:ObjectProperty rdf:about="&organisation;hasPreviousRegisteredOffice">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&organisation;LimitedCompany"/>
+        <rdfs:range rdf:resource="&publication;GazettesAddress"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#hasPreviousTradingAddress -->
+
+    <owl:ObjectProperty rdf:about="&organisation;hasPreviousTradingAddress">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>hasPreviousTradingAddress</rdfs:label>
+        <rdfs:domain rdf:resource="&organisation;Organisation"/>
+        <rdfs:range rdf:resource="&publication;GazettesAddress"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#hasPrincipalTradingAddress -->
+
+    <owl:ObjectProperty rdf:about="&organisation;hasPrincipalTradingAddress">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label rdf:datatype="&xsd;string">hasPrincipalTradingAddress property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Principal Trading Address associated with an organisation</rdfs:comment>
+        <rdfs:range rdf:resource="&ns;Address"/>
+        <rdfs:domain rdf:resource="&organisation;Organisation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#hasRegisteredOffice -->
+
+    <owl:ObjectProperty rdf:about="&organisation;hasRegisteredOffice">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>registeredOffice</rdfs:label>
+        <rdfs:domain rdf:resource="&organisation;ForProfitOrganisation"/>
+        <rdfs:range rdf:resource="&publication;GazettesAddress"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#isMemberOfOrganisation -->
+
+    <owl:ObjectProperty rdf:about="&organisation;isMemberOfOrganisation">
+        <rdfs:label>correspondingOrganisation</rdfs:label>
+        <rdfs:domain rdf:resource="&organisation;Organisation"/>
+        <rdfs:range rdf:resource="&person;Position"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#isPartOfOrganisation -->
+
+    <owl:ObjectProperty rdf:about="&organisation;isPartOfOrganisation">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&organisation;Department"/>
+        <rdfs:range rdf:resource="&organisation;Organisation"/>
+        <owl:inverseOf rdf:resource="&organisation;hasDepartment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <!-- https://www.thegazette.co.uk/def/organisation#companyNumber -->
+
+    <owl:DatatypeProperty rdf:about="&organisation;companyNumber">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>Company number</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&organisation;LimitedCompany"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#definedAs -->
+
+    <owl:DatatypeProperty rdf:about="&organisation;definedAs">
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&organisation;Partnership"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#departmentName -->
+
+    <owl:DatatypeProperty rdf:about="&organisation;departmentName">
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&organisation;Department"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#isTradingAs -->
+
+    <owl:DatatypeProperty rdf:about="&organisation;isTradingAs">
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&organisation;ForProfitOrganisation"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#name -->
+
+    <owl:DatatypeProperty rdf:about="&organisation;name">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>CompanyName</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&organisation;Organisation"/>
+        <rdfs:subPropertyOf rdf:resource="&foaf;name"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#natureOfBusiness -->
+
+    <owl:DatatypeProperty rdf:about="&organisation;natureOfBusiness">
+        <rdfs:label>natureOfBusiness</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&organisation;Organisation"/>
+    </owl:DatatypeProperty>
+	
+	
+	<!-- https://www.thegazette.co.uk/def/organisation#previousCompanyName -->
+
+    <owl:DatatypeProperty rdf:about="&organisation;previousCompanyName">
+        <rdfs:label>previousCompanyName</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&organisation;Organisation"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#officeName -->
+
+    <owl:DatatypeProperty rdf:about="&organisation;officeName">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&organisation;Office"/>
+    </owl:DatatypeProperty>
+
+    <!-- https://www.thegazette.co.uk/def/organisation#partnershipNumber -->
+
+    <owl:DatatypeProperty rdf:about="&organisation;partnershipNumber">
+    	<rdfs:label>partnershipNumber</rdfs:label>
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&organisation;Partnership"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#registeredCountries -->
+
+    <owl:DatatypeProperty rdf:about="&organisation;registeredCountries">
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&organisation;LimitedCompany"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#sitcTradeClassification -->
+
+    <owl:DatatypeProperty rdf:about="&organisation;sitcTradeClassification">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&organisation;LimitedCompany"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#status -->
+
+    <owl:DatatypeProperty rdf:about="&organisation;status">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&organisation;Organisation"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#Council -->
+
+    <owl:Class rdf:about="&organisation;Council">
+        <rdfs:subClassOf rdf:resource="&organisation;RegionalAdministration"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#CountyCouncil -->
+
+    <owl:Class rdf:about="&organisation;CountyCouncil">
+        <rdfs:subClassOf rdf:resource="&organisation;Council"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#Department -->
+
+    <owl:Class rdf:about="&organisation;Department">
+        <rdfs:label rdf:datatype="&xsd;string">Department Class</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&organisation;isPartOfOrganisation"/>
+                <owl:someValuesFrom rdf:resource="&organisation;Organisation"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&organisation;departmentName"/>
+                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="&xsd;string">Internal department or team within an organisation</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#DistrictCouncil -->
+
+    <owl:Class rdf:about="&organisation;DistrictCouncil">
+        <rdfs:subClassOf rdf:resource="&organisation;Council"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#ExecutiveAgency -->
+
+    <owl:Class rdf:about="&organisation;ExecutiveAgency">
+        <rdfs:subClassOf rdf:resource="&organisation;PublicInstitution"/>
+        <owl:disjointWith rdf:resource="&organisation;GovernmentDepartment"/>
+        <owl:disjointWith rdf:resource="&organisation;PublicCorporation"/>
+        <owl:disjointWith rdf:resource="&organisation;RegionalAdministration"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#ForProfitOrganisation -->
+
+    <owl:Class rdf:about="&organisation;ForProfitOrganisation">
+        <rdfs:label>ForProfitOrganisation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&organisation;Organisation"/>
+        <owl:disjointWith rdf:resource="&organisation;PublicInstitution"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#GeneralPartnership -->
+
+    <owl:Class rdf:about="&organisation;GeneralPartnership">
+        <rdfs:label rdf:datatype="&xsd;string">General Partnership Class</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&organisation;Partnership"/>
+        <owl:disjointWith rdf:resource="&organisation;LimitedLiabilityPartnership"/>
+        <owl:disjointWith rdf:resource="&organisation;LimitedPartnership"/>
+        <rdfs:comment rdf:datatype="&xsd;string">A General Partnership; this is what&apos;s usually meant when &apos;partnership&apos; isn&apos;t qualified</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#GovernmentDepartment -->
+
+    <owl:Class rdf:about="&organisation;GovernmentDepartment">
+        <rdfs:subClassOf rdf:resource="&organisation;PublicInstitution"/>
+        <owl:disjointWith rdf:resource="&organisation;PublicCorporation"/>
+        <owl:disjointWith rdf:resource="&organisation;RegionalAdministration"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#GovernmentOfficeRegionCouncil -->
+
+    <owl:Class rdf:about="&organisation;GovernmentOfficeRegionCouncil">
+        <rdfs:subClassOf rdf:resource="&organisation;RegionalAdministration"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#LimitedCompany -->
+
+    <owl:Class rdf:about="&organisation;LimitedCompany">
+        <rdfs:label>LimitedCompany</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&organisation;ForProfitOrganisation"/>
+        <owl:disjointWith rdf:resource="&organisation;Partnership"/>
+        <owl:disjointWith rdf:resource="&organisation;SoleTrader"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Limited Company</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#LimitedLiabilityPartnership -->
+
+    <owl:Class rdf:about="&organisation;LimitedLiabilityPartnership">
+        <rdfs:label rdf:datatype="&xsd;string">Limited Liability Partnership Class</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&organisation;Partnership"/>
+        <owl:disjointWith rdf:resource="&organisation;LimitedPartnership"/>
+        <rdfs:comment rdf:datatype="&xsd;string">A Limited Liability Partnership; partnerships of this kind will often have LLP in their names</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#LimitedPartnership -->
+
+    <owl:Class rdf:about="&organisation;LimitedPartnership">
+        <rdfs:label rdf:datatype="&xsd;string">Limited Partnership Class</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&organisation;Partnership"/>
+        <rdfs:comment rdf:datatype="&xsd;string">A Limited Partnership, in which some of the partners are limited partners (invest money but have no control over the firm)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#LondonBoroughCouncil -->
+
+    <owl:Class rdf:about="&organisation;LondonBoroughCouncil">
+        <rdfs:subClassOf rdf:resource="&organisation;Council"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#MetropolitanDistrictCouncil -->
+
+    <owl:Class rdf:about="&organisation;MetropolitanDistrictCouncil">
+        <rdfs:subClassOf rdf:resource="&organisation;Council"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#Office -->
+
+    <owl:Class rdf:about="&organisation;Office">
+        <rdfs:label rdf:datatype="&xsd;string">Office Class</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Location of Offices - an organisation can have many offices - an office can accommodate many organisations</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#Organisation -->
+
+    <owl:Class rdf:about="&organisation;Organisation">
+        <rdfs:label>Organisation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foaf;Organization"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#OverseasCompany -->
+
+    <owl:Class rdf:about="&organisation;OverseasCompany">
+        <rdfs:subClassOf rdf:resource="&organisation;Organisation"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#Partnership -->
+
+    <owl:Class rdf:about="&organisation;Partnership">
+        <rdfs:label>Partnership</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&organisation;ForProfitOrganisation"/>
+        <owl:disjointWith rdf:resource="&organisation;SoleTrader"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Organisation classed as a Partnership of any kind</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#PrivateCompanyLimitedByShares -->
+
+    <owl:Class rdf:about="&organisation;PrivateCompanyLimitedByShares">
+        <rdfs:subClassOf rdf:resource="&organisation;LimitedCompany"/>
+        <owl:disjointWith rdf:resource="&organisation;PublicLimitedCompany"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#PublicCorporation -->
+
+    <owl:Class rdf:about="&organisation;PublicCorporation">
+        <rdfs:subClassOf rdf:resource="&organisation;PublicInstitution"/>
+        <owl:disjointWith rdf:resource="&organisation;RegionalAdministration"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#PublicInstitution -->
+
+    <owl:Class rdf:about="&organisation;PublicInstitution">
+        <rdfs:subClassOf rdf:resource="&organisation;Organisation"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#PublicLimitedCompany -->
+
+    <owl:Class rdf:about="&organisation;PublicLimitedCompany">
+        <rdfs:subClassOf rdf:resource="&organisation;LimitedCompany"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#QuasiUnitaryAuthorityCouncil -->
+
+    <owl:Class rdf:about="&organisation;QuasiUnitaryAuthorityCouncil">
+        <rdfs:subClassOf rdf:resource="&organisation;Council"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#RegionalAdministration -->
+
+    <owl:Class rdf:about="&organisation;RegionalAdministration">
+        <rdfs:subClassOf rdf:resource="&organisation;PublicInstitution"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&organisation;hasArea"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#SocietyClub -->
+
+    <owl:Class rdf:about="&organisation;SocietyClub">
+        <rdfs:subClassOf rdf:resource="&organisation;Organisation"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#SoleTrader -->
+
+    <owl:Class rdf:about="&organisation;SoleTrader">
+        <rdfs:subClassOf rdf:resource="&organisation;ForProfitOrganisation"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#UnitaryAuthorityCouncil -->
+
+    <owl:Class rdf:about="&organisation;UnitaryAuthorityCouncil">
+        <rdfs:subClassOf rdf:resource="&organisation;Council"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#UnregisteredCompany -->
+
+    <owl:Class rdf:about="&organisation;UnregisteredCompany">
+        <rdfs:subClassOf rdf:resource="&organisation;Organisation"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/publication#GazettesAddress -->
+
+    <owl:Class rdf:about="&publication;GazettesAddress"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="&AdministrativeGeography;hasCensusCode">
+        <rdfs:label rdf:datatype="&xsd;string">has census code</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="&AdministrativeGeography;isSpatiallyEqualTo">
+        <rdfs:label rdf:datatype="&xsd;string">is spatially equal to</rdfs:label>
+        <rdfs:comment>The two regions have the same boundary and interior.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="&AdministrativeGeography;borders">
+        <rdfs:label rdf:datatype="&xsd;string">borders</rdfs:label>
+        <rdfs:comment>The boundaries of two regions intersect but their interiors do not intersect.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="&AdministrativeGeography;hasArea">
+        <rdfs:label rdf:datatype="&xsd;string">has area</rdfs:label>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

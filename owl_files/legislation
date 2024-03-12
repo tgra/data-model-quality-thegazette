@@ -1,0 +1,408 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY dcterms "http://purl.org/dc/terms/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY metalex "http://www.metalex.eu/metalex/2008-05-02#" >
+    <!ENTITY ontology "https://www.thegazette.co.uk/def/" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY person "https://www.thegazette.co.uk/def/person#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY organisation "https://www.thegazette.co.uk/def/organisation#" >
+    <!ENTITY core "http://purl.org/vocab/frbr/core#" >
+]>
+
+
+<rdf:RDF xmlns="&ontology;legislation"
+     xml:base="&ontology;legislation"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:person="&ontology;person"
+     xmlns:organisation="&ontology;organisation"
+     xmlns:ontology="https://www.thegazette.co.uk/def/"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="&ontology;legislation">
+        <dcterms:created>2008-01-23</dcterms:created>
+        <dcterms:creator>Jeni Tennison, The Stationery Office, jeni.tennison@tso.co.uk</dcterms:creator>
+        <dc:description xml:lang="en">
+  		Ontology for Legislation.
+
+  		This is a beta version, and you should expect it to change.
+		</dc:description>
+
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;legislation#reference">
+        <rdfs:subPropertyOf rdf:resource="&dc;identifier"/>
+        <rdfs:domain rdf:resource="&ontology;legislation#Order"/>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="&dc;identifier"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="&xsd;date"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#duration -->
+
+    <rdfs:Datatype rdf:about="&xsd;duration"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#gYear -->
+
+    <rdfs:Datatype rdf:about="&xsd;gYear"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/legislation#containsLegislationPart -->
+
+    <owl:ObjectProperty rdf:about="&ontology;legislation#containsLegislationPart">
+        <owl:inverseOf rdf:resource="&ontology;legislation#isPartOfLegislationPart"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/legislation#hasObjectionOrganisationContact -->
+
+    <owl:ObjectProperty rdf:about="&ontology;legislation#hasObjectionOrganisationContact">
+        <owl:inverseOf rdf:resource="&ontology;legislation#hasOrderObjection"/>
+        <rdfs:range rdf:resource="&ontology;organisation#Organisation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/legislation#hasObjectionPersonContact -->
+
+    <owl:ObjectProperty rdf:about="&ontology;legislation#hasObjectionPersonContact">
+        <rdfs:label rdf:datatype="&xsd;string">hasObjectioncontact property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Person associated with objections</rdfs:comment>
+        <rdfs:range rdf:resource="&ontology;person#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/legislation#hasObjectionRoleContact -->
+
+    <owl:ObjectProperty rdf:about="&ontology;legislation#hasObjectionRoleContact">
+        <rdfs:label rdf:datatype="&xsd;string">hasObjectioncontact property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Role associated with objections</rdfs:comment>
+        <rdfs:range rdf:resource="&ontology;person#Role"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/legislation#hasOrderObjection -->
+
+    <owl:ObjectProperty rdf:about="&ontology;legislation#hasOrderObjection"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/legislation#isPartOfLegislation -->
+
+    <owl:ObjectProperty rdf:about="&ontology;legislation#isPartOfLegislation"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/legislation#isPartOfLegislationPart -->
+
+    <owl:ObjectProperty rdf:about="&ontology;legislation#isPartOfLegislationPart"/>
+    
+    <!-- https://www.thegazette.co.uk/def/legislation#isPursuantToLegislation -->
+
+    <owl:ObjectProperty rdf:about="&ontology;legislation#isPursuantToLegislation">
+        <rdfs:label>isPursuantToLegislation</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Legislation item(s) pursuant to which the notice is placed</rdfs:comment>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ontology;legislation#Legislation"/>
+                    <rdf:Description rdf:about="&ontology;legislation#LegislationPart"/>
+					<rdf:Description rdf:about="&ontology;legislation#LegislationSection"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+    <owl:DatatypeProperty rdf:about="&dc;title"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/legislation#dateDeclarationMade -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;legislation#dateDeclarationMade">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label rdf:datatype="&xsd;string">dateDeclarationMade property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">date the declaration was made</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/legislation#dateOrderComesIntoEffect -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;legislation#dateOrderComesIntoEffect">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label rdf:datatype="&xsd;string">dateOrderComesIntoEffect property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">date the order comes into operation</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/legislation#dateOrderMade -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;legislation#dateOrderMade">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label rdf:datatype="&xsd;string">dateOrderMade property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">date the order was made</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/legislation#dateProposedOrderComesIntoEffect -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;legislation#dateProposedOrderComesIntoEffect">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label rdf:datatype="&xsd;string">dateOrderComesIntoEffect property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">date the order comes into operation</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/legislation#hasLegislationNumber -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;legislation#hasLegislationNumber">
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/legislation#hasLegislationPartNumber -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;legislation#hasLegislationPartNumber">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/legislation#hasLegislationYear -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;legislation#hasLegislationYear">
+        <rdfs:comment rdf:datatype="&xsd;string">The year in which an Act was enacted or an SI came into force.</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;gYear"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/legislation#hasSSInumber -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;legislation#hasSSInumber">
+        <rdfs:comment rdf:datatype="&xsd;string">The number of the legislation under the UK SI numbering scheme. A given piece of legislation may have numbers under a number of legislation numbering schemes.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&ontology;legislation#hasLegislationNumber"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/legislation#isRepealed -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;legislation#isRepealed">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/legislation#objectionCommencementDate -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;legislation#objectionCommencementDate">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label rdf:datatype="&xsd;string">objectionCommencementDate property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">commencement date objections can be placed</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/legislation#objectionDeadline -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;legislation#objectionDeadline">
+        <rdfs:range rdf:resource="&xsd;date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/legislation#objectionDuration -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;legislation#objectionDuration">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;duration"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/legislation#shortTitle -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;legislation#shortTitle">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label rdf:datatype="&xsd;string">shortTitle property</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&dc;title"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+    
+    <!-- https://www.thegazette.co.uk/def/legislation#legislationTitle -->
+
+    <owl:DatatypeProperty rdf:about="&ontology;legislation#legislationTitle">
+        <rdfs:label>legislationTitle</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/legislation#Legislation -->
+
+    <owl:Class rdf:about="&ontology;legislation#Legislation">
+    	<rdfs:label>Legislation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&core;Work"/>
+        <rdfs:subClassOf rdf:resource="&metalex;BibliographicWork"/>
+    </owl:Class>
+    
+	<!-- https://www.thegazette.co.uk/def/legislation#LegislationSection -->
+
+    <owl:Class rdf:about="&ontology;legislation#LegislationSection">
+    	<rdfs:label>LegislationSection</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&core;Expression"/>
+        <rdfs:subClassOf rdf:resource="&metalex;BibliographicExpression"/>
+		<rdfs:subClassOf rdf:resource="&ontology;legislation#Legislation"/>
+    </owl:Class>
+
+
+    <!-- https://www.thegazette.co.uk/def/legislation#LegislationPart -->
+
+    <owl:Class rdf:about="&ontology;legislation#LegislationPart">
+    	<rdfs:label>LegislationPart</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&core;Expression"/>
+        <rdfs:subClassOf rdf:resource="&metalex;BibliographicExpression"/>
+		<rdfs:subClassOf rdf:resource="&ontology;legislation#Legislation"/>
+    </owl:Class>
+    
+    <!-- https://www.thegazette.co.uk/def/legislation#Act -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/legislation#Act">
+    	<rdfs:label>Act</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&core;Expression"/>
+        <rdfs:subClassOf rdf:resource="&metalex;BibliographicExpression"/>
+		<rdfs:subClassOf rdf:resource="&ontology;legislation#Legislation"/>
+    </owl:Class>
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#Organisation -->
+
+    <owl:Class rdf:about="&ontology;organisation#Organisation"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/person#Person -->
+
+    <owl:Class rdf:about="&ontology;person#Person"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/person#Role -->
+
+    <owl:Class rdf:about="&ontology;person#Role"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/legislation -->
+
+    <owl:NamedIndividual rdf:about="&ontology;legislation">
+        <dc:title rdf:datatype="&xsd;string">Legislation Ontology</dc:title>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.2.1789) http://owlapi.sourceforge.net -->
+

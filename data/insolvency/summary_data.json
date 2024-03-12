@@ -1,0 +1,970 @@
+{
+    "classes": {
+        "http://www.w3.org/2006/vcard/ns#Address": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/court#CourtCase": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#ARROrder": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#ARROrderNotice": {
+            "label": "Annulling Revoking Rescinding Orders Notice (Notice Code 2516)",
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#AdministrationNotice": {
+            "label": "Administration Notice Class",
+            "comment": "Superclas for all Administration based notices"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#AdministrationOrder": {
+            "label": "Administration Order Thing Class",
+            "comment": "Notice of Administration Order (s. 21(1)(a)) \nCourt ordered administration content"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#AdministrationOrderNotice": {
+            "label": "Administration Orders Notice Class (Notice Code 2411)",
+            "comment": "Notice holder for Court ordered administration things"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#AdministrationOrderPersonalNotice": {
+            "label": "Administration Order Notice (Notice Code 2505)",
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#AmendmentOfTitleOfProceedings": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#AmendmentOfTitleOfProceedingsNotice": {
+            "label": "Amendment Of Title Of Proceedings Notice (Notice Code 2506)",
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#AnnualMeetingNotice": {
+            "label": " Court issed Annual Meetings Notice (Notice Code 2463)",
+            "comment": "Notice holder for court issued meeting things"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#AnnulmentOfProceedings": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#AnnulmentOfProceedingsNotice": {
+            "label": "Annulment Of Proceedings Notice (Notice Code 2512)",
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#ApplicationOfDischarge": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#ApplicationOfDischargeNotice": {
+            "label": "Application Of Discharge Notice (Notice Code 2513)",
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#AppointmentOfAdministrativeReceiversNotice": {
+            "label": "Appointment of Administrative Receivers Notice Class (Notice Code 2421)",
+            "comment": "Notice holder for company issued receiver administrator things"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#AppointmentOfAdministratorNotice": {
+            "label": "Appointment of Administrators Notice Class (notice code 2410)",
+            "comment": "Notice holder for Court ordered Appointment of Administrator things"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#AppointmentOfReceiversNotice": {
+            "label": "Appointment of Receivers Notice Class (Notice Code 2423)",
+            "comment": "Notice holder for company issued receiver appointment things"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#AppointmentOfTrustees": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#AppointmentOfTrusteesNotice": {
+            "label": "Appointment Of Trustees Notice (Notice Code 2507)",
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#BankruptcyOrder": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#BankruptcyOrderNotice": {
+            "label": "Bankruptcy Order Notice (Notice Code 2503)",
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#BankruptcyOrderPartnership": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#BankruptcyOrderPartnershipNotice": {
+            "label": "Bankruptcy Order Partnership Notice (Notice Code 2504)",
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#CompanyIssued": {
+            "label": "Company Issued Notice Things",
+            "comment": "Notice things that are Company based"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#CompanyIssuedAdministratorAppointment": {
+            "label": "Company Issued Administration Appointment",
+            "comment": "Company issued appointment of administrator content"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#CompanyIssuedAppointment": {
+            "label": "Company Issued Appointment Thing Class",
+            "comment": "SuperClass for all Company Issued appointments"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#CompanyIssuedLiquidatorAppointment": {
+            "label": "Company Issued Liquidator Appointment",
+            "comment": "Company issed appointment of liquidator content"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#CompanyIssuedMeeting": {
+            "label": "Company Issued Meeting",
+            "comment": "Company issued meeting content"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#CompanyIssuedNotice": {
+            "label": "Company Issued Notice",
+            "comment": "Company issued notice content"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#CompanyIssuedReceiverAppointment": {
+            "label": "Company Issued Receiver Appointment Thing Class",
+            "comment": "Company issued appointment of receiver content"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#CorporateInsolvency": {
+            "label": "CorporateInsolvencyThings Class",
+            "comment": "Superclass for all Corporate Insolvency Things\nie content that is used in Corporate Isolvency Notices"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#CorporateInsolvencyNotice": {
+            "label": "CorporateInsolvencyNotices Class",
+            "comment": "Superclass for all Corporate Insolvency Notices"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#CourtAdministratorAppointment": {
+            "label": "Court AdministratorAppointment",
+            "comment": "Court based administrator appointment content"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#CourtAppointmentOfLiquidatorsNotice": {
+            "label": "Appointment of Liquidators Notice Class (Notice Code 2454)",
+            "comment": "Notice holder for court appointment of liquidator things"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#CourtPetitionsAndOrdersCrossborderInsolvenciesNotice": {
+            "label": "(Notice Code 2404)",
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#CourtFinalMeetingsNotice": {
+            "label": " Court issed Final Meetings Notice (Notice Code 2458)",
+            "comment": "Notice holder for court issued meeting things"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#CourtIssued": {
+            "label": "Court Issued",
+            "comment": "Superclass for Court issued notice content"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#CourtIssuedAppointment": {
+            "label": "Court Issed Appointment Thing",
+            "comment": "Superclass for Court issued role appointment"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#CourtIssuedMeeting": {
+            "label": "Court Issed Meeting Thing",
+            "comment": "Court issued meeting content"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#CourtIssuedNotice": {
+            "label": "Court Issed Notice Thing Class",
+            "comment": "Court issued notice content"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#CourtLiquidatorAppointment": {
+            "label": "Court Issed Liquidator Appointment Thing",
+            "comment": "Court appointed liquidator content"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#CourtMeetingsOfCreditorsNotice": {
+            "label": "Meetings of Creditors Notice Class (Notice Code 2455)",
+            "comment": "Notice holder for court issued meeting thngs"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#CourtNoticeToCreditors": {
+            "label": "Notices to Creditors Notice Class (Notice code 2460)",
+            "comment": "Notice holder for court issued notice things"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#CourtNoticeToCreditorsOverseasTerritoriesAndDependencies": {
+            "label": "Notices to Creditors Overseas Territories and Dependencies Notice Class (Notice code 2465)",
+            "comment": "Notice holder for court issued notice things"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#CourtOrder": {
+            "label": "Court Order Thing Class",
+            "comment": "Superclass for court orders"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#CreditorsAnnualLiquidationMeetingsNotice": {
+            "label": "Annual Liquidation Meeting Notice Class (Notice Code 2444)",
+            "comment": "Notice holder for company issued annual liquidation meeting things"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#CreditorsAppointmentOfLiquidatorsNotice": {
+            "label": "Appointment of Liquidator Notice Class (Notice Code 2443)",
+            "comment": "Notice holder for company issued appointment of liquidator things"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#CreditorsAppointmentOfLiquidatorsOverseasTerritoriesAndDependenciesNotice": {
+            "label": "Appointment of Liquidator Overseas Territories and Dependencies Notice Class (Notice Code 2448)",
+            "comment": "Notice holder for company issued appointment of liquidator things"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#CreditorsFinalMeetingsNotice": {
+            "label": "Final Meeting Notice Class (Notice Code 2445)",
+            "comment": "Notice holder for company issued meeting things"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#CreditorsFinalMeetingsOverseasTerritoriesAndDependenciesNotice": {
+            "label": "Final Meeting Overseas Territories and Dependencies Notice Class (Notice Code 2449)",
+            "comment": "Notice holder for company issued meeting things"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#CreditorsMeetingsOfCreditorsNotice": {
+            "label": "Meetings of Creditors Notice Class (Notice Code 2442)",
+            "comment": "Holder notice for company issued meeting things"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#CreditorsMeetingsOfCreditorsOverseasTerritoriesAndDependenciesNotice": {
+            "label": "Meetings of Creditors Notice Overseas Territories and Dependencies Class (Notice Code 2447)",
+            "comment": "Holder notice for company issued meeting things"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#CreditorsNoticeToCreditors": {
+            "label": "Notices to Creditors Class (Notice Code 2446)",
+            "comment": "Holder notice for company issued notice things"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#CreditorsResolutionsForWindingUpNotice": {
+            "label": "Resolutions for Winding-up Notice Class (Notice Code 2441)",
+            "comment": "Notice holder for resolution things"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#CreditorsVoluntaryWindingUpNotice": {
+            "label": "Creditors Volutary Winding Up Notice Class",
+            "comment": "Superclass for all notices related to Creditors Voluntary winding Up"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#DischargeOrder": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#DischargeOrderNotice": {
+            "label": "Discharge Order Notice (Notice Code 2515)",
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#DismissalOfWindingUpPetitionNotice": {
+            "label": "Dismissal of Winding Up Petition Notice Class (Notice Code 2461)",
+            "comment": "Notice holder for petition things"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#FinalMeetings": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#FinalMeetingsNotice": {
+            "label": "Final Meetings Notice (Notice Code 2511)",
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#GeneralNotice": {
+            "label": "General Notice Class",
+            "comment": "Superclass for general notices"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#ITCcode": {
+            "label": "Insolvency Trade Classification Code",
+            "comment": "ITC code"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#MeetingOfCreditors": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#MeetingOfCreditorsNotice": {
+            "label": "Meetings of Creditors Notice Class (Notice Code 2412)",
+            "comment": "Notice holder for court issued meeting of creditor things"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#MeetingOfCreditorsOverseasTerritoriesAndDependenciesNotice": {
+            "label": "Meetings of Creditors Notice Overseas Territories and Dependencies Class (Notice Code 2414)",
+            "comment": "Notice holder for court issued meeting of creditor things"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#MeetingOfCreditorsPersonalNotice": {
+            "label": "Meeting Of Creditors Notice (Notice Code 2526)",
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#MembersAnnualLiquidationMeetingsNotice": {
+            "label": "Memebers Annual Liquidation Meeting Notice Class (Notice Code 2434)",
+            "comment": "Notice holder for company issued meeting things"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#MembersAppointmentOfLiquidatorsNotice": {
+            "label": "Members Appointment of Liquidators Notice Class (Notice Code 2432)",
+            "comment": "Notice holder for company issued liquidator appointment things"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#MembersFinalMeetingsNotice": {
+            "label": "Members Final Meeting Notice Class (Notice code 2435)",
+            "comment": "Notice holder for company issued meeting things"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#MembersFinalMeetingsOverseasTerritoriesAndDependenciesNotice": {
+            "label": "Members Final Meeting - Overseas Territories and Dependencies Notice Class (Notice code 2436)",
+            "comment": "Notice holder for company issued meeting things"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#MembersNoticeToCreditors": {
+            "label": "Members Notice to Creditors Class (Notice Code 2433)",
+            "comment": "Notice holder for company issued notice thing"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#MembersResolutionsForWindingUpNotice": {
+            "label": "Members Resolutions for Winding-up Notice Class (Notice Code 2431)",
+            "comment": "Notice holder for resolution things"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#MembersVolutaryWindingUpNotice": {
+            "label": "Members Voluntary Winding Up Notice Class",
+            "comment": "Superclass for all notices related to Members Voluntary winding Up"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#MoratoriumComingIntoForceNotice": {
+            "label": "Moratorium Coming Into Force Notice Class (Notice Code 2401)",
+            "comment": "Notice holder for company issued notice things"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#MoratoriumComingToAnEndNotice": {
+            "label": "MoratoriumComing to an End Notice Class (Notice Code 2402)",
+            "comment": "Notice holder for company issued notice things"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#MoratoriumOtherNotice": {
+            "label": "Moratorium Other Class (Notice Code 2408)",
+            "comment": "Notice holder for company issued notice things"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#MoratoriumOverseasTerritoriesNotice": {
+            "label": "Moratorium Overseas Territories Class (Notice Code 2405)",
+            "comment": "Notice holder for company issued notice things"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#MoratoriumReuseOfProhibitedNameNotice": {
+            "label": "Moratorium Reuse of Prohibited Name Class (Notice Code 2403)",
+            "comment": "Notice holder for company issued notice things"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#NoticeOfDividend": {
+            "label": "Notice Of Dividend (2510)",
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#NoticeOfDividendNotice": {
+            "label": "Notice Of Dividend Notice (Notice Code 2510)",
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#NoticeOfDividends": {
+            "label": "Notice of Dividends Class (Notice Code 2457)",
+            "comment": "Notice holder for notice things"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#NoticeOfIntendedDividend": {
+            "label": "Notice Of Intended Dividend (2509)",
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#NoticeOfIntendedDividendNotice": {
+            "label": "Notice Of Intended Dividend Notice (Notice Code 2509)",
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#NoticeOfIntendedDividends": {
+            "label": "Notice of Intended Dividends Class (Notice Code 2406)",
+            "comment": "Notice holder for notice things"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#NoticeOfMeetingCreditors": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#NoticeOfMeetingCreditorsNotice": {
+            "label": "Notice Of Meeting Creditors Notice (Notice Code 2511)",
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#NoticeOfStatuoryDemand": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#NoticeOfStatuoryDemandNotice": {
+            "label": "Notice Of Statuory Demand Notice (Notice Code 2501)",
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#NoticeToCreditors": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#NoticeToCreditorsNotice": {
+            "label": "Notice To Creditors Notice (Notice Code 2508)",
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#NoticeToMembers": {
+            "label": "Notices to Members Notice Class",
+            "comment": "Notice holder for company issued notice things"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#PersonalInsolvency": {
+            "label": "PersonalInsolvency",
+            "comment": "Superclass for all Personal Insolvency Things\nie content that is used in Personal Insolvency Notices"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#PersonalInsolvencyNotice": {
+            "label": "PersonalInsolvencyNotice",
+            "comment": "Superclass for all Personal Insolvency Notices"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#Petition": {
+            "label": "Petition",
+            "comment": "Court issued petition"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#PetitionsToWindUpCompaniesNotice": {
+            "label": "Petitions to Wind Up (Companies) Notice Class (Notice code 2450)",
+            "comment": "Notice holder for petition things"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#PetitionsToWindUpPartnershipsNotice": {
+            "label": "Petitions to Wind Up (Partnerships) Notice Class (Notice Code 2451)",
+            "comment": "Notice holder for petition things"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#PublicExaminations": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#PublicExaminationsNotice": {
+            "label": "Public Examinations Notice (Notice Code 2527)",
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#ReceivershipMeetingOfCreditorsNotice": {
+            "label": "Receivership Meeting of Creditors Notice Class (Notice Code 2422)",
+            "comment": "Notice holder for company issued meeting things"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#ReceivershipNotice": {
+            "label": "Receivership Notice Class",
+            "comment": "Superclass for all recerivership based notices"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#Release": {
+            "label": "Release Thing Class",
+            "comment": "Notice of release content"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#ReleaseOfLiquidatorNotice": {
+            "label": "Release of Liquidator Notice Class (Notice Code 2459)",
+            "comment": "Notice holder for release things"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#ReleaseOfTrustees": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#ReleaseOfTrusteesNotice": {
+            "label": "Release Of Trustees Notice (Notice Code 2514)",
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#Resolution": {
+            "label": "Resolution",
+            "comment": "Resolution notice content"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#SatisfactionOfTrustDeed": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#SatisfactionOfTrustDeedNotice": {
+            "label": "Satisfaction Of Trust Deed (Notice Code 2519)",
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#Sequestration": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#SequestrationNotice": {
+            "label": "Sequestration Notice (Notice Code 2517)",
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#ServiceOfPetitionNotice": {
+            "label": "Service of Petition Notice Class (Notice code 2462)",
+            "comment": "Notice holder for Notice things"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#SubstitutedServiceOfPetition": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#SubstitutedServiceOfPetitionNotice": {
+            "label": "Substituted Service Of Petition Notice (Notice Code 2502)",
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#TransferOfAppointments": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#TransferOfAppointmentsNotice": {
+            "label": "Transfer Of Appointments Notice (Notice Code)",
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#TrustDeeds": {
+            "label": "TrustDeeds",
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#TrustDeedsNotice": {
+            "label": "Trust Deeds Notice (Notice Code 2518)",
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#WindingUpByCourtNotice": {
+            "label": "Winding up by court notice Class",
+            "comment": "Superclass for all winding up by court notices"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#WindingUpOrder": {
+            "label": "Winding Up Order",
+            "comment": "Winding up order"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#WindingUpOrdersNotice": {
+            "label": "Winding-Up Orders Notice Class (Notice Code 2452)",
+            "comment": "Notice holder for Winding Up things"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#WindingUpOrdersPartnershipsNotice": {
+            "label": "Winding-Up Orders (Partnerships) Notice Class (Notice Code 2453)",
+            "comment": "Notice holder for Winding Up things"
+        },
+        "https://www.thegazette.co.uk/def/organisation#Organisation": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/person#Administrator": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/person#InsolvencyPractitioner": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/person#Liquidator": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/person#Person": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/person#Receiver": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/person#Role": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/person#Solicitor": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/publication#Notice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/publication#NotifiableThing": {
+            "label": null,
+            "comment": null
+        }
+    },
+    "object_properties": {
+        "https://www.thegazette.co.uk/def/insolvency#appointAdministrator": {
+            "label": "appointedAdministrator",
+            "comment": "Property to define the appointed administrator (role based)",
+            "domain": "Nab15b9aac7f049c2965bd55234c6543c",
+            "range": "https://www.thegazette.co.uk/def/person#InsolvencyPractitioner"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#appointLiquidator": {
+            "label": "appointLiquidator property",
+            "comment": "Property to define the appointed Liquidator (role based)",
+            "domain": "N949ef9d06d084641ae2ae3e06e78cb7b",
+            "range": "https://www.thegazette.co.uk/def/person#Liquidator"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#appointReceiver": {
+            "label": "appointReceiver property",
+            "comment": "Property to define the appointed Receiver (role based)",
+            "domain": "https://www.thegazette.co.uk/def/insolvency#CompanyIssuedReceiverAppointment",
+            "range": "https://www.thegazette.co.uk/def/person#Role"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#appointRole": {
+            "label": "appointRole property",
+            "comment": "Superclass for all role appointed properties",
+            "domain": null,
+            "range": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#companyMeetingRole": {
+            "label": "companyMeetingRole property",
+            "comment": "Role assigned to a Company Issued Meeting",
+            "domain": "https://www.thegazette.co.uk/def/insolvency#CompanyIssuedMeeting",
+            "range": "https://www.thegazette.co.uk/def/person#Role"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#courtMeetingRole": {
+            "label": "courtMeetingRole property",
+            "comment": "Role associated with Court issued meeting",
+            "domain": "https://www.thegazette.co.uk/def/insolvency#CourtIssuedMeeting",
+            "range": "https://www.thegazette.co.uk/def/person#Role"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#equivalentTo": {
+            "label": "equivalentTo property",
+            "comment": "Property for defining equivalance to another coding system such as SITC2003 or SITC2007",
+            "domain": "https://www.thegazette.co.uk/def/insolvency#ITCcode",
+            "range": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#hasAdministrator": {
+            "label": "administrator",
+            "comment": null,
+            "domain": null,
+            "range": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#hasPerson": {
+            "label": "hasPerson",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/insolvency#PersonalInsolvency",
+            "range": "https://www.thegazette.co.uk/def/person#Person"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#hasBankruptPerson": {
+            "label": "hasBankruptPerson",
+            "comment": null,
+            "domain": "N110221db494e4e40a2e598eb565a77f8",
+            "range": "https://www.thegazette.co.uk/def/person#Person"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#hasTrustee": {
+            "label": "hasTrustee",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/insolvency#TrustDeeds",
+            "range": "https://www.thegazette.co.uk/def/person#Person"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#hasCompany": {
+            "label": "hasCompany property",
+            "comment": "organisation associated with a company issued thing",
+            "domain": "https://www.thegazette.co.uk/def/insolvency#CorporateInsolvency",
+            "range": "https://www.thegazette.co.uk/def/organisation#Organisation"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#hasForeignRepresentative": {
+            "label": "hasForeignRepresentative",
+            "comment": null,
+            "domain": null,
+            "range": "https://www.thegazette.co.uk/def/person#Person"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#hasLiquidator": {
+            "label": "hasLiquidator",
+            "comment": null,
+            "domain": null,
+            "range": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#hasNotifiableThing": {
+            "label": "hasInsolvencyNotice property",
+            "comment": "Corporate Insolvency notices that are part of a court case",
+            "domain": "https://www.thegazette.co.uk/def/court#CourtCase",
+            "range": "https://www.thegazette.co.uk/def/insolvency#CourtIssued"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#hasOfficialReceiver": {
+            "label": "hasOfficialReceiver property",
+            "comment": "Receiver role assigned to winding up order",
+            "domain": "N23c6c3bf4f6d421484f9388adedd041f",
+            "range": "https://www.thegazette.co.uk/def/person#Receiver"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#hasPetitioner": {
+            "label": "hasPetitioner property",
+            "comment": "Company or person who acts as the petitioner",
+            "domain": "N646d037bf731474aa794f49fde03104f",
+            "range": "Nd2a6e2764659452d9d01d0b00aa0de38"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#hasPrimaryIP": {
+            "label": "hasPrimaryIP",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/publication#NotifiableThing",
+            "range": "https://www.thegazette.co.uk/def/person#InsolvencyPractitioner"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#hasReceiver": {
+            "label": null,
+            "comment": null,
+            "domain": null,
+            "range": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#hasSolicitor": {
+            "label": "hasSolicitor property",
+            "comment": "super property for all solictor subproperties",
+            "domain": null,
+            "range": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#meetingLocation": {
+            "label": "meetingLocation",
+            "comment": null,
+            "domain": "N2dd4e30a81dd490297d1b76d849cfeb9",
+            "range": "http://www.w3.org/2006/vcard/ns#Address"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#meetingRole": {
+            "label": "meetingRole property",
+            "comment": "super property for all meeting role properties",
+            "domain": null,
+            "range": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#orderAdministrator": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/insolvency#AdministrationOrder",
+            "range": "https://www.thegazette.co.uk/def/person#Administrator"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#orderReceiver": {
+            "label": "orderReceiver property",
+            "comment": "Receiver role assigned to a winding up order",
+            "domain": "https://www.thegazette.co.uk/def/insolvency#WindingUpOrder",
+            "range": "https://www.thegazette.co.uk/def/person#Receiver"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#petitionSolicitor": {
+            "label": "petitionSolicitor property",
+            "comment": "Role of solicitor assigned to a petition",
+            "domain": "https://www.thegazette.co.uk/def/insolvency#Petition",
+            "range": "https://www.thegazette.co.uk/def/person#Solicitor"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#placeOfHearing": {
+            "label": "placeOfHearing",
+            "comment": null,
+            "domain": "N0aca5dfd563c4ed6aa4891228d5c3d36",
+            "range": "http://www.w3.org/2006/vcard/ns#Address"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#releasedLiquidator": {
+            "label": "releasedLiquidator property",
+            "comment": "Role of liquidator assigned to a release",
+            "domain": "https://www.thegazette.co.uk/def/insolvency#Release",
+            "range": "https://www.thegazette.co.uk/def/person#Liquidator"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#resolutionLiquidator": {
+            "label": "resolutionLiquidator",
+            "comment": "Role of liquidator assigned to a resoltuion",
+            "domain": "https://www.thegazette.co.uk/def/insolvency#Resolution",
+            "range": "https://www.thegazette.co.uk/def/person#Liquidator"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#provisionalLiquidator": {
+            "label": "provisionalLiquidator",
+            "comment": "Role of provisional liquidator",
+            "domain": "https://www.thegazette.co.uk/def/insolvency#Petition",
+            "range": "https://www.thegazette.co.uk/def/person#Liquidator"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#resolutionMeetingLocation": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/insolvency#Resolution",
+            "range": "http://www.w3.org/2006/vcard/ns#Address"
+        },
+        "https://www.thegazette.co.uk/def/publication#isAbout": {
+            "label": null,
+            "comment": null,
+            "domain": null,
+            "range": null
+        }
+    },
+    "data_properties": {
+        "https://www.thegazette.co.uk/def/#hasNoticeCode": {
+            "label": null,
+            "comment": null,
+            "domain": "",
+            "range": null
+        },
+        "https://www.thegazette.co.uk/def/insolvency#companyStatus": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/organisation#Organisation",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#dateAdministrationOrderMade": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/insolvency#AdministrationOrder",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#dateInsolvencyRule": {
+            "label": "dateInsolvencyRule",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/insolvency#Petition",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#hasInsolvencyRule": {
+            "label": "dateInsolvencyRule",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/insolvency#Petition",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#dateOfAppointment": {
+            "label": "dateOfAppointment",
+            "comment": null,
+            "domain": "N0b6b96ef3945465788f63e6e21640746",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#dateOfBankruptcyOrder": {
+            "label": null,
+            "comment": null,
+            "domain": "Ndd9fb0d5714849fb9af2792005a38e7e",
+            "range": "http://www.w3.org/2001/XMLSchema#dateTime"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#dateOfHearing": {
+            "label": "dateOfHearing",
+            "comment": null,
+            "domain": "Ndd7d24d5cb0041eaa231ee63e9d9e2d2",
+            "range": "http://www.w3.org/2001/XMLSchema#dateTime"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#dateOfInterlocutor": {
+            "label": "dateOfInterlocutor",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/insolvency#Petition",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#sheriffName": {
+            "label": "sheriffName",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/insolvency#Petition",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#creditorName": {
+            "label": "creditorName",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/insolvency#Petition",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#presentedBy": {
+            "label": "presentedBy",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/insolvency#Petition",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#nameOfPlaceOfHearing": {
+            "label": "nameOfPlaceOfHearing",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/insolvency#Petition",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#dateOfPetitionPresentation": {
+            "label": "dateOfPetitionPresentation",
+            "comment": null,
+            "domain": "Nf203215426244ca7b15f672ec64f01ba",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#dateGranted": {
+            "label": "dateGranted",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/insolvency#TrustDeeds",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#dateOfProving": {
+            "label": null,
+            "comment": null,
+            "domain": "",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#dateOfResolution": {
+            "label": "dateOfResolution",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/insolvency#Resolution",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#datePetitionFiled": {
+            "label": "presentationDate",
+            "comment": null,
+            "domain": "Nda13e657569e426d94376778d612ad79",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#datePetitionSigned": {
+            "label": "datePetitionSigned",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/insolvency#Petition",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#dateToRequestAppearance": {
+            "label": "dateToRequestAppearance",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/insolvency#Petition",
+            "range": "http://www.w3.org/2001/XMLSchema#dateTime"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#dateWoundUp": {
+            "label": "wound up date",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/insolvency#WindingUpOrder",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#description": {
+            "label": "description property",
+            "comment": "Description of Trade Classification",
+            "domain": "https://www.thegazette.co.uk/def/insolvency#ITCcode",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#expectedDividend": {
+            "label": null,
+            "comment": null,
+            "domain": "",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#hasAppointer": {
+            "label": "Appointer",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/insolvency#CompanyIssuedAppointment",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#hasLongCode": {
+            "label": "hasLongCode property",
+            "comment": "ITC Long Code",
+            "domain": "https://www.thegazette.co.uk/def/insolvency#ITCcode",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#hasNoticeNumber": {
+            "label": null,
+            "comment": null,
+            "domain": "",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#hasShortCode": {
+            "label": "hasShortCode property",
+            "comment": "ITC Short Code",
+            "domain": "https://www.thegazette.co.uk/def/insolvency#ITCcode",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#meetingTime": {
+            "label": "meetingTime",
+            "comment": null,
+            "domain": "Na7eaa87c9abe4b9c916352b2cba72fa3",
+            "range": "http://www.w3.org/2001/XMLSchema#dateTime"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#addressType": {
+            "label": "addressType",
+            "comment": null,
+            "domain": "http://www.w3.org/2006/vcard/ns#Address",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#meetingIsFor": {
+            "label": "meetingIsFor",
+            "comment": null,
+            "domain": "N31d4b6067fe6497f8dbfca0e3e98e4f7",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#purposeOfMeeting": {
+            "label": "purposeOfMeeting",
+            "comment": null,
+            "domain": "N26a28425b7004a49a41f060547481d0d",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#proxyInformation": {
+            "label": "proxyInformation",
+            "comment": null,
+            "domain": "N576cac697cda41cbb29944b2a7110699",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#onOrBeforeClaimSubmit": {
+            "label": "onOrBeforeClaimSubmit",
+            "comment": null,
+            "domain": "Nbe2f60c5379547438d1c1f09d5197550",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#onOrBeforeProvingDebts": {
+            "label": "onOrBeforeProvingDebts",
+            "comment": null,
+            "domain": "Ncac06be9524e421d916883ab9ebbe700",
+            "range": "http://www.w3.org/2001/XMLSchema#dateTime"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#onOrBeforeProxySubmit": {
+            "label": "onOrBeforeProxySubmit",
+            "comment": null,
+            "domain": "N5fbf5c9db919494d885889953b4e38f6",
+            "range": "http://www.w3.org/2001/XMLSchema#dateTime"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#onOrBeforeCreditorDetail": {
+            "label": "onOrBeforeCreditorDetail",
+            "comment": null,
+            "domain": "Nbb639ca08da042b9a7b3ca3c4a2706cc",
+            "range": "http://www.w3.org/2001/XMLSchema#dateTime"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#typeOfLiquidation": {
+            "label": "typeOfLiquidation",
+            "comment": null,
+            "domain": "N119818df732646f2bb6d0f8e2aa958b9",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#typeOfPetition": {
+            "label": null,
+            "comment": null,
+            "domain": "",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#dateOfMoratoriumComingIntoForce": {
+            "label": null,
+            "comment": null,
+            "domain": "",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#dateOfMoratoriumComingToEnd": {
+            "label": null,
+            "comment": null,
+            "domain": "",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#provisionalLiquidatorAppointmentDetails": {
+            "label": "provisionalLiquidatorAppointmentDetails",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/insolvency#Petition",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/insolvency#dateInsolventLiquidation": {
+            "label": "dateInsolventLiquidation",
+            "comment": null,
+            "domain": "",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        }
+    }
+}

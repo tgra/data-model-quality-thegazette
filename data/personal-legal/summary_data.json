@@ -1,0 +1,416 @@
+{
+    "classes": {
+        "https://www.thegazette.co.uk/def/legislation#LegislationPart": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/organisation#Organisation": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#AdultChangeOfName": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#BritishCitizenship": {
+            "label": null,
+            "comment": "Note that British citizenship is purposefully not disjoint from Commonwealth citizenship."
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#ChangeOfName": {
+            "label": null,
+            "comment": "The change of a single person's name. (A ChangeOfNameNotice may involve more than one ChangeOfName.)"
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#ChangeOfNameNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#ChildChangeOfName": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#Citizenship": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#CommonwealthCitizenship": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#DeceasedEstatesNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#UnclaimedAssetsNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#DeceasedPerson": {
+            "label": "DeceasedPerson",
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#DeedPoll": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#MaritalStatus": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#MissingBeneficiaries": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#MissingBeneficiariesNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#MissingFreeholders": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#MissingFreeholdersNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#MissingWills": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#MissingWillsNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#NextOfKinNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#NoticeForClaimsAgainstEstate": {
+            "label": "NoticeForClaimsAgainstEstate",
+            "comment": "A Deceased Estates notice gives notice for claims to be made against a deceased person's estate."
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#NoticeForUnclaimedAssets": {
+            "label": "NoticeForUnclaimedAssets",
+            "comment": "A Deceased Estates (Unclaimed Estates) notice gives notice for claims to be made against a deceased person's estate."
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#SearchForNextOfKin": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#WillsAndProbateNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#WillsAndProbateThing": {
+            "label": null,
+            "comment": null
+        },
+        "http://www.w3.org/2006/vcard/ns#Name": {
+            "label": null,
+            "comment": null
+        }
+    },
+    "object_properties": {
+        "https://www.thegazette.co.uk/def/#isInNotice": {
+            "label": null,
+            "comment": null,
+            "domain": null,
+            "range": null
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#abandonsName": {
+            "label": null,
+            "comment": "The old name of the person.",
+            "domain": "https://www.thegazette.co.uk/def/personal-legal#ChangeOfName",
+            "range": "http://www.w3.org/2006/vcard/ns#Name"
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#assumesName": {
+            "label": null,
+            "comment": "The new name of the person.",
+            "domain": "https://www.thegazette.co.uk/def/personal-legal#ChangeOfName",
+            "range": "http://www.w3.org/2006/vcard/ns#Name"
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#belongsToCitizen": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/personal-legal#Citizenship",
+            "range": null
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#changesNameOf": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/personal-legal#ChangeOfName",
+            "range": null
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#conferredByLegislation": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/personal-legal#Citizenship",
+            "range": "https://www.thegazette.co.uk/def/legislation#LegislationPart"
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#confersCitizenship": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/legislation#LegislationPart",
+            "range": "https://www.thegazette.co.uk/def/personal-legal#Citizenship"
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#consentsToChangeOfName": {
+            "label": null,
+            "comment": null,
+            "domain": null,
+            "range": "https://www.thegazette.co.uk/def/personal-legal#ChildChangeOfName"
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#hasCitizenship": {
+            "label": null,
+            "comment": null,
+            "domain": null,
+            "range": "https://www.thegazette.co.uk/def/personal-legal#Citizenship"
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#hasContactOrganisation": {
+            "label": null,
+            "comment": null,
+            "domain": "N2c0f4ba719d747cc8ac62f441bc6b8d5",
+            "range": "https://www.thegazette.co.uk/def/organisation#Organisation"
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#hasEstateOf": {
+            "label": "hasEstateOf",
+            "comment": "Indicates the person who has died.",
+            "domain": "https://www.thegazette.co.uk/def/personal-legal#NoticeForClaimsAgainstEstate",
+            "range": "https://www.thegazette.co.uk/def/personal-legal#DeceasedPerson"
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#hasExecutor": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/personal-legal#WillsAndProbateThing",
+            "range": "http://xmlns.com/foaf/0.1/Agent"
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#hasMaritalStatus": {
+            "label": null,
+            "comment": null,
+            "domain": null,
+            "range": "https://www.thegazette.co.uk/def/personal-legal#MaritalStatus"
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#hasNameChange": {
+            "label": null,
+            "comment": null,
+            "domain": null,
+            "range": "https://www.thegazette.co.uk/def/personal-legal#ChangeOfName"
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#hasNextOfKin": {
+            "label": null,
+            "comment": null,
+            "domain": "http://www.w3.org/2000/10/swap/pim/contact#Person",
+            "range": "http://www.w3.org/2000/10/swap/pim/contact#Person"
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#hasNextOfKinBeingSearchedFor": {
+            "label": null,
+            "comment": "The person who could be the next of kin and is being searched for; this person is usually a relative of a deceased one.",
+            "domain": "https://www.thegazette.co.uk/def/personal-legal#SearchForNextOfKin",
+            "range": "http://www.w3.org/2000/10/swap/pim/contact#Person"
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#hasNoticeForClaims": {
+            "label": null,
+            "comment": "Relates a deceased person to the notice for claims on their estate.",
+            "domain": "https://www.thegazette.co.uk/def/personal-legal#DeceasedPerson",
+            "range": "https://www.thegazette.co.uk/def/personal-legal#NoticeForClaimsAgainstEstate"
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#hasParentalResponsibilityFor": {
+            "label": null,
+            "comment": null,
+            "domain": null,
+            "range": null
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#hasPersonalRepresentative": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/personal-legal#NoticeForClaimsAgainstEstate",
+            "range": "http://xmlns.com/foaf/0.1/Agent"
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#isAbandonedBy": {
+            "label": null,
+            "comment": null,
+            "domain": "http://www.w3.org/2006/vcard/ns#Name",
+            "range": "https://www.thegazette.co.uk/def/personal-legal#ChangeOfName"
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#isAssumedBy": {
+            "label": null,
+            "comment": null,
+            "domain": "http://www.w3.org/2006/vcard/ns#Name",
+            "range": "https://www.thegazette.co.uk/def/personal-legal#ChangeOfName"
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#isConsentedToBy": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/personal-legal#ChildChangeOfName",
+            "range": null
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#isContactOrganisationFor": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/organisation#Organisation",
+            "range": "Na0b94ac2591b421d9a1e19e4f1565f96"
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#isForNextOfKinOf": {
+            "label": null,
+            "comment": "The person for whom next of kin are being searched for; the person is usually deceased.",
+            "domain": "https://www.thegazette.co.uk/def/personal-legal#SearchForNextOfKin",
+            "range": "https://www.thegazette.co.uk/def/person#Person"
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#isMaritalStatusOf": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/personal-legal#MaritalStatus",
+            "range": null
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#isNextOfKinOf": {
+            "label": null,
+            "comment": null,
+            "domain": "http://www.w3.org/2000/10/swap/pim/contact#Person",
+            "range": "http://www.w3.org/2000/10/swap/pim/contact#Person"
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#isParentalResponsibilityOf": {
+            "label": null,
+            "comment": null,
+            "domain": null,
+            "range": null
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#isPersonalRepresentativeFor": {
+            "label": null,
+            "comment": null,
+            "domain": null,
+            "range": "https://www.thegazette.co.uk/def/personal-legal#NoticeForClaimsAgainstEstate"
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#otherInfo": {
+            "label": "otherInfo",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/person#Person",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        }
+    },
+    "data_properties": {
+        "https://www.thegazette.co.uk/def/#hasNoticeCode": {
+            "label": null,
+            "comment": null,
+            "domain": "",
+            "range": null
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#dateOfDeath": {
+            "label": "dateOfDeath",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/person#Person",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#placeOfDeath": {
+            "label": "placeOfDeath",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/person#Person",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#dateOfDecease": {
+            "label": "dateOfDecease",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/person#Person",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#dateOfMarriage": {
+            "label": "dateOfMarriage",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/person#Person",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#placeOfMarriage": {
+            "label": "placeOfMarriage",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/person#Person",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#spouse": {
+            "label": "spouse",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/person#Person",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#nationality": {
+            "label": "nationality",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/person#Person",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#religion": {
+            "label": "religion",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/person#Person",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#dateEnteredUK": {
+            "label": "dateEnteredUK",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/person#Person",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#dateOfNaturalisation": {
+            "label": "dateOfNaturalisation",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/person#Person",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#dateOfAdoption": {
+            "label": "dateOfAdoption",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/person#Person",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#dateOfDivorce": {
+            "label": "dateOfDivorce",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/person#Person",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#deedPollDate": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/personal-legal#DeedPoll",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#endDateOfDeath": {
+            "label": "endDate",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/person#Person",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#enrollmentDate": {
+            "label": null,
+            "comment": "The date on which the Deed Poll is enrolled at the Supreme Court (of Judicature/of England and Wales).",
+            "domain": "https://www.thegazette.co.uk/def/personal-legal#DeedPoll",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#hasClaimDeadline": {
+            "label": "claimDeadline",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/personal-legal#WillsAndProbateThing",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#hasClaimNumber": {
+            "label": "ClaimNumber",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/personal-legal#WillsAndProbateThing",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#onOrBeforeDateOfDeath": {
+            "label": "onOrBeforeDateOfDeath",
+            "comment": null,
+            "domain": "http://xmlns.com/foaf/0.1/Person",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#startDateOfDeath": {
+            "label": "fromDate",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/person#Person",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/personal-legal#executorDetails": {
+            "label": "executorDetails",
+            "comment": null,
+            "domain": "http://xmlns.com/foaf/0.1/Agent",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        }
+    }
+}

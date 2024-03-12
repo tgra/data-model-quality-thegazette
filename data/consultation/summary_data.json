@@ -1,0 +1,370 @@
+{
+    "classes": {
+        "http://www.geonames.org/ontology#Feature": {
+            "label": null,
+            "comment": null
+        },
+        "http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing": {
+            "label": null,
+            "comment": null
+        },
+        "http://xmlns.com/foaf/0.1/Document": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/authority#Authority": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/consultation#ConsultationThing": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/consultation#Copy": {
+            "label": "Copy class",
+            "comment": "A copy of a document required by the consultation process"
+        },
+        "https://www.thegazette.co.uk/def/consultation#InspectionCopy": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/consultation#Objection": {
+            "label": "Objection class",
+            "comment": "a procedure whereby a party to a suit says that a particular line of questioning or a particular witness or a piece of evidence or other matter is improper and should not be continued and asks the authority to rule on its impropriety or illegality"
+        },
+        "https://www.thegazette.co.uk/def/consultation#ObtainableCopy": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/consultation#PlanningPermission": {
+            "label": "PlanningPermission class",
+            "comment": "Planning Permission"
+        },
+        "https://www.thegazette.co.uk/def/consultation#Schedule": {
+            "label": "Schedule class",
+            "comment": "Schedule of Works"
+        },
+        "https://www.thegazette.co.uk/def/court#Court": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/duration#ObjectionDuration": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/duration#Times": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/organisation#Department": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/organisation#Organisation": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/person#Person": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/person#Position": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/person#Role": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/publication#Issue": {
+            "label": null,
+            "comment": null
+        }
+    },
+    "object_properties": {
+        "https://www.thegazette.co.uk/def/consultation#appliesToCourt": {
+            "label": null,
+            "comment": null,
+            "domain": null,
+            "range": "https://www.thegazette.co.uk/def/court#Court"
+        },
+        "https://www.thegazette.co.uk/def/consultation#grantedBy": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/consultation#PlanningPermission",
+            "range": "Na34e4719edf94675a6450c28bbf54fe4"
+        },
+        "https://www.thegazette.co.uk/def/consultation#grantedTo": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/consultation#PlanningPermission",
+            "range": "N1c3778ce9ee2457280815f066d1526fe"
+        },
+        "https://www.thegazette.co.uk/def/consultation#hasAssociatedPlanningPermission": {
+            "label": null,
+            "comment": null,
+            "domain": null,
+            "range": "https://www.thegazette.co.uk/def/consultation#PlanningPermission"
+        },
+        "https://www.thegazette.co.uk/def/consultation#hasAvailableTimes": {
+            "label": "hasDateTimeDuration property",
+            "comment": "Duration that Orders are available for inspection\n\t\tThis can use time durations ie 9.30 - 17.00\n\t\tor Monday to Friday\n\t\t",
+            "domain": "https://www.thegazette.co.uk/def/consultation#InspectionCopy",
+            "range": "https://www.thegazette.co.uk/def/duration#Times"
+        },
+        "https://www.thegazette.co.uk/def/consultation#hasCopy": {
+            "label": "hasCopies property",
+            "comment": "copies of document",
+            "domain": null,
+            "range": "https://www.thegazette.co.uk/def/consultation#Copy"
+        },
+        "https://www.thegazette.co.uk/def/consultation#hasInspectionTimes": {
+            "label": "hasInspectionTimes property",
+            "comment": "Times the inspection copy can be viewed",
+            "domain": "https://www.thegazette.co.uk/def/consultation#InspectionCopy",
+            "range": "https://www.thegazette.co.uk/def/duration#Times"
+        },
+        "https://www.thegazette.co.uk/def/consultation#hasInspector": {
+            "label": "hasInspector property",
+            "comment": "Person appointed as Inpsector for Public Inquiry",
+            "domain": null,
+            "range": "https://www.thegazette.co.uk/def/person#Person"
+        },
+        "https://www.thegazette.co.uk/def/consultation#hasLocation": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/consultation#ConsultationThing",
+            "range": "http://www.geonames.org/ontology#Feature"
+        },
+        "https://www.thegazette.co.uk/def/consultation#hasLocationFrom": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/consultation#ConsultationThing",
+            "range": "http://www.geonames.org/ontology#Feature"
+        },
+        "https://www.thegazette.co.uk/def/consultation#hasLocationTo": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/consultation#ConsultationThing",
+            "range": "http://www.geonames.org/ontology#Feature"
+        },
+        "https://www.thegazette.co.uk/def/consultation#hasMeetingLocation": {
+            "label": null,
+            "comment": null,
+            "domain": null,
+            "range": "http://www.geonames.org/ontology#Feature"
+        },
+        "https://www.thegazette.co.uk/def/consultation#hasObjectionAddressee": {
+            "label": "hasObjectionAddressee property",
+            "comment": "contact or address to which objections should be made",
+            "domain": "https://www.thegazette.co.uk/def/consultation#Objection",
+            "range": "N323a61b04a264570ab9016193f64efbc"
+        },
+        "https://www.thegazette.co.uk/def/consultation#hasObjectionDuration": {
+            "label": "hasObjectionDuration property",
+            "comment": "duration in which objections may be made",
+            "domain": "https://www.thegazette.co.uk/def/consultation#Objection",
+            "range": "https://www.thegazette.co.uk/def/duration#ObjectionDuration"
+        },
+        "https://www.thegazette.co.uk/def/consultation#hasOrderApplication": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/court#Court",
+            "range": null
+        },
+        "https://www.thegazette.co.uk/def/consultation#hasOriginalNoticePublication": {
+            "label": null,
+            "comment": null,
+            "domain": null,
+            "range": "https://www.thegazette.co.uk/def/publication#Issue"
+        },
+        "https://www.thegazette.co.uk/def/consultation#hasProgramOfficer": {
+            "label": "hasProgramOfficer property",
+            "comment": "Person appointed as Program Officer for Public Inquiry",
+            "domain": null,
+            "range": "https://www.thegazette.co.uk/def/person#Person"
+        },
+        "https://www.thegazette.co.uk/def/consultation#hasSchedule": {
+            "label": null,
+            "comment": null,
+            "domain": null,
+            "range": "https://www.thegazette.co.uk/def/consultation#Schedule"
+        },
+        "https://www.thegazette.co.uk/def/consultation#hasStatutoryConsultationNotification": {
+            "label": "hasStatutoryConsultationNotification property",
+            "comment": "Order is included in Statutory Consulatation Notification",
+            "domain": null,
+            "range": null
+        },
+        "https://www.thegazette.co.uk/def/consultation#hasWhoAppliedForOrder": {
+            "label": null,
+            "comment": null,
+            "domain": null,
+            "range": "N48aa608de62b401da8f720d21ab711aa"
+        },
+        "https://www.thegazette.co.uk/def/consultation#isAbout": {
+            "label": null,
+            "comment": null,
+            "domain": null,
+            "range": "https://www.thegazette.co.uk/def/consultation#ConsultationThing"
+        },
+        "https://www.thegazette.co.uk/def/consultation#isAboutOrder": {
+            "label": "isAboutOrder property",
+            "comment": "Order that notice is about",
+            "domain": null,
+            "range": null
+        },
+        "https://www.thegazette.co.uk/def/consultation#isAvailableAt": {
+            "label": "isAvailableAt property",
+            "comment": "Location that holds the Copy",
+            "domain": "https://www.thegazette.co.uk/def/consultation#InspectionCopy",
+            "range": "http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"
+        },
+        "https://www.thegazette.co.uk/def/consultation#isAvailableFrom": {
+            "label": "isAvailableFrom property",
+            "comment": "Role that holds the Order",
+            "domain": "https://www.thegazette.co.uk/def/consultation#Copy",
+            "range": null
+        },
+        "https://www.thegazette.co.uk/def/consultation#isAvailableFromOrganisation": {
+            "label": "isAvailableFromOrganisation property",
+            "comment": "Contact Organisation that holds the Order",
+            "domain": "https://www.thegazette.co.uk/def/consultation#Copy",
+            "range": "https://www.thegazette.co.uk/def/organisation#Organisation"
+        },
+        "https://www.thegazette.co.uk/def/consultation#isAvailableFromPerson": {
+            "label": "isAvailableFromPerson property",
+            "comment": "Contact Person that holds the Order",
+            "domain": "https://www.thegazette.co.uk/def/consultation#Copy",
+            "range": "https://www.thegazette.co.uk/def/person#Person"
+        },
+        "https://www.thegazette.co.uk/def/consultation#isAvailableFromRole": {
+            "label": "isAvailableFromRole property",
+            "comment": "Contact Role that holds the Order",
+            "domain": "https://www.thegazette.co.uk/def/consultation#Copy",
+            "range": "https://www.thegazette.co.uk/def/person#Role"
+        },
+        "https://www.thegazette.co.uk/def/consultation#isCopyOf": {
+            "label": "isCopyOf property",
+            "comment": "Document that is copied",
+            "domain": "https://www.thegazette.co.uk/def/consultation#Copy",
+            "range": null
+        },
+        "https://www.thegazette.co.uk/def/consultation#makeApplicationToCourt": {
+            "label": "makeApplicationToCourt property",
+            "comment": "court to which objections are made",
+            "domain": "https://www.thegazette.co.uk/def/consultation#Objection",
+            "range": "https://www.thegazette.co.uk/def/court#Court"
+        },
+        "https://www.thegazette.co.uk/def/consultation#submitOrderTo": {
+            "label": null,
+            "comment": null,
+            "domain": null,
+            "range": "https://www.thegazette.co.uk/def/authority#Authority"
+        },
+        "https://www.thegazette.co.uk/def/consultation#isPursuantToLegislation": {
+            "label": "isPursuantToLegislation",
+            "comment": "Legislation item(s) pursuant to which the notice is placed",
+            "domain": "https://www.thegazette.co.uk/def/consultation#StatutoryConsultationNotification",
+            "range": "Nebe8c52567914aacb9b9125c721e5c79"
+        }
+    },
+    "data_properties": {
+        "https://www.thegazette.co.uk/def/consultation#availableDuration": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/consultation#InspectionCopy",
+            "range": "http://www.w3.org/2001/XMLSchema#duration"
+        },
+        "https://www.thegazette.co.uk/def/consultation#completionDate": {
+            "label": "completionDate property",
+            "comment": "date work is scheduled for completion",
+            "domain": "https://www.thegazette.co.uk/def/consultation#Schedule",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/consultation#concerning": {
+            "label": "concerning property",
+            "comment": "the nature of the notice - ie zebra crossing",
+            "domain": "",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/consultation#dateApplicationMade": {
+            "label": "dateApplicationMade datatype property",
+            "comment": "Date order being withdrawn was origianlly applied for",
+            "domain": "",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/consultation#dateAvailableFrom": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/consultation#InspectionCopy",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/consultation#dateAvailableTo": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/consultation#InspectionCopy",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/consultation#dateGrantedOn": {
+            "label": "dateGrantedOn property",
+            "comment": "date planning permission granted on",
+            "domain": "https://www.thegazette.co.uk/def/consultation#PlanningPermission",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/consultation#dateOfConfirmation": {
+            "label": "dateOfConfirmation property",
+            "comment": "date of conformation",
+            "domain": "",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/consultation#dateOfDecisionLetter": {
+            "label": "dateOfDecisionLetter property",
+            "comment": "date Of Decision Letter",
+            "domain": "",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/consultation#dateProposalsAdvertised": {
+            "label": "dateProposalsAdvertised datatype property",
+            "comment": "Date Proposals for making an order were origianlly advertised",
+            "domain": "",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/consultation#hasObjectionReference": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/consultation#Objection",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/consultation#hearingDateTime": {
+            "label": "dateTimeOfHearing datatype property",
+            "comment": "Date and Time of hearing",
+            "domain": "",
+            "range": "http://www.w3.org/2001/XMLSchema#dateTime"
+        },
+        "https://www.thegazette.co.uk/def/consultation#meetingDateTime": {
+            "label": "meetingDateTime datatype property",
+            "comment": "Date and Time of meeting",
+            "domain": "",
+            "range": "http://www.w3.org/2001/XMLSchema#dateTime"
+        },
+        "https://www.thegazette.co.uk/def/consultation#planningReference": {
+            "label": "planningReference property",
+            "comment": "planning permission reference number",
+            "domain": "https://www.thegazette.co.uk/def/consultation#PlanningPermission",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/consultation#scheduleNumber": {
+            "label": "scheduleNumber property",
+            "comment": "number appointed to a schedule",
+            "domain": "https://www.thegazette.co.uk/def/consultation#Schedule",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/consultation#startDate": {
+            "label": "startDate property",
+            "comment": "date work is scheduled to start",
+            "domain": "https://www.thegazette.co.uk/def/consultation#Schedule",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        }
+    }
+}

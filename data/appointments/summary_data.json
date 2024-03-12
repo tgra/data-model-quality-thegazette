@@ -1,0 +1,112 @@
+{
+    "classes": {
+        "https://www.thegazette.co.uk/def/publication#PNBNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/publication#PNBThing": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/appointments#AppointmentNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/appointments#AppointmentThing": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/appointments#AppointmentToRoyalHousehold": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/appointments#AppointmentToRoyalHouseholdNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/appointments#CrownOffice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/appointments#CrownOfficeNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/appointments#DeputyLieutenant": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/appointments#DeputyLieutenantNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/appointments#DuchyOfCornwall": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/appointments#DuchyOfCornwallNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/appointments#Judges": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/appointments#JudgesNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/appointments#LordLieutenants": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/appointments#LordLieutenantsNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/appointments#PrimeMinistersOffice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/appointments#PrimeMinistersOfficeNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/appointments#Sheriffs": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/appointments#SheriffsNotice": {
+            "label": null,
+            "comment": null
+        }
+    },
+    "object_properties": {
+        "https://www.thegazette.co.uk/def/publication#isAbout": {
+            "label": null,
+            "comment": null,
+            "domain": null,
+            "range": null
+        },
+        "https://www.thegazette.co.uk/def/publication#isEnabledByLegislation": {
+            "label": null,
+            "comment": null,
+            "domain": null,
+            "range": null
+        },
+        "https://www.thegazette.co.uk/def/appointments##hasAppointee": {
+            "label": "Appointee",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/appointments##AppointmentToRoyalHousehold",
+            "range": "https://www.thegazette.co.uk/def/person#Person"
+        }
+    },
+    "data_properties": {
+        "https://www.thegazette.co.uk/def/publication#hasNoticeCode": {
+            "label": null,
+            "comment": null,
+            "domain": "",
+            "range": null
+        }
+    }
+}

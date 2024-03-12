@@ -1,0 +1,262 @@
+{
+    "classes": {
+        "https://www.thegazette.co.uk/def/organisation#Council": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/organisation#CountyCouncil": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/organisation#Department": {
+            "label": "Department Class",
+            "comment": "Internal department or team within an organisation"
+        },
+        "https://www.thegazette.co.uk/def/organisation#DistrictCouncil": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/organisation#ExecutiveAgency": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/organisation#ForProfitOrganisation": {
+            "label": "ForProfitOrganisation",
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/organisation#GeneralPartnership": {
+            "label": "General Partnership Class",
+            "comment": "A General Partnership; this is what's usually meant when 'partnership' isn't qualified"
+        },
+        "https://www.thegazette.co.uk/def/organisation#GovernmentDepartment": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/organisation#GovernmentOfficeRegionCouncil": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/organisation#LimitedCompany": {
+            "label": "LimitedCompany",
+            "comment": "Limited Company"
+        },
+        "https://www.thegazette.co.uk/def/organisation#LimitedLiabilityPartnership": {
+            "label": "Limited Liability Partnership Class",
+            "comment": "A Limited Liability Partnership; partnerships of this kind will often have LLP in their names"
+        },
+        "https://www.thegazette.co.uk/def/organisation#LimitedPartnership": {
+            "label": "Limited Partnership Class",
+            "comment": "A Limited Partnership, in which some of the partners are limited partners (invest money but have no control over the firm)"
+        },
+        "https://www.thegazette.co.uk/def/organisation#LondonBoroughCouncil": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/organisation#MetropolitanDistrictCouncil": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/organisation#Office": {
+            "label": "Office Class",
+            "comment": "Location of Offices - an organisation can have many offices - an office can accommodate many organisations"
+        },
+        "https://www.thegazette.co.uk/def/organisation#Organisation": {
+            "label": "Organisation",
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/organisation#OverseasCompany": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/organisation#Partnership": {
+            "label": "Partnership",
+            "comment": "Organisation classed as a Partnership of any kind"
+        },
+        "https://www.thegazette.co.uk/def/organisation#PrivateCompanyLimitedByShares": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/organisation#PublicCorporation": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/organisation#PublicInstitution": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/organisation#PublicLimitedCompany": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/organisation#QuasiUnitaryAuthorityCouncil": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/organisation#RegionalAdministration": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/organisation#SocietyClub": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/organisation#SoleTrader": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/organisation#UnitaryAuthorityCouncil": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/organisation#UnregisteredCompany": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/publication#GazettesAddress": {
+            "label": null,
+            "comment": null
+        }
+    },
+    "object_properties": {
+        "https://www.thegazette.co.uk/def/organisation#hasArea": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/organisation#RegionalAdministration",
+            "range": null
+        },
+        "https://www.thegazette.co.uk/def/organisation#hasDepartment": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/organisation#Organisation",
+            "range": "https://www.thegazette.co.uk/def/organisation#Department"
+        },
+        "https://www.thegazette.co.uk/def/organisation#hasOfficeAddress": {
+            "label": "OfficeAddress",
+            "comment": "address associated with an office location",
+            "domain": "https://www.thegazette.co.uk/def/organisation#Office",
+            "range": "http://www.w3.org/2006/vcard/ns#Address"
+        },
+        "https://www.thegazette.co.uk/def/organisation#hasOrganisation": {
+            "label": "hasOrganisation property",
+            "comment": "organisation(s) associated with location",
+            "domain": null,
+            "range": "https://www.thegazette.co.uk/def/organisation#Organisation"
+        },
+        "https://www.thegazette.co.uk/def/organisation#hasOrganisationMember": {
+            "label": "correspondingOrganisation",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/person#Position",
+            "range": "https://www.thegazette.co.uk/def/organisation#Organisation"
+        },
+        "https://www.thegazette.co.uk/def/organisation#hasPreviousRegisteredOffice": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/organisation#LimitedCompany",
+            "range": "https://www.thegazette.co.uk/def/publication#GazettesAddress"
+        },
+        "https://www.thegazette.co.uk/def/organisation#hasPreviousTradingAddress": {
+            "label": "hasPreviousTradingAddress",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/organisation#Organisation",
+            "range": "https://www.thegazette.co.uk/def/publication#GazettesAddress"
+        },
+        "https://www.thegazette.co.uk/def/organisation#hasPrincipalTradingAddress": {
+            "label": "hasPrincipalTradingAddress property",
+            "comment": "Principal Trading Address associated with an organisation",
+            "domain": "https://www.thegazette.co.uk/def/organisation#Organisation",
+            "range": "http://www.w3.org/2006/vcard/ns#Address"
+        },
+        "https://www.thegazette.co.uk/def/organisation#hasRegisteredOffice": {
+            "label": "registeredOffice",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/organisation#ForProfitOrganisation",
+            "range": "https://www.thegazette.co.uk/def/publication#GazettesAddress"
+        },
+        "https://www.thegazette.co.uk/def/organisation#isMemberOfOrganisation": {
+            "label": "correspondingOrganisation",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/organisation#Organisation",
+            "range": "https://www.thegazette.co.uk/def/person#Position"
+        },
+        "https://www.thegazette.co.uk/def/organisation#isPartOfOrganisation": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/organisation#Department",
+            "range": "https://www.thegazette.co.uk/def/organisation#Organisation"
+        }
+    },
+    "data_properties": {
+        "https://www.thegazette.co.uk/def/organisation#companyNumber": {
+            "label": "Company number",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/organisation#LimitedCompany",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/organisation#definedAs": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/organisation#Partnership",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/organisation#departmentName": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/organisation#Department",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/organisation#isTradingAs": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/organisation#ForProfitOrganisation",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/organisation#name": {
+            "label": "CompanyName",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/organisation#Organisation",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/organisation#natureOfBusiness": {
+            "label": "natureOfBusiness",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/organisation#Organisation",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/organisation#previousCompanyName": {
+            "label": "previousCompanyName",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/organisation#Organisation",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/organisation#officeName": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/organisation#Office",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/organisation#partnershipNumber": {
+            "label": "partnershipNumber",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/organisation#Partnership",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/organisation#registeredCountries": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/organisation#LimitedCompany",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/organisation#sitcTradeClassification": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/organisation#LimitedCompany",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/organisation#status": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/organisation#Organisation",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        }
+    }
+}

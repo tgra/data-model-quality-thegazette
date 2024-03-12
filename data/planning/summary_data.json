@@ -1,0 +1,542 @@
+{
+    "classes": {
+        "http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/consultation#Document": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/consultation#InspectionCopy": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/consultation#StatutoryConsultationNotification": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/organisation#Organisation": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/person#Person": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/planning#AcquireProperty": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/planning#AcquisitionAndDisposalOfLand": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/planning#AcquisitionAndDisposalOfLandNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/planning#AuthorisationApplication": {
+            "label": "Application for authorisation of construction",
+            "comment": "PipelineApplication class"
+        },
+        "https://www.thegazette.co.uk/def/planning#Cancellation": {
+            "label": "Notice of cancellation of a conservation area",
+            "comment": "Cancellation class"
+        },
+        "https://www.thegazette.co.uk/def/planning#ChangeOfConservationArea": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/planning#ChangeOfPipeline": {
+            "label": "A pipeline for conveying fluids or power",
+            "comment": "Pipeline class"
+        },
+        "https://www.thegazette.co.uk/def/planning#CommonsRegistration": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/planning#CommonsRegistrationNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/planning#PlanningAct2008": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/planning#PlanningAct2008Notice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/planning#BurialGrounds": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/planning#BurialGroundsNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/planning#PlanningApplications": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/planning#PlanningApplicationsNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/planning#Consent": {
+            "label": "Consent granted",
+            "comment": "Consent class"
+        },
+        "https://www.thegazette.co.uk/def/planning#Conservation": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/planning#Designation": {
+            "label": "Notice of designation of a conservation area",
+            "comment": "Designation class"
+        },
+        "https://www.thegazette.co.uk/def/planning#DisposalOfSurplusProperty": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/planning#InnerUrbanAreas": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/planning#InnerUrbanAreasNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/planning#LocalGovernmentAndHousing": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/planning#LocalGovernmentAndHousingNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/planning#NewConservationArea": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/planning#NewPipeline": {
+            "label": "A pipeline for conveying fluids or power",
+            "comment": "Pipeline class"
+        },
+        "https://www.thegazette.co.uk/def/planning#NewTowns": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/planning#NewTownsNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/planning#OpenSpaces": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/planning#OpenSpacesNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/planning#Operation": {
+            "label": "A large-scale business activity",
+            "comment": "Operation class"
+        },
+        "https://www.thegazette.co.uk/def/planning#PermitApplication": {
+            "label": "Application for permit",
+            "comment": "PermitApplication class"
+        },
+        "https://www.thegazette.co.uk/def/planning#PipeLines": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/planning#PipeLinesNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/planning#PipelineApplication": {
+            "label": "Consent granted",
+            "comment": "Consent class"
+        },
+        "https://www.thegazette.co.uk/def/planning#PipelineAuthorisation": {
+            "label": "Consent granted",
+            "comment": "Consent class"
+        },
+        "https://www.thegazette.co.uk/def/planning#PlanningAndEnvironmentNotice": {
+            "label": "PlanningAndEnvironmentNotice",
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/planning#PlanningNotice": {
+            "label": "PlanningNotice",
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/planning#PlanningAndEnvironmentThing": {
+            "label": "PlanningAndEnvironmentThing",
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/planning#PlanningThing": {
+            "label": "PlanningThing",
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/planning#Proposal": {
+            "label": "Proposal",
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/planning#RevokeConservationArea": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/planning#SearchForFormerOwners": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/planning#TownAndCountryPlanning": {
+            "label": "Town and Country Planning (Notice Code 1601)",
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/planning#TownAndCountryPlanningNotice": {
+            "label": "Town and Country Planning (Notice Code 1601)",
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/planning#Variation": {
+            "label": "Notice of variation (amendment and revision) of a conservation area",
+            "comment": "Variation class"
+        },
+        "https://www.thegazette.co.uk/def/planning#WorksAuthorisation": {
+            "label": "Works Authorisation",
+            "comment": "WorksAuthorisation class"
+        },
+        "https://www.thegazette.co.uk/def/planning#ZooLicenceApplicationIntention": {
+            "label": "Intention of applying for a zoo licence",
+            "comment": "ZooLicenceApplicationIntention class"
+        },
+        "https://www.thegazette.co.uk/def/planning#ZooLicenceRenewal": {
+            "label": "ZooLicenceRenewal of existing zoo licence",
+            "comment": "ZooLicenceRenewal class"
+        },
+        "https://www.thegazette.co.uk/def/planning#ZooLicensing": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/planning#ZooLicensingNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/publication#Notice": {
+            "label": null,
+            "comment": null
+        }
+    },
+    "object_properties": {
+        "https://www.thegazette.co.uk/def/planning#acquiredFrom": {
+            "label": null,
+            "comment": null,
+            "domain": "http://www.geonames.org/ontology#Feature",
+            "range": "https://www.thegazette.co.uk/def/person#Person"
+        },
+        "https://www.thegazette.co.uk/def/planning#enquiriesAddressedTo": {
+            "label": "enquiriesAddressedTo property",
+            "comment": "address for Information and queries",
+            "domain": "https://www.thegazette.co.uk/def/planning#ZooLicenceRenewal",
+            "range": "http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"
+        },
+        "https://www.thegazette.co.uk/def/planning#hasAddress": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/planning#Proposal",
+            "range": "http://www.w3.org/2006/vcard/ns#Address"
+        },
+        "https://www.thegazette.co.uk/def/planning#hasProposalApplicant": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/planning#Proposal",
+            "range": "https://www.thegazette.co.uk/def/person#Person"
+        },
+        "https://www.thegazette.co.uk/def/planning#hasApplicant": {
+            "label": "hasApplicant property",
+            "comment": "Person and/or organisation applying for licence",
+            "domain": "https://www.thegazette.co.uk/def/planning#ZooLicensing",
+            "range": "Nb884bbc57a574f7a8b517ee6012d4d97"
+        },
+        "https://www.thegazette.co.uk/def/planning#hasApplicationFrom": {
+            "label": "hasApplicationFrom property",
+            "comment": "Organisation applying for authorisation",
+            "domain": "https://www.thegazette.co.uk/def/planning#PipelineApplication",
+            "range": "https://www.thegazette.co.uk/def/organisation#Organisation"
+        },
+        "https://www.thegazette.co.uk/def/planning#hasApplicationOnBehalfOf": {
+            "label": "isAppliedOnBehalfOf property",
+            "comment": "Organisation(s) application is on behalf of",
+            "domain": "https://www.thegazette.co.uk/def/planning#PipelineApplication",
+            "range": "https://www.thegazette.co.uk/def/organisation#Organisation"
+        },
+        "https://www.thegazette.co.uk/def/planning#hasContact": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/planning#SearchForFormerOwners",
+            "range": "https://www.thegazette.co.uk/def/organisation#Organisation"
+        },
+        "https://www.thegazette.co.uk/def/planning#hasCorrespondenceContact": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/planning#DisposalOfSurplusProperty",
+            "range": "https://www.thegazette.co.uk/def/person#Person"
+        },
+        "https://www.thegazette.co.uk/def/planning#hasDocuments": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/planning#PipeLines",
+            "range": "https://www.thegazette.co.uk/def/consultation#Document"
+        },
+        "https://www.thegazette.co.uk/def/planning#hasInspectionCopy": {
+            "label": "hasInspectionCopy property",
+            "comment": "Copy of documents/plans for inspection",
+            "domain": "https://www.thegazette.co.uk/def/planning#ZooLicenceApplicationIntention",
+            "range": "https://www.thegazette.co.uk/def/consultation#InspectionCopy"
+        },
+        "https://www.thegazette.co.uk/def/planning#hasOperation": {
+            "label": "hasOperation property",
+            "comment": "Operation that is run by an Organisation",
+            "domain": "https://www.thegazette.co.uk/def/organisation#Organisation",
+            "range": "https://www.thegazette.co.uk/def/planning#Operation"
+        },
+        "https://www.thegazette.co.uk/def/planning#hasOperator": {
+            "label": "hasOperator property",
+            "comment": "Organisation authorised to operate pipeline",
+            "domain": "https://www.thegazette.co.uk/def/planning#PipelineAuthorisation",
+            "range": "https://www.thegazette.co.uk/def/organisation#Organisation"
+        },
+        "https://www.thegazette.co.uk/def/planning#hasOrganisation": {
+            "label": null,
+            "comment": null,
+            "domain": null,
+            "range": null
+        },
+        "https://www.thegazette.co.uk/def/planning#hasOrganiser": {
+            "label": "hasOrganiser property",
+            "comment": "Organisation in charge of operation",
+            "domain": "https://www.thegazette.co.uk/def/planning#Operation",
+            "range": "https://www.thegazette.co.uk/def/organisation#Organisation"
+        },
+        "https://www.thegazette.co.uk/def/planning#hasPipeline": {
+            "label": "runsFrom property",
+            "comment": "Location of start of pipeline",
+            "domain": "https://www.thegazette.co.uk/def/planning#PipeLines",
+            "range": "https://www.thegazette.co.uk/def/planning#ChangeOfPipeline"
+        },
+        "https://www.thegazette.co.uk/def/planning#hasProposal": {
+            "label": "hasProposal",
+            "comment": null,
+            "domain": null,
+            "range": "https://www.thegazette.co.uk/def/planning#Proposal"
+        },
+        "https://www.thegazette.co.uk/def/planning#hasRepresentative": {
+            "label": null,
+            "comment": null,
+            "domain": null,
+            "range": "https://www.thegazette.co.uk/def/person#InsolvencyPractitioner"
+        },
+        "https://www.thegazette.co.uk/def/planning#hasStatutoryConsultationNotification": {
+            "label": null,
+            "comment": null,
+            "domain": null,
+            "range": null
+        },
+        "https://www.thegazette.co.uk/def/planning#hasZooLocation": {
+            "label": "hasZooLocation property",
+            "comment": "Location of zoo",
+            "domain": "https://www.thegazette.co.uk/def/planning#ZooLicensing",
+            "range": "http://www.geonames.org/ontology#Feature"
+        },
+        "https://www.thegazette.co.uk/def/planning#isAboutConsultationThing": {
+            "label": "general property for connecting a planning thing with a consultation thing",
+            "comment": "isAboutConsultationThing property",
+            "domain": "https://www.thegazette.co.uk/def/planning#PlanningThing",
+            "range": "https://www.thegazette.co.uk/def/consultation#ConsultationThing"
+        },
+        "https://www.thegazette.co.uk/def/planning#isAboutDocument": {
+            "label": "general property for connecting a planning thing with a document",
+            "comment": "isAboutDocument property",
+            "domain": "https://www.thegazette.co.uk/def/planning#PlanningThing",
+            "range": "https://www.thegazette.co.uk/def/consultation#Document"
+        },
+        "https://www.thegazette.co.uk/def/planning#isAboutPlans": {
+            "label": "isAboutPlans property",
+            "comment": "Plans and maps that notice is about",
+            "domain": "https://www.thegazette.co.uk/def/planning#Conservation",
+            "range": "https://www.thegazette.co.uk/def/consultation#Document"
+        },
+        "https://www.thegazette.co.uk/def/planning#isAboutProperty": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/planning#AcquisitionAndDisposalOfLand",
+            "range": "https://www.thegazette.co.uk/def/organisation#Organisation"
+        },
+        "https://www.thegazette.co.uk/def/planning#isHeldBy": {
+            "label": "heldBy property",
+            "comment": "Organisation authorisaton is held by",
+            "domain": "https://www.thegazette.co.uk/def/planning#WorksAuthorisation",
+            "range": "https://www.thegazette.co.uk/def/organisation#Organisation"
+        },
+        "https://www.thegazette.co.uk/def/planning#isSearchingForOrganisation": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/planning#SearchForFormerOwners",
+            "range": "https://www.thegazette.co.uk/def/organisation#Organisation"
+        },
+        "https://www.thegazette.co.uk/def/planning#isSearchingForPerson": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/planning#SearchForFormerOwners",
+            "range": "https://www.thegazette.co.uk/def/person#Person"
+        },
+        "https://www.thegazette.co.uk/def/planning#makesRepresentation": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/planning#PipelineApplication",
+            "range": "https://www.thegazette.co.uk/def/authority#Authority"
+        },
+        "https://www.thegazette.co.uk/def/planning#runsFrom": {
+            "label": "runsFrom property",
+            "comment": "Location of start of pipeline",
+            "domain": "https://www.thegazette.co.uk/def/planning#ChangeOfPipeline",
+            "range": "http://www.geonames.org/ontology#Feature"
+        },
+        "https://www.thegazette.co.uk/def/planning#runsThrough": {
+            "label": "runsThrough property",
+            "comment": "Locations traversed by pipeline",
+            "domain": "https://www.thegazette.co.uk/def/planning#ChangeOfPipeline",
+            "range": "http://www.geonames.org/ontology#Feature"
+        },
+        "https://www.thegazette.co.uk/def/planning#runsTo": {
+            "label": "runsTo property",
+            "comment": "Location of end of pipeline",
+            "domain": "https://www.thegazette.co.uk/def/planning#ChangeOfPipeline",
+            "range": "http://www.geonames.org/ontology#Feature"
+        },
+        "https://www.thegazette.co.uk/def/publication#isAbout": {
+            "label": null,
+            "comment": null,
+            "domain": null,
+            "range": null
+        }
+    },
+    "data_properties": {
+        "https://www.thegazette.co.uk/def/planning#berrNumber": {
+            "label": "BERRnumber property",
+            "comment": "BERR number (also known as DTI number)",
+            "domain": "https://www.thegazette.co.uk/def/planning#Operation",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/planning#dateAcquiredOn": {
+            "label": null,
+            "comment": null,
+            "domain": "http://www.geonames.org/ontology#Feature",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/planning#dateCorrespondenceReceivedBy": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/planning#DisposalOfSurplusProperty",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/planning#dateEnvironmentalStatementReceived": {
+            "label": "dateEnvironmentalStatementReceived property",
+            "comment": "Date Environmental Statement Received",
+            "domain": "https://www.thegazette.co.uk/def/planning#Operation",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/planning#dateReviewCompleted": {
+            "label": "dateReviewCompleted property",
+            "comment": "Date Review Completed",
+            "domain": "https://www.thegazette.co.uk/def/planning#Operation",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/planning#disposalReference": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/planning#AcquisitionAndDisposalOfLand",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/planning#hasZooLocation": {
+            "label": "hasZooLocation property",
+            "comment": "Location of zoo",
+            "domain": "https://www.thegazette.co.uk/def/planning#ZooLicensing",
+            "range": "http://www.geonames.org/ontology#Feature"
+        },
+        "https://www.thegazette.co.uk/def/planning#orderDetails": {
+            "label": "Details and representation information",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/planning#TownAndCountryPlanning",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/planning#hasSchedule": {
+            "label": "Schedule information",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/planning#TownAndCountryPlanning",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/planning#project": {
+            "label": "project property",
+            "comment": "Name of operation project",
+            "domain": "https://www.thegazette.co.uk/def/planning#Operation",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/planning#proposalDescription": {
+            "label": "proposalDescription",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/planning#Proposal",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/planning#proposalReference": {
+            "label": "proposalReference",
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/planning#Proposal",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/planning#quadBlock": {
+            "label": "quadBlock property",
+            "comment": "Quad/Block reference (part of BERR well number)",
+            "domain": "https://www.thegazette.co.uk/def/planning#Operation",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/planning#representationDeadline": {
+            "label": "representationDeadline property",
+            "comment": "Deadline for representations to be made",
+            "domain": "https://www.thegazette.co.uk/def/planning#Operation",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/planning#runsFrom": {
+            "label": "runsFrom property",
+            "comment": "Location of start of pipeline",
+            "domain": "https://www.thegazette.co.uk/def/planning#ChangeOfPipeline",
+            "range": "http://www.geonames.org/ontology#Feature"
+        },
+        "https://www.thegazette.co.uk/def/planning#runsThrough": {
+            "label": "runsThrough property",
+            "comment": "Locations traversed by pipeline",
+            "domain": "https://www.thegazette.co.uk/def/planning#ChangeOfPipeline",
+            "range": "http://www.geonames.org/ontology#Feature"
+        },
+        "https://www.thegazette.co.uk/def/planning#runsTo": {
+            "label": "runsTo property",
+            "comment": "Location of end of pipeline",
+            "domain": "https://www.thegazette.co.uk/def/planning#ChangeOfPipeline",
+            "range": "http://www.geonames.org/ontology#Feature"
+        },
+        "https://www.thegazette.co.uk/def/planning#zooName": {
+            "label": "zooName property",
+            "comment": "Name of zoo",
+            "domain": "https://www.thegazette.co.uk/def/planning#ZooLicensing",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/publication#hasNoticeCode": {
+            "label": null,
+            "comment": null,
+            "domain": "",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        }
+    }
+}

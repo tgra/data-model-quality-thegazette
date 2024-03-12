@@ -1,0 +1,678 @@
+{
+    "classes": {
+        "https://www.thegazette.co.uk/def/honours#Order": {
+            "label": "Order Class",
+            "comment": "Order"
+        },
+        "https://www.thegazette.co.uk/def/honours#Award": {
+            "label": "Award Class",
+            "comment": "Award"
+        },
+        "https://www.thegazette.co.uk/def/honours#Honour": {
+            "label": "Honour Class",
+            "comment": "Honour"
+        },
+        "https://www.thegazette.co.uk/def/honours#Decoration": {
+            "label": "Decoration Class",
+            "comment": "Decoration"
+        },
+        "https://www.thegazette.co.uk/def/honours#Medal": {
+            "label": "Medal Class",
+            "comment": "Medal"
+        },
+        "https://www.thegazette.co.uk/def/honours#Commendation": {
+            "label": "Commendation Class",
+            "comment": "Commendation"
+        },
+        "https://www.thegazette.co.uk/def/honours#AppointmentsToTheMonarch": {
+            "label": "AppointmentsToTheMonarch Class",
+            "comment": "Appointments To The Monarch"
+        },
+        "https://www.thegazette.co.uk/def/honours#LifePeer": {
+            "label": "LifePeer Class",
+            "comment": "Life Peer"
+        },
+        "https://www.thegazette.co.uk/def/honours#Knight": {
+            "label": "Knight Class",
+            "comment": "Knight"
+        },
+        "https://www.thegazette.co.uk/def/honours#Dame": {
+            "label": "Dame Class",
+            "comment": "Dame"
+        },
+        "https://www.thegazette.co.uk/def/honours#Lady": {
+            "label": "Lady Class",
+            "comment": "Lady"
+        },
+        "https://www.thegazette.co.uk/def/honours#Commander": {
+            "label": "Commander Class",
+            "comment": "Commander"
+        },
+        "https://www.thegazette.co.uk/def/honours#Lieutenant": {
+            "label": "Lieutenant Class",
+            "comment": "Lieutenant"
+        },
+        "https://www.thegazette.co.uk/def/honours#Officer": {
+            "label": "Officer Class",
+            "comment": "Officer"
+        },
+        "https://www.thegazette.co.uk/def/honours#Member": {
+            "label": "Member Class",
+            "comment": "Member"
+        },
+        "https://www.thegazette.co.uk/def/honours#Companion": {
+            "label": "Companion Class",
+            "comment": "Companion"
+        },
+        "https://www.thegazette.co.uk/def/honours#Bar": {
+            "label": "Bar Class",
+            "comment": "Bar"
+        },
+        "https://www.thegazette.co.uk/def/honours#CampaignBar": {
+            "label": "CampaignBar Class",
+            "comment": "Campaign Bar"
+        },
+        "https://www.thegazette.co.uk/def/honours#AchievementBar": {
+            "label": "AchievementBar Class",
+            "comment": "Achievement Bar"
+        },
+        "https://www.thegazette.co.uk/def/honours#MultipleAwardBar": {
+            "label": "MultipleAwardBar Class",
+            "comment": "MultipleAward Bar"
+        },
+        "https://www.thegazette.co.uk/def/honours#ServiceBar": {
+            "label": "ServiceBar Class",
+            "comment": "Service Bar"
+        },
+        "https://www.thegazette.co.uk/def/honours#OrderOfChivalry": {
+            "label": "OrderOfChivalry Class",
+            "comment": "Order of Chivalry"
+        },
+        "https://www.thegazette.co.uk/def/honours#Baroness": {
+            "label": "Baroness Class",
+            "comment": "Baroness"
+        },
+        "https://www.thegazette.co.uk/def/honours#Baron": {
+            "label": "Baron Class",
+            "comment": "Baron"
+        },
+        "https://www.thegazette.co.uk/def/honours#PrivyCounsellor": {
+            "label": "PrivyCounsellor Class",
+            "comment": "Privy Counsellor"
+        },
+        "https://www.thegazette.co.uk/def/honours#AideDeCamp": {
+            "label": "AideDeCamp Class",
+            "comment": "Aide de Camp"
+        },
+        "https://www.thegazette.co.uk/def/honours#KnightBatchelor": {
+            "label": "KnightBatchelor Class",
+            "comment": "Knight Batchelor"
+        },
+        "https://www.thegazette.co.uk/def/honours#TheMostNobleOrderOfTheGarter": {
+            "label": "TheMostNobleOrderOfTheGarter Class",
+            "comment": "The Most Noble Order of the Garter"
+        },
+        "https://www.thegazette.co.uk/def/honours#KnightOfTheGarter": {
+            "label": "KnightOfTheGarter Class",
+            "comment": "Knight of the Garter"
+        },
+        "https://www.thegazette.co.uk/def/honours#LadyOfTheGarter": {
+            "label": "LadyOfTheGarter Class",
+            "comment": "Lady of the Garter"
+        },
+        "https://www.thegazette.co.uk/def/honours#TheMostAncientAndNobleOrderOfTheThistle": {
+            "label": "TheMostAncientAndNobleOrderOfTheThistle Class",
+            "comment": "The Most Ancient and Noble Order of the Thistle"
+        },
+        "https://www.thegazette.co.uk/def/honours#KnightOfTheThistle": {
+            "label": "KnightOfTheThistle Class",
+            "comment": "Knight of the Thistle"
+        },
+        "https://www.thegazette.co.uk/def/honours#LadyOfTheThistle": {
+            "label": "LadyOfTheThistle Class",
+            "comment": "Lady of the Thistle"
+        },
+        "https://www.thegazette.co.uk/def/honours#TheOrderOfMerit": {
+            "label": "TheOrderOfMerit Class",
+            "comment": "The Order of Merit"
+        },
+        "https://www.thegazette.co.uk/def/honours#MemberOfTheOrderOfMerit": {
+            "label": "MemberOfTheOrderOfMerit Class",
+            "comment": "Member of the Order of Merit"
+        },
+        "https://www.thegazette.co.uk/def/honours#TheRoyalVictorianOrder": {
+            "label": "TheRoyalVictorianOrder Class",
+            "comment": "The Royal Victorian Order"
+        },
+        "https://www.thegazette.co.uk/def/honours#KnightGrandCrossVictorianOrder": {
+            "label": "KnightGrandCrossVictorianOrder Class",
+            "comment": "Knight Grand Cross Victorian Order"
+        },
+        "https://www.thegazette.co.uk/def/honours#DameGrandCrossVictorianOrder": {
+            "label": "DameGrandCrossVictorianOrder Class",
+            "comment": "Dame Grand Cross Victorian Order"
+        },
+        "https://www.thegazette.co.uk/def/honours#KnightCommanderVictorianOrder": {
+            "label": "KnightCommanderVictorianOrder Class",
+            "comment": "Knight Commander Victorian Order"
+        },
+        "https://www.thegazette.co.uk/def/honours#DameCommanderVictorianOrder": {
+            "label": "DameCommanderVictorianOrder Class",
+            "comment": "Dame Commander Victorian Order"
+        },
+        "https://www.thegazette.co.uk/def/honours#LieutenantVictorianOrder": {
+            "label": "LieutenantVictorianOrder Class",
+            "comment": "Lieutenant Victorian Order"
+        },
+        "https://www.thegazette.co.uk/def/honours#MemberVictorianOrder": {
+            "label": "MemberVictorianOrder Class",
+            "comment": "Member Victorian Order"
+        },
+        "https://www.thegazette.co.uk/def/honours#TheMostHonourableOrderOfTheBath": {
+            "label": "TheMostHonourableOrderOfTheBath Class",
+            "comment": "The Most Honourable Order of the Bath"
+        },
+        "https://www.thegazette.co.uk/def/honours#KnightGrandCrossOrderOfBath": {
+            "label": "KnightGrandCrossOrderOfBath Class",
+            "comment": "Knight Grand Cross Order Of Bath"
+        },
+        "https://www.thegazette.co.uk/def/honours#DameGrandCrossOrderOfBath": {
+            "label": "DameGrandCrossOrderOfBath Class",
+            "comment": "Dame Grand Cross Order Of Bath"
+        },
+        "https://www.thegazette.co.uk/def/honours#KnightCommmanderOrderOfBath": {
+            "label": "KnightCommmanderOrderOfBath Class",
+            "comment": "Knight Commmander Order Of Bath"
+        },
+        "https://www.thegazette.co.uk/def/honours#DameCommmanderOrderOfBath": {
+            "label": "DameCommmanderOrderOfBath Class",
+            "comment": "Dame Commmander Order Of Bath"
+        },
+        "https://www.thegazette.co.uk/def/honours#CompanionOrderOfBath": {
+            "label": "CompanionOrderOfBath Class",
+            "comment": "Companion Order Of Bath"
+        },
+        "https://www.thegazette.co.uk/def/honours#TheOrderOfStMichaelAndStGeorge": {
+            "label": "TheOrderOfStMichaelAndStGeorge Class",
+            "comment": "The Order of St Michael and St George"
+        },
+        "https://www.thegazette.co.uk/def/honours#KnightGrandCrossOrderOfStMichaelAndStGeorge": {
+            "label": "KnightGrandCrossOrderOfStMichaelAndStGeorge Class",
+            "comment": "Knight Grand Cross Order Of St Michael And St George"
+        },
+        "https://www.thegazette.co.uk/def/honours#DameGrandCrossOrderOfStMichaelAndStGeorge": {
+            "label": "DameGrandCrossOrderOfStMichaelAndStGeorge Class",
+            "comment": "Dame Grand Cross Order Of St Michael And St George"
+        },
+        "https://www.thegazette.co.uk/def/honours#KnightCommanderOrderOfStMichaelAndStGeorge": {
+            "label": "KnightCommanderOrderOfStMichaelAndStGeorge Class",
+            "comment": "Knight Commander Order Of St Michael And St George"
+        },
+        "https://www.thegazette.co.uk/def/honours#DameCommanderOrderOfStMichaelAndStGeorge": {
+            "label": "DameCommanderOrderOfStMichaelAndStGeorge Class",
+            "comment": "Dame Commander Order Of St Michael And St George"
+        },
+        "https://www.thegazette.co.uk/def/honours#CompanionOrderOfStMichaelAndStGeorge": {
+            "label": "CompanionOrderOfStMichaelAndStGeorge Class",
+            "comment": "Companion Order Of St Michael And St George"
+        },
+        "https://www.thegazette.co.uk/def/honours#TheOrderOfTheBritishEmpire": {
+            "label": "TheOrderOfTheBritishEmpire Class",
+            "comment": "The Order of the British Empire"
+        },
+        "https://www.thegazette.co.uk/def/honours#KnightGrandCrossOrderOfTheBritishEmpire": {
+            "label": "KnightGrandCrossOrderOfTheBritishEmpire Class",
+            "comment": "Knight Grand Cross Order Of The British Empire"
+        },
+        "https://www.thegazette.co.uk/def/honours#DameGrandCrossOrderOfTheBritishEmpire": {
+            "label": "DameGrandCrossOrderOfTheBritishEmpire Class",
+            "comment": "Dame Grand Cross Order Of The British Empire"
+        },
+        "https://www.thegazette.co.uk/def/honours#KnightCommanderOrderOfTheBritishEmpire": {
+            "label": "KnightCommanderOrderOfTheBritishEmpire Class",
+            "comment": "Knight Commander Order Of The British Empire"
+        },
+        "https://www.thegazette.co.uk/def/honours#DameCommanderOrderOfTheBritishEmpire": {
+            "label": "DameCommanderOrderOfTheBritishEmpire Class",
+            "comment": "Dame Commander Order Of The British Empire"
+        },
+        "https://www.thegazette.co.uk/def/honours#CommanderOrderOfTheBritishEmpire": {
+            "label": "CommanderOrderOfTheBritishEmpire Class",
+            "comment": "Commander Order Of The British Empire"
+        },
+        "https://www.thegazette.co.uk/def/honours#OfficerOrderOfTheBritishEmpire": {
+            "label": "OfficerOrderOfTheBritishEmpire Class",
+            "comment": "Officer Order Of The British Empire"
+        },
+        "https://www.thegazette.co.uk/def/honours#MemberOrderOfTheBritishEmpire": {
+            "label": "MemberOrderOfTheBritishEmpire Class",
+            "comment": "Member Order Of The British Empire"
+        },
+        "https://www.thegazette.co.uk/def/honours#TheOrderOfTheCompanionsOfHonour": {
+            "label": "TheOrderOfTheCompanionsOfHonour Class",
+            "comment": "The Order of the Companions of Honour"
+        },
+        "https://www.thegazette.co.uk/def/honours#CompanionOrderOfTheCompanionsOfHonour": {
+            "label": "CompanionOrderOfTheCompanionsOfHonour Class",
+            "comment": "Companion Order Of The Companions Of Honour"
+        },
+        "https://www.thegazette.co.uk/def/honours#ImperialServiceOrder": {
+            "label": "ImperialServiceOrder Class",
+            "comment": "Imperial Service Order"
+        },
+        "https://www.thegazette.co.uk/def/honours#CompanionImperialServiceOrder": {
+            "label": "CompanionImperialServiceOrder Class",
+            "comment": "Companion Imperial Service Order"
+        },
+        "https://www.thegazette.co.uk/def/honours#DistinguishedServiceOrder": {
+            "label": "DistinguishedServiceOrder Class",
+            "comment": "The Distinguished Service Order"
+        },
+        "https://www.thegazette.co.uk/def/honours#CompanionDistinguishedServiceOrder": {
+            "label": "CompanionDistinguishedServiceOrder Class",
+            "comment": "Companion Distinguished Service Order"
+        },
+        "https://www.thegazette.co.uk/def/honours#VictoriaCross": {
+            "label": "VictoriaCross Class",
+            "comment": "Victoria Cross"
+        },
+        "https://www.thegazette.co.uk/def/honours#GeorgeCross": {
+            "label": "GeorgeCross Class",
+            "comment": "George Cross"
+        },
+        "https://www.thegazette.co.uk/def/honours#ConspicuousGallantryCross": {
+            "label": "ConspicuousGallantryCross Class",
+            "comment": "Conspicuous Gallantry Cross"
+        },
+        "https://www.thegazette.co.uk/def/honours#MemberRoyalRedCross": {
+            "label": "MemberRoyalRedCross Class",
+            "comment": "Member Royal Red Cross"
+        },
+        "https://www.thegazette.co.uk/def/honours#AssociateRoyalRedCross": {
+            "label": "AssociateRoyalRedCross Class",
+            "comment": "Associate Royal Red Cross"
+        },
+        "https://www.thegazette.co.uk/def/honours#DistinguishedServiceCross": {
+            "label": "DistinguishedServiceCross Class",
+            "comment": "Distinguished Service Cross"
+        },
+        "https://www.thegazette.co.uk/def/honours#MilitaryCross": {
+            "label": "MilitaryCross Class",
+            "comment": "Military Cross"
+        },
+        "https://www.thegazette.co.uk/def/honours#DistinguishedFlyingCross": {
+            "label": "DistinguishedFlyingCross Class",
+            "comment": "Distinguished Flying Cross"
+        },
+        "https://www.thegazette.co.uk/def/honours#AirForceCross": {
+            "label": "AirForceCross Class",
+            "comment": "Air Force Cross"
+        },
+        "https://www.thegazette.co.uk/def/honours#DistinguishedConductMedal": {
+            "label": "DistinguishedConductMedal Class",
+            "comment": "Distinguished Conduct Medal"
+        },
+        "https://www.thegazette.co.uk/def/honours#ConspicuousGallantryMedal": {
+            "label": "ConspicuousGallantryMedal Class",
+            "comment": "Conspicuous Gallantry Medal"
+        },
+        "https://www.thegazette.co.uk/def/honours#ConspicuousGallantryMedalFlying": {
+            "label": "ConspicuousGallantryMedalFlying Class",
+            "comment": "Conspicuous Gallantry Medal Flying"
+        },
+        "https://www.thegazette.co.uk/def/honours#GeorgeMedal": {
+            "label": "GeorgeMedal Class",
+            "comment": "George Medal"
+        },
+        "https://www.thegazette.co.uk/def/honours#KingsPoliceMedal": {
+            "label": "KingsPoliceMedal Class",
+            "comment": "The King's Police Medal"
+        },
+        "https://www.thegazette.co.uk/def/honours#KingsFireServiceMedal": {
+            "label": "KingsFireServiceMedal Class",
+            "comment": "The King's Fire Service Medal"
+        },
+        "https://www.thegazette.co.uk/def/honours#ColonialPoliceMedal": {
+            "label": "ColonialPoliceMedal Class",
+            "comment": "Colonial Police Medal"
+        },
+        "https://www.thegazette.co.uk/def/honours#QueensGallantryMedal": {
+            "label": "QueensGallantryMedal Class",
+            "comment": "Queen's Gallantry Medal"
+        },
+        "https://www.thegazette.co.uk/def/honours#SeaGallantryMedal": {
+            "label": "SeaGallantryMedal Class",
+            "comment": "Sea Gallantry Medal"
+        },
+        "https://www.thegazette.co.uk/def/honours#RoyalVictorianMedal": {
+            "label": "RoyalVictorianMedal Class",
+            "comment": "Royal Victorian Medal"
+        },
+        "https://www.thegazette.co.uk/def/honours#RoyalVictorianMedalBronze": {
+            "label": "RoyalVictorianMedalBronze Class",
+            "comment": "Royal Victorian Medal Bronze"
+        },
+        "https://www.thegazette.co.uk/def/honours#RoyalVictorianMedalSilver": {
+            "label": "RoyalVictorianMedalSilver Class",
+            "comment": "Royal Victorian Medal Silver"
+        },
+        "https://www.thegazette.co.uk/def/honours#RoyalVictorianMedalGold": {
+            "label": "RoyalVictorianMedalGold Class",
+            "comment": "Royal Victorian Medal Gold"
+        },
+        "https://www.thegazette.co.uk/def/honours#BritishEmpireMedal": {
+            "label": "BritishEmpireMedal Class",
+            "comment": "British Empire Medal"
+        },
+        "https://www.thegazette.co.uk/def/honours#KingsVolunteerReservesMedal": {
+            "label": "KingsVolunteerReservesMedal Class",
+            "comment": "King's Volunteer Reserves Medal"
+        },
+        "https://www.thegazette.co.uk/def/honours#ImperialServiceMedal": {
+            "label": "ImperialServiceMedal Class",
+            "comment": "Imperial Service Medal"
+        },
+        "https://www.thegazette.co.uk/def/honours#MilitaryMedal": {
+            "label": "MilitaryMedal Class",
+            "comment": "Military Medal"
+        },
+        "https://www.thegazette.co.uk/def/honours#MentionInDespatches": {
+            "label": "MentionInDespatches Class",
+            "comment": "Mention in Despatches"
+        },
+        "https://www.thegazette.co.uk/def/honours#QueensCommendationForBravery": {
+            "label": "QueensCommendationForBravery Class",
+            "comment": "Queen's Commendation for Bravery"
+        },
+        "https://www.thegazette.co.uk/def/honours#QueensCommendationForBraveryInTheAir": {
+            "label": "QueensCommendationForBraveryInTheAir Class",
+            "comment": "Queen's Commendation for Bravery in the Air"
+        },
+        "https://www.thegazette.co.uk/def/honours#QueensCommendationForValuableService": {
+            "label": "QueensCommendationForValuableService Class",
+            "comment": "Queen's Commendation for Valuable Service"
+        },
+        "https://www.thegazette.co.uk/def/honours#OrderDivision": {
+            "label": "OrderDivision Class",
+            "comment": "An Order can be subdivided into Divisions"
+        },
+        "https://www.thegazette.co.uk/def/honours#AwardandHonourNotice": {
+            "label": "AwardandHonourNotice Class",
+            "comment": "Notices of awards and honours as contained in the Award and Honours Supplement"
+        },
+        "https://www.thegazette.co.uk/def/honours#AwardandHonourThing": {
+            "label": "AwardandHonourThing Class",
+            "comment": "Notifiable things that pertain to the awards and honours class of notices"
+        },
+        "https://www.thegazette.co.uk/def/honours#ColonialPoliceMedalNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/honours#GeorgeMedalNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/honours#ImperialServiceMedalNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/honours#KnightsBatchelorNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/honours#OrderStMichaelNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/honours#OrderStJohnNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/honours#CommonwealthHonoursNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/honours#OrderOfBathNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/honours#OrderBritishEmpireNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/honours#OrderCompanionsNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/honours#OrderStJohn": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/honours#PeerageNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/honours#PolarMedalNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/honours#PolarMedal": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/honours#PrivyCounsellorsNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/honours#QueensAwardEnterpriseNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/honours#QueensAwardEnterprise": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/honours#QueensAwardVoluntaryService": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/honours#QueensCommendationBravery": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/honours#QueensFireMedal": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/honours#QueensAwardVoluntaryServiceNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/honours#QueensCommendationBraveryNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/honours#KingsFireServiceMedalNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/honours#QueensGallantryMedalNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/honours#KingsPoliceMedalNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/honours#RoyalRedCrossNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/honours#RoyalRedCross": {
+            "label": "RoyalRedCross",
+            "comment": "RoyalRedCross"
+        },
+        "https://www.thegazette.co.uk/def/honours#RoyalVictorianOrderNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/honours#RoyalVictorianMedalNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/honours#BarRoyalVictorianMedal": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/honours#BarRoyalVictorianMedalNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/honours#QueensAmbulanceServiceMedalNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/honours#OverseasTerritoriesPoliceFireServiceMedalNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/honours#BritishEmpireMedalNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/honours#OrderOfStMichaelAndStGeorgeNotice": {
+            "label": null,
+            "comment": null
+        }
+    },
+    "object_properties": {
+        "https://www.thegazette.co.uk/def/honours#forMilitaryService": {
+            "label": "forMilitaryService property",
+            "comment": "the awarded thing is for military service",
+            "domain": "https://www.thegazette.co.uk/def/honours#AwardandHonourThing",
+            "range": "https://www.thegazette.co.uk/def/military#Service"
+        },
+        "https://www.thegazette.co.uk/def/honours#isAppointedTo": {
+            "label": "isAppointedTo property",
+            "comment": "the Order an appointment has been made to",
+            "domain": "https://www.thegazette.co.uk/def/honours#AwardandHonourThing",
+            "range": "https://www.thegazette.co.uk/def/honours#Order"
+        },
+        "https://www.thegazette.co.uk/def/honours#isAppointedAs": {
+            "label": "isAppointedAs property",
+            "comment": "the Honour that has been appointed ie OBE, MBE etc",
+            "domain": "https://www.thegazette.co.uk/def/honours#AwardandHonourThing",
+            "range": "https://www.thegazette.co.uk/def/honours#Honour"
+        },
+        "https://www.thegazette.co.uk/def/honours#isAwarded": {
+            "label": "isAwarded property",
+            "comment": "the award that has been approved",
+            "domain": "https://www.thegazette.co.uk/def/honours#AwardandHonourThing",
+            "range": "https://www.thegazette.co.uk/def/honours#Medal"
+        },
+        "https://www.thegazette.co.uk/def/honours#isCommended": {
+            "label": "isCommended property",
+            "comment": "the Commendation that has been approved",
+            "domain": "https://www.thegazette.co.uk/def/honours#AwardandHonourThing",
+            "range": "https://www.thegazette.co.uk/def/honours#Commendation"
+        },
+        "https://www.thegazette.co.uk/def/honours#isAwardedTo": {
+            "label": "isAwardedTo property",
+            "comment": "property to designate a person the honour is awarded to",
+            "domain": "https://www.thegazette.co.uk/def/honours#Award",
+            "range": "https://www.thegazette.co.uk/def/person#Person"
+        },
+        "https://www.thegazette.co.uk/def/honours#hasAward": {
+            "label": "isAwardedTo property",
+            "comment": "property to associate a person with a particular award",
+            "domain": "https://www.thegazette.co.uk/def/person#Person",
+            "range": "https://www.thegazette.co.uk/def/honours#Award"
+        },
+        "https://www.thegazette.co.uk/def/honours#belongsToOrderDivision": {
+            "label": "belongsToOrderDivision property",
+            "comment": "an Award can be an appointment to a Division within an Order",
+            "domain": "https://www.thegazette.co.uk/def/honours#Honour",
+            "range": "https://www.thegazette.co.uk/def/honours#OrderDivision"
+        },
+        "https://www.thegazette.co.uk/def/honours#hasOrderDivision": {
+            "label": "hasOrderDivision property",
+            "comment": "an Order can be composed of Divisions",
+            "domain": "https://www.thegazette.co.uk/def/honours#Order",
+            "range": "https://www.thegazette.co.uk/def/honours#OrderDivision"
+        },
+        "https://www.thegazette.co.uk/def/honours#isMemberOfOrder": {
+            "label": "isMemberOfOrder property",
+            "comment": "an Award can be an appointment to an Order",
+            "domain": "https://www.thegazette.co.uk/def/honours#Honour",
+            "range": "https://www.thegazette.co.uk/def/honours#Order"
+        },
+        "https://www.thegazette.co.uk/def/honours#hasRecipients": {
+            "label": "hasRecipients property",
+            "comment": "an Order has various levels which are awarded to people",
+            "domain": "https://www.thegazette.co.uk/def/honours#Order",
+            "range": "https://www.thegazette.co.uk/def/honours#Honour"
+        },
+        "https://www.thegazette.co.uk/def/honours#isAffiliatedToOrder": {
+            "label": "isMemberOfOrder property",
+            "comment": "an Award can be an appointment to an Order",
+            "domain": "https://www.thegazette.co.uk/def/honours#Medal",
+            "range": "https://www.thegazette.co.uk/def/honours#Order"
+        },
+        "https://www.thegazette.co.uk/def/honours#hasAffiliation": {
+            "label": "hasRecipients property",
+            "comment": "an Order has various levels which are awarded to people",
+            "domain": "https://www.thegazette.co.uk/def/honours#Order",
+            "range": "https://www.thegazette.co.uk/def/honours#Medal"
+        },
+        "https://www.thegazette.co.uk/def/honours#isAssociatedWithAward": {
+            "label": "isAssociatedWithAward property",
+            "comment": "Each Bar is associated with an award",
+            "domain": "https://www.thegazette.co.uk/def/honours#Bar",
+            "range": "https://www.thegazette.co.uk/def/honours#Award"
+        },
+        "https://www.thegazette.co.uk/def/honours#hasAppointee": {
+            "label": "hasAppointee property",
+            "comment": "Honour appointed to person",
+            "domain": "https://www.thegazette.co.uk/def/honours#AwardandHonourThing",
+            "range": "https://www.thegazette.co.uk/def/person#Person"
+        },
+        "https://www.thegazette.co.uk/def/honours#hasAwardee": {
+            "label": "hasAwardee property",
+            "comment": "Award appointed to person",
+            "domain": "https://www.thegazette.co.uk/def/honours#AwardandHonourThing",
+            "range": "https://www.thegazette.co.uk/def/person#Person"
+        }
+    },
+    "data_properties": {
+        "https://www.thegazette.co.uk/def/honours#dateAwarded": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/honours#AwardandHonourThing",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/honours#nominalLetter": {
+            "label": "nominalLetter datatype property",
+            "comment": "nominal letter associated with an Order",
+            "domain": "https://www.thegazette.co.uk/def/honours#Award",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/honours#awardName": {
+            "label": "awardName datatype property",
+            "comment": "name award is known by",
+            "domain": "https://www.thegazette.co.uk/def/honours#Award",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/honours#orderName": {
+            "label": "orderName datatype property",
+            "comment": "name of the Order",
+            "domain": "https://www.thegazette.co.uk/def/honours#Order",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/honours#orderDivisionName": {
+            "label": "orderDivisionName datatype property",
+            "comment": "name of the Order Division",
+            "domain": "https://www.thegazette.co.uk/def/honours#OrderDivision",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        }
+    }
+}

@@ -1,0 +1,290 @@
+{
+    "classes": {
+        "http://www.gazettes-online.co.uk/ontology#Edition": {
+            "label": "Edition Class",
+            "comment": "Gazette edition ie Belfast/Edinburgh/London"
+        },
+        "http://www.gazettes-online.co.uk/ontology#TypeOfMarkup": {
+            "label": "MethodOfMarkup Class",
+            "comment": "The method used to markup the notice data"
+        },
+        "http://www.gazettes-online.co.uk/ontology#GATE": {
+            "label": "GATE Class",
+            "comment": "GATE as a method used to markup the notice data"
+        },
+        "http://www.gazettes-online.co.uk/ontology#ManualMarkup": {
+            "label": "ManualMarkup Class",
+            "comment": "Manual method of markup to the notice data"
+        },
+        "http://www.gazettes-online.co.uk/ontology/legislation#Legislation": {
+            "label": null,
+            "comment": null
+        },
+        "http://www.gazettes-online.co.uk/ontology/legislation#LegislationPart": {
+            "label": null,
+            "comment": null
+        },
+        "http://www.gazettes-online.co.uk/ontology#Issue": {
+            "label": "Issue Class",
+            "comment": "An issue of the Gazette"
+        },
+        "http://www.gazettes-online.co.uk/ontology#Supplement": {
+            "label": "Supplement Class",
+            "comment": "A Supplement to an issue of the Gazette"
+        },
+        "http://www.gazettes-online.co.uk/ontology#AwardsAndHonoursSupplement": {
+            "label": "AwardsAndHonoursSupplement Class",
+            "comment": "Awards and Honours supplement"
+        },
+        "http://www.gazettes-online.co.uk/ontology#Notice": {
+            "label": "Notice Class",
+            "comment": "Superclass for all notices that are contained within a Gazette Issue"
+        },
+        "http://www.gazettes-online.co.uk/ontology#NotifiableThing": {
+            "label": "NotifiableThing Class",
+            "comment": "Superclass for all Notifiable things - these are things that can be included within a notice which will make up its content"
+        },
+        "http://www.gazettes-online.co.uk/ontology#Publication": {
+            "label": "Publication Class",
+            "comment": "Superclass for all Published things including the Gazette"
+        },
+        "http://xmlns.com/wordnet/1.6/Publication": {
+            "label": null,
+            "comment": null
+        },
+        "http://www.gazettes-online.co.uk/ontology#Gazette": {
+            "label": "Publication Class",
+            "comment": "Superclass for all Published things including the Gazette"
+        },
+        "http://www.gazettes-online.co.uk/ontology#Authoriser": {
+            "label": "Authoriser Class",
+            "comment": ""
+        },
+        "http://www.gazettes-online.co.uk/ontology#AuthorityThing": {
+            "label": "AuthorityThing Class",
+            "comment": "Notifiable things that pertain to the Authority Class of Notices"
+        },
+        "http://www.gazettes-online.co.uk/ontology#ContinuationOfPublicNotice": {
+            "label": "ContinuationOfPublicNotice class",
+            "comment": "Notification of future advertising within the Gazette"
+        },
+        "http://www.gazettes-online.co.uk/ontology#AuthorityNotice": {
+            "label": "AuthorityNotice Class",
+            "comment": "Notices that have an authority assigned to them (Notice codes 15xx, 16xx, 18xx and 19xx)"
+        }
+    },
+    "object_properties": {
+        "http://www.gazettes-online.co.uk/ontology#hasEdition": {
+            "label": "hasEdition property",
+            "comment": "Edition that a particular Issue belongs to",
+            "domain": "http://www.gazettes-online.co.uk/ontology#Issue",
+            "range": "http://www.gazettes-online.co.uk/ontology#Publication"
+        },
+        "http://www.gazettes-online.co.uk/ontology#hasIssue": {
+            "label": "hasIssue property",
+            "comment": "Issues that are contained within an Edition",
+            "domain": "http://www.gazettes-online.co.uk/ontology#Publication",
+            "range": "http://www.gazettes-online.co.uk/ontology#Issue"
+        },
+        "http://www.gazettes-online.co.uk/ontology#hasNotice": {
+            "label": "hasNotice property",
+            "comment": "Notices contained within an Issue",
+            "domain": "http://www.gazettes-online.co.uk/ontology#Issue",
+            "range": "http://www.gazettes-online.co.uk/ontology#Notice"
+        },
+        "http://www.gazettes-online.co.uk/ontology#retractsNotice": {
+            "label": "retractsNotice boolean  inverse object property",
+            "comment": "This should point to the relevant page of the issue that the notice is substituting\n\t\t\tusing the uri scheme\n\t\t\thttp://www.{edition}-gazette.co.uk/id/issues/{issueNumber}/notices/{notice}",
+            "domain": "http://www.gazettes-online.co.uk/ontology#Notice",
+            "range": "http://www.gazettes-online.co.uk/ontology#Notice"
+        },
+        "http://www.gazettes-online.co.uk/ontology#hasNoticeRetraction": {
+            "label": "hasNoticeRetraction  inverse object property",
+            "comment": "This should point to the relevant page of the issue that the notice is substituting\n\t\t\tusing the uri scheme\n\t\t\thttp://www.{edition}-gazette.co.uk/id/issues/{issueNumber}/notices/{notice}",
+            "domain": "http://www.gazettes-online.co.uk/ontology#Notice",
+            "range": "http://www.gazettes-online.co.uk/ontology#Notice"
+        },
+        "http://www.gazettes-online.co.uk/ontology#substitutesNotice": {
+            "label": "substitutesNotice inverse object property",
+            "comment": "This should point to the relevant page of the issue that the notice is substituting\n\t\t\tusing the uri scheme\n\t\t\thttp://www.{edition}-gazette.co.uk/id/issues/{issueNumber}/notices/{notice}\n\t\t",
+            "domain": "http://www.gazettes-online.co.uk/ontology#Notice",
+            "range": "http://www.gazettes-online.co.uk/ontology#Notice"
+        },
+        "http://www.gazettes-online.co.uk/ontology#hasNoticeSubstitution": {
+            "label": "hasNoticeSubstitution inverse object property",
+            "comment": "This should point to the relevant page of the issue that the notice is substituting\n\t\t\tusing the uri scheme\n\t\t\thttp://www.{edition}-gazette.co.uk/id/issues/{issueNumber}/notices/{notice}\n\t\t",
+            "domain": "http://www.gazettes-online.co.uk/ontology#Notice",
+            "range": "http://www.gazettes-online.co.uk/ontology#Notice"
+        },
+        "http://www.gazettes-online.co.uk/ontology#isInIssue": {
+            "label": "isInIssue property",
+            "comment": "Gazette Issue that Notice belongs to",
+            "domain": "http://www.gazettes-online.co.uk/ontology#Notice",
+            "range": "http://www.gazettes-online.co.uk/ontology#Issue"
+        },
+        "http://www.gazettes-online.co.uk/ontology#isInSupplement": {
+            "label": "isInSupplement property",
+            "comment": "Gazette Supplement that Notice belongs to",
+            "domain": "http://www.gazettes-online.co.uk/ontology#Notice",
+            "range": "http://www.gazettes-online.co.uk/ontology#Supplement"
+        },
+        "http://www.gazettes-online.co.uk/ontology#containsSupplementNotice": {
+            "label": "hasSupplementNotice property",
+            "comment": "Supplement contains notices",
+            "domain": "http://www.gazettes-online.co.uk/ontology#Supplement",
+            "range": "http://www.gazettes-online.co.uk/ontology#Notice"
+        },
+        "http://www.gazettes-online.co.uk/ontology#isRequiredByLegislation": {
+            "label": "isRequiredByLegislation property",
+            "comment": "Legislation that requires this Notice to be published",
+            "domain": "http://www.gazettes-online.co.uk/ontology#Notice",
+            "range": "Ndfb1c4c38cc645ef8a79c68a46d30c9b"
+        },
+        "http://www.gazettes-online.co.uk/ontology#isEnabledByLegislation": {
+            "label": "isRequiredByLegislation property",
+            "comment": "Legislation that enables the act(s) contained in the Notifiable Thing",
+            "domain": "http://www.gazettes-online.co.uk/ontology#NotifiableThing",
+            "range": "N9391d1a232cf4a9c91b8f6123542077a"
+        },
+        "http://www.gazettes-online.co.uk/ontology#isPartOfIssue": {
+            "label": "isPartOfIssue property",
+            "comment": "Each Supplement is part of an Issue of an edition of the Gazette",
+            "domain": "http://www.gazettes-online.co.uk/ontology#Supplement",
+            "range": "http://www.gazettes-online.co.uk/ontology#Issue"
+        },
+        "http://www.gazettes-online.co.uk/ontology#hasSupplement": {
+            "label": "hasSupplement property",
+            "comment": "Each Issue can have multiple Supplements",
+            "domain": "http://www.gazettes-online.co.uk/ontology#Issue",
+            "range": "http://www.gazettes-online.co.uk/ontology#Supplement"
+        },
+        "http://www.gazettes-online.co.uk/ontology#hasAuthorisingPerson": {
+            "label": "hasAuthorisingPerson property",
+            "comment": "Person that authorises the NotifiableThing ",
+            "domain": "http://www.gazettes-online.co.uk/ontology#Authoriser",
+            "range": "http://www.gazettes-online.co.uk/ontology/person#Person"
+        },
+        "http://www.gazettes-online.co.uk/ontology#hasAuthorisingLocation": {
+            "label": "hasAuthorisingLocation property",
+            "comment": "Location of authoriser for the NotifiableThing ",
+            "domain": "http://www.gazettes-online.co.uk/ontology#Authoriser",
+            "range": "http://www.geonames.org/ontology#Feature"
+        },
+        "http://www.gazettes-online.co.uk/ontology#hasAuthorisingOrganisation": {
+            "label": "hasAuthorisingOrganisation property",
+            "comment": "Organisation that authorises the NotifiableThing ",
+            "domain": "http://www.gazettes-online.co.uk/ontology#Authoriser",
+            "range": "http://www.gazettes-online.co.uk/ontology/organisation#Organisation"
+        },
+        "http://www.gazettes-online.co.uk/ontology#hasAuthorisingRole": {
+            "label": "hasAuthorisingRole property",
+            "comment": "Role that authorises the NotifiableThing ",
+            "domain": "http://www.gazettes-online.co.uk/ontology#Authoriser",
+            "range": "http://www.gazettes-online.co.uk/ontology/person#Role"
+        },
+        "http://www.gazettes-online.co.uk/ontology#hasAuthority": {
+            "label": "hasAuthority property",
+            "comment": "Authority that is associated with an Authority Notice",
+            "domain": "http://www.gazettes-online.co.uk/ontology#AuthorityThing",
+            "range": "http://www.gazettes-online.co.uk/ontology/authority#Authority"
+        },
+        "http://www.gazettes-online.co.uk/ontology#isAbout": {
+            "label": "isAbout property",
+            "comment": "Property to set the content of the Notice",
+            "domain": "http://www.gazettes-online.co.uk/ontology#Notice",
+            "range": "http://www.gazettes-online.co.uk/ontology#NotifiableThing"
+        },
+        "http://www.gazettes-online.co.uk/ontology#hasAuthoriser": {
+            "label": "isAbout property",
+            "comment": "Property to set the content of the Notice",
+            "domain": "http://www.gazettes-online.co.uk/ontology#NotifiableThing",
+            "range": "http://www.gazettes-online.co.uk/ontology#Authoriser"
+        },
+        "http://www.gazettes-online.co.uk/ontology#isAuthoriserFor": {
+            "label": "isAuthoriserFor property",
+            "comment": "Property to set the content of the Notice",
+            "domain": "http://www.gazettes-online.co.uk/ontology#Authoriser",
+            "range": "http://www.gazettes-online.co.uk/ontology#NotifiableThing"
+        },
+        "http://www.gazettes-online.co.uk/ontology#isInNotice": {
+            "label": "isInNotice property",
+            "comment": "Notice that this is included in",
+            "domain": "http://www.gazettes-online.co.uk/ontology#NotifiableThing",
+            "range": "http://www.gazettes-online.co.uk/ontology#Notice"
+        },
+        "http://www.gazettes-online.co.uk/ontology#isAboutDocument": {
+            "label": "isAboutDocument property",
+            "comment": "Document that Authority thing is concerned about",
+            "domain": "http://www.gazettes-online.co.uk/ontology#AuthorityThing",
+            "range": "http://www.gazettes-online.co.uk/ontology/consultation#Document"
+        },
+        "http://www.gazettes-online.co.uk/ontology#containsThing": {
+            "label": "containsThing property",
+            "comment": "catchall to say anything about anything",
+            "domain": null,
+            "range": null
+        },
+        "http://www.gazettes-online.co.uk/ontology#markedUpBy": {
+            "label": "containsThing property",
+            "comment": "catchall to say anything about anything",
+            "domain": "http://www.gazettes-online.co.uk/ontology#Notice",
+            "range": "http://www.gazettes-online.co.uk/ontology#TypeOfMarkup"
+        }
+    },
+    "data_properties": {
+        "http://www.gazettes-online.co.uk/ontology#publicationName": {
+            "label": "name datatype property",
+            "comment": "Name of publication",
+            "domain": "http://www.gazettes-online.co.uk/ontology#Publication",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "http://www.gazettes-online.co.uk/ontology#hasIssueNumber": {
+            "label": "hasIssueNumber datatype property",
+            "comment": "Number associated with an Issue",
+            "domain": "http://www.gazettes-online.co.uk/ontology#Issue",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "http://www.gazettes-online.co.uk/ontology#hasNoticeCode": {
+            "label": "hasNoticeCode datatype property",
+            "comment": "Code associated with a notice",
+            "domain": "http://www.gazettes-online.co.uk/ontology#Notice",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "http://www.gazettes-online.co.uk/ontology#hasNoticeNumber": {
+            "label": "hasNoticeNumber datatype property",
+            "comment": "Identifying number associated with a notice",
+            "domain": "http://www.gazettes-online.co.uk/ontology#Notice",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "http://www.gazettes-online.co.uk/ontology#supplementNumber": {
+            "label": "supplementNumber datatype property",
+            "comment": "Supplement Number",
+            "domain": "http://www.gazettes-online.co.uk/ontology#Supplement",
+            "range": "http://www.w3.org/2001/XMLSchema#integer"
+        },
+        "http://www.gazettes-online.co.uk/ontology#supplementName": {
+            "label": "supplementName datatype property",
+            "comment": "Supplement Name",
+            "domain": "http://www.gazettes-online.co.uk/ontology#Supplement",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "http://www.gazettes-online.co.uk/ontology#dateAuthorisationSigned": {
+            "label": "dateAuthorisationSigned property",
+            "comment": "Date that an Authority Notice has been signed",
+            "domain": "http://www.gazettes-online.co.uk/ontology#Authoriser",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "http://www.gazettes-online.co.uk/ontology#hasPublicationDate": {
+            "label": null,
+            "comment": null,
+            "domain": "N101658b1d0ae4657bb5f041852da918d",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "http://www.gazettes-online.co.uk/ontology#accuracy": {
+            "label": "accuracy datatype property",
+            "comment": "accuracy of data capture ",
+            "domain": "http://www.gazettes-online.co.uk/ontology#Notice",
+            "range": "http://www.w3.org/2001/XMLSchema#decimal"
+        }
+    }
+}

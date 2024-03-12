@@ -1,0 +1,38 @@
+{
+    "classes": {
+        "https://www.thegazette.co.uk/def/other-notices#OtherNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/other-notices#OtherThing": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/other-notices#OtherNotices": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/other-notices#OtherNoticesNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/other-notices#SeizureOfGoods": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/other-notices#SeizureOfGoodsNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/other-notices#UnclaimedPremiumBonds": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/other-notices#UnclaimedPremiumBondsNotice": {
+            "label": null,
+            "comment": null
+        }
+    },
+    "object_properties": {},
+    "data_properties": {}
+}

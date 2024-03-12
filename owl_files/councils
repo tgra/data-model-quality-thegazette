@@ -1,0 +1,1387 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns="https://www.thegazette.co.uk/def/organisation#"
+    xmlns:c="https://www.thegazette.co.uk/def/councils#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:dcterms="http://purl.org/dc/terms/"
+    xml:base="https://www.thegazette.co.uk/def/councils">
+  <owl:Ontology rdf:about="">
+    <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Council List</dc:title>
+    <dc:description xml:lang="en">
+    	List of councils in the UK.
+    	
+    	This is a beta version, and you should expect it to change.
+    	
+    	Automatically generated based on 
+      AdministrativeGeography.rdf published by Ordnance Survey at 
+      http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf, 
+      by Cathy Dolbear, John Goodwin, Glen Hart and Katalin Kovacs.
+    </dc:description>
+  	<dcterms:created>2008-01-23</dcterms:created>
+  	<dcterms:creator>The Stationery Office</dcterms:creator>
+    <dcterms:license rdf:resource="http://creativecommons.org/licenses/by-nc-sa/2.0/uk/"/>
+  </owl:Ontology>
+  <DistrictCouncil rdf:ID="SelbyDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#selby__36uh"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="CaradonDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#caradon_15ub"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="EastDevonDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#east_devon_18ub"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="BroxtoweDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#broxtowe_37ud"/>
+  </DistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="WestBerkshireCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#west_berkshire_00mb"/>
+  </UnitaryAuthorityCouncil>
+  <GovernmentOfficeRegionCouncil rdf:ID="GovernmentOfficeForTheEastOfEngland">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#east_of_england_g"/>
+  </GovernmentOfficeRegionCouncil>
+  <MetropolitanDistrictCouncil rdf:ID="WalsallMetropolitanDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#walsall_00cu"/>
+  </MetropolitanDistrictCouncil>
+  <CountyCouncil rdf:ID="DerbyshireCountyCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#derbyshire_17"/>
+  </CountyCouncil>
+  <DistrictCouncil rdf:ID="HarboroughDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#harborough_31ud"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="AshfieldDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#ashfield_37ub"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="WorcesterDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#worcester_47ue"/>
+  </DistrictCouncil>
+  <MetropolitanDistrictCouncil rdf:ID="SunderlandMetropolitanDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#sunderland_00cm"/>
+  </MetropolitanDistrictCouncil>
+  <DistrictCouncil rdf:ID="WinchesterDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#winchester_24up"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="DartfordDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#dartford_29ud"/>
+  </DistrictCouncil>
+  <LondonBoroughCouncil rdf:ID="BarnetLondonBoroughCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#barnet_00ac"/>
+  </LondonBoroughCouncil>
+  <MetropolitanDistrictCouncil rdf:ID="LeedsMetropolitanDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#leeds_00da"/>
+  </MetropolitanDistrictCouncil>
+  <MetropolitanDistrictCouncil rdf:ID="TraffordMetropolitanDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#trafford_00bu"/>
+  </MetropolitanDistrictCouncil>
+  <DistrictCouncil rdf:ID="EdenDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#eden_16uf"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="ForestHeathDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#forest_heath_42uc"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="DerwentsideDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#derwentside_20ud"/>
+  </DistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="MerthyrTydfilCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#merthyr_tydfil_00ph"/>
+  </UnitaryAuthorityCouncil>
+  <DistrictCouncil rdf:ID="CarrickDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#carrick_15uc"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="FarehamDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#fareham_24ue"/>
+  </DistrictCouncil>
+  <CountyCouncil rdf:ID="WiltshireCountyCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#wiltshire_46"/>
+  </CountyCouncil>
+  <DistrictCouncil rdf:ID="EastStaffordshireDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#east_staffordshire_41uc"/>
+  </DistrictCouncil>
+  <CountyCouncil rdf:ID="DurhamCountyCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#durham_county_20"/>
+  </CountyCouncil>
+  <DistrictCouncil rdf:ID="WyreDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#wyre_30uq"/>
+  </DistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="ArgyllAndButeCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#argyll_and_bute_00qd"/>
+  </UnitaryAuthorityCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="PlymouthCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#plymouth_00hg"/>
+  </UnitaryAuthorityCouncil>
+  <DistrictCouncil rdf:ID="WealdenDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#wealden_21uh"/>
+  </DistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="PowysCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#powys_00nn"/>
+  </UnitaryAuthorityCouncil>
+  <DistrictCouncil rdf:ID="EastLindseyDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#east_lindsey_32uc"/>
+  </DistrictCouncil>
+  <CountyCouncil rdf:ID="LincolnshireCountyCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#lincolnshire_32"/>
+  </CountyCouncil>
+  <DistrictCouncil rdf:ID="KingSLynnAndWestNorfolkDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#kings_lynn_and_west_norfolk_33ue"/>
+  </DistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="BridgendCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#bridgend_00pb"/>
+  </UnitaryAuthorityCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="MiltonKeynesCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#milton_keynes_ua_00mg"/>
+  </UnitaryAuthorityCouncil>
+  <DistrictCouncil rdf:ID="TunbridgeWellsDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#tunbridge_wells_29uq"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="TynedaleDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#tynedale_35uf"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="BrentwoodDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#brentwood_22ud"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="OxfordDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#oxford_38uc"/>
+  </DistrictCouncil>
+  <GovernmentOfficeRegionCouncil rdf:ID="GovernmentOfficeForTheSouthEast">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#south_east_j"/>
+  </GovernmentOfficeRegionCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="EastAyrshireCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#east_ayrshire_00qk"/>
+  </UnitaryAuthorityCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="CityOfKingstonUponHullCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#city_of_kingston_upon_hull_00fa"/>
+  </UnitaryAuthorityCouncil>
+  <MetropolitanDistrictCouncil rdf:ID="StockportMetropolitanDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#stockport_00bs"/>
+  </MetropolitanDistrictCouncil>
+  <MetropolitanDistrictCouncil rdf:ID="DudleyMetropolitanDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#dudley_00cr"/>
+  </MetropolitanDistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="AberdeenshireCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#aberdeenshire_00qb"/>
+  </UnitaryAuthorityCouncil>
+  <CountyCouncil rdf:ID="GloucestershireCountyCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#gloucestershire_23"/>
+  </CountyCouncil>
+  <CountyCouncil rdf:ID="BuckinghamshireCountyCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#buckinghamshire_11"/>
+  </CountyCouncil>
+  <DistrictCouncil rdf:ID="BromsgroveDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#bromsgrove_47ub"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="WyreForestDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#wyre_forest_47ug"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="BostonDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#boston_32ub"/>
+  </DistrictCouncil>
+  <MetropolitanDistrictCouncil rdf:ID="OldhamMetropolitanDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#oldham_00bp"/>
+  </MetropolitanDistrictCouncil>
+  <DistrictCouncil rdf:ID="MaidstoneDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#maidstone_29uh"/>
+  </DistrictCouncil>
+  <LondonBoroughCouncil rdf:ID="WandsworthLondonBoroughCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#wandsworth_00bj"/>
+  </LondonBoroughCouncil>
+  <LondonBoroughCouncil rdf:ID="WalthamForestLondonBoroughCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#waltham_forest_00bh"/>
+  </LondonBoroughCouncil>
+  <DistrictCouncil rdf:ID="StEdmundsburyDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#st_edmundsbury_42uf"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="SedgefieldDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#sedgefield__20ug"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="EppingForestDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#epping_forest_22uh"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="AllerdaleDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#allerdale_16ub"/>
+  </DistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="WindsorAndMaidenheadRoyalBoroughCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#windsor_and_maidenhead_00me"/>
+  </UnitaryAuthorityCouncil>
+  <LondonBoroughCouncil rdf:ID="BromleyLondonBoroughCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#bromley_00af"/>
+  </LondonBoroughCouncil>
+  <DistrictCouncil rdf:ID="SwaleDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#swale_29um"/>
+  </DistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="RenfrewshireCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#renfrewshire_00rc"/>
+  </UnitaryAuthorityCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="RutlandCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#rutland_00fp"/>
+  </UnitaryAuthorityCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="NottinghamCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#nottingham_00fy"/>
+  </UnitaryAuthorityCouncil>
+  <DistrictCouncil rdf:ID="ChesterLeStreetDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#chester-le-street_20ub"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="SouthHamsDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#south_hams_18ug"/>
+  </DistrictCouncil>
+  <MetropolitanDistrictCouncil rdf:ID="SeftonMetropolitanDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#sefton_00ca"/>
+  </MetropolitanDistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="HartlepoolCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#hartlepool_ua_00eb"/>
+  </UnitaryAuthorityCouncil>
+  <DistrictCouncil rdf:ID="SouthBucksDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#south_bucks_11ue"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="DacorumDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#dacorum_26uc"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="RushmoorDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#rushmoor_24ul"/>
+  </DistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="MidlothianCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#midlothian_00qw"/>
+  </UnitaryAuthorityCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="DumfriesAndGallowayCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#dumfries_and_galloway_00qh"/>
+  </UnitaryAuthorityCouncil>
+  <DistrictCouncil rdf:ID="WokingDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#woking_43um"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="NorthNorfolkDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#north_norfolk_33uf"/>
+  </DistrictCouncil>
+  <CountyCouncil rdf:ID="LeicestershireCountyCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#leicestershire_31"/>
+  </CountyCouncil>
+  <DistrictCouncil rdf:ID="HinckleyAndBosworthDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#hinckley_and_bosworth_31ue"/>
+  </DistrictCouncil>
+  <MetropolitanDistrictCouncil rdf:ID="StHelensMetropolitanDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#st_helens_00bz"/>
+  </MetropolitanDistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="HerefordshireCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#herefordshire_00ga"/>
+  </UnitaryAuthorityCouncil>
+  <MetropolitanDistrictCouncil rdf:ID="NewcastleUponTyneMetropolitanDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#newcastle_upon_tyne_00cj"/>
+  </MetropolitanDistrictCouncil>
+  <DistrictCouncil rdf:ID="WestWiltshireDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#west_wiltshire_46uf"/>
+  </DistrictCouncil>
+  <MetropolitanDistrictCouncil rdf:ID="SolihullMetropolitanDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#solihull_00ct"/>
+  </MetropolitanDistrictCouncil>
+  <DistrictCouncil rdf:ID="NorthWiltshireDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#north_wiltshire_46uc"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="AmberValleyDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#amber_valley_17ub"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="SurreyHeathDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#surrey_heath_43uj"/>
+  </DistrictCouncil>
+  <LondonBoroughCouncil rdf:ID="EalingLondonBoroughCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#ealing_00aj"/>
+  </LondonBoroughCouncil>
+  <LondonBoroughCouncil rdf:ID="HaringeyLondonBoroughCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#haringey_00ap"/>
+  </LondonBoroughCouncil>
+  <DistrictCouncil rdf:ID="ValeRoyalDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#vale_royal_13uh"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="SouthLakelandDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#south_lakeland_16ug"/>
+  </DistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="IsleOfWightCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#isle_of_wight_00mw"/>
+  </UnitaryAuthorityCouncil>
+  <DistrictCouncil rdf:ID="ReigateAndBansteadDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#reigate_and_banstead_43uf"/>
+  </DistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="MorayCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#moray_00qx"/>
+  </UnitaryAuthorityCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="WrexhamCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#wrexham_00nl"/>
+  </UnitaryAuthorityCouncil>
+  <DistrictCouncil rdf:ID="RedditchDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#redditch_47ud"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="ExeterDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#exeter_18uc"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="AdurDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#adur_45ub"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="EastHampshireDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#east_hampshire_24uc"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="PendleDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#pendle_30uj"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="ChilternDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#chiltern_11uc"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="RochfordDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#rochford__22ul"/>
+  </DistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="RedcarAndClevelandCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#redcar_and_cleveland_00ee"/>
+  </UnitaryAuthorityCouncil>
+  <DistrictCouncil rdf:ID="EastHertfordshireDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#east_hertfordshire_26ud"/>
+  </DistrictCouncil>
+  <MetropolitanDistrictCouncil rdf:ID="LiverpoolMetropolitanDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#liverpool_00by"/>
+  </MetropolitanDistrictCouncil>
+  <CountyCouncil rdf:ID="CambridgeshireCountyCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#cambridgeshire_12"/>
+  </CountyCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="OrkneyIslandsCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#orkney_islands_00ra"/>
+  </UnitaryAuthorityCouncil>
+  <DistrictCouncil rdf:ID="CotswoldDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#cotswold_23uc"/>
+  </DistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="EileanSiarCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#eilean_siar_00rj"/>
+  </UnitaryAuthorityCouncil>
+  <DistrictCouncil rdf:ID="NewcastleUnderLymeDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#newcastle-under-lyme_41ue"/>
+  </DistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="NorthSomersetCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#north_somerset_00hc"/>
+  </UnitaryAuthorityCouncil>
+  <DistrictCouncil rdf:ID="NewForestDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#new_forest_24uj"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="CravenDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#craven_36ub"/>
+  </DistrictCouncil>
+  <CountyCouncil rdf:ID="NorthYorkshireCountyCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#north_yorkshire_36"/>
+  </CountyCouncil>
+  <DistrictCouncil rdf:ID="CarlisleDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#carlisle_16ud"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="NorthHertfordshireDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#north_hertfordshire_26uf"/>
+  </DistrictCouncil>
+  <MetropolitanDistrictCouncil rdf:ID="BradfordMetropolitanDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#bradford_00cx"/>
+  </MetropolitanDistrictCouncil>
+  <LondonBoroughCouncil rdf:ID="RedbridgeLondonBoroughCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#redbridge_00bc"/>
+  </LondonBoroughCouncil>
+  <DistrictCouncil rdf:ID="HuntingdonshireDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#huntingdonshire_12ue"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="MoleValleyDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#mole_valley_43ue"/>
+  </DistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="IsleOfAngleseyCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#isle_of_anglesey_00na"/>
+  </UnitaryAuthorityCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="PerthAndKinrossCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#perth_and_kinross_00rb"/>
+  </UnitaryAuthorityCouncil>
+  <DistrictCouncil rdf:ID="WestDorsetDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#west_dorset_19uh"/>
+  </DistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="LeicesterCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#leicester_00fn"/>
+  </UnitaryAuthorityCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="CarmarthenshireCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#carmarthenshire_00nu"/>
+  </UnitaryAuthorityCouncil>
+  <DistrictCouncil rdf:ID="BasingstokeAndDeaneDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#basingstoke_and_deane_24ub"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="DurhamDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#durham__20ue"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="StratfordOnAvonDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#stratford-on-avon_44ue"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="WorthingDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#worthing_45uh"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="EastCambridgeshireDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#east_cambridgeshire_12uc"/>
+  </DistrictCouncil>
+  <CountyCouncil rdf:ID="WestSussexCountyCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#west_sussex_45"/>
+  </CountyCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="StokeOnTrentCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#stoke-on-trent_00gl"/>
+  </UnitaryAuthorityCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="HighlandCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#highland_00qt"/>
+  </UnitaryAuthorityCouncil>
+  <GovernmentOfficeRegionCouncil rdf:ID="GovernmentOfficeForWales">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#wales_gor_l"/>
+  </GovernmentOfficeRegionCouncil>
+  <DistrictCouncil rdf:ID="CastlePointDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#castle_point_22ue"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="WaverleyDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#waverley_43ul"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="HastingsDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#hastings_21ud"/>
+  </DistrictCouncil>
+  <CountyCouncil rdf:ID="NorthumberlandCountyCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#northumberland_35"/>
+  </CountyCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="SwindonCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#swindon_00hx"/>
+  </UnitaryAuthorityCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="SouthLanarkshireCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#south_lanarkshire_00rf"/>
+  </UnitaryAuthorityCouncil>
+  <DistrictCouncil rdf:ID="BaberghDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#babergh_42ub"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="ChorleyDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#chorley_30ue"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="HartDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#hart_24ug"/>
+  </DistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="TorfaenCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#torfaen_00pm"/>
+  </UnitaryAuthorityCouncil>
+  <MetropolitanDistrictCouncil rdf:ID="GatesheadMetropolitanDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#gateshead_00ch"/>
+  </MetropolitanDistrictCouncil>
+  <DistrictCouncil rdf:ID="SouthShropshireDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#south_shropshire_39uf"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="FenlandDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#fenland_12ud"/>
+  </DistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="CardiffCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#cardiff_00pt"/>
+  </UnitaryAuthorityCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="NeathPortTalbotCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#neath_port_talbot_00nz"/>
+  </UnitaryAuthorityCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="GwyneddCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#gwynedd_00nc"/>
+  </UnitaryAuthorityCouncil>
+  <DistrictCouncil rdf:ID="FyldeDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#fylde_30uf"/>
+  </DistrictCouncil>
+  <GovernmentOfficeRegionCouncil rdf:ID="GovernmentOfficeForYorkshireAndHumberside">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#yorkshire_and_humberside_d"/>
+  </GovernmentOfficeRegionCouncil>
+  <DistrictCouncil rdf:ID="RugbyDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#rugby_44ud"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="ShepwayDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#shepway_29ul"/>
+  </DistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="SloughCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#slough_00md"/>
+  </UnitaryAuthorityCouncil>
+  <DistrictCouncil rdf:ID="BlythValleyDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#blyth_valley_35ud"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="HighPeakDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#high_peak_17uh"/>
+  </DistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="BournemouthCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#bournemouth_00hn"/>
+  </UnitaryAuthorityCouncil>
+  <DistrictCouncil rdf:ID="WychavonDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#wychavon_47uf"/>
+  </DistrictCouncil>
+  <MetropolitanDistrictCouncil rdf:ID="DoncasterMetropolitanDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#doncaster_00ce"/>
+  </MetropolitanDistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="MonmouthshireCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#monmouthshire_00pp"/>
+  </UnitaryAuthorityCouncil>
+  <GovernmentOfficeRegionCouncil rdf:ID="GovernmentOfficeForTheEastMidlands">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#east_midlands_e"/>
+  </GovernmentOfficeRegionCouncil>
+  <DistrictCouncil rdf:ID="CorbyDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#corby_34ub"/>
+  </DistrictCouncil>
+  <CountyCouncil rdf:ID="EastSussexCountyCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#east_sussex_21"/>
+  </CountyCouncil>
+  <DistrictCouncil rdf:ID="NorthWestLeicestershireDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#north_west_leicestershire_31uh"/>
+  </DistrictCouncil>
+  <MetropolitanDistrictCouncil rdf:ID="SalfordMetropolitanDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#salford_00br"/>
+  </MetropolitanDistrictCouncil>
+  <DistrictCouncil rdf:ID="GosportDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#gosport_24uf"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="CannockChaseDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#cannock_chase_41ub"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="BraintreeDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#braintree_22uc"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="SevenoaksDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#sevenoaks__29uk"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="ChesterfieldDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#chesterfield_17ud"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="MidSuffolkDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#mid_suffolk_42ue"/>
+  </DistrictCouncil>
+  <GovernmentOfficeRegionCouncil rdf:ID="GovernmentOfficeForScotland">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#scotland_gor_m"/>
+  </GovernmentOfficeRegionCouncil>
+  <CountyCouncil rdf:ID="WorcestershireCountyCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#worcestershire_47"/>
+  </CountyCouncil>
+  <DistrictCouncil rdf:ID="RotherDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#rother_21ug"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="EllesmerePortAndNestonDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#ellesmere_port_and_neston_13ue"/>
+  </DistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="CityOfEdinburghCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#city_of_edinburgh_00qp"/>
+  </UnitaryAuthorityCouncil>
+  <DistrictCouncil rdf:ID="GloucesterDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#gloucester_23ue"/>
+  </DistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="NorthLanarkshireCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#north_lanarkshire_00qz"/>
+  </UnitaryAuthorityCouncil>
+  <DistrictCouncil rdf:ID="PrestonDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#preston_30uk"/>
+  </DistrictCouncil>
+  <LondonBoroughCouncil rdf:ID="BarkingAndDagenhamLondonBoroughCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#barking_and_dagenham_00ab"/>
+  </LondonBoroughCouncil>
+  <DistrictCouncil rdf:ID="MaldonDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#maldon__22uk"/>
+  </DistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="SouthAyrshireCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#south_ayrshire_00re"/>
+  </UnitaryAuthorityCouncil>
+  <LondonBoroughCouncil rdf:ID="CamdenLondonBoroughCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#camden_00ag"/>
+  </LondonBoroughCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="EastDunbartonshireCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#east_dunbartonshire_00ql"/>
+  </UnitaryAuthorityCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="FalkirkCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#falkirk_00qq"/>
+  </UnitaryAuthorityCouncil>
+  <MetropolitanDistrictCouncil rdf:ID="BoltonMetropolitanDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#bolton_00bl"/>
+  </MetropolitanDistrictCouncil>
+  <DistrictCouncil rdf:ID="IpswichDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#ipswich_42ud"/>
+  </DistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="SouthGloucestershireCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#south_gloucestershire_00hd"/>
+  </UnitaryAuthorityCouncil>
+  <GovernmentOfficeRegionCouncil rdf:ID="GovernmentOfficeForTheNorthEast">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#north_east_a"/>
+  </GovernmentOfficeRegionCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="EastLothianCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#east_lothian_00qm"/>
+  </UnitaryAuthorityCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="TheValeOfGlamorganCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#the_vale_of_glamorgan_00pd"/>
+  </UnitaryAuthorityCouncil>
+  <MetropolitanDistrictCouncil rdf:ID="BarnsleyMetropolitanDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#barnsley_00cc"/>
+  </MetropolitanDistrictCouncil>
+  <DistrictCouncil rdf:ID="RestormelDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#restormel_15ug"/>
+  </DistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="AberdeenCityCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#aberdeen_city_00qa"/>
+  </UnitaryAuthorityCouncil>
+  <DistrictCouncil rdf:ID="HorshamDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#horsham_45uf"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="SouthHollandDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#south_holland_32uf"/>
+  </DistrictCouncil>
+  <LondonBoroughCouncil rdf:ID="BexleyLondonBoroughCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#bexley_00ad"/>
+  </LondonBoroughCouncil>
+  <DistrictCouncil rdf:ID="MansfieldDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#mansfield_37uf"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="PurbeckDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#purbeck_19ug"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="NorthamptonDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#northampton_34uf"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="ArunDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#arun_45uc"/>
+  </DistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="BathAndNorthEastSomersetCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#bath_and_north_east_somerset_00ha"/>
+  </UnitaryAuthorityCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="ConwyCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#conwy_ua_00ne"/>
+  </UnitaryAuthorityCouncil>
+  <DistrictCouncil rdf:ID="WansbeckDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#wansbeck_35ug"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="WarwickDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#warwick__44uf"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="ScarboroughDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#scarborough_36ug"/>
+  </DistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="GlasgowCityCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#glasgow_city_00qs"/>
+  </UnitaryAuthorityCouncil>
+  <DistrictCouncil rdf:ID="TonbridgeAndMallingDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#tonbridge_and_malling_29up"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="WestOxfordshireDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#west_oxfordshire_38uf"/>
+  </DistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="LutonCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#luton_00ka"/>
+  </UnitaryAuthorityCouncil>
+  <DistrictCouncil rdf:ID="BerwickUponTweedDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#berwick-upon-tweed_35uc"/>
+  </DistrictCouncil>
+  <CountyCouncil rdf:ID="OxfordshireCountyCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#oxfordshire_38"/>
+  </CountyCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="AngusCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#angus_00qc"/>
+  </UnitaryAuthorityCouncil>
+  <DistrictCouncil rdf:ID="CanterburyDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#canterbury_29uc"/>
+  </DistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="DarlingtonCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#darlington_ua_00eh"/>
+  </UnitaryAuthorityCouncil>
+  <DistrictCouncil rdf:ID="GuildfordDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#guildford_43ud"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="SuffolkCoastalDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#suffolk_coastal_42ug"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="SouthSomersetDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#south_somerset_40ud"/>
+  </DistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="BlackpoolCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#blackpool_00ey"/>
+  </UnitaryAuthorityCouncil>
+  <DistrictCouncil rdf:ID="LewesDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#lewes__21uf"/>
+  </DistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="CityOfBristolCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#city_of_bristol_00hb"/>
+  </UnitaryAuthorityCouncil>
+  <DistrictCouncil rdf:ID="ShrewsburyAndAtchamDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#shrewsbury_and_atcham_39ue"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="CongletonDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#congleton__13uc"/>
+  </DistrictCouncil>
+  <LondonBoroughCouncil rdf:ID="RichmondUponThamesLondonBoroughCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#richmond_upon_thames_00bd"/>
+  </LondonBoroughCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="SouthamptonCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#southampton_00ms"/>
+  </UnitaryAuthorityCouncil>
+  <DistrictCouncil rdf:ID="TestValleyDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#test_valley_24un"/>
+  </DistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="TelfordAndWrekinCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#telford_and_wrekin_00gf"/>
+  </UnitaryAuthorityCouncil>
+  <CountyCouncil rdf:ID="SomersetCountyCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#somerset_40"/>
+  </CountyCouncil>
+  <LondonBoroughCouncil rdf:ID="LewishamLondonBoroughCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#lewisham_00az"/>
+  </LondonBoroughCouncil>
+  <CountyCouncil rdf:ID="CornwallCountyCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#cornwall_15"/>
+  </CountyCouncil>
+  <QuasiUnitaryAuthorityCouncil rdf:ID="IslesOfScillyCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#isles_of_scilly_15uh"/>
+  </QuasiUnitaryAuthorityCouncil>
+  <DistrictCouncil rdf:ID="RushcliffeDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#rushcliffe_37uj"/>
+  </DistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="StocktonOnTeesCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#stockton-on-tees_00ef"/>
+  </UnitaryAuthorityCouncil>
+  <DistrictCouncil rdf:ID="ThanetDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#thanet_29un"/>
+  </DistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="CeredigionCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#ceredigion_00nq"/>
+  </UnitaryAuthorityCouncil>
+  <DistrictCouncil rdf:ID="WestLancashireDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#west_lancashire_30up"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="GraveshamDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#gravesham_29ug"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="GedlingDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#gedling_37ue"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="ChelmsfordDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#chelmsford_22uf"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="EpsomAndEwellDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#epsom_and_ewell_43uc"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="CreweAndNantwichDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#crewe_and_nantwich_13ud"/>
+  </DistrictCouncil>
+  <MetropolitanDistrictCouncil rdf:ID="SandwellMetropolitanDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#sandwell_00cs"/>
+  </MetropolitanDistrictCouncil>
+  <DistrictCouncil rdf:ID="WycombeDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#wycombe_11uf"/>
+  </DistrictCouncil>
+  <GovernmentOfficeRegionCouncil rdf:ID="GovernmentOfficeForTheNorthWest">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#north_west_b"/>
+  </GovernmentOfficeRegionCouncil>
+  <DistrictCouncil rdf:ID="EasingtonDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#easington_20uf"/>
+  </DistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="DerbyCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#derby_00fk"/>
+  </UnitaryAuthorityCouncil>
+  <DistrictCouncil rdf:ID="SouthDerbyshireDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#south_derbyshire_17uk"/>
+  </DistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="NewportCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#newport_00pr"/>
+  </UnitaryAuthorityCouncil>
+  <CountyCouncil rdf:ID="StaffordshireCountyCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#staffordshire_41"/>
+  </CountyCouncil>
+  <LondonBoroughCouncil rdf:ID="TowerHamletsLondonBoroughCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#tower_hamlets_00bg"/>
+  </LondonBoroughCouncil>
+  <CountyCouncil rdf:ID="ShropshireCountyCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#shropshire_39"/>
+  </CountyCouncil>
+  <CountyCouncil rdf:ID="HampshireCountyCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#hampshire_24"/>
+  </CountyCouncil>
+  <LondonBoroughCouncil rdf:ID="HarrowLondonBoroughCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#harrow_00aq"/>
+  </LondonBoroughCouncil>
+  <DistrictCouncil rdf:ID="SouthOxfordshireDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#south_oxfordshire_38ud"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="MalvernHillsDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#malvern_hills_47uc"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="NorthEastDerbyshireDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#north_east_derbyshire_17uj"/>
+  </DistrictCouncil>
+  <MetropolitanDistrictCouncil rdf:ID="KirkleesMetropolitanDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#kirklees_00cz"/>
+  </MetropolitanDistrictCouncil>
+  <DistrictCouncil rdf:ID="SouthStaffordshireDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#south_staffordshire_41uf"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="StevenageDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#stevenage_26uh"/>
+  </DistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="TorbayCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#torbay_00hh"/>
+  </UnitaryAuthorityCouncil>
+  <DistrictCouncil rdf:ID="BolsoverDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#bolsover_17uc"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="BlabyDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#blaby__31ub"/>
+  </DistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="NorthEastLincolnshireCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#north_east_lincolnshire_00fc"/>
+  </UnitaryAuthorityCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="EastRidingOfYorkshireCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#east_riding_of_yorkshire_00fb"/>
+  </UnitaryAuthorityCouncil>
+  <DistrictCouncil rdf:ID="MendipDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#mendip_40ub"/>
+  </DistrictCouncil>
+  <LondonBoroughCouncil rdf:ID="LambethLondonBoroughCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#lambeth_00ay"/>
+  </LondonBoroughCouncil>
+  <CountyCouncil rdf:ID="NorfolkCountyCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#norfolk_33"/>
+  </CountyCouncil>
+  <DistrictCouncil rdf:ID="NorthKestevenDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#north_kesteven_32ue"/>
+  </DistrictCouncil>
+  <CountyCouncil rdf:ID="SurreyCountyCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#surrey_43"/>
+  </CountyCouncil>
+  <DistrictCouncil rdf:ID="NorthCornwallDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#north_cornwall_15ue"/>
+  </DistrictCouncil>
+  <LondonBoroughCouncil rdf:ID="GreenwichLondonBoroughCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#greenwich_00al"/>
+  </LondonBoroughCouncil>
+  <DistrictCouncil rdf:ID="BassetlawDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#bassetlaw_37uc"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="ForestOfDeanDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#forest_of_dean_23ud"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="KennetDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#kennet_46ub"/>
+  </DistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="ScottishBordersCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#scottish_borders_00qe"/>
+  </UnitaryAuthorityCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="MedwayCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#medway_00lc"/>
+  </UnitaryAuthorityCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="RhonddaCynonTaffCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#rhondda_cynon_taff_00pf"/>
+  </UnitaryAuthorityCouncil>
+  <DistrictCouncil rdf:ID="SouthBedfordshireDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#south_bedfordshire_09ue"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="ChichesterDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#chichester__45ud"/>
+  </DistrictCouncil>
+  <LondonBoroughCouncil rdf:ID="SuttonLondonBoroughCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#sutton_00bf"/>
+  </LondonBoroughCouncil>
+  <DistrictCouncil rdf:ID="BedfordDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#bedford_09ud"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="StAlbansDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#st_albans_26ug"/>
+  </DistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="WarringtonCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#warrington_00eu"/>
+  </UnitaryAuthorityCouncil>
+  <CountyCouncil rdf:ID="CheshireCountyCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#cheshire_13"/>
+  </CountyCouncil>
+  <DistrictCouncil rdf:ID="NorwichDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#norwich_33ug"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="BridgnorthDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#bridgnorth__39ub"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="NorthShropshireDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#north_shropshire_39uc"/>
+  </DistrictCouncil>
+  <MetropolitanDistrictCouncil rdf:ID="SouthTynesideMetropolitanDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#south_tyneside_00cl"/>
+  </MetropolitanDistrictCouncil>
+  <MetropolitanDistrictCouncil rdf:ID="CalderdaleMetropolitanDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#calderdale_00cy"/>
+  </MetropolitanDistrictCouncil>
+  <LondonBoroughCouncil rdf:ID="CommonCouncilOfTheCityOfLondon">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#city_of_london_00aa"/>
+  </LondonBoroughCouncil>
+  <DistrictCouncil rdf:ID="StroudDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#stroud__23uf"/>
+  </DistrictCouncil>
+  <MetropolitanDistrictCouncil rdf:ID="NorthTynesideMetropolitanDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#north_tyneside_00ck"/>
+  </MetropolitanDistrictCouncil>
+  <DistrictCouncil rdf:ID="NorthDevonDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#north_devon_18ue"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="TeignbridgeDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#teignbridge_18uh"/>
+  </DistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="CaerphillyCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#caerphilly_00pk"/>
+  </UnitaryAuthorityCouncil>
+  <DistrictCouncil rdf:ID="CopelandDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#copeland_16ue"/>
+  </DistrictCouncil>
+  <CountyCouncil rdf:ID="NottinghamshireCountyCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#nottinghamshire_37"/>
+  </CountyCouncil>
+  <DistrictCouncil rdf:ID="WestLindseyDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#west_lindsey_32uh"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="HyndburnDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#hyndburn_30ug"/>
+  </DistrictCouncil>
+  <CountyCouncil rdf:ID="HertfordshireCountyCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#hertfordshire_26"/>
+  </CountyCouncil>
+  <DistrictCouncil rdf:ID="MidSussexDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#mid_sussex_45ug"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="LancasterDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#lancaster_30uh"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="HertsmereDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#hertsmere_26ue"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="RunnymedeDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#runnymede_43ug"/>
+  </DistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="PembrokeshireCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#pembrokeshire_00ns"/>
+  </UnitaryAuthorityCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="ReadingCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#reading_00mc"/>
+  </UnitaryAuthorityCouncil>
+  <DistrictCouncil rdf:ID="UttlesfordDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#uttlesford_22uq"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="OswestryDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#oswestry__39ud"/>
+  </DistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="BlaenauGwentCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#blaenau_gwent_00pl"/>
+  </UnitaryAuthorityCouncil>
+  <DistrictCouncil rdf:ID="SouthKestevenDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#south_kesteven_32ug"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="TeesdaleDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#teesdale_20uh"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="EastNorthamptonshireDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#east_northamptonshire_34ud"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="TamworthDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#tamworth_41uk"/>
+  </DistrictCouncil>
+  <LondonBoroughCouncil rdf:ID="BrentLondonBoroughCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#brent_00ae"/>
+  </LondonBoroughCouncil>
+  <MetropolitanDistrictCouncil rdf:ID="CoventryMetropolitanDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#coventry_00cq"/>
+  </MetropolitanDistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="PooleCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#poole_00hp"/>
+  </UnitaryAuthorityCouncil>
+  <DistrictCouncil rdf:ID="NorthWarwickshireDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#north_warwickshire_44ub"/>
+  </DistrictCouncil>
+  <LondonBoroughCouncil rdf:ID="NewhamLondonBoroughCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#newham_00bb"/>
+  </LondonBoroughCouncil>
+  <DistrictCouncil rdf:ID="StaffordDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#stafford_41ug"/>
+  </DistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="BracknellForestCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#bracknell_forest_00ma"/>
+  </UnitaryAuthorityCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="StirlingCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#stirling_00rg"/>
+  </UnitaryAuthorityCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="YorkCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#york_00ff"/>
+  </UnitaryAuthorityCouncil>
+  <DistrictCouncil rdf:ID="CrawleyDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#crawley_45ue"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="AylesburyValeDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#aylesbury_vale_11ub"/>
+  </DistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="EastRenfrewshireCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#east_renfrewshire_00qn"/>
+  </UnitaryAuthorityCouncil>
+  <DistrictCouncil rdf:ID="TauntonDeaneDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#taunton_deane_40ue"/>
+  </DistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="ShetlandIslandsCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#shetland_islands_00rd"/>
+  </UnitaryAuthorityCouncil>
+  <DistrictCouncil rdf:ID="KetteringDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#kettering_34ue"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="TendringDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#tendring__22un"/>
+  </DistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="WestLothianCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#west_lothian_00rh"/>
+  </UnitaryAuthorityCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="SouthendOnSeaCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#southend-on-sea_00kf"/>
+  </UnitaryAuthorityCouncil>
+  <DistrictCouncil rdf:ID="EastleighDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#eastleigh_24ud"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="BroxbourneDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#broxbourne_26ub"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="SalisburyDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#salisbury_46ud"/>
+  </DistrictCouncil>
+  <LondonBoroughCouncil rdf:ID="EnfieldLondonBoroughCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#enfield_00ak"/>
+  </LondonBoroughCouncil>
+  <DistrictCouncil rdf:ID="MidBedfordshireDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#mid_bedfordshire_09uc"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="KerrierDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#kerrier_15ud"/>
+  </DistrictCouncil>
+  <MetropolitanDistrictCouncil rdf:ID="KnowsleyMetropolitanDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#knowsley_00bx"/>
+  </MetropolitanDistrictCouncil>
+  <LondonBoroughCouncil rdf:ID="IslingtonLondonBoroughCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#islington_00au"/>
+  </LondonBoroughCouncil>
+  <CountyCouncil rdf:ID="DorsetCountyCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#dorset_19"/>
+  </CountyCouncil>
+  <DistrictCouncil rdf:ID="NorthDorsetDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#north_dorset_19ue"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="EastbourneDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#eastbourne_21uc"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="SouthRibbleDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#south_ribble_30un"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="AshfordDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#ashford_29ub"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="SouthNorfolkDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#south_norfolk_33uh"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="WatfordDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#watford_26uk"/>
+  </DistrictCouncil>
+  <LondonBoroughCouncil rdf:ID="HounslowLondonBoroughCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#hounslow_00at"/>
+  </LondonBoroughCouncil>
+  <LondonBoroughCouncil rdf:ID="CityOfWestminsterCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#westminster_00bk"/>
+  </LondonBoroughCouncil>
+  <DistrictCouncil rdf:ID="PenwithDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#penwith_15uf"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="WellingboroughDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#wellingborough_34uh"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="CherwellDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#cherwell_38ub"/>
+  </DistrictCouncil>
+  <CountyCouncil rdf:ID="BedfordshireCountyCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#bedfordshire_09"/>
+  </CountyCouncil>
+  <DistrictCouncil rdf:ID="TandridgeDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#tandridge__43uk"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="WestSomersetDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#west_somerset_40uf"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="ErewashDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#erewash_17ug"/>
+  </DistrictCouncil>
+  <CountyCouncil rdf:ID="LancashireCountyCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#lancashire_30"/>
+  </CountyCouncil>
+  <DistrictCouncil rdf:ID="LincolnDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#lincoln_32ud"/>
+  </DistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="NorthLincolnshireCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#north_lincolnshire_00fd"/>
+  </UnitaryAuthorityCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="FlintshireCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#flintshire_00nj"/>
+  </UnitaryAuthorityCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="SwanseaCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#swansea_00nx"/>
+  </UnitaryAuthorityCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="BrightonAndHoveCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#brighton_and_hove_00ml"/>
+  </UnitaryAuthorityCouncil>
+  <DistrictCouncil rdf:ID="WestDevonDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#west_devon_18ul"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="BroadlandDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#broadland_33uc"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="SouthNorthamptonshireDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#south_northamptonshire_34ug"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="DoverDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#dover__29ue"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="BrecklandDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#breckland_33ub"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="RyedaleDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#ryedale_36uf"/>
+  </DistrictCouncil>
+  <GovernmentOfficeRegionCouncil rdf:ID="GovernmentOfficeForTheWestMidlands">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#west_midlands_f"/>
+  </GovernmentOfficeRegionCouncil>
+  <CountyCouncil rdf:ID="SuffolkCountyCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#suffolk_42"/>
+  </CountyCouncil>
+  <DistrictCouncil rdf:ID="NuneatonAndBedworthDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#nuneaton_and_bedworth_44uc"/>
+  </DistrictCouncil>
+  <CountyCouncil rdf:ID="DevonCountyCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#devon_18"/>
+  </CountyCouncil>
+  <DistrictCouncil rdf:ID="RibbleValleyDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#ribble_valley_30ul"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="BarrowInFurnessDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#barrow-in-furness_16uc"/>
+  </DistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="WestDunbartonshireCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#west_dunbartonshire_00qg"/>
+  </UnitaryAuthorityCouncil>
+  <DistrictCouncil rdf:ID="CambridgeDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#cambridge_12ub"/>
+  </DistrictCouncil>
+  <LondonBoroughCouncil rdf:ID="HammersmithAndFulhamLondonBoroughCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#hammersmith_and_fulham_00an"/>
+  </LondonBoroughCouncil>
+  <LondonBoroughCouncil rdf:ID="CroydonLondonBoroughCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#croydon_00ah"/>
+  </LondonBoroughCouncil>
+  <DistrictCouncil rdf:ID="ThreeRiversDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#three_rivers_26uj"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="HambletonDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#hambleton_36uc"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="RossendaleDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#rossendale_30um"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="BurnleyDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#burnley_30ud"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="CastleMorpethDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#castle_morpeth_35ue"/>
+  </DistrictCouncil>
+  <MetropolitanDistrictCouncil rdf:ID="TamesideMetropolitanDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#tameside_00bt"/>
+  </MetropolitanDistrictCouncil>
+  <LondonBoroughCouncil rdf:ID="KingstonUponThamesRoyalBoroughCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#kingston_upon_thames_00ax"/>
+  </LondonBoroughCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="ClackmannanshireCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#clackmannanshire_00qf"/>
+  </UnitaryAuthorityCouncil>
+  <MetropolitanDistrictCouncil rdf:ID="WirralMetropolitanDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#wirral_00cb"/>
+  </MetropolitanDistrictCouncil>
+  <DistrictCouncil rdf:ID="WearValleyDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#wear_valley_20uj"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="MeltonDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#melton__31ug"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="HarrogateDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#harrogate_36ud"/>
+  </DistrictCouncil>
+  <MetropolitanDistrictCouncil rdf:ID="SheffieldMetropolitanDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#sheffield_00cg"/>
+  </MetropolitanDistrictCouncil>
+  <DistrictCouncil rdf:ID="ChesterDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#chester_13ub"/>
+  </DistrictCouncil>
+  <CountyCouncil rdf:ID="NorthamptonshireCountyCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#northamptonshire_34"/>
+  </CountyCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="MiddlesbroughCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#middlesbrough_00ec"/>
+  </UnitaryAuthorityCouncil>
+  <DistrictCouncil rdf:ID="EastDorsetDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#east_dorset_19ud"/>
+  </DistrictCouncil>
+  <CountyCouncil rdf:ID="CumbriaCountyCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#cumbria_16"/>
+  </CountyCouncil>
+  <MetropolitanDistrictCouncil rdf:ID="RotherhamMetropolitanDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#rotherham_00cf"/>
+  </MetropolitanDistrictCouncil>
+  <DistrictCouncil rdf:ID="ValeOfWhiteHorseDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#vale_of_white_horse_38ue"/>
+  </DistrictCouncil>
+  <LondonBoroughCouncil rdf:ID="HillingdonLondonBoroughCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#hillingdon_00as"/>
+  </LondonBoroughCouncil>
+  <MetropolitanDistrictCouncil rdf:ID="BirminghamMetropolitanDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#birmingham_00cn"/>
+  </MetropolitanDistrictCouncil>
+  <LondonBoroughCouncil rdf:ID="HaveringLondonBoroughCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#havering_00ar"/>
+  </LondonBoroughCouncil>
+  <DistrictCouncil rdf:ID="CheltenhamDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#cheltenham_23ub"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="RichmondshireDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#richmondshire_36ue"/>
+  </DistrictCouncil>
+  <MetropolitanDistrictCouncil rdf:ID="WiganMetropolitanDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#wigan_00bw"/>
+  </MetropolitanDistrictCouncil>
+  <DistrictCouncil rdf:ID="AlnwickDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#alnwick__35ub"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="CharnwoodDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#charnwood_31uc"/>
+  </DistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="ThurrockCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#thurrock_00kg"/>
+  </UnitaryAuthorityCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="DenbighshireCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#denbighshire_00ng"/>
+  </UnitaryAuthorityCouncil>
+  <MetropolitanDistrictCouncil rdf:ID="RochdaleMetropolitanDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#rochdale_00bq"/>
+  </MetropolitanDistrictCouncil>
+  <GovernmentOfficeRegionCouncil rdf:ID="GovernmentOfficeForLondon">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#london_gor_h"/>
+  </GovernmentOfficeRegionCouncil>
+  <LondonBoroughCouncil rdf:ID="SouthwarkLondonBoroughCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#southwark_00be"/>
+  </LondonBoroughCouncil>
+  <DistrictCouncil rdf:ID="ElmbridgeDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#elmbridge_43ub"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="LichfieldDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#lichfield___41ud"/>
+  </DistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="WokinghamCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#wokingham_00mf"/>
+  </UnitaryAuthorityCouncil>
+  <CountyCouncil rdf:ID="KentCountyCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#kent_29"/>
+  </CountyCouncil>
+  <CountyCouncil rdf:ID="EssexCountyCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#essex_22"/>
+  </CountyCouncil>
+  <DistrictCouncil rdf:ID="TewkesburyDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#tewkesbury__23ug"/>
+  </DistrictCouncil>
+  <LondonBoroughCouncil rdf:ID="KensingtonAndChelseaRoyalBoroughCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#kensington_and_chelsea_00aw"/>
+  </LondonBoroughCouncil>
+  <LondonBoroughCouncil rdf:ID="MertonLondonBoroughCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#merton_00ba"/>
+  </LondonBoroughCouncil>
+  <LondonBoroughCouncil rdf:ID="HackneyLondonBoroughCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#hackney_00am"/>
+  </LondonBoroughCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="DundeeCityCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#dundee_city_00qj"/>
+  </UnitaryAuthorityCouncil>
+  <MetropolitanDistrictCouncil rdf:ID="BuryMetropolitanDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#bury_00bm"/>
+  </MetropolitanDistrictCouncil>
+  <DistrictCouncil rdf:ID="WeymouthAndPortlandDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#weymouth_and_portland_19uj"/>
+  </DistrictCouncil>
+  <MetropolitanDistrictCouncil rdf:ID="WolverhamptonMetropolitanDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#wolverhampton_00cw"/>
+  </MetropolitanDistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="PortsmouthCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#portsmouth_00mr"/>
+  </UnitaryAuthorityCouncil>
+  <DistrictCouncil rdf:ID="TorridgeDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#torridge_18uk"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="MacclesfieldDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#macclesfield_13ug"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="BasildonDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#basildon_22ub"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="WelwynHatfieldDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#welwyn_hatfield_26ul"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="NewarkAndSherwoodDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#newark_and_sherwood_37ug"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="SedgemoorDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#sedgemoor_40uc"/>
+  </DistrictCouncil>
+  <CountyCouncil rdf:ID="WarwickshireCountyCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#warwickshire_44"/>
+  </CountyCouncil>
+  <GovernmentOfficeRegionCouncil rdf:ID="GovernmentOfficeForTheSouthWest">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#south_west_k"/>
+  </GovernmentOfficeRegionCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="InverclydeCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#inverclyde_00qu"/>
+  </UnitaryAuthorityCouncil>
+  <DistrictCouncil rdf:ID="StaffordshireMoorlandsDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#staffordshire_moorlands_41uh"/>
+  </DistrictCouncil>
+  <MetropolitanDistrictCouncil rdf:ID="WakefieldMetropolitanDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#wakefield_00db"/>
+  </MetropolitanDistrictCouncil>
+  <DistrictCouncil rdf:ID="WaveneyDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#waveney_42uh"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="SpelthorneDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#spelthorne_43uh"/>
+  </DistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="BlackburnWithDarwenCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#blackburn_with_darwen_00ex"/>
+  </UnitaryAuthorityCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="FifeCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#fife_00qr"/>
+  </UnitaryAuthorityCouncil>
+  <DistrictCouncil rdf:ID="DerbyshireDalesDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#derbyshire_dales_17uf"/>
+  </DistrictCouncil>
+  <MetropolitanDistrictCouncil rdf:ID="ManchesterMetropolitanDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#manchester_00bn"/>
+  </MetropolitanDistrictCouncil>
+  <DistrictCouncil rdf:ID="HavantDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#havant_24uh"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="SouthCambridgeshireDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#south_cambridgeshire_12ug"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="MidDevonDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#mid_devon_18ud"/>
+  </DistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="HaltonCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#halton_00et"/>
+  </UnitaryAuthorityCouncil>
+  <DistrictCouncil rdf:ID="ColchesterDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#colchester_22ug"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="GreatYarmouthDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#great_yarmouth_33ud"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="ChristchurchDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#christchurch_19uc"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="HarlowDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#harlow_22uj"/>
+  </DistrictCouncil>
+  <DistrictCouncil rdf:ID="DaventryDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#daventry__34uc"/>
+  </DistrictCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="NorthAyrshireCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#north_ayrshire_00qy"/>
+  </UnitaryAuthorityCouncil>
+  <UnitaryAuthorityCouncil rdf:ID="PeterboroughCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#peterborough_00ja"/>
+  </UnitaryAuthorityCouncil>
+  <DistrictCouncil rdf:ID="OadbyAndWigstonDistrictCouncil">
+    <hasArea rdf:resource="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#oadby_and_wigston_31uj"/>
+  </DistrictCouncil>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.3.1, Build 430)  http://protege.stanford.edu -->

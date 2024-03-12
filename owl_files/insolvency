@@ -1,0 +1,3316 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY dcterms "http://purl.org/dc/terms/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY vCard "http://www.w3.org/2006/vcard/ns#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY def "https://www.thegazette.co.uk/def/#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY court "https://www.thegazette.co.uk/def/court#" >
+    <!ENTITY person "https://www.thegazette.co.uk/def/person#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY legislation "https://www.thegazette.co.uk/def/legislation#" >
+    <!ENTITY publication "https://www.thegazette.co.uk/def/publication#" >
+    <!ENTITY organisation "https://www.thegazette.co.uk/def/organisation#" >
+    <!ENTITY protege "http://protege.stanford.edu/plugins/owl/protege#" >
+    <!ENTITY xsp "http://www.owl-ontologies.com/2005/08/07/xsp.owl#" >
+    <!ENTITY AdministrativeGeography "http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#" >
+]>
+
+
+<rdf:RDF xmlns="https://www.thegazette.co.uk/def/insolvency#"
+     xml:base="https://www.thegazette.co.uk/def/insolvency"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:AdministrativeGeography="http://www.ordnancesurvey.co.uk/ontology/v1/AdministrativeGeography.rdf#"
+     xmlns:person="https://www.thegazette.co.uk/def/person#"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+     xmlns:organisation="https://www.thegazette.co.uk/def/organisation#"
+     xmlns:legislation="https://www.thegazette.co.uk/def/legislation#"
+     xmlns:court="https://www.thegazette.co.uk/def/court#"
+     xmlns:vCard="http://www.w3.org/2006/vcard/ns#"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:publication="https://www.thegazette.co.uk/def/publication#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:def="https://www.thegazette.co.uk/def/#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="https://www.thegazette.co.uk/def/insolvency">
+        <dcterms:created rdf:datatype="&xsd;string">2008-09-18</dcterms:created>
+        <dc:title rdf:datatype="&xsd;string">Gazette Ontology</dc:title>
+        <dcterms:creator rdf:datatype="&xsd;string">Griff Chamberlain, The Stationery Office, mark.chamberlain@tso.co.uk</dcterms:creator>
+        <dc:description xml:lang="en">
+  		Ontology for Corporate Insolvency Notices.
+
+  		This is a beta version, and you should expect it to change.
+		</dc:description>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="&xsd;date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#appointAdministrator -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#appointAdministrator">
+        <rdfs:label>appointedAdministrator</rdfs:label>
+        <rdfs:comment xml:lang="en">Property to define the appointed administrator (role based)</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#appointRole"/>
+        <rdfs:range rdf:resource="&person;InsolvencyPractitioner"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedAdministratorAppointment"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CourtAdministratorAppointment"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#appointLiquidator -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#appointLiquidator">
+        <rdfs:label xml:lang="en">appointLiquidator property</rdfs:label>
+        <rdfs:comment xml:lang="en">Property to define the appointed Liquidator (role based)</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#appointRole"/>
+        <rdfs:range rdf:resource="&person;Liquidator"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedLiquidatorAppointment"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CourtLiquidatorAppointment"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#appointReceiver -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#appointReceiver">
+        <rdfs:label xml:lang="en">appointReceiver property</rdfs:label>
+        <rdfs:comment xml:lang="en">Property to define the appointed Receiver (role based)</rdfs:comment>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedReceiverAppointment"/>
+        <rdfs:subPropertyOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#appointRole"/>
+        <rdfs:range rdf:resource="&person;Role"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#appointRole -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#appointRole">
+        <rdfs:label xml:lang="en">appointRole property</rdfs:label>
+        <rdfs:comment xml:lang="en">Superclass for all role appointed properties</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#companyMeetingRole -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#companyMeetingRole">
+        <rdfs:label xml:lang="en">companyMeetingRole property</rdfs:label>
+        <rdfs:comment xml:lang="en">Role assigned to a Company Issued Meeting</rdfs:comment>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedMeeting"/>
+        <rdfs:subPropertyOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#meetingRole"/>
+        <rdfs:range rdf:resource="&person;Role"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#courtMeetingRole -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#courtMeetingRole">
+        <rdfs:label xml:lang="en">courtMeetingRole property</rdfs:label>
+        <rdfs:comment xml:lang="en">Role associated with Court issued meeting</rdfs:comment>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/insolvency#CourtIssuedMeeting"/>
+        <rdfs:subPropertyOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#meetingRole"/>
+        <rdfs:range rdf:resource="&person;Role"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#equivalentTo -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#equivalentTo">
+        <rdfs:label rdf:datatype="&xsd;string">equivalentTo property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Property for defining equivalance to another coding system such as SITC2003 or SITC2007</rdfs:comment>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/insolvency#ITCcode"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#hasAdministrator -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#hasAdministrator">
+        <rdfs:label>administrator</rdfs:label>
+    </owl:ObjectProperty>
+    
+    <!-- https://www.thegazette.co.uk/def/insolvency#hasPerson -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#hasPerson">
+        <rdfs:label>hasPerson</rdfs:label>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/insolvency#PersonalInsolvency"/>
+        <rdfs:range rdf:resource="&person;Person"/>
+    </owl:ObjectProperty>
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#hasBankruptPerson -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#hasBankruptPerson">
+        <rdfs:label>hasBankruptPerson</rdfs:label>
+        <rdfs:range rdf:resource="&person;Person"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#BankruptcyOrder"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#NoticeOfDividend"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:subPropertyOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#hasPerson"/>
+    </owl:ObjectProperty>
+    
+    <!-- https://www.thegazette.co.uk/def/insolvency#hasTrustee -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#hasTrustee">
+        <rdfs:label>hasTrustee</rdfs:label>
+        <rdfs:range rdf:resource="&person;Person"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/insolvency#TrustDeeds"/>
+    </owl:ObjectProperty>
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#hasCompany -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#hasCompany">
+        <rdfs:label rdf:datatype="&xsd;string">hasCompany property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">organisation associated with a company issued thing</rdfs:comment>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/insolvency#CorporateInsolvency"/>
+        <rdfs:range rdf:resource="&organisation;Organisation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#hasForeignRepresentative -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#hasForeignRepresentative">
+        <rdfs:label>hasForeignRepresentative</rdfs:label>
+        <rdfs:range rdf:resource="&person;Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#hasLiquidator -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#hasLiquidator">
+        <rdfs:label>hasLiquidator</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#hasNotifiableThing -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#hasNotifiableThing">
+        <rdfs:label rdf:datatype="&xsd;string">hasInsolvencyNotice property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Corporate Insolvency notices that are part of a court case</rdfs:comment>
+        <rdfs:domain rdf:resource="&court;CourtCase"/>
+        <rdfs:range rdf:resource="https://www.thegazette.co.uk/def/insolvency#CourtIssued"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#hasOfficialReceiver -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#hasOfficialReceiver">
+        <rdfs:label rdf:datatype="&xsd;string">hasOfficialReceiver property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Receiver role assigned to winding up order</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#hasReceiver"/>
+        <rdfs:range rdf:resource="&person;Receiver"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#BankruptcyOrder"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#NoticeOfDividend"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#WindingUpOrder"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#hasPetitioner -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#hasPetitioner">
+        <rdfs:label rdf:datatype="&xsd;string">hasPetitioner property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Company or person who acts as the petitioner</rdfs:comment>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#Petition"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CourtIssuedNotice"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&organisation;Organisation"/>
+                    <rdf:Description rdf:about="&person;Person"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#hasPrimaryIP -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#hasPrimaryIP">
+        <rdfs:label rdf:datatype="&xsd;string">hasPrimaryIP</rdfs:label>
+        <rdfs:range rdf:resource="&person;InsolvencyPractitioner"/>
+        <rdfs:domain rdf:resource="&publication;NotifiableThing"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#hasReceiver -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#hasReceiver"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#hasSolicitor -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#hasSolicitor">
+        <rdfs:label rdf:datatype="&xsd;string">hasSolicitor property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">super property for all solictor subproperties</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#meetingLocation -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#meetingLocation">
+    <rdfs:label>meetingLocation</rdfs:label>
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&vCard;Address"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CompanyIssued"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CourtIssuedMeeting"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#meetingRole -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#meetingRole">
+        <rdfs:label rdf:datatype="&xsd;string">meetingRole property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">super property for all meeting role properties</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#orderAdministrator -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#orderAdministrator">
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/insolvency#AdministrationOrder"/>
+        <rdfs:subPropertyOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#hasAdministrator"/>
+        <rdfs:range rdf:resource="&person;Administrator"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#orderReceiver -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#orderReceiver">
+        <rdfs:label rdf:datatype="&xsd;string">orderReceiver property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Receiver role assigned to a winding up order</rdfs:comment>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/insolvency#WindingUpOrder"/>
+        <rdfs:subPropertyOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#hasReceiver"/>
+        <rdfs:range rdf:resource="&person;Receiver"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#petitionSolicitor -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#petitionSolicitor">
+        <rdfs:label rdf:datatype="&xsd;string">petitionSolicitor property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Role of solicitor assigned to a petition</rdfs:comment>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/insolvency#Petition"/>
+        <rdfs:subPropertyOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#hasSolicitor"/>
+        <rdfs:range rdf:resource="&person;Solicitor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#placeOfHearing -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#placeOfHearing">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>placeOfHearing</rdfs:label>
+        <rdfs:range rdf:resource="&vCard;Address"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#Petition"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CourtIssuedNotice"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#releasedLiquidator -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#releasedLiquidator">
+        <rdfs:label rdf:datatype="&xsd;string">releasedLiquidator property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Role of liquidator assigned to a release</rdfs:comment>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/insolvency#Release"/>
+        <rdfs:subPropertyOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#hasLiquidator"/>
+        <rdfs:range rdf:resource="&person;Liquidator"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#resolutionLiquidator -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#resolutionLiquidator">
+        <rdfs:label>resolutionLiquidator</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Role of liquidator assigned to a resoltuion</rdfs:comment>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/insolvency#Resolution"/>
+        <rdfs:subPropertyOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#hasLiquidator"/>
+        <rdfs:range rdf:resource="&person;Liquidator"/>
+    </owl:ObjectProperty>
+    
+    <!-- https://www.thegazette.co.uk/def/insolvency#provisionalLiquidator -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#provisionalLiquidator">
+        <rdfs:label>provisionalLiquidator</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Role of provisional liquidator</rdfs:comment>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/insolvency#Petition"/>
+        <rdfs:subPropertyOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#hasLiquidator"/>
+        <rdfs:range rdf:resource="&person;Liquidator"/>
+    </owl:ObjectProperty>
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#resolutionMeetingLocation -->
+
+    <owl:ObjectProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#resolutionMeetingLocation">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&vCard;Address"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/insolvency#Resolution"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/publication#isAbout -->
+
+    <owl:ObjectProperty rdf:about="&publication;isAbout"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/#hasNoticeCode -->
+
+    <owl:DatatypeProperty rdf:about="&def;hasNoticeCode"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#companyStatus -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#companyStatus">
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&organisation;Organisation"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#dateAdministrationOrderMade -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#dateAdministrationOrderMade">
+        <rdfs:range rdf:resource="&xsd;date"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/insolvency#AdministrationOrder"/>
+    </owl:DatatypeProperty>
+    
+    <!-- https://www.thegazette.co.uk/def/insolvency#dateInsolvencyRule -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#dateInsolvencyRule">
+    	<rdfs:label>dateInsolvencyRule</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;date"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/insolvency#Petition"/>
+    </owl:DatatypeProperty>
+    
+    <!-- https://www.thegazette.co.uk/def/insolvency#hasInsolvencyRule -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#hasInsolvencyRule">
+    	<rdfs:label>dateInsolvencyRule</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/insolvency#Petition"/>
+    </owl:DatatypeProperty>
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#dateOfAppointment -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#dateOfAppointment">
+        <rdfs:label>dateOfAppointment</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;date"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedAppointment"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CourtIssuedAppointment"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#dateOfBankruptcyOrder -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#dateOfBankruptcyOrder">
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+        <rdfs:domain>
+       		<owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#BankruptcyOrder"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#AmendmentOfTitleOfProceedings"/>
+                </owl:unionOf>
+            </owl:Class>
+       </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#dateOfHearing -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#dateOfHearing">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>dateOfHearing</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#Petition"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CourtIssuedNotice"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+    <!-- https://www.thegazette.co.uk/def/insolvency#dateOfInterlocutor -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#dateOfInterlocutor">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>dateOfInterlocutor</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;date"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/insolvency#Petition"/>
+    </owl:DatatypeProperty>
+    
+    <!-- https://www.thegazette.co.uk/def/insolvency#sheriffName -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#sheriffName">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>sheriffName</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/insolvency#Petition"/>
+    </owl:DatatypeProperty>
+    
+    <!-- https://www.thegazette.co.uk/def/insolvency#creditorName -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#creditorName">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>creditorName</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/insolvency#Petition"/>
+    </owl:DatatypeProperty>
+    
+    <!-- https://www.thegazette.co.uk/def/insolvency#presentedBy -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#presentedBy">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>presentedBy</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/insolvency#Petition"/>
+    </owl:DatatypeProperty>
+    
+    <!-- https://www.thegazette.co.uk/def/insolvency#nameOfPlaceOfHearing -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#nameOfPlaceOfHearing">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>nameOfPlaceOfHearing</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/insolvency#Petition"/>
+    </owl:DatatypeProperty>
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#dateOfPetitionPresentation -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#dateOfPetitionPresentation">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>dateOfPetitionPresentation</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;date"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#Petition"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CourtIssuedNotice"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+ 
+     <!-- https://www.thegazette.co.uk/def/insolvency#dateGranted -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#dateGranted">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>dateGranted</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;date"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/insolvency#TrustDeeds"/>
+    </owl:DatatypeProperty>   
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#dateOfProving -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#dateOfProving">
+        <rdfs:range rdf:resource="&xsd;date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#dateOfResolution -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#dateOfResolution">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>dateOfResolution</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;date"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/insolvency#Resolution"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#datePetitionFiled -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#datePetitionFiled">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>presentationDate</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;date"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#WindingUpOrder"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#BankruptcyOrder"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#datePetitionSigned -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#datePetitionSigned">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>datePetitionSigned</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;date"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/insolvency#Petition"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#dateToRequestAppearance -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#dateToRequestAppearance">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>dateToRequestAppearance</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/insolvency#Petition"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#dateWoundUp -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#dateWoundUp">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>wound up date</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;date"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/insolvency#WindingUpOrder"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#description -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#description">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label rdf:datatype="&xsd;string">description property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Description of Trade Classification</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/insolvency#ITCcode"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#expectedDividend -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#expectedDividend">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#hasAppointer -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#hasAppointer">
+    	<rdfs:label>Appointer</rdfs:label>
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedAppointment"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#hasLongCode -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#hasLongCode">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label rdf:datatype="&xsd;string">hasLongCode property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">ITC Long Code</rdfs:comment>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/insolvency#ITCcode"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#hasNoticeNumber -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#hasNoticeNumber">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#hasShortCode -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#hasShortCode">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label rdf:datatype="&xsd;string">hasShortCode property</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">ITC Short Code</rdfs:comment>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/insolvency#ITCcode"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#meetingTime -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#meetingTime">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>meetingTime</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedMeeting"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CourtIssuedMeeting"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+	<!-- https://www.thegazette.co.uk/def/insolvency#addressType -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#addressType">
+        <rdfs:label>addressType</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2006/vcard/ns#Address"/>
+    </owl:DatatypeProperty>
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#meetingIsFor -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#meetingIsFor">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>meetingIsFor</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedMeeting"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CourtIssuedMeeting"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+    <!-- https://www.thegazette.co.uk/def/insolvency#purposeOfMeeting -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#purposeOfMeeting">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>purposeOfMeeting</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedMeeting"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CourtIssuedMeeting"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+    <!-- https://www.thegazette.co.uk/def/insolvency#proxyInformation -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#proxyInformation">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>proxyInformation</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedMeeting"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CourtIssuedMeeting"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#onOrBeforeClaimSubmit -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#onOrBeforeClaimSubmit">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>onOrBeforeClaimSubmit</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;date"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedNotice"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#NoticeOfDividend"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#onOrBeforeProvingDebts -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#onOrBeforeProvingDebts">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>onOrBeforeProvingDebts</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedMeeting"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedNotice"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+	
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#onOrBeforeProxySubmit -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#onOrBeforeProxySubmit">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>onOrBeforeProxySubmit</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedMeeting"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedNotice"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+    <!-- https://www.thegazette.co.uk/def/insolvency#onOrBeforeCreditorDetail -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#onOrBeforeCreditorDetail">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>onOrBeforeCreditorDetail</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedMeeting"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedNotice"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#typeOfLiquidation -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#typeOfLiquidation">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>typeOfLiquidation</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedLiquidatorAppointment"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#Resolution"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#typeOfPetition -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#typeOfPetition">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#dateOfMoratoriumComingIntoForce -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#dateOfMoratoriumComingIntoForce">
+        <rdfs:range rdf:resource="&xsd;date"/>
+    </owl:DatatypeProperty>    
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#dateOfMoratoriumComingToEnd -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#dateOfMoratoriumComingToEnd">
+        <rdfs:range rdf:resource="&xsd;date"/>
+    </owl:DatatypeProperty>   
+	
+	<!-- https://www.thegazette.co.uk/def/insolvency#provisionalLiquidatorAppointmentDetails -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#provisionalLiquidatorAppointmentDetails">
+        <rdfs:label>provisionalLiquidatorAppointmentDetails</rdfs:label>
+        <rdfs:domain rdf:resource="https://www.thegazette.co.uk/def/insolvency#Petition"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2006/vcard/ns#Address -->
+
+    <owl:Class rdf:about="&vCard;Address"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/court#CourtCase -->
+
+    <owl:Class rdf:about="&court;CourtCase"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#ARROrder -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#ARROrder">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#PersonalInsolvency"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#ARROrderNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#ARROrderNotice">
+        <rdfs:label xml:lang="en">Annulling Revoking Rescinding Orders Notice (Notice Code 2516)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2516</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#PersonalInsolvencyNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#ARROrder"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#AdministrationNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#AdministrationNotice">
+        <rdfs:label xml:lang="en">Administration Notice Class</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#AdministrationOrderNotice"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#AppointmentOfAdministratorNotice"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#MeetingOfCreditorsNotice"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#MeetingOfCreditorsOverseasTerritoriesAndDependenciesNotice"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#NoticeToMembers"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#CorporateInsolvencyNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CreditorsVoluntaryWindingUpNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#GeneralNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#MembersVolutaryWindingUpNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#ReceivershipNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#WindingUpByCourtNotice"/>
+        <rdfs:comment xml:lang="en">Superclas for all Administration based notices</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#AdministrationOrder -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#AdministrationOrder">
+        <rdfs:label xml:lang="en">Administration Order Thing Class</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.thegazette.co.uk/def/insolvency#orderAdministrator"/>
+                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#CourtOrder"/>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#PersonalInsolvency"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#WindingUpOrder"/>
+        <rdfs:comment xml:lang="en">Notice of Administration Order (s. 21(1)(a)) 
+Court ordered administration content</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#AdministrationOrderNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#AdministrationOrderNotice">
+        <rdfs:label xml:lang="en">Administration Orders Notice Class (Notice Code 2411)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2411</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#AdministrationNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#AdministrationOrder"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#AppointmentOfAdministratorNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#MeetingOfCreditorsNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#MeetingOfCreditorsOverseasTerritoriesAndDependenciesNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#NoticeToMembers"/>
+        <rdfs:comment xml:lang="en">Notice holder for Court ordered administration things</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#AdministrationOrderPersonalNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#AdministrationOrderPersonalNotice">
+        <rdfs:label xml:lang="en">Administration Order Notice (Notice Code 2505)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2505</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#PersonalInsolvencyNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#AdministrationOrder"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#AmendmentOfTitleOfProceedings -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#AmendmentOfTitleOfProceedings">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#PersonalInsolvency"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#AmendmentOfTitleOfProceedingsNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#AmendmentOfTitleOfProceedingsNotice">
+        <rdfs:label xml:lang="en">Amendment Of Title Of Proceedings Notice (Notice Code 2506)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2506</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#PersonalInsolvencyNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#AmendmentOfTitleOfProceedings"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#AnnualMeetingNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#AnnualMeetingNotice">
+        <rdfs:label xml:lang="en"> Court issed Annual Meetings Notice (Notice Code 2463)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2463</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedMeeting"/>
+                            <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CourtIssuedMeeting"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CourtAppointmentOfLiquidatorsNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CourtFinalMeetingsNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CourtMeetingsOfCreditorsNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CourtNoticeToCreditors"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CourtNoticeToCreditorsOverseasTerritoriesAndDependencies"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#DismissalOfWindingUpPetitionNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#NoticeOfDividends"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#NoticeOfIntendedDividends"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#PetitionsToWindUpCompaniesNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#PetitionsToWindUpPartnershipsNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#ReleaseOfLiquidatorNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#ServiceOfPetitionNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#WindingUpOrdersNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#WindingUpOrdersPartnershipsNotice"/>
+        <rdfs:comment xml:lang="en">Notice holder for court issued meeting things</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#AnnulmentOfProceedings -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#AnnulmentOfProceedings">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#PersonalInsolvency"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#AnnulmentOfProceedingsNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#AnnulmentOfProceedingsNotice">
+        <rdfs:label xml:lang="en">Annulment Of Proceedings Notice (Notice Code 2512)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2512</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#PersonalInsolvencyNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#AnnulmentOfProceedings"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#ApplicationOfDischarge -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#ApplicationOfDischarge">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#PersonalInsolvency"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#ApplicationOfDischargeNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#ApplicationOfDischargeNotice">
+        <rdfs:label xml:lang="en">Application Of Discharge Notice (Notice Code 2513)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2513</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#PersonalInsolvencyNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#ApplicationOfDischarge"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#AppointmentOfAdministrativeReceiversNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#AppointmentOfAdministrativeReceiversNotice">
+        <rdfs:label xml:lang="en">Appointment of Administrative Receivers Notice Class (Notice Code 2421)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2421</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedAdministratorAppointment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#AppointmentOfReceiversNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#ReceivershipMeetingOfCreditorsNotice"/>
+        <rdfs:comment xml:lang="en">Notice holder for company issued receiver administrator things</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#AppointmentOfAdministratorNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#AppointmentOfAdministratorNotice">
+        <rdfs:label xml:lang="en">Appointment of Administrators Notice Class (notice code 2410)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2410</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#AdministrationNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedAdministratorAppointment"/>
+                            <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CourtAdministratorAppointment"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#MeetingOfCreditorsNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#MeetingOfCreditorsOverseasTerritoriesAndDependenciesNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#NoticeToMembers"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Notice holder for Court ordered Appointment of Administrator things</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#AppointmentOfReceiversNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#AppointmentOfReceiversNotice">
+        <rdfs:label xml:lang="en">Appointment of Receivers Notice Class (Notice Code 2423)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2423</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedReceiverAppointment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#ReceivershipMeetingOfCreditorsNotice"/>
+        <rdfs:comment xml:lang="en">Notice holder for company issued receiver appointment things</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#AppointmentOfTrustees -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#AppointmentOfTrustees">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#PersonalInsolvency"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#AppointmentOfTrusteesNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#AppointmentOfTrusteesNotice">
+        <rdfs:label xml:lang="en">Appointment Of Trustees Notice (Notice Code 2507)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2507</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#PersonalInsolvencyNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#AppointmentOfTrustees"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#BankruptcyOrder -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#BankruptcyOrder">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#PersonalInsolvency"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#BankruptcyOrderNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#BankruptcyOrderNotice">
+        <rdfs:label xml:lang="en">Bankruptcy Order Notice (Notice Code 2503)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2503</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#PersonalInsolvencyNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#BankruptcyOrder"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#BankruptcyOrderPartnership -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#BankruptcyOrderPartnership">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#PersonalInsolvency"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#BankruptcyOrderPartnershipNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#BankruptcyOrderPartnershipNotice">
+        <rdfs:label xml:lang="en">Bankruptcy Order Partnership Notice (Notice Code 2504)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2504</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#PersonalInsolvencyNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#BankruptcyOrderPartnership"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#CompanyIssued -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#CompanyIssued">
+        <rdfs:label xml:lang="en">Company Issued Notice Things</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.thegazette.co.uk/def/insolvency#hasCompany"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#CorporateInsolvency"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CourtIssued"/>
+        <rdfs:comment xml:lang="en">Notice things that are Company based</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#CompanyIssuedAdministratorAppointment -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedAdministratorAppointment">
+        <rdfs:label>Company Issued Administration Appointment</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedAppointment"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedLiquidatorAppointment"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedReceiverAppointment"/>
+        <rdfs:comment xml:lang="en">Company issued appointment of administrator content</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#CompanyIssuedAppointment -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedAppointment">
+        <rdfs:label xml:lang="en">Company Issued Appointment Thing Class</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedAdministratorAppointment"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedLiquidatorAppointment"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedReceiverAppointment"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#CompanyIssued"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedMeeting"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#Petition"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#Release"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#Resolution"/>
+        <rdfs:comment xml:lang="en">SuperClass for all Company Issued appointments</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#CompanyIssuedLiquidatorAppointment -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedLiquidatorAppointment">
+        <rdfs:label>Company Issued Liquidator Appointment</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedAppointment"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedReceiverAppointment"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Company issed appointment of liquidator content</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#CompanyIssuedMeeting -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedMeeting">
+        <rdfs:label>Company Issued Meeting</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#CompanyIssued"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.thegazette.co.uk/def/insolvency#meetingLocation"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#Petition"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#Release"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#Resolution"/>
+        <rdfs:comment xml:lang="en">Company issued meeting content</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#CompanyIssuedNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedNotice">
+        <rdfs:label>Company Issued Notice</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#CompanyIssued"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#Petition"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#Release"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#Resolution"/>
+        <rdfs:comment xml:lang="en">Company issued notice content</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#CompanyIssuedReceiverAppointment -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedReceiverAppointment">
+        <rdfs:label rdf:datatype="&xsd;string">Company Issued Receiver Appointment Thing Class</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedAppointment"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.thegazette.co.uk/def/insolvency#appointReceiver"/>
+                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="&xsd;string">Company issued appointment of receiver content</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#CorporateInsolvency -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#CorporateInsolvency">
+        <rdfs:label xml:lang="en">CorporateInsolvencyThings Class</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CompanyIssued"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CourtIssued"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&publication;NotifiableThing"/>
+        <rdfs:comment xml:lang="en">Superclass for all Corporate Insolvency Things
+ie content that is used in Corporate Isolvency Notices</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#CorporateInsolvencyNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#CorporateInsolvencyNotice">
+        <rdfs:label xml:lang="en">CorporateInsolvencyNotices Class</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&publication;Notice"/>
+        <rdfs:comment xml:lang="en">Superclass for all Corporate Insolvency Notices</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#CourtAdministratorAppointment -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#CourtAdministratorAppointment">
+        <rdfs:label>Court AdministratorAppointment</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#CourtIssuedAppointment"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CourtLiquidatorAppointment"/>
+        <rdfs:comment xml:lang="en">Court based administrator appointment content</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#CourtAppointmentOfLiquidatorsNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#CourtAppointmentOfLiquidatorsNotice">
+        <rdfs:label xml:lang="en">Appointment of Liquidators Notice Class (Notice Code 2454)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2454</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#CourtLiquidatorAppointment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CourtFinalMeetingsNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CourtMeetingsOfCreditorsNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CourtNoticeToCreditors"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CourtNoticeToCreditorsOverseasTerritoriesAndDependencies"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#DismissalOfWindingUpPetitionNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#NoticeOfDividends"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#NoticeOfIntendedDividends"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#PetitionsToWindUpCompaniesNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#PetitionsToWindUpPartnershipsNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#ReleaseOfLiquidatorNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#ServiceOfPetitionNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#WindingUpOrdersNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#WindingUpOrdersPartnershipsNotice"/>
+        <rdfs:comment xml:lang="en">Notice holder for court appointment of liquidator things</rdfs:comment>
+    </owl:Class>
+    
+<!-- https://www.thegazette.co.uk/def/insolvency#CourtPetitionsAndOrdersCrossborderInsolvenciesNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#CourtPetitionsAndOrdersCrossborderInsolvenciesNotice">
+        <rdfs:label xml:lang="en">(Notice Code 2404)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2404</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#CourtIssuedNotice"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#CourtFinalMeetingsNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#CourtFinalMeetingsNotice">
+        <rdfs:label xml:lang="en"> Court issed Final Meetings Notice (Notice Code 2458)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2458</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#CourtIssuedMeeting"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CourtMeetingsOfCreditorsNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CourtNoticeToCreditors"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CourtNoticeToCreditorsOverseasTerritoriesAndDependencies"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#DismissalOfWindingUpPetitionNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#NoticeOfDividends"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#NoticeOfIntendedDividends"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#PetitionsToWindUpCompaniesNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#PetitionsToWindUpPartnershipsNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#ReleaseOfLiquidatorNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#ServiceOfPetitionNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#WindingUpOrdersNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#WindingUpOrdersPartnershipsNotice"/>
+        <rdfs:comment xml:lang="en">Notice holder for court issued meeting things</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#CourtIssued -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#CourtIssued">
+        <rdfs:label>Court Issued</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#CorporateInsolvency"/>
+        <rdfs:comment xml:lang="en">Superclass for Court issued notice content</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#CourtIssuedAppointment -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#CourtIssuedAppointment">
+        <rdfs:label xml:lang="en">Court Issed Appointment Thing</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CourtAdministratorAppointment"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CourtLiquidatorAppointment"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#CourtIssued"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CourtIssuedMeeting"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CourtIssuedNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CourtOrder"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#Petition"/>
+        <rdfs:comment xml:lang="en">Superclass for Court issued role appointment</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#CourtIssuedMeeting -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#CourtIssuedMeeting">
+        <rdfs:label xml:lang="en">Court Issed Meeting Thing</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#CourtIssued"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.thegazette.co.uk/def/insolvency#meetingLocation"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CourtIssuedNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CourtOrder"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#Petition"/>
+        <rdfs:comment xml:lang="en">Court issued meeting content</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#CourtIssuedNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#CourtIssuedNotice">
+        <rdfs:label xml:lang="en">Court Issed Notice Thing Class</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#CourtIssued"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CourtOrder"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#Petition"/>
+        <rdfs:comment xml:lang="en">Court issued notice content</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#CourtLiquidatorAppointment -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#CourtLiquidatorAppointment">
+        <rdfs:label xml:lang="en">Court Issed Liquidator Appointment Thing</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#CourtIssuedAppointment"/>
+        <rdfs:comment xml:lang="en">Court appointed liquidator content</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#CourtMeetingsOfCreditorsNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#CourtMeetingsOfCreditorsNotice">
+        <rdfs:label xml:lang="en">Meetings of Creditors Notice Class (Notice Code 2455)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2455</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#CourtIssuedMeeting"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CourtNoticeToCreditors"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CourtNoticeToCreditorsOverseasTerritoriesAndDependencies"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#DismissalOfWindingUpPetitionNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#NoticeOfDividends"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#NoticeOfIntendedDividends"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#PetitionsToWindUpCompaniesNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#PetitionsToWindUpPartnershipsNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#ReleaseOfLiquidatorNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#ServiceOfPetitionNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#WindingUpOrdersNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#WindingUpOrdersPartnershipsNotice"/>
+        <rdfs:comment xml:lang="en">Notice holder for court issued meeting thngs</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#CourtNoticeToCreditors -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#CourtNoticeToCreditors">
+        <rdfs:label xml:lang="en">Notices to Creditors Notice Class (Notice code 2460)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2460</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#CourtIssuedNotice"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CourtNoticeToCreditorsOverseasTerritoriesAndDependencies"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#DismissalOfWindingUpPetitionNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#NoticeOfDividends"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#NoticeOfIntendedDividends"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#PetitionsToWindUpCompaniesNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#PetitionsToWindUpPartnershipsNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#ReleaseOfLiquidatorNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#ServiceOfPetitionNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#WindingUpOrdersNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#WindingUpOrdersPartnershipsNotice"/>
+        <rdfs:comment xml:lang="en">Notice holder for court issued notice things</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#CourtNoticeToCreditorsOverseasTerritoriesAndDependencies -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#CourtNoticeToCreditorsOverseasTerritoriesAndDependencies">
+        <rdfs:label xml:lang="en">Notices to Creditors Overseas Territories and Dependencies Notice Class (Notice code 2465)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2465</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#CourtIssuedNotice"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#DismissalOfWindingUpPetitionNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#NoticeOfDividends"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#NoticeOfIntendedDividends"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#PetitionsToWindUpCompaniesNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#PetitionsToWindUpPartnershipsNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#ReleaseOfLiquidatorNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#ServiceOfPetitionNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#WindingUpOrdersNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#WindingUpOrdersPartnershipsNotice"/>
+        <rdfs:comment xml:lang="en">Notice holder for court issued notice things</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#CourtOrder -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#CourtOrder">
+        <rdfs:label xml:lang="en">Court Order Thing Class</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#AdministrationOrder"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#WindingUpOrder"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#CourtIssued"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#Petition"/>
+        <rdfs:comment xml:lang="en">Superclass for court orders</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#CreditorsAnnualLiquidationMeetingsNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#CreditorsAnnualLiquidationMeetingsNotice">
+        <rdfs:label xml:lang="en">Annual Liquidation Meeting Notice Class (Notice Code 2444)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2444</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedMeeting"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CreditorsAppointmentOfLiquidatorsNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CreditorsAppointmentOfLiquidatorsOverseasTerritoriesAndDependenciesNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CreditorsFinalMeetingsNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CreditorsFinalMeetingsOverseasTerritoriesAndDependenciesNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CreditorsMeetingsOfCreditorsNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CreditorsMeetingsOfCreditorsOverseasTerritoriesAndDependenciesNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CreditorsNoticeToCreditors"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CreditorsResolutionsForWindingUpNotice"/>
+        <rdfs:comment xml:lang="en">Notice holder for company issued annual liquidation meeting things</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#CreditorsAppointmentOfLiquidatorsNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#CreditorsAppointmentOfLiquidatorsNotice">
+        <rdfs:label xml:lang="en">Appointment of Liquidator Notice Class (Notice Code 2443)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2443</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedLiquidatorAppointment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CreditorsAppointmentOfLiquidatorsOverseasTerritoriesAndDependenciesNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CreditorsFinalMeetingsNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CreditorsFinalMeetingsOverseasTerritoriesAndDependenciesNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CreditorsMeetingsOfCreditorsNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CreditorsMeetingsOfCreditorsOverseasTerritoriesAndDependenciesNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CreditorsNoticeToCreditors"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CreditorsResolutionsForWindingUpNotice"/>
+        <rdfs:comment xml:lang="en">Notice holder for company issued appointment of liquidator things</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#CreditorsAppointmentOfLiquidatorsOverseasTerritoriesAndDependenciesNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#CreditorsAppointmentOfLiquidatorsOverseasTerritoriesAndDependenciesNotice">
+        <rdfs:label xml:lang="en">Appointment of Liquidator Overseas Territories and Dependencies Notice Class (Notice Code 2448)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2448</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#CreditorsVoluntaryWindingUpNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedLiquidatorAppointment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CreditorsFinalMeetingsNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CreditorsFinalMeetingsOverseasTerritoriesAndDependenciesNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CreditorsMeetingsOfCreditorsNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CreditorsMeetingsOfCreditorsOverseasTerritoriesAndDependenciesNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CreditorsNoticeToCreditors"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CreditorsResolutionsForWindingUpNotice"/>
+        <rdfs:comment xml:lang="en">Notice holder for company issued appointment of liquidator things</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#CreditorsFinalMeetingsNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#CreditorsFinalMeetingsNotice">
+        <rdfs:label xml:lang="en">Final Meeting Notice Class (Notice Code 2445)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2445</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#CreditorsVoluntaryWindingUpNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedMeeting"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CreditorsFinalMeetingsOverseasTerritoriesAndDependenciesNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CreditorsMeetingsOfCreditorsNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CreditorsMeetingsOfCreditorsOverseasTerritoriesAndDependenciesNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CreditorsNoticeToCreditors"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CreditorsResolutionsForWindingUpNotice"/>
+        <rdfs:comment xml:lang="en">Notice holder for company issued meeting things</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#CreditorsFinalMeetingsOverseasTerritoriesAndDependenciesNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#CreditorsFinalMeetingsOverseasTerritoriesAndDependenciesNotice">
+        <rdfs:label xml:lang="en">Final Meeting Overseas Territories and Dependencies Notice Class (Notice Code 2449)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2449</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#CreditorsVoluntaryWindingUpNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedMeeting"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CreditorsMeetingsOfCreditorsNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CreditorsMeetingsOfCreditorsOverseasTerritoriesAndDependenciesNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CreditorsNoticeToCreditors"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CreditorsResolutionsForWindingUpNotice"/>
+        <rdfs:comment xml:lang="en">Notice holder for company issued meeting things</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#CreditorsMeetingsOfCreditorsNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#CreditorsMeetingsOfCreditorsNotice">
+        <rdfs:label xml:lang="en">Meetings of Creditors Notice Class (Notice Code 2442)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2442</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedMeeting"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CreditorsMeetingsOfCreditorsOverseasTerritoriesAndDependenciesNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CreditorsNoticeToCreditors"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CreditorsResolutionsForWindingUpNotice"/>
+        <rdfs:comment xml:lang="en">Holder notice for company issued meeting things</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#CreditorsMeetingsOfCreditorsOverseasTerritoriesAndDependenciesNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#CreditorsMeetingsOfCreditorsOverseasTerritoriesAndDependenciesNotice">
+        <rdfs:label xml:lang="en">Meetings of Creditors Notice Overseas Territories and Dependencies Class (Notice Code 2447)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2447</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#CreditorsVoluntaryWindingUpNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedMeeting"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CreditorsNoticeToCreditors"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CreditorsResolutionsForWindingUpNotice"/>
+        <rdfs:comment xml:lang="en">Holder notice for company issued meeting things</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#CreditorsNoticeToCreditors -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#CreditorsNoticeToCreditors">
+        <rdfs:label xml:lang="en">Notices to Creditors Class (Notice Code 2446)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2446</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedNotice"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#CreditorsResolutionsForWindingUpNotice"/>
+        <rdfs:comment xml:lang="en">Holder notice for company issued notice things</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#CreditorsResolutionsForWindingUpNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#CreditorsResolutionsForWindingUpNotice">
+        <rdfs:label xml:lang="en">Resolutions for Winding-up Notice Class (Notice Code 2441)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2441</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#Resolution"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Notice holder for resolution things</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#CreditorsVoluntaryWindingUpNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#CreditorsVoluntaryWindingUpNotice">
+        <rdfs:label rdf:datatype="&xsd;string">Creditors Volutary Winding Up Notice Class</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CreditorsAnnualLiquidationMeetingsNotice"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CreditorsAppointmentOfLiquidatorsNotice"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CreditorsAppointmentOfLiquidatorsOverseasTerritoriesAndDependenciesNotice"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CreditorsFinalMeetingsNotice"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CreditorsFinalMeetingsOverseasTerritoriesAndDependenciesNotice"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CreditorsMeetingsOfCreditorsNotice"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CreditorsMeetingsOfCreditorsOverseasTerritoriesAndDependenciesNotice"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CreditorsNoticeToCreditors"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CreditorsResolutionsForWindingUpNotice"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#CorporateInsolvencyNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#GeneralNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#MembersVolutaryWindingUpNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#ReceivershipNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#WindingUpByCourtNotice"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Superclass for all notices related to Creditors Voluntary winding Up</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#DischargeOrder -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#DischargeOrder">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#PersonalInsolvency"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#DischargeOrderNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#DischargeOrderNotice">
+        <rdfs:label xml:lang="en">Discharge Order Notice (Notice Code 2515)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2515</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#PersonalInsolvencyNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#DischargeOrder"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#DismissalOfWindingUpPetitionNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#DismissalOfWindingUpPetitionNotice">
+        <rdfs:label xml:lang="en">Dismissal of Winding Up Petition Notice Class (Notice Code 2461)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2461</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#CourtIssuedNotice"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#NoticeOfDividends"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#NoticeOfIntendedDividends"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#PetitionsToWindUpCompaniesNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#PetitionsToWindUpPartnershipsNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#ReleaseOfLiquidatorNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#ServiceOfPetitionNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#WindingUpOrdersNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#WindingUpOrdersPartnershipsNotice"/>
+        <rdfs:comment xml:lang="en">Notice holder for petition things</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#FinalMeetings -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#FinalMeetings">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#PersonalInsolvency"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#FinalMeetingsNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#FinalMeetingsNotice">
+        <rdfs:label xml:lang="en">Final Meetings Notice (Notice Code 2511)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2511</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#PersonalInsolvencyNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#FinalMeetings"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#GeneralNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#GeneralNotice">
+        <rdfs:label rdf:datatype="&xsd;string">General Notice Class</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#CorporateInsolvencyNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#MembersVolutaryWindingUpNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#ReceivershipNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#WindingUpByCourtNotice"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Superclass for general notices</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#ITCcode -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#ITCcode">
+        <rdfs:label rdf:datatype="&xsd;string">Insolvency Trade Classification Code</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string"></rdfs:comment>
+        <rdfs:comment rdf:datatype="&xsd;string">ITC code</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#MeetingOfCreditors -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#MeetingOfCreditors">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#PersonalInsolvency"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#MeetingOfCreditorsNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#MeetingOfCreditorsNotice">
+        <rdfs:label xml:lang="en">Meetings of Creditors Notice Class (Notice Code 2412)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2412</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#CourtIssuedMeeting"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#MeetingOfCreditorsOverseasTerritoriesAndDependenciesNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#NoticeToMembers"/>
+        <rdfs:comment xml:lang="en">Notice holder for court issued meeting of creditor things</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#MeetingOfCreditorsOverseasTerritoriesAndDependenciesNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#MeetingOfCreditorsOverseasTerritoriesAndDependenciesNotice">
+        <rdfs:label xml:lang="en">Meetings of Creditors Notice Overseas Territories and Dependencies Class (Notice Code 2414)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2414</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#CourtIssuedMeeting"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#NoticeToMembers"/>
+        <rdfs:comment xml:lang="en">Notice holder for court issued meeting of creditor things</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#MeetingOfCreditorsPersonalNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#MeetingOfCreditorsPersonalNotice">
+        <rdfs:label xml:lang="en">Meeting Of Creditors Notice (Notice Code 2526)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2526</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#PersonalInsolvencyNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#MeetingOfCreditors"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#MembersAnnualLiquidationMeetingsNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#MembersAnnualLiquidationMeetingsNotice">
+        <rdfs:label xml:lang="en">Memebers Annual Liquidation Meeting Notice Class (Notice Code 2434)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2434</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedMeeting"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#MembersAppointmentOfLiquidatorsNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#MembersFinalMeetingsNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#MembersFinalMeetingsOverseasTerritoriesAndDependenciesNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#MembersNoticeToCreditors"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#MembersResolutionsForWindingUpNotice"/>
+        <rdfs:comment xml:lang="en">Notice holder for company issued meeting things</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#MembersAppointmentOfLiquidatorsNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#MembersAppointmentOfLiquidatorsNotice">
+        <rdfs:label xml:lang="en">Members Appointment of Liquidators Notice Class (Notice Code 2432)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2432</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedLiquidatorAppointment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#MembersFinalMeetingsNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#MembersFinalMeetingsOverseasTerritoriesAndDependenciesNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#MembersNoticeToCreditors"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#MembersResolutionsForWindingUpNotice"/>
+        <rdfs:comment xml:lang="en">Notice holder for company issued liquidator appointment things</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#MembersFinalMeetingsNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#MembersFinalMeetingsNotice">
+        <rdfs:label xml:lang="en">Members Final Meeting Notice Class (Notice code 2435)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2435</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedMeeting"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#MembersFinalMeetingsOverseasTerritoriesAndDependenciesNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#MembersNoticeToCreditors"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#MembersResolutionsForWindingUpNotice"/>
+        <rdfs:comment xml:lang="en">Notice holder for company issued meeting things</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#MembersFinalMeetingsOverseasTerritoriesAndDependenciesNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#MembersFinalMeetingsOverseasTerritoriesAndDependenciesNotice">
+        <rdfs:label xml:lang="en">Members Final Meeting - Overseas Territories and Dependencies Notice Class (Notice code 2436)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2436</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedMeeting"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#MembersNoticeToCreditors"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#MembersResolutionsForWindingUpNotice"/>
+        <rdfs:comment xml:lang="en">Notice holder for company issued meeting things</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#MembersNoticeToCreditors -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#MembersNoticeToCreditors">
+        <rdfs:label xml:lang="en">Members Notice to Creditors Class (Notice Code 2433)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2433</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#MembersVolutaryWindingUpNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedNotice"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#MembersResolutionsForWindingUpNotice"/>
+        <rdfs:comment xml:lang="en">Notice holder for company issued notice thing</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#MembersResolutionsForWindingUpNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#MembersResolutionsForWindingUpNotice">
+        <rdfs:label xml:lang="en">Members Resolutions for Winding-up Notice Class (Notice Code 2431)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2431</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#Resolution"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Notice holder for resolution things</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#MembersVolutaryWindingUpNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#MembersVolutaryWindingUpNotice">
+        <rdfs:label rdf:datatype="&xsd;string">Members Voluntary Winding Up Notice Class</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#MembersAnnualLiquidationMeetingsNotice"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#MembersAppointmentOfLiquidatorsNotice"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#MembersFinalMeetingsNotice"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#MembersFinalMeetingsOverseasTerritoriesAndDependenciesNotice"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#MembersNoticeToCreditors"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#MembersResolutionsForWindingUpNotice"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#CorporateInsolvencyNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#ReceivershipNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#WindingUpByCourtNotice"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Superclass for all notices related to Members Voluntary winding Up</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#MoratoriumComingIntoForceNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#MoratoriumComingIntoForceNotice">
+        <rdfs:label xml:lang="en">Moratorium Coming Into Force Notice Class (Notice Code 2401)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2401</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedNotice"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#MoratoriumComingToAnEndNotice"/>
+        <rdfs:comment xml:lang="en">Notice holder for company issued notice things</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#MoratoriumComingToAnEndNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#MoratoriumComingToAnEndNotice">
+        <rdfs:label xml:lang="en">MoratoriumComing to an End Notice Class (Notice Code 2402)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2402</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedNotice"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Notice holder for company issued notice things</rdfs:comment>
+    </owl:Class>
+    
+    <!-- https://www.thegazette.co.uk/def/insolvency#MoratoriumOtherNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#MoratoriumOtherNotice">
+        <rdfs:label xml:lang="en">Moratorium Other Class (Notice Code 2408)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2408</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedNotice"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Notice holder for company issued notice things</rdfs:comment>
+    </owl:Class>
+	
+	<!-- https://www.thegazette.co.uk/def/insolvency#MoratoriumOverseasTerritoriesNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#MoratoriumOverseasTerritoriesNotice">
+        <rdfs:label xml:lang="en">Moratorium Overseas Territories Class (Notice Code 2405)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2405</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedNotice"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Notice holder for company issued notice things</rdfs:comment>
+    </owl:Class>
+	
+	<!-- https://www.thegazette.co.uk/def/insolvency#MoratoriumReuseOfProhibitedNameNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#MoratoriumReuseOfProhibitedNameNotice">
+        <rdfs:label xml:lang="en">Moratorium Reuse of Prohibited Name Class (Notice Code 2403)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2403</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedNotice"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Notice holder for company issued notice things</rdfs:comment>
+    </owl:Class>
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#NoticeOfDividend -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#NoticeOfDividend">
+    	<rdfs:label>Notice Of Dividend (2510)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#PersonalInsolvency"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#NoticeOfDividendNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#NoticeOfDividendNotice">
+        <rdfs:label xml:lang="en">Notice Of Dividend Notice (Notice Code 2510)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2510</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#PersonalInsolvencyNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#NoticeOfDividend"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#NoticeOfDividends -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#NoticeOfDividends">
+        <rdfs:label xml:lang="en">Notice of Dividends Class (Notice Code 2457)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2457</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedNotice"/>
+                            <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CourtIssuedNotice"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#NoticeOfIntendedDividends"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#PetitionsToWindUpCompaniesNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#PetitionsToWindUpPartnershipsNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#ReleaseOfLiquidatorNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#ServiceOfPetitionNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#WindingUpOrdersNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#WindingUpOrdersPartnershipsNotice"/>
+        <rdfs:comment xml:lang="en">Notice holder for notice things</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#NoticeOfIntendedDividend -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#NoticeOfIntendedDividend">
+    	<rdfs:label>Notice Of Intended Dividend (2509)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#PersonalInsolvency"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#NoticeOfIntendedDividendNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#NoticeOfIntendedDividendNotice">
+        <rdfs:label xml:lang="en">Notice Of Intended Dividend Notice (Notice Code 2509)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2509</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#PersonalInsolvencyNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#NoticeOfIntendedDividend"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#NoticeOfIntendedDividends -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#NoticeOfIntendedDividends">
+        <rdfs:label xml:lang="en">Notice of Intended Dividends Class (Notice Code 2406)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2406</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedNotice"/>
+                            <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CourtIssuedNotice"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#PetitionsToWindUpCompaniesNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#PetitionsToWindUpPartnershipsNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#ReleaseOfLiquidatorNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#ServiceOfPetitionNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#WindingUpOrdersNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#WindingUpOrdersPartnershipsNotice"/>
+        <rdfs:comment xml:lang="en">Notice holder for notice things</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#NoticeOfMeetingCreditors -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#NoticeOfMeetingCreditors">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#PersonalInsolvency"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#NoticeOfMeetingCreditorsNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#NoticeOfMeetingCreditorsNotice">
+        <rdfs:label xml:lang="en">Notice Of Meeting Creditors Notice (Notice Code 2511)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2511</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#PersonalInsolvencyNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#NoticeOfMeetingCreditors"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#NoticeOfStatuoryDemand -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#NoticeOfStatuoryDemand">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#PersonalInsolvency"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#NoticeOfStatuoryDemandNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#NoticeOfStatuoryDemandNotice">
+        <rdfs:label xml:lang="en">Notice Of Statuory Demand Notice (Notice Code 2501)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2501</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#PersonalInsolvencyNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#NoticeOfStatuoryDemand"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#NoticeToCreditors -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#NoticeToCreditors">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#PersonalInsolvency"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#NoticeToCreditorsNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#NoticeToCreditorsNotice">
+        <rdfs:label xml:lang="en">Notice To Creditors Notice (Notice Code 2508)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2508</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#PersonalInsolvencyNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#NoticeToCreditors"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#NoticeToMembers -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#NoticeToMembers">
+        <rdfs:label xml:lang="en">Notices to Members Notice Class</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2413</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedNotice"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Notice holder for company issued notice things</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#PersonalInsolvency -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#PersonalInsolvency">
+        <rdfs:label>PersonalInsolvency</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&publication;NotifiableThing"/>
+        <rdfs:comment xml:lang="en">Superclass for all Personal Insolvency Things
+ie content that is used in Personal Insolvency Notices</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#PersonalInsolvencyNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#PersonalInsolvencyNotice">
+        <rdfs:label>PersonalInsolvencyNotice</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&publication;Notice"/>
+        <rdfs:comment xml:lang="en">Superclass for all Personal Insolvency Notices</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#Petition -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#Petition">
+        <rdfs:label>Petition</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#CourtIssued"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.thegazette.co.uk/def/insolvency#hasPetitioner"/>
+                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#Release"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#Resolution"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Court issued petition</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#PetitionsToWindUpCompaniesNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#PetitionsToWindUpCompaniesNotice">
+        <rdfs:label xml:lang="en">Petitions to Wind Up (Companies) Notice Class (Notice code 2450)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2450</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#Petition"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#PetitionsToWindUpPartnershipsNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#ReleaseOfLiquidatorNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#ServiceOfPetitionNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#WindingUpOrdersNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#WindingUpOrdersPartnershipsNotice"/>
+        <rdfs:comment xml:lang="en">Notice holder for petition things</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#PetitionsToWindUpPartnershipsNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#PetitionsToWindUpPartnershipsNotice">
+        <rdfs:label xml:lang="en">Petitions to Wind Up (Partnerships) Notice Class (Notice Code 2451)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2451</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#Petition"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#ReleaseOfLiquidatorNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#ServiceOfPetitionNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#WindingUpOrdersNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#WindingUpOrdersPartnershipsNotice"/>
+        <rdfs:comment xml:lang="en">Notice holder for petition things</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#PublicExaminations -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#PublicExaminations">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#PersonalInsolvency"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#PublicExaminationsNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#PublicExaminationsNotice">
+        <rdfs:label xml:lang="en">Public Examinations Notice (Notice Code 2527)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2527</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#PersonalInsolvencyNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#PublicExaminations"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#ReceivershipMeetingOfCreditorsNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#ReceivershipMeetingOfCreditorsNotice">
+        <rdfs:label xml:lang="en">Receivership Meeting of Creditors Notice Class (Notice Code 2422)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2422</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#CompanyIssuedMeeting"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Notice holder for company issued meeting things</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#ReceivershipNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#ReceivershipNotice">
+        <rdfs:label rdf:datatype="&xsd;string">Receivership Notice Class</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#AppointmentOfAdministrativeReceiversNotice"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#AppointmentOfReceiversNotice"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#ReceivershipMeetingOfCreditorsNotice"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#CorporateInsolvencyNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#WindingUpByCourtNotice"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Superclass for all recerivership based notices</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#Release -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#Release">
+        <rdfs:label rdf:datatype="&xsd;string">Release Thing Class</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#CompanyIssued"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.thegazette.co.uk/def/insolvency#releasedLiquidator"/>
+                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#Resolution"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Notice of release content</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#ReleaseOfLiquidatorNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#ReleaseOfLiquidatorNotice">
+        <rdfs:label xml:lang="en">Release of Liquidator Notice Class (Notice Code 2459)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2459</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#Release"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#ServiceOfPetitionNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#WindingUpOrdersNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#WindingUpOrdersPartnershipsNotice"/>
+        <rdfs:comment xml:lang="en">Notice holder for release things</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#ReleaseOfTrustees -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#ReleaseOfTrustees">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#PersonalInsolvency"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#ReleaseOfTrusteesNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#ReleaseOfTrusteesNotice">
+        <rdfs:label xml:lang="en">Release Of Trustees Notice (Notice Code 2514)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2514</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#PersonalInsolvencyNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#ReleaseOfTrustees"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#Resolution -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#Resolution">
+        <rdfs:label>Resolution</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#CompanyIssued"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.thegazette.co.uk/def/insolvency#resolutionLiquidator"/>
+                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="&xsd;string">Resolution notice content</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#SatisfactionOfTrustDeed -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#SatisfactionOfTrustDeed">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#PersonalInsolvency"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#SatisfactionOfTrustDeedNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#SatisfactionOfTrustDeedNotice">
+        <rdfs:label xml:lang="en">Satisfaction Of Trust Deed (Notice Code 2519)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2519</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#PersonalInsolvencyNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#SatisfactionOfTrustDeed"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#Sequestration -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#Sequestration">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#PersonalInsolvency"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#SequestrationNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#SequestrationNotice">
+        <rdfs:label xml:lang="en">Sequestration Notice (Notice Code 2517)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2517</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#PersonalInsolvencyNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#Sequestration"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#ServiceOfPetitionNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#ServiceOfPetitionNotice">
+        <rdfs:label xml:lang="en">Service of Petition Notice Class (Notice code 2462)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2462</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#CourtIssuedNotice"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#WindingUpOrdersNotice"/>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#WindingUpOrdersPartnershipsNotice"/>
+        <rdfs:comment xml:lang="en">Notice holder for Notice things</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#SubstitutedServiceOfPetition -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#SubstitutedServiceOfPetition">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#PersonalInsolvency"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#SubstitutedServiceOfPetitionNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#SubstitutedServiceOfPetitionNotice">
+        <rdfs:label xml:lang="en">Substituted Service Of Petition Notice (Notice Code 2502)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2502</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#PersonalInsolvencyNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#SubstitutedServiceOfPetition"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#TransferOfAppointments -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#TransferOfAppointments">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#PersonalInsolvency"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#TransferOfAppointmentsNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#TransferOfAppointmentsNotice">
+        <rdfs:label xml:lang="en">Transfer Of Appointments Notice (Notice Code)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">NEW</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#PersonalInsolvencyNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#TransferOfAppointments"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#TrustDeeds -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#TrustDeeds">
+    	<rdfs:label>TrustDeeds</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#PersonalInsolvency"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#TrustDeedsNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#TrustDeedsNotice">
+        <rdfs:label xml:lang="en">Trust Deeds Notice (Notice Code 2518)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2518</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#PersonalInsolvencyNotice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#TrustDeeds"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#WindingUpByCourtNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#WindingUpByCourtNotice">
+        <rdfs:label rdf:datatype="&xsd;string">Winding up by court notice Class</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#AnnualMeetingNotice"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CourtAppointmentOfLiquidatorsNotice"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CourtFinalMeetingsNotice"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CourtMeetingsOfCreditorsNotice"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CourtNoticeToCreditors"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#CourtNoticeToCreditorsOverseasTerritoriesAndDependencies"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#DismissalOfWindingUpPetitionNotice"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#NoticeOfDividends"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#NoticeOfIntendedDividends"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#PetitionsToWindUpCompaniesNotice"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#PetitionsToWindUpPartnershipsNotice"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#ReleaseOfLiquidatorNotice"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#ServiceOfPetitionNotice"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#WindingUpOrdersNotice"/>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/insolvency#WindingUpOrdersPartnershipsNotice"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#CorporateInsolvencyNotice"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Superclass for all winding up by court notices</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#WindingUpOrder -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#WindingUpOrder">
+        <rdfs:label>Winding Up Order</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/insolvency#CourtOrder"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Winding up order</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#WindingUpOrdersNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#WindingUpOrdersNotice">
+        <rdfs:label xml:lang="en">Winding-Up Orders Notice Class (Notice Code 2452)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&def;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;integer">2452</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#WindingUpOrder"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://www.thegazette.co.uk/def/insolvency#WindingUpOrdersPartnershipsNotice"/>
+        <rdfs:comment xml:lang="en">Notice holder for Winding Up things</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/insolvency#WindingUpOrdersPartnershipsNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/insolvency#WindingUpOrdersPartnershipsNotice">
+        <rdfs:label xml:lang="en">Winding-Up Orders (Partnerships) Notice Class (Notice Code 2453)</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2453</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&publication;isAbout"/>
+                <owl:allValuesFrom rdf:resource="https://www.thegazette.co.uk/def/insolvency#WindingUpOrder"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Notice holder for Winding Up things</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/organisation#Organisation -->
+
+    <owl:Class rdf:about="&organisation;Organisation"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/person#Administrator -->
+
+    <owl:Class rdf:about="&person;Administrator"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/person#InsolvencyPractitioner -->
+
+    <owl:Class rdf:about="&person;InsolvencyPractitioner"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/person#Liquidator -->
+
+    <owl:Class rdf:about="&person;Liquidator"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/person#Person -->
+
+    <owl:Class rdf:about="&person;Person"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/person#Receiver -->
+
+    <owl:Class rdf:about="&person;Receiver"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/person#Role -->
+
+    <owl:Class rdf:about="&person;Role"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/person#Solicitor -->
+
+    <owl:Class rdf:about="&person;Solicitor"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/publication#Notice -->
+
+    <owl:Class rdf:about="&publication;Notice"/>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/publication#NotifiableThing -->
+
+    <owl:Class rdf:about="&publication;NotifiableThing"/>
+	
+	<!-- https://www.thegazette.co.uk/def/insolvency#dateInsolventLiquidation -->
+
+    <owl:DatatypeProperty rdf:about="https://www.thegazette.co.uk/def/insolvency#dateInsolventLiquidation">
+        <rdfs:label rdf:datatype="&xsd;string">dateInsolventLiquidation</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;date"/>
+    </owl:DatatypeProperty>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.2.1789) http://owlapi.sourceforge.net -->
+

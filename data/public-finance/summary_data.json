@@ -1,0 +1,78 @@
+{
+    "classes": {
+        "https://www.thegazette.co.uk/def/public-finance#PublicFinanceNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/public-finance#PublicFinanceThing": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/public-finance#BankOfEngland": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/public-finance#BankOfEnglandNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/public-finance#BankersAct": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/public-finance#BankersActNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/public-finance#BankOfIssueScotland": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/public-finance#BankOfIssueScotlandNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/public-finance#Currency": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/public-finance#CurrencyNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/public-finance#SavingInvestment": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/public-finance#SavingInvestmentNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/public-finance#Tax": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/public-finance#TaxNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/public-finance#Treasury": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/public-finance#TreasuryNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/public-finance#Vat": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/public-finance#VatNotice": {
+            "label": null,
+            "comment": null
+        }
+    },
+    "object_properties": {},
+    "data_properties": {}
+}

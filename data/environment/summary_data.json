@@ -1,0 +1,242 @@
+{
+    "classes": {
+        "https://www.thegazette.co.uk/def/environment#ImpactAssesments": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/environment#ImpactAssesmentsNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/environment#CleanAirNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/environment#EnvironmentThing": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/consultation#StatutoryConsultationNotification": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/environment#CoastProtectionNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/environment#ControlOfPollutionNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/environment#EnvironmentalProtectionNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/environment#EnvironmentNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/environment#FloodPreventionNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/environment#HarboursNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/environment#NationalParksAndAccessToTheCountrysideNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/environment#WildlifeAndCountrysideNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/environment#Permit": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/environment#DeclarationOfNatureReserve": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/environment#EnvironmentalPermit": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/environment#IntegratedPollutionPreventionAndControlPermit": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/environment#IntegratedPollutionPreventionAndControlPermitApplication": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/environment#IntegratedPollutionPreventionAndControlPermitRevocation": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/environment#IntegratedPollutionPreventionAndControlPermitVariation": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/environment#EnvironmentalPermitApplication": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/environment#EnvironmentalPermitRevocation": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/environment#EnvironmentalPermitVariation": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/environment#ChangeOfSmokeControl": {
+            "label": "SmokeControl class",
+            "comment": "superclass for all smoke control classes"
+        },
+        "https://www.thegazette.co.uk/def/environment#NewSmokeControlArea": {
+            "label": "NewSmokeControlArea class",
+            "comment": "designation of a new smoke control area"
+        },
+        "https://www.thegazette.co.uk/def/environment#RevokeSmokeControlArea": {
+            "label": "RevokeSmokeControlArea class",
+            "comment": "revoke a smoke control area"
+        },
+        "https://www.thegazette.co.uk/def/environment#VariationOfSmokeControlArea": {
+            "label": "VariationOfSmokeControlArea class",
+            "comment": "change smoke control area boundaries"
+        },
+        "https://www.thegazette.co.uk/def/environment#SmokeControlExemption": {
+            "label": "SmokeControlExemption class",
+            "comment": "exemption within a smoke control area"
+        },
+        "https://www.thegazette.co.uk/def/environment#ChangeAirQualityManagementArea": {
+            "label": "ChangeAirQualityManagementArea class",
+            "comment": "superclass for all Air Quality Management Area classes"
+        },
+        "https://www.thegazette.co.uk/def/environment#NewAirQualityManagementArea": {
+            "label": "NewAirQualityManagementArea class",
+            "comment": "designation of a new air quality management area"
+        },
+        "https://www.thegazette.co.uk/def/environment#RevokeAirQualityManagementArea": {
+            "label": "RevokeAirQualityManagementArea class",
+            "comment": "revoke an existing air quality management area"
+        },
+        "https://www.thegazette.co.uk/def/environment#VariationOfAirQualityManagementArea": {
+            "label": "RevokeAirQualityManagementArea class",
+            "comment": "variation an existing air quality management area"
+        },
+        "https://www.thegazette.co.uk/def/environment#OperationOfInstallation": {
+            "label": "OperationOfInstallation class",
+            "comment": "an operation of an installation"
+        },
+        "https://www.thegazette.co.uk/def/environment#DesignateNoiseAbatementZone": {
+            "label": "DesignateNoiseAbatementZone class",
+            "comment": "designated noise abatement zone"
+        },
+        "https://www.thegazette.co.uk/def/environment#ChangeOfNationalNatureReserve": {
+            "label": "NationalNatureReserve class",
+            "comment": "national nature reserve"
+        },
+        "https://www.thegazette.co.uk/def/environment#NewNationalNatureReserve": {
+            "label": "NewNationalNatureReserve class",
+            "comment": "new national nature reserve"
+        },
+        "https://www.thegazette.co.uk/def/environment#RevokeNationalNatureReserve": {
+            "label": "RevokeNationalNatureReserve class",
+            "comment": "revoke existing national nature reserve"
+        },
+        "https://www.thegazette.co.uk/def/environment#VariationOfNationalNatureReserve": {
+            "label": "VariationOfNationalNatureReserve class",
+            "comment": "variation of national nature reserve boundaries"
+        },
+        "https://www.thegazette.co.uk/def/environment#CoastalProtectionWork": {
+            "label": "CoastalProtectionWork class",
+            "comment": "Coastal protection work"
+        },
+        "https://www.thegazette.co.uk/def/environment#ChangeOfFootpath": {
+            "label": "ChangeOfFootpath class",
+            "comment": "superclass for all changes of footpath classes"
+        },
+        "https://www.thegazette.co.uk/def/environment#NewFootpath": {
+            "label": "NewFootpath class",
+            "comment": "declare a new footpath"
+        },
+        "https://www.thegazette.co.uk/def/environment#RevokeFootpath": {
+            "label": "RevokeFootpath class",
+            "comment": "revoke existing footpath"
+        }
+    },
+    "object_properties": {
+        "https://www.thegazette.co.uk/def/environment#isAboutDocument": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/environment#EnvironmentThing",
+            "range": "https://www.thegazette.co.uk/def/consultation#Document"
+        },
+        "https://www.thegazette.co.uk/def/environment#hasAppliedTo": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/environment#Permit",
+            "range": "https://www.thegazette.co.uk/def/organisation#Organisation"
+        },
+        "https://www.thegazette.co.uk/def/environment#hasApplicant": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/environment#Permit",
+            "range": "https://www.thegazette.co.uk/def/organisation#Organisation"
+        },
+        "https://www.thegazette.co.uk/def/environment#hasExemptedProperty": {
+            "label": "hasExemptedProperty property",
+            "comment": "location within smoke control area that is exempted from the control",
+            "domain": "https://www.thegazette.co.uk/def/environment#SmokeControlExemption",
+            "range": "http://www.geonames.org/ontology#Feature"
+        },
+        "https://www.thegazette.co.uk/def/environment#hasSmokeControlAreaBoundaries": {
+            "label": "hasSmokeControlAreaBoundaries property",
+            "comment": "locations that mark the boundaries to an Smoke Control Area",
+            "domain": "https://www.thegazette.co.uk/def/environment#ChangeOfSmokeControl",
+            "range": "http://www.geonames.org/ontology#Feature"
+        },
+        "https://www.thegazette.co.uk/def/environment#hasAirQualityManagementAreaBoundaries": {
+            "label": "hasAirQualityManagementAreaBoundaries property",
+            "comment": "locations that mark the boundaries to an Air Quality Management Area",
+            "domain": "https://www.thegazette.co.uk/def/environment#ChangeAirQualityManagementArea",
+            "range": "http://www.geonames.org/ontology#Feature"
+        }
+    },
+    "data_properties": {
+        "https://www.thegazette.co.uk/def/environment#dateSigned": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/environment#EnvironmentThing",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/environment#typeOfInstallation": {
+            "label": "typeOfInstallation property",
+            "comment": "type of installation",
+            "domain": "https://www.thegazette.co.uk/def/environment#OperationOfInstallation",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/environment#totalArea": {
+            "label": "totalArea property",
+            "comment": "approx total area of nature reserve",
+            "domain": "https://www.thegazette.co.uk/def/environment#ChangeOfNationalNatureReserve",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/environment#estimatedCost": {
+            "label": "estimatedCost property",
+            "comment": "estimated cost of coastal protection work",
+            "domain": "https://www.thegazette.co.uk/def/environment#CoastalProtectionWork",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/environment#footpathName": {
+            "label": "footpathName property",
+            "comment": "name of footpath",
+            "domain": "https://www.thegazette.co.uk/def/environment#ChangeOfFootpath",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        }
+    }
+}

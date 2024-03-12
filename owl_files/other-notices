@@ -1,0 +1,195 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf:RDF [
+    <!ENTITY dcterms "http://purl.org/dc/terms/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY water "https://www.thegazette.co.uk/def/water#" >
+    <!ENTITY person "https://www.thegazette.co.uk/def/person#" >
+    <!ENTITY wgs84_pos "http://www.w3.org/2003/01/geo/wgs84_pos#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY authority "https://www.thegazette.co.uk/def/authority#" >
+    <!ENTITY transport "https://www.thegazette.co.uk/def/transport#" >
+    <!ENTITY publication "https://www.thegazette.co.uk/def/publication#" >
+    <!ENTITY environment "https://www.thegazette.co.uk/def/environment#" >
+    <!ENTITY consultation "https://www.thegazette.co.uk/def/consultation#" >
+    <!ENTITY organisation "https://www.thegazette.co.uk/def/organisation#" >
+	<!ENTITY ns "http://www.w3.org/2006/vcard/ns#" >
+	<!ENTITY ontology "https://www.thegazette.co.uk/def/publication#" >
+	<!ENTITY planning "https://www.thegazette.co.uk/def/planning#" >
+	<!ENTITY other-notices "https://www.thegazette.co.uk/def/other-notices#" >
+]>
+
+<rdf:RDF xmlns="https://www.thegazette.co.uk/def/other-notices#"
+     xml:base="https://www.thegazette.co.uk/def/other-notices"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+	 xmlns:ontology="https://www.thegazette.co.uk/def/publication#"
+	 xmlns:planning="https://www.thegazette.co.uk/def/planning#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<owl:Ontology rdf:about="">
+		<dc:description xml:lang="en"
+            >
+  		Ontology for other-notices Notices.
+		
+  		This is a beta version, and you should expect it to change.
+		</dc:description>
+		<dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Gazette other-notices Notices Ontology</dc:title>
+		<dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2008-09-18</dcterms:created>
+		<dcterms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Griff Chamberlain, The Stationery Office, mark.chamberlain@tso.co.uk</dcterms:creator>
+
+	</owl:Ontology>
+	<rdf:Property rdf:about="http://purl.org/dc/elements/1.1/description">
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+	</rdf:Property>
+	<rdf:Property rdf:about="http://purl.org/dc/elements/1.1/title">
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+	</rdf:Property>
+	<rdf:Description rdf:about="http://purl.org/dc/terms/created"/>
+	<rdf:Description rdf:about="http://purl.org/dc/terms/creator"/>
+	<rdf:Description rdf:about="http://purl.org/dc/terms/license"/>
+
+
+
+
+
+
+
+
+	<!-- https://www.thegazette.co.uk/def/other-notices#OtherNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/other-notices#OtherNotice">
+        <rdfs:subClassOf rdf:resource="&ontology;PNBNotice"/>
+    </owl:Class>
+
+    <!-- https://www.thegazette.co.uk/def/other-notices#OtherThing -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/other-notices#OtherThing">
+        <rdfs:subClassOf rdf:resource="&ontology;PNBThing"/>
+    </owl:Class>
+
+
+	
+	<!--NOTICE TYPES -->
+
+	    <!-- https://www.thegazette.co.uk/def/other-notices#OtherNotices -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/other-notices#OtherNotices">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/other-notices#OtherThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/other-notices#OtherNoticesNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/other-notices#OtherNoticesNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">2301</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/other-notices#OtherNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/other-notices#OtherNotices"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+		    <!-- https://www.thegazette.co.uk/def/other-notices#SeizureOfGoods -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/other-notices#SeizureOfGoods">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/other-notices#OtherThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/other-notices#SeizureOfGoodsNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/other-notices#SeizureOfGoodsNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">NEW</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/other-notices#OtherNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/other-notices#SeizureOfGoods"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+		
+		    <!-- https://www.thegazette.co.uk/def/other-notices#SeizureOfGoods -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/other-notices#SeizureOfGoods">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/other-notices#OtherThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/other-notices#SeizureOfGoodsNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/other-notices#SeizureOfGoodsNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">NEW</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/other-notices#OtherNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/other-notices#SeizureOfGoods"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+	
+			
+		    <!-- https://www.thegazette.co.uk/def/other-notices#UnclaimedPremiumBonds -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/other-notices#UnclaimedPremiumBonds">
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/other-notices#OtherThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thegazette.co.uk/def/other-notices#UnclaimedPremiumBondsNotice -->
+
+    <owl:Class rdf:about="https://www.thegazette.co.uk/def/other-notices#UnclaimedPremiumBondsNotice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;hasNoticeCode"/>
+                <owl:hasValue rdf:datatype="&xsd;string">Supplements</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.thegazette.co.uk/def/other-notices#OtherNotice"/>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ontology;isAbout"/>
+                <owl:allValuesFrom>
+                    <rdf:Description rdf:about="https://www.thegazette.co.uk/def/other-notices#UnclaimedPremiumBonds"/>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+</rdf:RDF>

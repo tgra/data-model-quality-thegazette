@@ -1,0 +1,12 @@
+.container {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+@media (min-width: 576px) {
+    .sidebar {
+        max-width: 340px;
+        min-width: 340px;
+        padding: 5px;
+    }
+}

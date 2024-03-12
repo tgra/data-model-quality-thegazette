@@ -1,65 +1,100 @@
 <!DOCTYPE html>
 <html>
-<head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/startbootstrap-sb-admin-2/4.1.4/css/sb-admin-2.css" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/startbootstrap-sb-admin-2/4.1.4/js/sb-admin-2.min.js"  crossorigin="anonymous"></script>
+<head> <link rel="stylesheet" href="../../lib/bootstrap-4.0.0-dist/css/bootstrap.min.css"><script src="../../lib/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script><link rel="stylesheet" href="../../assets/css/style.css">
 <title>Summary</title>
 </head>
 <body>
-<h1>Church Summary</h1>
-<h2>Class</h2>
-<h3>Relevance</h2>
-<table><tr>
-<td>
-<img width="600" src="../../data/church/relevance_class.jpg" alt="Relevance">
-<table class='table table-striped datatable-table'><tr><th>URI</th><th>Frequency</th></tr>
-<tr><td>https://www.thegazette.co.uk/def/church#PlaceOfMarriageNotice</td><td>3501</td></tr>
-<tr><td>https://www.thegazette.co.uk/def/church#PlaceOfMarriage</td><td>3500</td></tr>
-<tr><td>https://www.thegazette.co.uk/def/church#ChurchWork</td><td>137</td></tr>
-<tr><td>https://www.thegazette.co.uk/def/church#ChurchWorkNotice</td><td>137</td></tr>
-<tr><td>https://www.thegazette.co.uk/def/church#ChurchCommissioners</td><td>10</td></tr>
-<tr><td>https://www.thegazette.co.uk/def/church#ChurchCommissionersNotice</td><td>10</td></tr>
-<tr><td>https://www.thegazette.co.uk/def/church#ChurchOfScotland</td><td>2</td></tr>
-<tr><td>https://www.thegazette.co.uk/def/church#ChurchOfScotlandNotice</td><td>2</td></tr>
-<tr><td>https://www.thegazette.co.uk/def/publication#PNBNotice</td><td>0</td></tr>
-<tr><td>https://www.thegazette.co.uk/def/publication#PNBThing</td><td>0</td></tr>
-<tr><td>https://www.thegazette.co.uk/def/church#ChurchNotice</td><td>0</td></tr>
-<tr><td>https://www.thegazette.co.uk/def/church#Church</td><td>0</td></tr>
-<tr><td>https://www.thegazette.co.uk/def/church#ChurchThing</td><td>0</td></tr>
-</table>
-</td></tr></table>
-<h3>Completeness</h3>
-<table><tr><td>
-<img width="600" src="../../data/church/completeness_class.jpg" alt="Completeness class Image">
-</td>
-</tr></table>
-<h2>Object property</h2>
-<h3>Relevance</h2>
-<table><tr>
-<td>
-<img width="600" src="../../data/church/relevance_object_property.jpg" alt="Relevance">
-<table class='table table-striped datatable-table'><tr><th>URI</th><th>Frequency</th></tr>
-<tr><td>https://www.thegazette.co.uk/def/publication#hasNoticeCode</td><td>4386772</td></tr>
-<tr><td>https://www.thegazette.co.uk/def/church#churchName</td><td>0</td></tr>
-</table>
-</td></tr></table>
-<h3>Completeness</h3>
-<table><tr><td>
-<img width="600" src="../../data/church/completeness_object_property.jpg" alt="Completeness Image">
-</td>
-</tr></table>
+ 
+                <div class="container-fluid ">
+    <div class="row justify-content-start ">
+            <div class=" sidebar ">
+                <p><img src="../../assets/images/logo.png" /> </p>
+            </div>
+            <div class="col-8 bg-info">
+                <h1>The Gazette Data Model</h1>
+            </div>
+        </div>
+        <div class="row justify-content-start">
+            <div class=" bg-info sidebar">
+
+                <ul class="list-group">
+
+                    <li class="list-group-item"><a href="../../index.html">Dashboard</a></li>
+                    <li class="list-group-item"><a href="../../quality_review/index.html">Quality review</a></li>
+                    <li class="list-group-item"><a href="../../documentation/index.html">Documentation</a></li>
+
+                </ul>
+            </div>
+            <div class="col">
+<h2 class="text-secondary">Church Ontology</h2>
+<h3 class='text-primary'>Documentation</h3><a class='text-info' target='_new' href="http://150.146.207.114/lode/extract?lang=en&url=https%3A%2F%2Fwww.thegazette.co.uk%2Fdef%2Fchurch">View documentation</a><br/><br/><h3 class='text-primary'>Quality review</h3><h4>OWL Class</h4>
+ 
+<div class="row">
+                    <div class="col-sm-5">
+                        <div class="card  ">
+                            <div class="card-body ">
+                                <h5 class="card-title">Relevance</h5>
+                                <img width="400" src="../../data/church/relevance_class.jpg" alt="Relevance">
+ 
+                                <p><a href="relevance.html"
+                                    class="btn btn-info">Further information</a></p>
+                            </div>
+                        </div><br/>
+                    </div>
+                    <div class="col-sm-5 ">
+                        <div class="card ">
+                            <div class="card-body">
+                                <h5 class="card-title">Completeness</h5>
+                                <img width="400" src="../../data/church/completeness_class.jpg" alt="Completeness Image">
+ <br/>
+                                   <p><a href="completeness.html"
+                                    class="btn btn-info">Further information</a></p>
+                            </div></div><br/></div></div>
+<h4>Object property</h4>
+ 
+<div class="row">
+                    <div class="col-sm-5">
+                        <div class="card  ">
+                            <div class="card-body ">
+                                <h5 class="card-title">Relevance</h5>
+                                <img width="400" src="../../data/church/relevance_object_property.jpg" alt="Relevance">
+ 
+                                <p><a href="relevance.html"
+                                    class="btn btn-info">Further information</a></p>
+                            </div>
+                        </div><br/>
+                    </div>
+                    <div class="col-sm-5 ">
+                        <div class="card ">
+                            <div class="card-body">
+                                <h5 class="card-title">Completeness</h5>
+                                <img width="400" src="../../data/church/completeness_object_property.jpg" alt="Completeness Image">
+ <br/>
+                                   <p><a href="completeness.html"
+                                    class="btn btn-info">Further information</a></p>
+                            </div></div><br/></div></div>
 <h2>Data property</h2>
-<h3>Relevance</h2>
-<table><tr>
-<td>
-<img width="600" src="../../data/church/relevance_data_property.jpg" alt="Relevance">
-<table class='table table-striped datatable-table'><tr><th>URI</th><th>Frequency</th></tr>
-<tr><td>https://www.thegazette.co.uk/def/publication#hasNoticeCode</td><td>4389008</td></tr>
-<tr><td>https://www.thegazette.co.uk/def/church#churchName</td><td>0</td></tr>
-</table>
-</td></tr></table>
-<h3>Completeness</h3>
-<table><tr><td>
-<img width="600" src="../../data/church/completeness_data_property.jpg" alt="Completeness Image">
-</td>
-</tr></table>
-<a href="http://150.146.207.114/lode/extract?lang=en&url=https%3A%2F%2Fwww.thegazette.co.uk%2Fdef%2Fchurch">View documentation</a>
+ 
+<div class="row">
+                    <div class="col-sm-5">
+                        <div class="card  ">
+                            <div class="card-body ">
+                                <h5 class="card-title">Relevance</h5>
+                                <img width="400" src="../../data/church/relevance_data_property.jpg" alt="Relevance">
+ 
+                                <p><a href="relevance.html"
+                                    class="btn btn-info">Further information</a></p>
+                            </div>
+                        </div><br/>
+                    </div>
+                    <div class="col-sm-5 ">
+                        <div class="card ">
+                            <div class="card-body">
+                                <h5 class="card-title">Completeness</h5>
+                                <img width="400" src="../../data/church/completeness_data_property.jpg" alt="Completeness Image">
+ <br/>
+                                   <p><a href="completeness.html"
+                                    class="btn btn-info">Further information</a></p>
+                            </div></div><br/></div></div>
+ </div></div></body>
+</html>

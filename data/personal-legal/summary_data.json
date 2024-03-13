@@ -167,7 +167,7 @@
         "https://www.thegazette.co.uk/def/personal-legal#hasContactOrganisation": {
             "label": null,
             "comment": null,
-            "domain": "N2c0f4ba719d747cc8ac62f441bc6b8d5",
+            "domain": "N4a0af8bff83f43b19974a47a17368851",
             "range": "https://www.thegazette.co.uk/def/organisation#Organisation"
         },
         "https://www.thegazette.co.uk/def/personal-legal#hasEstateOf": {
@@ -246,7 +246,7 @@
             "label": null,
             "comment": null,
             "domain": "https://www.thegazette.co.uk/def/organisation#Organisation",
-            "range": "Na0b94ac2591b421d9a1e19e4f1565f96"
+            "range": "Nef98940dea63471fb7c19048a0a21fc0"
         },
         "https://www.thegazette.co.uk/def/personal-legal#isForNextOfKinOf": {
             "label": null,

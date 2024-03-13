@@ -146,12 +146,12 @@
             "label": null,
             "comment": null,
             "domain": "http://www.geonames.org/ontology#Feature",
-            "range": "N6fee3a9f4940477c8b933b0b2a8d8e6f"
+            "range": "N771c8df3cff74f1ba90c0c7678a25382"
         },
         "https://www.thegazette.co.uk/def/location#ownsProperty": {
             "label": null,
             "comment": null,
-            "domain": "N864fae836f3a4ace8db3612ca96bc3b2",
+            "domain": "Na36646397e60418e9c6406a2536b636b",
             "range": "http://www.geonames.org/ontology#Feature"
         }
     },

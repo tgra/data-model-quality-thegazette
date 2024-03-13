@@ -138,13 +138,13 @@
             "label": "isRequiredByLegislation property",
             "comment": "Legislation that requires this Notice to be published",
             "domain": "http://www.gazettes-online.co.uk/ontology#Notice",
-            "range": "Ndfb1c4c38cc645ef8a79c68a46d30c9b"
+            "range": "N7a9d9170b69344c6844b05dc1d34109b"
         },
         "http://www.gazettes-online.co.uk/ontology#isEnabledByLegislation": {
             "label": "isRequiredByLegislation property",
             "comment": "Legislation that enables the act(s) contained in the Notifiable Thing",
             "domain": "http://www.gazettes-online.co.uk/ontology#NotifiableThing",
-            "range": "N9391d1a232cf4a9c91b8f6123542077a"
+            "range": "N472ef78cd91143c284a7eb6882fc2c10"
         },
         "http://www.gazettes-online.co.uk/ontology#isPartOfIssue": {
             "label": "isPartOfIssue property",
@@ -277,7 +277,7 @@
         "http://www.gazettes-online.co.uk/ontology#hasPublicationDate": {
             "label": null,
             "comment": null,
-            "domain": "N101658b1d0ae4657bb5f041852da918d",
+            "domain": "N3793809624e8414da1efcbb3ec438b2a",
             "range": "http://www.w3.org/2001/XMLSchema#date"
         },
         "http://www.gazettes-online.co.uk/ontology#accuracy": {

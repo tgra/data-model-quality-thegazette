@@ -258,7 +258,7 @@
             "label": "hasApplicant property",
             "comment": "Person and/or organisation applying for licence",
             "domain": "https://www.thegazette.co.uk/def/planning#ZooLicensing",
-            "range": "Nb884bbc57a574f7a8b517ee6012d4d97"
+            "range": "Nf0de0ae317a1498187cc5fd17bba009a"
         },
         "https://www.thegazette.co.uk/def/planning#hasApplicationFrom": {
             "label": "hasApplicationFrom property",

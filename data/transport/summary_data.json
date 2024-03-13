@@ -679,7 +679,7 @@
         "https://www.thegazette.co.uk/def/transport#changesParkingRuleTimesTo": {
             "label": "hasParkingRuleTimes property",
             "comment": "Times allocated to the parking rule",
-            "domain": "N223771be7d28498da464620ce777a437",
+            "domain": "Nf7bbf024dcee426a82227b8011ca344f",
             "range": "https://www.thegazette.co.uk/def/duration#Times"
         },
         "https://www.thegazette.co.uk/def/transport#concernsAerodrome": {

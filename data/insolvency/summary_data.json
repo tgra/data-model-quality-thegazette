@@ -529,13 +529,13 @@
         "https://www.thegazette.co.uk/def/insolvency#appointAdministrator": {
             "label": "appointedAdministrator",
             "comment": "Property to define the appointed administrator (role based)",
-            "domain": "Nab15b9aac7f049c2965bd55234c6543c",
+            "domain": "Nd4769501c5134e62bd687ae77c66898c",
             "range": "https://www.thegazette.co.uk/def/person#InsolvencyPractitioner"
         },
         "https://www.thegazette.co.uk/def/insolvency#appointLiquidator": {
             "label": "appointLiquidator property",
             "comment": "Property to define the appointed Liquidator (role based)",
-            "domain": "N949ef9d06d084641ae2ae3e06e78cb7b",
+            "domain": "N3d1e7e7df6e74416b974e454aea8e4d6",
             "range": "https://www.thegazette.co.uk/def/person#Liquidator"
         },
         "https://www.thegazette.co.uk/def/insolvency#appointReceiver": {
@@ -583,7 +583,7 @@
         "https://www.thegazette.co.uk/def/insolvency#hasBankruptPerson": {
             "label": "hasBankruptPerson",
             "comment": null,
-            "domain": "N110221db494e4e40a2e598eb565a77f8",
+            "domain": "N60ef6e287525446e9f33fb169215748a",
             "range": "https://www.thegazette.co.uk/def/person#Person"
         },
         "https://www.thegazette.co.uk/def/insolvency#hasTrustee": {
@@ -619,14 +619,14 @@
         "https://www.thegazette.co.uk/def/insolvency#hasOfficialReceiver": {
             "label": "hasOfficialReceiver property",
             "comment": "Receiver role assigned to winding up order",
-            "domain": "N23c6c3bf4f6d421484f9388adedd041f",
+            "domain": "Ned06bc7c11bf46b997819d3b0ba73828",
             "range": "https://www.thegazette.co.uk/def/person#Receiver"
         },
         "https://www.thegazette.co.uk/def/insolvency#hasPetitioner": {
             "label": "hasPetitioner property",
             "comment": "Company or person who acts as the petitioner",
-            "domain": "N646d037bf731474aa794f49fde03104f",
-            "range": "Nd2a6e2764659452d9d01d0b00aa0de38"
+            "domain": "Nf9fd572f11284a0aaa9508d9e14212b3",
+            "range": "N65c55be97b334c22aa4e8c1ad5905a50"
         },
         "https://www.thegazette.co.uk/def/insolvency#hasPrimaryIP": {
             "label": "hasPrimaryIP",
@@ -649,7 +649,7 @@
         "https://www.thegazette.co.uk/def/insolvency#meetingLocation": {
             "label": "meetingLocation",
             "comment": null,
-            "domain": "N2dd4e30a81dd490297d1b76d849cfeb9",
+            "domain": "N677a36b4614d4bcda26ea8a7f14a4da8",
             "range": "http://www.w3.org/2006/vcard/ns#Address"
         },
         "https://www.thegazette.co.uk/def/insolvency#meetingRole": {
@@ -679,7 +679,7 @@
         "https://www.thegazette.co.uk/def/insolvency#placeOfHearing": {
             "label": "placeOfHearing",
             "comment": null,
-            "domain": "N0aca5dfd563c4ed6aa4891228d5c3d36",
+            "domain": "N52941339a9894b09bd54a761cb66530a",
             "range": "http://www.w3.org/2006/vcard/ns#Address"
         },
         "https://www.thegazette.co.uk/def/insolvency#releasedLiquidator": {
@@ -747,19 +747,19 @@
         "https://www.thegazette.co.uk/def/insolvency#dateOfAppointment": {
             "label": "dateOfAppointment",
             "comment": null,
-            "domain": "N0b6b96ef3945465788f63e6e21640746",
+            "domain": "N48513d1684df4723ba9bc2666ceb5718",
             "range": "http://www.w3.org/2001/XMLSchema#date"
         },
         "https://www.thegazette.co.uk/def/insolvency#dateOfBankruptcyOrder": {
             "label": null,
             "comment": null,
-            "domain": "Ndd9fb0d5714849fb9af2792005a38e7e",
+            "domain": "N0f3e21b3063a46d3b61c15bae162e8ae",
             "range": "http://www.w3.org/2001/XMLSchema#dateTime"
         },
         "https://www.thegazette.co.uk/def/insolvency#dateOfHearing": {
             "label": "dateOfHearing",
             "comment": null,
-            "domain": "Ndd7d24d5cb0041eaa231ee63e9d9e2d2",
+            "domain": "Nddf16d3bd22d4a2a949e516b11d47f24",
             "range": "http://www.w3.org/2001/XMLSchema#dateTime"
         },
         "https://www.thegazette.co.uk/def/insolvency#dateOfInterlocutor": {
@@ -795,7 +795,7 @@
         "https://www.thegazette.co.uk/def/insolvency#dateOfPetitionPresentation": {
             "label": "dateOfPetitionPresentation",
             "comment": null,
-            "domain": "Nf203215426244ca7b15f672ec64f01ba",
+            "domain": "N73ddb39fb93843dbb66410e122591753",
             "range": "http://www.w3.org/2001/XMLSchema#date"
         },
         "https://www.thegazette.co.uk/def/insolvency#dateGranted": {
@@ -819,7 +819,7 @@
         "https://www.thegazette.co.uk/def/insolvency#datePetitionFiled": {
             "label": "presentationDate",
             "comment": null,
-            "domain": "Nda13e657569e426d94376778d612ad79",
+            "domain": "Nd367111148d343bc8d5e31684d85d692",
             "range": "http://www.w3.org/2001/XMLSchema#date"
         },
         "https://www.thegazette.co.uk/def/insolvency#datePetitionSigned": {
@@ -879,7 +879,7 @@
         "https://www.thegazette.co.uk/def/insolvency#meetingTime": {
             "label": "meetingTime",
             "comment": null,
-            "domain": "Na7eaa87c9abe4b9c916352b2cba72fa3",
+            "domain": "Nd2ef3e6e34ae44c2b20e580b5548e9a0",
             "range": "http://www.w3.org/2001/XMLSchema#dateTime"
         },
         "https://www.thegazette.co.uk/def/insolvency#addressType": {
@@ -891,49 +891,49 @@
         "https://www.thegazette.co.uk/def/insolvency#meetingIsFor": {
             "label": "meetingIsFor",
             "comment": null,
-            "domain": "N31d4b6067fe6497f8dbfca0e3e98e4f7",
+            "domain": "N67ae08bd25004235ab9813d65431d5fd",
             "range": "http://www.w3.org/2001/XMLSchema#string"
         },
         "https://www.thegazette.co.uk/def/insolvency#purposeOfMeeting": {
             "label": "purposeOfMeeting",
             "comment": null,
-            "domain": "N26a28425b7004a49a41f060547481d0d",
+            "domain": "N41d417ce7a1542ca9f1baaa87b78c46b",
             "range": "http://www.w3.org/2001/XMLSchema#string"
         },
         "https://www.thegazette.co.uk/def/insolvency#proxyInformation": {
             "label": "proxyInformation",
             "comment": null,
-            "domain": "N576cac697cda41cbb29944b2a7110699",
+            "domain": "N52afe5e587814f918f3b0091130b6512",
             "range": "http://www.w3.org/2001/XMLSchema#string"
         },
         "https://www.thegazette.co.uk/def/insolvency#onOrBeforeClaimSubmit": {
             "label": "onOrBeforeClaimSubmit",
             "comment": null,
-            "domain": "Nbe2f60c5379547438d1c1f09d5197550",
+            "domain": "Nac4a172d978c45269866b5acff4ae10a",
             "range": "http://www.w3.org/2001/XMLSchema#date"
         },
         "https://www.thegazette.co.uk/def/insolvency#onOrBeforeProvingDebts": {
             "label": "onOrBeforeProvingDebts",
             "comment": null,
-            "domain": "Ncac06be9524e421d916883ab9ebbe700",
+            "domain": "Nc6654dd24a7f4e74a0b3b37c0180ccf6",
             "range": "http://www.w3.org/2001/XMLSchema#dateTime"
         },
         "https://www.thegazette.co.uk/def/insolvency#onOrBeforeProxySubmit": {
             "label": "onOrBeforeProxySubmit",
             "comment": null,
-            "domain": "N5fbf5c9db919494d885889953b4e38f6",
+            "domain": "N2c9bf4705f8643219fcb22087362f4a4",
             "range": "http://www.w3.org/2001/XMLSchema#dateTime"
         },
         "https://www.thegazette.co.uk/def/insolvency#onOrBeforeCreditorDetail": {
             "label": "onOrBeforeCreditorDetail",
             "comment": null,
-            "domain": "Nbb639ca08da042b9a7b3ca3c4a2706cc",
+            "domain": "N94e47b588b19448d8c5cbfd75cd65341",
             "range": "http://www.w3.org/2001/XMLSchema#dateTime"
         },
         "https://www.thegazette.co.uk/def/insolvency#typeOfLiquidation": {
             "label": "typeOfLiquidation",
             "comment": null,
-            "domain": "N119818df732646f2bb6d0f8e2aa958b9",
+            "domain": "N7c15ba54556b45dcabf815bbbcfab48b",
             "range": "http://www.w3.org/2001/XMLSchema#string"
         },
         "https://www.thegazette.co.uk/def/insolvency#typeOfPetition": {

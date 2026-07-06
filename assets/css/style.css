@@ -1,12 +1,360 @@
+/* ==========================================================================
+   The Gazette Data Model — site theme
+   Loaded by every page after Bootstrap 4, so it restyles both the
+   hand-written index pages and the notebook-generated category pages.
+   ========================================================================== */
+
+:root {
+    --brand: #8e2433;          /* Gazette crimson */
+    --brand-dark: #6e1b27;
+    --header-bg: #1c2733;      /* dark navy header band */
+    --ink: #212b36;
+    --ink-muted: #5f6b7a;
+    --bg: #f4f5f7;
+    --surface: #ffffff;
+    --border: #e2e6ea;
+    --danger-bg: #fdecea;
+    --danger-ink: #93261f;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, sans-serif;
+    min-height: 100%;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container-fluid {
+    padding: 0;
+}
+
 .container {
     margin-left: 0 !important;
     margin-right: 0 !important;
 }
 
+/* Neutralise the loud Bootstrap utility backgrounds baked into the markup */
+.bg-info,
+.bg-warning {
+    background-color: transparent !important;
+}
+
+/* --------------------------------------------------------------------------
+   Header band (first row: logo + site title)
+   -------------------------------------------------------------------------- */
+
+.container-fluid > .row:first-of-type {
+    background: var(--header-bg);
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    margin: 0;
+    border-bottom: 4px solid var(--brand);
+}
+
+.container-fluid > .row:first-of-type .sidebar {
+    background: transparent;
+    padding: 0;
+    max-width: none;
+    min-width: 0;
+    flex: 0 0 auto;
+}
+
+.container-fluid > .row:first-of-type p {
+    margin: 0;
+}
+
+.container-fluid > .row:first-of-type img {
+    height: 52px;
+    width: auto;
+    display: block;
+}
+
+.container-fluid > .row:first-of-type h1 {
+    color: #fff;
+    font-size: 1.35rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    margin: 0;
+    padding-left: 0.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   Layout: sidebar nav + content
+   -------------------------------------------------------------------------- */
+
+.container-fluid > .row:not(:first-of-type) {
+    margin: 0;
+    padding: 1.5rem;
+    align-items: flex-start;
+}
+
+.sidebar {
+    padding: 0;
+}
+
 @media (min-width: 576px) {
     .sidebar {
-        max-width: 340px;
-        min-width: 340px;
-        padding: 5px;
+        max-width: 240px;
+        min-width: 240px;
+        margin-right: 1.5rem;
+    }
+}
+
+.list-group {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(16, 24, 40, 0.06);
+}
+
+.list-group-item {
+    border: none;
+    border-left: 3px solid transparent;
+    padding: 0;
+    background: transparent;
+}
+
+.list-group-item + .list-group-item {
+    border-top: 1px solid var(--border);
+}
+
+.list-group-item a {
+    display: block;
+    padding: 0.7rem 1rem;
+    color: var(--ink);
+    font-weight: 500;
+    font-size: 0.925rem;
+    text-decoration: none;
+}
+
+.list-group-item:hover {
+    border-left-color: var(--brand);
+    background: #faf5f6;
+}
+
+.list-group-item:hover a {
+    color: var(--brand);
+}
+
+.list-group-item.active {
+    background: transparent;
+    border-left-color: var(--brand);
+}
+
+.list-group-item.active a {
+    color: var(--brand);
+    font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   Typography in content area
+   -------------------------------------------------------------------------- */
+
+h2, h3, h4 {
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+
+h3 {
+    font-size: 1.15rem;
+    margin-top: 1.75rem;
+    margin-bottom: 0.75rem;
+}
+
+h4 {
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid var(--border);
+}
+
+h6 {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--ink-muted);
+    margin-top: 1rem;
+}
+
+.text-primary {
+    color: var(--brand) !important;
+}
+
+.text-secondary {
+    color: var(--ink) !important;
+}
+
+a.text-info {
+    color: var(--brand) !important;
+    font-weight: 500;
+}
+
+a.text-info:hover {
+    color: var(--brand-dark) !important;
+}
+
+.lead-muted {
+    color: var(--ink-muted);
+    max-width: 60ch;
+    margin-bottom: 1.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   Cards (category tiles and quality-review panels)
+   -------------------------------------------------------------------------- */
+
+.card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(16, 24, 40, 0.06);
+    height: 100%;
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.card-grid .card:hover {
+    box-shadow: 0 6px 16px rgba(16, 24, 40, 0.12);
+    transform: translateY(-2px);
+}
+
+.card-body {
+    padding: 1.1rem 1.2rem;
+}
+
+.card-title {
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 1.02rem;
+    color: var(--ink);
+    margin-bottom: 0.35rem;
+}
+
+.card-body p {
+    color: var(--ink-muted);
+    font-size: 0.85rem;
+    margin-bottom: 0.9rem;
+}
+
+/* Category tile grid columns need breathing room between rows */
+.card-grid > [class*="col"] {
+    margin-bottom: 1.5rem;
+}
+
+.card-grid > [class*="col"] > br {
+    display: none;
+}
+
+/* --------------------------------------------------------------------------
+   Buttons — includes the generated "btn-sucess" (sic) class
+   -------------------------------------------------------------------------- */
+
+.btn {
+    font-size: 0.82rem;
+    font-weight: 500;
+    border-radius: 6px;
+    padding: 0.4rem 0.85rem;
+    border: 1px solid var(--brand);
+    color: var(--brand);
+    background: transparent;
+}
+
+.btn:hover {
+    background: #faf5f6;
+    color: var(--brand-dark);
+    border-color: var(--brand-dark);
+}
+
+.btn-sucess,
+.btn-primary {
+    background: var(--brand);
+    border-color: var(--brand);
+    color: #fff;
+}
+
+.btn-sucess:hover,
+.btn-primary:hover {
+    background: var(--brand-dark);
+    border-color: var(--brand-dark);
+    color: #fff;
+}
+
+/* --------------------------------------------------------------------------
+   Tables (generated with border='1' or .table) and charts
+   -------------------------------------------------------------------------- */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+    margin: 0.75rem 0 1.25rem;
+    background: var(--surface);
+}
+
+table th {
+    background: #f1f3f5;
+    color: var(--ink);
+    font-weight: 600;
+    text-align: left;
+}
+
+table th,
+table td {
+    border: 1px solid var(--border);
+    padding: 0.45rem 0.6rem;
+    overflow-wrap: anywhere;
+}
+
+table tr:nth-child(even) td {
+    background: #fafbfc;
+}
+
+.bg-danger,
+tr.bg-danger td,
+tr.bg-danger th {
+    background-color: var(--danger-bg) !important;
+    color: var(--danger-ink);
+}
+
+/* Charts exported from the analysis notebooks */
+.card-body img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+/* --------------------------------------------------------------------------
+   Small screens
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 575.98px) {
+    .container-fluid > .row:not(:first-of-type) {
+        padding: 1rem;
+    }
+
+    .sidebar {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .container-fluid > .row:first-of-type h1 {
+        font-size: 1.05rem;
+    }
+
+    .container-fluid > .row:first-of-type img {
+        height: 40px;
     }
 }

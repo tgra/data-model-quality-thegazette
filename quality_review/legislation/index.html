@@ -1,42 +1,44 @@
 <!DOCTYPE html>
-<html>
-<head> <link rel="stylesheet" href="../../lib/bootstrap-4.0.0-dist/css/bootstrap.min.css"><script src="../../lib/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script><link rel="stylesheet" href="../../assets/css/style.css">
-<title>Summary</title>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Legislation — Quality review — The Gazette Data Model</title>
+    <link rel="stylesheet" href="../../lib/bootstrap-4.0.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 <body>
- 
-                <div class="container-fluid ">
-    <div class="row justify-content-start ">
-            <div class=" sidebar ">
-                <p><img src="../../assets/images/logo.png" /> </p>
+
+    <div class="container-fluid">
+        <div class="row justify-content-start">
+            <div class="sidebar">
+                <p><img src="../../assets/images/logo.png" alt="The Gazette logo"></p>
             </div>
-            <div class="col-8 bg-info">
+            <div class="col bg-info">
                 <h1>The Gazette Data Model</h1>
             </div>
         </div>
         <div class="row justify-content-start">
-            <div class=" bg-info sidebar">
-
+            <div class="bg-info sidebar">
                 <ul class="list-group">
-
                     <li class="list-group-item"><a href="../../index.html">Dashboard</a></li>
-                    <li class="list-group-item"><a href="../../quality_review/index.html">Quality review</a></li>
-                    
-
+                    <li class="list-group-item active"><a href="../../quality_review/index.html">Quality review</a></li>
+                    <li class="list-group-item"><a href="../../documentation/index.html">Documentation</a></li>
                 </ul>
             </div>
             <div class="col">
 <h2 class="text-secondary">Legislation Ontology</h2>
-<h3 class='text-primary'>Documentation</h3><a class='text-info' target='_new' href="http://150.146.207.114/lode/extract?lang=en&url=https%3A%2F%2Fwww.thegazette.co.uk%2Fdef%2Flegislation">View documentation</a><br/><br/><h3 class='text-primary'>Quality review</h3><h4>OWL Class</h4>
- 
+<p class="lead-muted">Relevance and completeness review of the classes and properties in this ontology.</p>
+<h3 class="text-primary">Documentation</h3><a class="text-info" target="_new" href="http://150.146.207.114/lode/extract?lang=en&url=https%3A%2F%2Fwww.thegazette.co.uk%2Fdef%2Flegislation">View documentation</a>
+<h3 class="text-primary">Quality review</h3>
+<h4>OWL Class</h4>
 <div class="row">
-                    <div class="col">
-                        <div class="card  ">
-                            <div class="card-body ">
-                                <h5 class="card-title">Relevance</h5>
-                                   
-                                <img width="600px"  src="../../data/legislation/relevance_class.jpg" alt="Relevance">
-<br/><h6>Frequency in The Gazette data</h6><table border='1'>
+<div class="col-lg-6">
+<div class="card"><div class="card-body">
+<h5 class="card-title">Relevance</h5>
+<img src="../../data/legislation/relevance_class.jpg" alt="Relevance chart for owl class">
+<h6>Frequency in The Gazette data</h6>
+<table>
 <thead>
 <tr><th>URI</th><th>Frequency</th></tr>
 </thead>
@@ -49,27 +51,23 @@
 <tr><td>https://www.thegazette.co.uk/def/legislation#Act</td><td>58768</td></tr>
 <tr><td>https://www.thegazette.co.uk/def/legislation#LegislationPart</td><td>0</td></tr>
 </tbody>
-</table> 
-                               
-                            </div>
-                        </div><br/>
-                    </div>
-                    <div class="col ">
-                        <div class="card ">
-                            <div class="card-body">
-                                <h5 class="card-title">Completeness</h5>
-                                <img width="600px"  src="../../data/legislation/completeness_class.jpg" alt="Completeness Image">
-<table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/legislation#Legislation</td></tr><tr class=''><th>Label</th><td>Legislation</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/legislation#LegislationSection</td></tr><tr class=''><th>Label</th><td>LegislationSection</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/legislation#LegislationPart</td></tr><tr class=''><th>Label</th><td>LegislationPart</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/legislation#Act</td></tr><tr class=''><th>Label</th><td>Act</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/organisation#Organisation</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/person#Person</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/person#Role</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><br/> <br/>
-                                  
-                            </div></div><br/></div></div>
+</table>
+</div></div>
+</div>
+<div class="col-lg-6">
+<div class="card"><div class="card-body">
+<h5 class="card-title">Completeness</h5>
+<img src="../../data/legislation/completeness_class.jpg" alt="Completeness chart for owl class">
+<table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/legislation#Legislation</td></tr><tr class=''><th>Label</th><td>Legislation</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/legislation#LegislationSection</td></tr><tr class=''><th>Label</th><td>LegislationSection</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/legislation#LegislationPart</td></tr><tr class=''><th>Label</th><td>LegislationPart</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/legislation#Act</td></tr><tr class=''><th>Label</th><td>Act</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/organisation#Organisation</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/person#Person</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/person#Role</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table></div></div>
+</div>
+</div>
 <h4>Object property</h4>
- 
-                <div class="row">
-                    <div class="col">
-                        <div class="card  ">
-                            <div class="card-body ">
-                                <h5 class="card-title">Relevance</h5>
-                                <br/><h6>Frequency in The Gazette data</h6><table border='1'>
+<div class="row">
+<div class="col-lg-6">
+<div class="card"><div class="card-body">
+<h5 class="card-title">Relevance</h5>
+<h6>Frequency in The Gazette data</h6>
+<table>
 <thead>
 <tr><th>URI</th><th>Frequency</th></tr>
 </thead>
@@ -83,25 +81,24 @@
 <tr><td>https://www.thegazette.co.uk/def/legislation#isPartOfLegislationPart</td><td>0</td></tr>
 <tr><td>https://www.thegazette.co.uk/def/legislation#isPursuantToLegislation</td><td>0</td></tr>
 </tbody>
-</table></div> 
-                            </div>
-                        </div>
-                    <div class="col ">
-                        <div class="card ">
-                            <div class="card-body">
-                                <h5 class="card-title">Completeness</h5>
-                                <img width="600px"  src="../../data/legislation/completeness_object_property.jpg" alt="Completeness Image">
-<table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/legislation#containsLegislationPart</td></tr><tr  class='bg-danger'><th>Label</th><td>None</td></tr><tr  class='bg-danger'><th>Comment</th><td>None</td></tr><tr><th>Domain</th><td>None</td></tr><tr><th>Range</th><td>None</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/legislation#hasObjectionOrganisationContact</td></tr><tr  class='bg-danger'><th>Label</th><td>None</td></tr><tr  class='bg-danger'><th>Comment</th><td>None</td></tr><tr><th>Domain</th><td>None</td></tr><tr><th>Range</th><td>https://www.thegazette.co.uk/def/organisation#Organisation</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/legislation#hasObjectionPersonContact</td></tr><tr  class=''><th>Label</th><td>hasObjectioncontact property</td></tr><tr  class=''><th>Comment</th><td>Person associated with objections</td></tr><tr><th>Domain</th><td>None</td></tr><tr><th>Range</th><td>https://www.thegazette.co.uk/def/person#Person</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/legislation#hasObjectionRoleContact</td></tr><tr  class=''><th>Label</th><td>hasObjectioncontact property</td></tr><tr  class=''><th>Comment</th><td>Role associated with objections</td></tr><tr><th>Domain</th><td>None</td></tr><tr><th>Range</th><td>https://www.thegazette.co.uk/def/person#Role</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/legislation#hasOrderObjection</td></tr><tr  class='bg-danger'><th>Label</th><td>None</td></tr><tr  class='bg-danger'><th>Comment</th><td>None</td></tr><tr><th>Domain</th><td>None</td></tr><tr><th>Range</th><td>None</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/legislation#isPartOfLegislation</td></tr><tr  class='bg-danger'><th>Label</th><td>None</td></tr><tr  class='bg-danger'><th>Comment</th><td>None</td></tr><tr><th>Domain</th><td>None</td></tr><tr><th>Range</th><td>None</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/legislation#isPartOfLegislationPart</td></tr><tr  class='bg-danger'><th>Label</th><td>None</td></tr><tr  class='bg-danger'><th>Comment</th><td>None</td></tr><tr><th>Domain</th><td>None</td></tr><tr><th>Range</th><td>None</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/legislation#isPursuantToLegislation</td></tr><tr  class=''><th>Label</th><td>isPursuantToLegislation</td></tr><tr  class=''><th>Comment</th><td>Legislation item(s) pursuant to which the notice is placed</td></tr><tr><th>Domain</th><td>None</td></tr><tr><th>Range</th><td>Nd0ad336bbcd749689061ba3979f942f5</td></tr></table><br/> 
-                            </div></div></div><br/>
-</div><h4>Data property</h4>
- 
+</table>
+</div></div>
+</div>
+<div class="col-lg-6">
+<div class="card"><div class="card-body">
+<h5 class="card-title">Completeness</h5>
+<img src="../../data/legislation/completeness_object_property.jpg" alt="Completeness chart for object property">
+<table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/legislation#containsLegislationPart</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr><tr><th>Domain</th><td>None</td></tr><tr><th>Range</th><td>None</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/legislation#hasObjectionOrganisationContact</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr><tr><th>Domain</th><td>None</td></tr><tr><th>Range</th><td>https://www.thegazette.co.uk/def/organisation#Organisation</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/legislation#hasObjectionPersonContact</td></tr><tr class=''><th>Label</th><td>hasObjectioncontact property</td></tr><tr class=''><th>Comment</th><td>Person associated with objections</td></tr><tr><th>Domain</th><td>None</td></tr><tr><th>Range</th><td>https://www.thegazette.co.uk/def/person#Person</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/legislation#hasObjectionRoleContact</td></tr><tr class=''><th>Label</th><td>hasObjectioncontact property</td></tr><tr class=''><th>Comment</th><td>Role associated with objections</td></tr><tr><th>Domain</th><td>None</td></tr><tr><th>Range</th><td>https://www.thegazette.co.uk/def/person#Role</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/legislation#hasOrderObjection</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr><tr><th>Domain</th><td>None</td></tr><tr><th>Range</th><td>None</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/legislation#isPartOfLegislation</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr><tr><th>Domain</th><td>None</td></tr><tr><th>Range</th><td>None</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/legislation#isPartOfLegislationPart</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr><tr><th>Domain</th><td>None</td></tr><tr><th>Range</th><td>None</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/legislation#isPursuantToLegislation</td></tr><tr class=''><th>Label</th><td>isPursuantToLegislation</td></tr><tr class=''><th>Comment</th><td>Legislation item(s) pursuant to which the notice is placed</td></tr><tr><th>Domain</th><td>None</td></tr><tr><th>Range</th><td>Nd0ad336bbcd749689061ba3979f942f5</td></tr></table></div></div>
+</div>
+</div>
+<h4>Data property</h4>
 <div class="row">
-                    <div class="col">
-                        <div class="card  ">
-                            <div class="card-body ">
-                                <h5 class="card-title">Relevance</h5>
-                                <img width="600px"  src="../../data/legislation/relevance_data_property.jpg" alt="Relevance">
-<br/><h6>Frequency in The Gazette data</h6><table border='1'>
+<div class="col-lg-6">
+<div class="card"><div class="card-body">
+<h5 class="card-title">Relevance</h5>
+<img src="../../data/legislation/relevance_data_property.jpg" alt="Relevance chart for data property">
+<h6>Frequency in The Gazette data</h6>
+<table>
 <thead>
 <tr><th>URI</th><th>Frequency</th></tr>
 </thead>
@@ -122,17 +119,18 @@
 <tr><td>https://www.thegazette.co.uk/def/legislation#objectionDuration</td><td>0</td></tr>
 <tr><td>https://www.thegazette.co.uk/def/legislation#shortTitle</td><td>0</td></tr>
 </tbody>
-</table> 
-                                
-                            </div>
-                        </div><br/>
-                    </div>
-                    <div class="col ">
-                        <div class="card ">
-                            <div class="card-body">
-                                <h5 class="card-title">Completeness</h5>
-                                <img width="600px"  src="../../data/legislation/completeness_data_property.jpg" alt="Completeness Image">
-<table border='1'><tr><th>URI</th><td>http://purl.org/dc/elements/1.1/title</td></tr><tr  class='bg-danger'><th>Label</th><td>None</td></tr><tr  class='bg-danger'><th>Comment</th><td>None</td></tr><tr><th>Domain</th><td></td></tr><tr><th>Range</th><td>None</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/legislation#dateDeclarationMade</td></tr><tr  class=''><th>Label</th><td>dateDeclarationMade property</td></tr><tr  class=''><th>Comment</th><td>date the declaration was made</td></tr><tr><th>Domain</th><td></td></tr><tr><th>Range</th><td>http://www.w3.org/2001/XMLSchema#date</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/legislation#dateOrderComesIntoEffect</td></tr><tr  class=''><th>Label</th><td>dateOrderComesIntoEffect property</td></tr><tr  class=''><th>Comment</th><td>date the order comes into operation</td></tr><tr><th>Domain</th><td></td></tr><tr><th>Range</th><td>http://www.w3.org/2001/XMLSchema#date</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/legislation#dateOrderMade</td></tr><tr  class=''><th>Label</th><td>dateOrderMade property</td></tr><tr  class=''><th>Comment</th><td>date the order was made</td></tr><tr><th>Domain</th><td></td></tr><tr><th>Range</th><td>http://www.w3.org/2001/XMLSchema#date</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/legislation#dateProposedOrderComesIntoEffect</td></tr><tr  class=''><th>Label</th><td>dateOrderComesIntoEffect property</td></tr><tr  class=''><th>Comment</th><td>date the order comes into operation</td></tr><tr><th>Domain</th><td></td></tr><tr><th>Range</th><td>http://www.w3.org/2001/XMLSchema#date</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/legislation#hasLegislationNumber</td></tr><tr  class='bg-danger'><th>Label</th><td>None</td></tr><tr  class='bg-danger'><th>Comment</th><td>None</td></tr><tr><th>Domain</th><td></td></tr><tr><th>Range</th><td>http://www.w3.org/2001/XMLSchema#integer</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/legislation#hasLegislationPartNumber</td></tr><tr  class='bg-danger'><th>Label</th><td>None</td></tr><tr  class='bg-danger'><th>Comment</th><td>None</td></tr><tr><th>Domain</th><td></td></tr><tr><th>Range</th><td>http://www.w3.org/2001/XMLSchema#string</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/legislation#hasLegislationYear</td></tr><tr  class='bg-danger'><th>Label</th><td>None</td></tr><tr  class=''><th>Comment</th><td>The year in which an Act was enacted or an SI came into force.</td></tr><tr><th>Domain</th><td></td></tr><tr><th>Range</th><td>http://www.w3.org/2001/XMLSchema#gYear</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/legislation#hasSSInumber</td></tr><tr  class='bg-danger'><th>Label</th><td>None</td></tr><tr  class=''><th>Comment</th><td>The number of the legislation under the UK SI numbering scheme. A given piece of legislation may have numbers under a number of legislation numbering schemes.</td></tr><tr><th>Domain</th><td></td></tr><tr><th>Range</th><td>http://www.w3.org/2001/XMLSchema#integer</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/legislation#isRepealed</td></tr><tr  class='bg-danger'><th>Label</th><td>None</td></tr><tr  class='bg-danger'><th>Comment</th><td>None</td></tr><tr><th>Domain</th><td></td></tr><tr><th>Range</th><td>http://www.w3.org/2001/XMLSchema#boolean</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/legislation#objectionCommencementDate</td></tr><tr  class=''><th>Label</th><td>objectionCommencementDate property</td></tr><tr  class=''><th>Comment</th><td>commencement date objections can be placed</td></tr><tr><th>Domain</th><td></td></tr><tr><th>Range</th><td>http://www.w3.org/2001/XMLSchema#date</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/legislation#objectionDeadline</td></tr><tr  class='bg-danger'><th>Label</th><td>None</td></tr><tr  class='bg-danger'><th>Comment</th><td>None</td></tr><tr><th>Domain</th><td></td></tr><tr><th>Range</th><td>http://www.w3.org/2001/XMLSchema#date</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/legislation#objectionDuration</td></tr><tr  class='bg-danger'><th>Label</th><td>None</td></tr><tr  class='bg-danger'><th>Comment</th><td>None</td></tr><tr><th>Domain</th><td></td></tr><tr><th>Range</th><td>http://www.w3.org/2001/XMLSchema#duration</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/legislation#shortTitle</td></tr><tr  class=''><th>Label</th><td>shortTitle property</td></tr><tr  class='bg-danger'><th>Comment</th><td>None</td></tr><tr><th>Domain</th><td></td></tr><tr><th>Range</th><td>http://www.w3.org/2001/XMLSchema#string</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/legislation#legislationTitle</td></tr><tr  class=''><th>Label</th><td>legislationTitle</td></tr><tr  class='bg-danger'><th>Comment</th><td>None</td></tr><tr><th>Domain</th><td></td></tr><tr><th>Range</th><td>http://www.w3.org/2001/XMLSchema#string</td></tr></table><br/> 
-                            </div></div><br/></div></div>
- </div></div></body>
+</table>
+</div></div>
+</div>
+<div class="col-lg-6">
+<div class="card"><div class="card-body">
+<h5 class="card-title">Completeness</h5>
+<img src="../../data/legislation/completeness_data_property.jpg" alt="Completeness chart for data property">
+<table><tr><th>URI</th><td>http://purl.org/dc/elements/1.1/title</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr><tr><th>Domain</th><td></td></tr><tr><th>Range</th><td>None</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/legislation#dateDeclarationMade</td></tr><tr class=''><th>Label</th><td>dateDeclarationMade property</td></tr><tr class=''><th>Comment</th><td>date the declaration was made</td></tr><tr><th>Domain</th><td></td></tr><tr><th>Range</th><td>http://www.w3.org/2001/XMLSchema#date</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/legislation#dateOrderComesIntoEffect</td></tr><tr class=''><th>Label</th><td>dateOrderComesIntoEffect property</td></tr><tr class=''><th>Comment</th><td>date the order comes into operation</td></tr><tr><th>Domain</th><td></td></tr><tr><th>Range</th><td>http://www.w3.org/2001/XMLSchema#date</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/legislation#dateOrderMade</td></tr><tr class=''><th>Label</th><td>dateOrderMade property</td></tr><tr class=''><th>Comment</th><td>date the order was made</td></tr><tr><th>Domain</th><td></td></tr><tr><th>Range</th><td>http://www.w3.org/2001/XMLSchema#date</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/legislation#dateProposedOrderComesIntoEffect</td></tr><tr class=''><th>Label</th><td>dateOrderComesIntoEffect property</td></tr><tr class=''><th>Comment</th><td>date the order comes into operation</td></tr><tr><th>Domain</th><td></td></tr><tr><th>Range</th><td>http://www.w3.org/2001/XMLSchema#date</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/legislation#hasLegislationNumber</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr><tr><th>Domain</th><td></td></tr><tr><th>Range</th><td>http://www.w3.org/2001/XMLSchema#integer</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/legislation#hasLegislationPartNumber</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr><tr><th>Domain</th><td></td></tr><tr><th>Range</th><td>http://www.w3.org/2001/XMLSchema#string</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/legislation#hasLegislationYear</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class=''><th>Comment</th><td>The year in which an Act was enacted or an SI came into force.</td></tr><tr><th>Domain</th><td></td></tr><tr><th>Range</th><td>http://www.w3.org/2001/XMLSchema#gYear</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/legislation#hasSSInumber</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class=''><th>Comment</th><td>The number of the legislation under the UK SI numbering scheme. A given piece of legislation may have numbers under a number of legislation numbering schemes.</td></tr><tr><th>Domain</th><td></td></tr><tr><th>Range</th><td>http://www.w3.org/2001/XMLSchema#integer</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/legislation#isRepealed</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr><tr><th>Domain</th><td></td></tr><tr><th>Range</th><td>http://www.w3.org/2001/XMLSchema#boolean</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/legislation#objectionCommencementDate</td></tr><tr class=''><th>Label</th><td>objectionCommencementDate property</td></tr><tr class=''><th>Comment</th><td>commencement date objections can be placed</td></tr><tr><th>Domain</th><td></td></tr><tr><th>Range</th><td>http://www.w3.org/2001/XMLSchema#date</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/legislation#objectionDeadline</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr><tr><th>Domain</th><td></td></tr><tr><th>Range</th><td>http://www.w3.org/2001/XMLSchema#date</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/legislation#objectionDuration</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr><tr><th>Domain</th><td></td></tr><tr><th>Range</th><td>http://www.w3.org/2001/XMLSchema#duration</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/legislation#shortTitle</td></tr><tr class=''><th>Label</th><td>shortTitle property</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr><tr><th>Domain</th><td></td></tr><tr><th>Range</th><td>http://www.w3.org/2001/XMLSchema#string</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/legislation#legislationTitle</td></tr><tr class=''><th>Label</th><td>legislationTitle</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr><tr><th>Domain</th><td></td></tr><tr><th>Range</th><td>http://www.w3.org/2001/XMLSchema#string</td></tr></table></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
 </html>

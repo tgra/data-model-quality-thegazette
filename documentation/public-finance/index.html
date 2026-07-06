@@ -1,19 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Public-finance</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Public finance — Documentation — The Gazette Data Model</title>
   <style>
-    body, html, iframe {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      width: 100%;
-      border: none;
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
+    body { display: flex; flex-direction: column; }
+    header {
+      background: #1c2733; border-bottom: 4px solid #8e2433;
+      color: #fff; padding: 0.65rem 1.25rem;
+      display: flex; align-items: center; gap: 1rem;
     }
+    header h1 { font-size: 1.05rem; font-weight: 600; flex: 1; }
+    header a { color: #fff; opacity: 0.85; font-size: 0.85rem; text-decoration: none; }
+    header a:hover { opacity: 1; text-decoration: underline; }
+    iframe { flex: 1; width: 100%; border: none; }
   </style>
 </head>
 <body>
-  <h1 style="text-transform: capitalize;">Public-finance</h1>
-  <iframe src="http://150.146.207.114/lode/extract?lang=en&url=https%3A%2F%2Fwww.thegazette.co.uk%2Fdef%2Fpublic-finance" style="height: 100%; width: 100%;"></iframe>
+  <header>
+    <h1>Public finance — Documentation</h1>
+    <a href="../../index.html">&larr; Back to dashboard</a>
+  </header>
+  <iframe src="http://150.146.207.114/lode/extract?lang=en&url=https%3A%2F%2Fwww.thegazette.co.uk%2Fdef%2Fpublic-finance" title="Public finance ontology documentation"></iframe>
 </body>
 </html>

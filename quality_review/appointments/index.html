@@ -1,42 +1,44 @@
 <!DOCTYPE html>
-<html>
-<head> <link rel="stylesheet" href="../../lib/bootstrap-4.0.0-dist/css/bootstrap.min.css"><script src="../../lib/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script><link rel="stylesheet" href="../../assets/css/style.css">
-<title>Summary</title>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Appointments — Quality review — The Gazette Data Model</title>
+    <link rel="stylesheet" href="../../lib/bootstrap-4.0.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 <body>
- 
-                <div class="container-fluid ">
-    <div class="row justify-content-start ">
-            <div class=" sidebar ">
-                <p><img src="../../assets/images/logo.png" /> </p>
+
+    <div class="container-fluid">
+        <div class="row justify-content-start">
+            <div class="sidebar">
+                <p><img src="../../assets/images/logo.png" alt="The Gazette logo"></p>
             </div>
-            <div class="col-8 bg-info">
+            <div class="col bg-info">
                 <h1>The Gazette Data Model</h1>
             </div>
         </div>
         <div class="row justify-content-start">
-            <div class=" bg-info sidebar">
-
+            <div class="bg-info sidebar">
                 <ul class="list-group">
-
                     <li class="list-group-item"><a href="../../index.html">Dashboard</a></li>
-                    <li class="list-group-item"><a href="../../quality_review/index.html">Quality review</a></li>
-                    
-
+                    <li class="list-group-item active"><a href="../../quality_review/index.html">Quality review</a></li>
+                    <li class="list-group-item"><a href="../../documentation/index.html">Documentation</a></li>
                 </ul>
             </div>
             <div class="col">
 <h2 class="text-secondary">Appointments Ontology</h2>
-<h3 class='text-primary'>Documentation</h3><a class='text-info' target='_new' href="http://150.146.207.114/lode/extract?lang=en&url=https%3A%2F%2Fwww.thegazette.co.uk%2Fdef%2Fappointments">View documentation</a><br/><br/><h3 class='text-primary'>Quality review</h3><h4>OWL Class</h4>
- 
+<p class="lead-muted">Relevance and completeness review of the classes and properties in this ontology.</p>
+<h3 class="text-primary">Documentation</h3><a class="text-info" target="_new" href="http://150.146.207.114/lode/extract?lang=en&url=https%3A%2F%2Fwww.thegazette.co.uk%2Fdef%2Fappointments">View documentation</a>
+<h3 class="text-primary">Quality review</h3>
+<h4>OWL Class</h4>
 <div class="row">
-                    <div class="col">
-                        <div class="card  ">
-                            <div class="card-body ">
-                                <h5 class="card-title">Relevance</h5>
-                                   
-                                <img width="600px"  src="../../data/appointments/relevance_class.jpg" alt="Relevance">
-<br/><h6>Frequency in The Gazette data</h6><table border='1'>
+<div class="col-lg-6">
+<div class="card"><div class="card-body">
+<h5 class="card-title">Relevance</h5>
+<img src="../../data/appointments/relevance_class.jpg" alt="Relevance chart for owl class">
+<h6>Frequency in The Gazette data</h6>
+<table>
 <thead>
 <tr><th>URI</th><th>Frequency</th></tr>
 </thead>
@@ -62,28 +64,24 @@
 <tr><td>https://www.thegazette.co.uk/def/appointments#AppointmentNotice</td><td>0</td></tr>
 <tr><td>https://www.thegazette.co.uk/def/publication#PNBNotice</td><td>0</td></tr>
 </tbody>
-</table> 
-                               
-                            </div>
-                        </div><br/>
-                    </div>
-                    <div class="col ">
-                        <div class="card ">
-                            <div class="card-body">
-                                <h5 class="card-title">Completeness</h5>
-                                <img width="600px"  src="../../data/appointments/completeness_class.jpg" alt="Completeness Image">
-<table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/publication#PNBNotice</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/publication#PNBThing</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/appointments#AppointmentNotice</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/appointments#AppointmentThing</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/appointments#AppointmentToRoyalHousehold</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/appointments#AppointmentToRoyalHouseholdNotice</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/appointments#CrownOffice</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/appointments#CrownOfficeNotice</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/appointments#DeputyLieutenant</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/appointments#DeputyLieutenantNotice</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/appointments#DuchyOfCornwall</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/appointments#DuchyOfCornwallNotice</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/appointments#Judges</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/appointments#JudgesNotice</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/appointments#LordLieutenants</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/appointments#LordLieutenantsNotice</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/appointments#PrimeMinistersOffice</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/appointments#PrimeMinistersOfficeNotice</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/appointments#Sheriffs</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/appointments#SheriffsNotice</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><br/> <br/>
-                                  
-                            </div></div><br/></div></div>
+</table>
+</div></div>
+</div>
+<div class="col-lg-6">
+<div class="card"><div class="card-body">
+<h5 class="card-title">Completeness</h5>
+<img src="../../data/appointments/completeness_class.jpg" alt="Completeness chart for owl class">
+<table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/publication#PNBNotice</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/publication#PNBThing</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/appointments#AppointmentNotice</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/appointments#AppointmentThing</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/appointments#AppointmentToRoyalHousehold</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/appointments#AppointmentToRoyalHouseholdNotice</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/appointments#CrownOffice</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/appointments#CrownOfficeNotice</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/appointments#DeputyLieutenant</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/appointments#DeputyLieutenantNotice</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/appointments#DuchyOfCornwall</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/appointments#DuchyOfCornwallNotice</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/appointments#Judges</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/appointments#JudgesNotice</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/appointments#LordLieutenants</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/appointments#LordLieutenantsNotice</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/appointments#PrimeMinistersOffice</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/appointments#PrimeMinistersOfficeNotice</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/appointments#Sheriffs</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/appointments#SheriffsNotice</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table></div></div>
+</div>
+</div>
 <h4>Object property</h4>
- 
-                <div class="row">
-                    <div class="col">
-                        <div class="card  ">
-                            <div class="card-body ">
-                                <h5 class="card-title">Relevance</h5>
-                                <img width="600px"  src="../../data/appointments/relevance_object_property.jpg" alt="Relevance">
-<br/><h6>Frequency in The Gazette data</h6><table border='1'>
+<div class="row">
+<div class="col-lg-6">
+<div class="card"><div class="card-body">
+<h5 class="card-title">Relevance</h5>
+<img src="../../data/appointments/relevance_object_property.jpg" alt="Relevance chart for object property">
+<h6>Frequency in The Gazette data</h6>
+<table>
 <thead>
 <tr><th>URI</th><th>Frequency</th></tr>
 </thead>
@@ -92,41 +90,41 @@
 <tr><td>https://www.thegazette.co.uk/def/publication#isEnabledByLegislation</td><td>375728</td></tr>
 <tr><td>https://www.thegazette.co.uk/def/appointments##hasAppointee</td><td>0</td></tr>
 </tbody>
-</table></div> 
-                            </div>
-                        </div>
-                    <div class="col ">
-                        <div class="card ">
-                            <div class="card-body">
-                                <h5 class="card-title">Completeness</h5>
-                                <img width="600px"  src="../../data/appointments/completeness_object_property.jpg" alt="Completeness Image">
-<table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/publication#isAbout</td></tr><tr  class='bg-danger'><th>Label</th><td>None</td></tr><tr  class='bg-danger'><th>Comment</th><td>None</td></tr><tr><th>Domain</th><td>None</td></tr><tr><th>Range</th><td>None</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/publication#isEnabledByLegislation</td></tr><tr  class='bg-danger'><th>Label</th><td>None</td></tr><tr  class='bg-danger'><th>Comment</th><td>None</td></tr><tr><th>Domain</th><td>None</td></tr><tr><th>Range</th><td>None</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/appointments##hasAppointee</td></tr><tr  class=''><th>Label</th><td>Appointee</td></tr><tr  class='bg-danger'><th>Comment</th><td>None</td></tr><tr><th>Domain</th><td>https://www.thegazette.co.uk/def/appointments##AppointmentToRoyalHousehold</td></tr><tr><th>Range</th><td>https://www.thegazette.co.uk/def/person#Person</td></tr></table><br/> 
-                            </div></div></div><br/>
-</div><h4>Data property</h4>
- 
+</table>
+</div></div>
+</div>
+<div class="col-lg-6">
+<div class="card"><div class="card-body">
+<h5 class="card-title">Completeness</h5>
+<img src="../../data/appointments/completeness_object_property.jpg" alt="Completeness chart for object property">
+<table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/publication#isAbout</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr><tr><th>Domain</th><td>None</td></tr><tr><th>Range</th><td>None</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/publication#isEnabledByLegislation</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr><tr><th>Domain</th><td>None</td></tr><tr><th>Range</th><td>None</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/appointments##hasAppointee</td></tr><tr class=''><th>Label</th><td>Appointee</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr><tr><th>Domain</th><td>https://www.thegazette.co.uk/def/appointments##AppointmentToRoyalHousehold</td></tr><tr><th>Range</th><td>https://www.thegazette.co.uk/def/person#Person</td></tr></table></div></div>
+</div>
+</div>
+<h4>Data property</h4>
 <div class="row">
-                    <div class="col">
-                        <div class="card  ">
-                            <div class="card-body ">
-                                <h5 class="card-title">Relevance</h5>
-                                <br/><h6>Frequency in The Gazette data</h6><table border='1'>
+<div class="col-lg-6">
+<div class="card"><div class="card-body">
+<h5 class="card-title">Relevance</h5>
+<h6>Frequency in The Gazette data</h6>
+<table>
 <thead>
 <tr><th>URI</th><th>Frequency</th></tr>
 </thead>
 <tbody>
 <tr><td>https://www.thegazette.co.uk/def/publication#hasNoticeCode</td><td>4390112</td></tr>
 </tbody>
-</table> 
-                                
-                            </div>
-                        </div><br/>
-                    </div>
-                    <div class="col ">
-                        <div class="card ">
-                            <div class="card-body">
-                                <h5 class="card-title">Completeness</h5>
-                                <img width="600px"  src="../../data/appointments/completeness_data_property.jpg" alt="Completeness Image">
-<table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/publication#hasNoticeCode</td></tr><tr  class='bg-danger'><th>Label</th><td>None</td></tr><tr  class='bg-danger'><th>Comment</th><td>None</td></tr><tr><th>Domain</th><td></td></tr><tr><th>Range</th><td>None</td></tr></table><br/> 
-                            </div></div><br/></div></div>
- </div></div></body>
+</table>
+</div></div>
+</div>
+<div class="col-lg-6">
+<div class="card"><div class="card-body">
+<h5 class="card-title">Completeness</h5>
+<img src="../../data/appointments/completeness_data_property.jpg" alt="Completeness chart for data property">
+<table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/publication#hasNoticeCode</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr><tr><th>Domain</th><td></td></tr><tr><th>Range</th><td>None</td></tr></table></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
 </html>

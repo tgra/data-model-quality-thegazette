@@ -1,42 +1,44 @@
 <!DOCTYPE html>
-<html>
-<head> <link rel="stylesheet" href="../../lib/bootstrap-4.0.0-dist/css/bootstrap.min.css"><script src="../../lib/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script><link rel="stylesheet" href="../../assets/css/style.css">
-<title>Summary</title>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Parliament — Quality review — The Gazette Data Model</title>
+    <link rel="stylesheet" href="../../lib/bootstrap-4.0.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 <body>
- 
-                <div class="container-fluid ">
-    <div class="row justify-content-start ">
-            <div class=" sidebar ">
-                <p><img src="../../assets/images/logo.png" /> </p>
+
+    <div class="container-fluid">
+        <div class="row justify-content-start">
+            <div class="sidebar">
+                <p><img src="../../assets/images/logo.png" alt="The Gazette logo"></p>
             </div>
-            <div class="col-8 bg-info">
+            <div class="col bg-info">
                 <h1>The Gazette Data Model</h1>
             </div>
         </div>
         <div class="row justify-content-start">
-            <div class=" bg-info sidebar">
-
+            <div class="bg-info sidebar">
                 <ul class="list-group">
-
                     <li class="list-group-item"><a href="../../index.html">Dashboard</a></li>
-                    <li class="list-group-item"><a href="../../quality_review/index.html">Quality review</a></li>
-                    
-
+                    <li class="list-group-item active"><a href="../../quality_review/index.html">Quality review</a></li>
+                    <li class="list-group-item"><a href="../../documentation/index.html">Documentation</a></li>
                 </ul>
             </div>
             <div class="col">
 <h2 class="text-secondary">Parliament Ontology</h2>
-<h3 class='text-primary'>Documentation</h3><a class='text-info' target='_new' href="http://150.146.207.114/lode/extract?lang=en&url=https%3A%2F%2Fwww.thegazette.co.uk%2Fdef%2Fparliament">View documentation</a><br/><br/><h3 class='text-primary'>Quality review</h3><h4>OWL Class</h4>
- 
+<p class="lead-muted">Relevance and completeness review of the classes and properties in this ontology.</p>
+<h3 class="text-primary">Documentation</h3><a class="text-info" target="_new" href="http://150.146.207.114/lode/extract?lang=en&url=https%3A%2F%2Fwww.thegazette.co.uk%2Fdef%2Fparliament">View documentation</a>
+<h3 class="text-primary">Quality review</h3>
+<h4>OWL Class</h4>
 <div class="row">
-                    <div class="col">
-                        <div class="card  ">
-                            <div class="card-body ">
-                                <h5 class="card-title">Relevance</h5>
-                                   
-                                <img width="600px"  src="../../data/parliament/relevance_class.jpg" alt="Relevance">
-<br/><h6>Frequency in The Gazette data</h6><table border='1'>
+<div class="col-lg-6">
+<div class="card"><div class="card-body">
+<h5 class="card-title">Relevance</h5>
+<img src="../../data/parliament/relevance_class.jpg" alt="Relevance chart for owl class">
+<h6>Frequency in The Gazette data</h6>
+<table>
 <thead>
 <tr><th>URI</th><th>Frequency</th></tr>
 </thead>
@@ -62,54 +64,46 @@
 <tr><td>https://www.thegazette.co.uk/def/parliament#RecordOfLegislationNotice</td><td>0</td></tr>
 <tr><td>https://www.thegazette.co.uk/def/parliament#ParliamentNotice</td><td>0</td></tr>
 </tbody>
-</table> 
-                               
-                            </div>
-                        </div><br/>
-                    </div>
-                    <div class="col ">
-                        <div class="card ">
-                            <div class="card-body">
-                                <h5 class="card-title">Completeness</h5>
-                                <img width="600px"  src="../../data/parliament/completeness_class.jpg" alt="Completeness Image">
-<table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/parliament#ParliamentNotice</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/parliament#ParliamentThing</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/parliament#HouseOfCommons</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/parliament#HouseOfCommonsNotice</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/parliament#LordChancellorsOffice</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/parliament#LordChancellorsOfficeNotice</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/parliament#BillsInParliament</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/parliament#BillsInParliamentNotice</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/parliament#BillsRoyalAssent</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/parliament#BillsRoyalAssentNotice</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/parliament#BillsRoyalAssentNorthernIreland</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/parliament#BillsRoyalAssentNorthernIrelandNotice</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/parliament#BillsRoyalAssentScotland</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/parliament#BillsRoyalAssentScotlandNotice</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/parliament#BillsRoyalAssentWales</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/parliament#BillsRoyalAssentWalesNotice</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/parliament#RecordOfLegislation</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/parliament#RecordOfLegislationNotice</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/parliament#Speakers</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><br/><table border='1'><tr><th>URI</th><td>https://www.thegazette.co.uk/def/parliament#SpeakersNotice</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><br/> <br/>
-                                  
-                            </div></div><br/></div></div>
+</table>
+</div></div>
+</div>
+<div class="col-lg-6">
+<div class="card"><div class="card-body">
+<h5 class="card-title">Completeness</h5>
+<img src="../../data/parliament/completeness_class.jpg" alt="Completeness chart for owl class">
+<table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/parliament#ParliamentNotice</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/parliament#ParliamentThing</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/parliament#HouseOfCommons</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/parliament#HouseOfCommonsNotice</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/parliament#LordChancellorsOffice</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/parliament#LordChancellorsOfficeNotice</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/parliament#BillsInParliament</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/parliament#BillsInParliamentNotice</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/parliament#BillsRoyalAssent</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/parliament#BillsRoyalAssentNotice</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/parliament#BillsRoyalAssentNorthernIreland</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/parliament#BillsRoyalAssentNorthernIrelandNotice</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/parliament#BillsRoyalAssentScotland</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/parliament#BillsRoyalAssentScotlandNotice</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/parliament#BillsRoyalAssentWales</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/parliament#BillsRoyalAssentWalesNotice</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/parliament#RecordOfLegislation</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/parliament#RecordOfLegislationNotice</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/parliament#Speakers</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table><table><tr><th>URI</th><td>https://www.thegazette.co.uk/def/parliament#SpeakersNotice</td></tr><tr class='bg-danger'><th>Label</th><td>None</td></tr><tr class='bg-danger'><th>Comment</th><td>None</td></tr></table></div></div>
+</div>
+</div>
 <h4>Object property</h4>
- 
-                <div class="row">
-                    <div class="col">
-                        <div class="card  ">
-                            <div class="card-body ">
-                                <h5 class="card-title">Relevance</h5>
-                                </div> 
-                            </div>
-                        </div>
-                    <div class="col ">
-                        <div class="card ">
-                            <div class="card-body">
-                                <h5 class="card-title">Completeness</h5>
-                                <img width="600px"  src="../../data/parliament/completeness_object_property.jpg" alt="Completeness Image">
- 
-                            </div></div></div><br/>
-</div><h4>Data property</h4>
- 
 <div class="row">
-                    <div class="col">
-                        <div class="card  ">
-                            <div class="card-body ">
-                                <h5 class="card-title">Relevance</h5>
-                                 
-                                
-                            </div>
-                        </div><br/>
-                    </div>
-                    <div class="col ">
-                        <div class="card ">
-                            <div class="card-body">
-                                <h5 class="card-title">Completeness</h5>
-                                <img width="600px"  src="../../data/parliament/completeness_data_property.jpg" alt="Completeness Image">
- 
-                            </div></div><br/></div></div>
- </div></div></body>
+<div class="col-lg-6">
+<div class="card"><div class="card-body">
+<h5 class="card-title">Relevance</h5>
+</div></div>
+</div>
+<div class="col-lg-6">
+<div class="card"><div class="card-body">
+<h5 class="card-title">Completeness</h5>
+<img src="../../data/parliament/completeness_object_property.jpg" alt="Completeness chart for object property">
+</div></div>
+</div>
+</div>
+<h4>Data property</h4>
+<div class="row">
+<div class="col-lg-6">
+<div class="card"><div class="card-body">
+<h5 class="card-title">Relevance</h5>
+</div></div>
+</div>
+<div class="col-lg-6">
+<div class="card"><div class="card-body">
+<h5 class="card-title">Completeness</h5>
+<img src="../../data/parliament/completeness_data_property.jpg" alt="Completeness chart for data property">
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
 </html>

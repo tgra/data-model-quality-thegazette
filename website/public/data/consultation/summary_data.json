@@ -92,13 +92,13 @@
             "label": null,
             "comment": null,
             "domain": "https://www.thegazette.co.uk/def/consultation#PlanningPermission",
-            "range": "Nff03d9e806334e1298fd6414e7a59967"
+            "range": "Nd669ee8ae1f44155b1f6bb0061094752"
         },
         "https://www.thegazette.co.uk/def/consultation#grantedTo": {
             "label": null,
             "comment": null,
             "domain": "https://www.thegazette.co.uk/def/consultation#PlanningPermission",
-            "range": "Nbd5f407e89de4d23a01248da0d7dd9e8"
+            "range": "N6f4f72e9c31347098c4cdce14f137569"
         },
         "https://www.thegazette.co.uk/def/consultation#hasAssociatedPlanningPermission": {
             "label": null,
@@ -158,7 +158,7 @@
             "label": "hasObjectionAddressee property",
             "comment": "contact or address to which objections should be made",
             "domain": "https://www.thegazette.co.uk/def/consultation#Objection",
-            "range": "Nfc78bb4119114972a9902b9c768f00b3"
+            "range": "Nb5278fc5221b4d9381e468c9610e72f5"
         },
         "https://www.thegazette.co.uk/def/consultation#hasObjectionDuration": {
             "label": "hasObjectionDuration property",
@@ -200,7 +200,7 @@
             "label": null,
             "comment": null,
             "domain": null,
-            "range": "N914638ce09d84fae8e17bb04d30e81ec"
+            "range": "N931d8141b8f243a5a92ff1d0ed659cc5"
         },
         "https://www.thegazette.co.uk/def/consultation#isAbout": {
             "label": null,
@@ -266,7 +266,7 @@
             "label": "isPursuantToLegislation",
             "comment": "Legislation item(s) pursuant to which the notice is placed",
             "domain": "https://www.thegazette.co.uk/def/consultation#StatutoryConsultationNotification",
-            "range": "Nd844d412b4bc4508922461ec32b660cf"
+            "range": "N25891f147c064a5ba7a51220dc534c45"
         }
     },
     "data_properties": {

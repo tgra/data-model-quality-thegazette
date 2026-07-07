@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
-import { SiteNav } from "@/components/SiteNav";
-import { getCategories } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: {
@@ -14,8 +12,6 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const categories = getCategories();
-
   return (
     <html lang="en">
       <body>
@@ -24,12 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Link href="/">The Gazette Data Model</Link>
           </h1>
         </header>
-        <div className="layout">
-          <aside className="sidebar">
-            <SiteNav categories={categories} />
-          </aside>
-          <main className="content">{children}</main>
-        </div>
+        {children}
       </body>
     </html>
   );

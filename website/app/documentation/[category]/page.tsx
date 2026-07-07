@@ -22,28 +22,21 @@ export default async function Documentation({
   if (!getCategories().includes(category)) notFound();
 
   return (
-    <>
-      <nav className="breadcrumb" aria-label="Breadcrumb">
-        <Link href="/">Dashboard</Link> <span>/</span>{" "}
-        <Link href="/documentation">Documentation</Link> <span>/</span>{" "}
-        {categoryTitle(category)}
-      </nav>
-      <div className="page-head">
-        <h2>{categoryTitle(category)} — documentation</h2>
-        <div className="page-actions">
-          <Link href={`/quality-review/${category}`} className="btn btn-primary">
-            Quality review
-          </Link>
-          <a href={docUrl(category)} target="_blank" rel="noopener" className="btn">
-            Open in new tab ↗
-          </a>
-        </div>
+    <div className="doc-page">
+      <div className="doc-bar">
+        <Link href="/documentation" className="doc-back">
+          ← All documentation
+        </Link>
+        <span className="doc-bar-title">{categoryTitle(category)}</span>
+        <Link href={`/quality-review/${category}`} className="btn btn-primary">
+          Quality review
+        </Link>
       </div>
       <iframe
         className="doc-frame"
         src={docUrl(category)}
         title={`${categoryTitle(category)} ontology documentation`}
       />
-    </>
+    </div>
   );
 }

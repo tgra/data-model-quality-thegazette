@@ -50,6 +50,9 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 a {
@@ -328,12 +331,53 @@ tr.missing th {
   color: var(--danger-ink);
 }
 
-/* ---------- Documentation iframe page ---------- */
-.doc-frame {
+/* ---------- Documentation (full-width, no sidebar) ---------- */
+.content-full {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* Documentation index keeps normal page padding */
+.doc-index {
+  max-width: 1400px;
   width: 100%;
-  height: calc(100vh - 150px);
-  border: 1px solid var(--border);
-  border-radius: 10px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.doc-page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.doc-bar {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.6rem 1.25rem;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.doc-back {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.doc-bar-title {
+  font-weight: 600;
+  text-transform: capitalize;
+  margin-right: auto;
+}
+
+.doc-frame {
+  flex: 1;
+  width: 100%;
+  border: none;
   background: #fff;
 }
 

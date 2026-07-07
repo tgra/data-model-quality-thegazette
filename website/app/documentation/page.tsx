@@ -7,7 +7,7 @@ export default function DocumentationIndex() {
   const stats = getAllStats();
 
   return (
-    <>
+    <div className="doc-index">
       <nav className="breadcrumb" aria-label="Breadcrumb">
         <Link href="/">Dashboard</Link> <span>/</span> Documentation
       </nav>
@@ -29,6 +29,6 @@ export default function DocumentationIndex() {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 }

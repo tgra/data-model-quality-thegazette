@@ -103,9 +103,13 @@ export function getAllStats(): CategoryStats[] {
   return getCategories().map(getCategoryStats);
 }
 
-/** Static pyLODE documentation generated at build time into public/docs. */
+/**
+ * Static pyLODE documentation, stored as docs/<category>/index.html so the
+ * clean URL /docs/<category>/ serves on both Vercel (trailingSlash cleanUrls)
+ * and GitHub Pages (directory index).
+ */
 export function docUrl(category: string): string {
-  return `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/docs/${category}.html`;
+  return `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/docs/${category}/`;
 }
 
 /** URIs observed at least once in The Gazette data, across all entity kinds. */

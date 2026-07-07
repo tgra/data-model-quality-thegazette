@@ -1,0 +1,168 @@
+{
+    "classes": {
+        "https://www.thegazette.co.uk/def/military#Rank": {
+            "label": "Rank Class",
+            "comment": "Rank"
+        },
+        "https://www.thegazette.co.uk/def/military#Officer": {
+            "label": "Officer Class",
+            "comment": "Officer"
+        },
+        "https://www.thegazette.co.uk/def/military#Enlisted": {
+            "label": "Enlisted Class",
+            "comment": "Enlisted"
+        },
+        "https://www.thegazette.co.uk/def/military#Service": {
+            "label": "Service Class",
+            "comment": "Service"
+        },
+        "https://www.thegazette.co.uk/def/military#Division": {
+            "label": "Division Class",
+            "comment": "Division"
+        },
+        "https://www.thegazette.co.uk/def/military#MilitaryRole": {
+            "label": "Division Class",
+            "comment": "Division"
+        },
+        "https://www.thegazette.co.uk/def/person#Position": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/military#MilitaryNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/military#MilitaryThing": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/military#ArmyAppointments": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/military#ArmyAppointmentsNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/military#RAFAppointments": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/military#RAFAppointmentsNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/military#RNAppointments": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/military#RNAppointmentsNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/military#TAAppointments": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/military#TAAppointmentsNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/military#ArmyAwards": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/military#ArmyAwardsNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/military#TAAwards": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/military#TAAwardsNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/military#RNAwards": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/military#RNAwardsNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/military#RAFAwards": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/military#RAFAwardsNotice": {
+            "label": null,
+            "comment": null
+        }
+    },
+    "object_properties": {
+        "https://www.thegazette.co.uk/def/military#holdsRank": {
+            "label": "isPartOf property",
+            "comment": "The rank an individual holds as a military role",
+            "domain": "https://www.thegazette.co.uk/def/military#MilitaryRole",
+            "range": "https://www.thegazette.co.uk/def/military#Rank"
+        },
+        "https://www.thegazette.co.uk/def/military#inService": {
+            "label": "isPartOf property",
+            "comment": "The service an individual belongs to",
+            "domain": "https://www.thegazette.co.uk/def/military#MilitaryRole",
+            "range": "https://www.thegazette.co.uk/def/military#Service"
+        },
+        "https://www.thegazette.co.uk/def/military#withDivision": {
+            "label": "withDivision property",
+            "comment": "The Division an individual belongs to eg regiment",
+            "domain": "https://www.thegazette.co.uk/def/military#MilitaryRole",
+            "range": "https://www.thegazette.co.uk/def/military#Division"
+        },
+        "https://www.thegazette.co.uk/def/military#isPartOf": {
+            "label": "isPartOf property",
+            "comment": "Divisional part of a service",
+            "domain": "https://www.thegazette.co.uk/def/military#Division",
+            "range": "https://www.thegazette.co.uk/def/military#Service"
+        },
+        "https://www.thegazette.co.uk/def/military#hasDivision": {
+            "label": "hasDivision property",
+            "comment": "a service consists of multiple divisions",
+            "domain": "https://www.thegazette.co.uk/def/military#Service",
+            "range": "https://www.thegazette.co.uk/def/military#Division"
+        },
+        "https://www.thegazette.co.uk/def/military#belongsToService": {
+            "label": "belongsToService property",
+            "comment": "the service to which the rank is used",
+            "domain": "https://www.thegazette.co.uk/def/military#Rank",
+            "range": "https://www.thegazette.co.uk/def/military#Service"
+        },
+        "https://www.thegazette.co.uk/def/military#hasAssociatedRank": {
+            "label": "hasAssociatedRank property",
+            "comment": "service has particular rank",
+            "domain": "https://www.thegazette.co.uk/def/military#Service",
+            "range": "https://www.thegazette.co.uk/def/military#Rank"
+        }
+    },
+    "data_properties": {
+        "https://www.thegazette.co.uk/def/military#rankName": {
+            "label": "rankName datatype property",
+            "comment": "rankName of rank",
+            "domain": "https://www.thegazette.co.uk/def/military#Rank",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/military#abbreviation": {
+            "label": "abbreviation datatype property",
+            "comment": "abbreviation associated with a rank",
+            "domain": "https://www.thegazette.co.uk/def/military#Rank",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/military#serviceNumber": {
+            "label": "serviceNumber datatype property",
+            "comment": "the service number of an individual with a military role",
+            "domain": "https://www.thegazette.co.uk/def/military#MilitaryRole",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        }
+    }
+}

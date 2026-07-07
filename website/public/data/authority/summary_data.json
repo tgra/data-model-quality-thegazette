@@ -1,0 +1,48 @@
+{
+    "classes": {
+        "https://www.thegazette.co.uk/def/authority#Authority": {
+            "label": "Authority",
+            "comment": null
+        }
+    },
+    "object_properties": {
+        "https://www.thegazette.co.uk/def/authority#hasAuthorised": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/authority#Authority",
+            "range": null
+        },
+        "https://www.thegazette.co.uk/def/authority#hasAuthority": {
+            "label": null,
+            "comment": null,
+            "domain": null,
+            "range": "https://www.thegazette.co.uk/def/authority#Authority"
+        },
+        "https://www.thegazette.co.uk/def/authority#hasAddress": {
+            "label": "hasAddress",
+            "comment": "Current or last registered address for a person",
+            "domain": "https://www.thegazette.co.uk/def/authority#Authority",
+            "range": "http://www.w3.org/2006/vcard/ns#Address"
+        }
+    },
+    "data_properties": {
+        "https://www.thegazette.co.uk/def/authority#isKnownAs": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/authority#Authority",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/authority#hasDepartment": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/authority#Authority",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/authority#hasReferenceNumber": {
+            "label": null,
+            "comment": null,
+            "domain": "https://www.thegazette.co.uk/def/authority#Authority",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        }
+    }
+}

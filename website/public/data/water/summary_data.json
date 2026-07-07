@@ -1,0 +1,284 @@
+{
+    "classes": {
+        "https://www.thegazette.co.uk/def/water#WaterNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/water#WaterThing": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/water#Application": {
+            "label": "Application class",
+            "comment": "Applications to local authorities"
+        },
+        "https://www.thegazette.co.uk/def/water#ByelawConfirmation": {
+            "label": "ByelawConfirmation class",
+            "comment": "Confirmation of byelaw"
+        },
+        "https://www.thegazette.co.uk/def/water#ApplicationForConsent": {
+            "label": "ApplicationForConsent class",
+            "comment": "Application for consent"
+        },
+        "https://www.thegazette.co.uk/def/water#ApplicationForAppointment": {
+            "label": "ApplicationForAppointment class",
+            "comment": "Application for appointment"
+        },
+        "https://www.thegazette.co.uk/def/water#NaturalMineralWaterSourceApplicationApproval": {
+            "label": "NaturalMineralWaterSourceApplicationApproval class",
+            "comment": "Approval of Natural Mineral Water Source Applciation"
+        },
+        "https://www.thegazette.co.uk/def/water#LandDrainageNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/consultation#StatutoryConsultationNotification": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/water#NaturalMineralWatersNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/water#WaterIndustryNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/water#WaterResourcesNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/water#InternalDrainageBoard": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/water#DrainageDistrict": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/water#ChangeOfDischarge": {
+            "label": "ChangeOfDischarge class",
+            "comment": "superclass for change of discharge classes"
+        },
+        "https://www.thegazette.co.uk/def/water#NewDischarge": {
+            "label": "NewDischarge class",
+            "comment": "New discharge"
+        },
+        "https://www.thegazette.co.uk/def/water#VariationDischarge": {
+            "label": "VariationDischarge class",
+            "comment": "vairation of existing discharge"
+        },
+        "https://www.thegazette.co.uk/def/water#ChangeOfUndertaker": {
+            "label": "ChangeOfUndertaker class",
+            "comment": "superclass for change of role undertaker"
+        },
+        "https://www.thegazette.co.uk/def/water#ChangeOfSewageUndertaker": {
+            "label": "ChangeOfSewageUndertaker class",
+            "comment": "change of sewage undertaker"
+        },
+        "https://www.thegazette.co.uk/def/water#ChangeOfWaterUndertaker": {
+            "label": "ChangeOfSewageUndertaker class",
+            "comment": "change of water undertaker"
+        },
+        "https://www.thegazette.co.uk/def/water#AmalgamationOfDrainageDistrict": {
+            "label": "AmalgamationOfDrainageDistrict class",
+            "comment": "amalgamation of drainage districts into one district"
+        },
+        "https://www.thegazette.co.uk/def/water#ChangeDrainageBaord": {
+            "label": "ChangeDrainageBaord class",
+            "comment": "Superclass for change of drainage board classes"
+        },
+        "https://www.thegazette.co.uk/def/water#ReconstitutionOfDrainageBoard": {
+            "label": "ReconstitutionOfDrainageBoard class",
+            "comment": "Reconsitution (change of number of members) of Drainage Board"
+        },
+        "https://www.thegazette.co.uk/def/water#AbolitionOfDrainageBoard": {
+            "label": "AbolitionOfDrainageBoard class",
+            "comment": "Abolition of Drainage Board"
+        },
+        "https://www.thegazette.co.uk/def/water#NewDrainageBoard": {
+            "label": "NewDrainageBoard class",
+            "comment": "Formation of new Drainage Board"
+        },
+        "https://www.thegazette.co.uk/def/water#ChangeOfMineralWaterSource": {
+            "label": "ChangeOfMineralWaterSource class",
+            "comment": "Superclass for change of mineral water source classes"
+        },
+        "https://www.thegazette.co.uk/def/water#NewRecognitionOfSource": {
+            "label": "NewRecognitionOfSource class",
+            "comment": "Recognised new source of mineral water"
+        },
+        "https://www.thegazette.co.uk/def/water#WithdrawnRecognitionOfSource": {
+            "label": "WithdrawnRecognitionOfSource class",
+            "comment": "Withdraw recognition of mineral water source"
+        },
+        "https://www.thegazette.co.uk/def/water#RedesignateSource": {
+            "label": "RedesignateSource class",
+            "comment": "Redesignate (sometimes refered to as Rename) mineral water source"
+        },
+        "https://www.thegazette.co.uk/def/water#NaturalMineralWater": {
+            "label": "NaturalMineralWater class",
+            "comment": "Natural mineral water"
+        }
+    },
+    "object_properties": {
+        "https://www.thegazette.co.uk/def/water#hasByelaw": {
+            "label": "hasByelaw property",
+            "comment": "Bylaw that is being confirmed",
+            "domain": "https://www.thegazette.co.uk/def/water#ByelawConfirmation",
+            "range": "https://www.thegazette.co.uk/def/legislation#Byelaw"
+        },
+        "https://www.thegazette.co.uk/def/water#hasApplication": {
+            "label": "hasApplication property",
+            "comment": "Associated Application",
+            "domain": "https://www.thegazette.co.uk/def/water#Application",
+            "range": "https://www.thegazette.co.uk/def/legislation#Application"
+        },
+        "https://www.thegazette.co.uk/def/water#hasApplicationMadeBy": {
+            "label": "hasApplicationMadeBy property",
+            "comment": "Organisation that made the application ",
+            "domain": "https://www.thegazette.co.uk/def/water#Application",
+            "range": "https://www.thegazette.co.uk/def/organisation#Organisation"
+        },
+        "https://www.thegazette.co.uk/def/water#hasApplicationMadeTo": {
+            "label": "hasApplicationMadeBy property",
+            "comment": "Organisation the application has been submitted to",
+            "domain": "https://www.thegazette.co.uk/def/water#Application",
+            "range": "https://www.thegazette.co.uk/def/organisation#Organisation"
+        },
+        "https://www.thegazette.co.uk/def/water#dischargeTo": {
+            "label": "dischargeTo property",
+            "comment": "location effluent will discharge into",
+            "domain": "https://www.thegazette.co.uk/def/water#ChangeOfDischarge",
+            "range": "http://www.geonames.org/ontology#Feature"
+        },
+        "https://www.thegazette.co.uk/def/water#dischargeFrom": {
+            "label": "dischargeFrom property",
+            "comment": "location where effluent generated",
+            "domain": "https://www.thegazette.co.uk/def/water#ChangeOfDischarge",
+            "range": "http://www.geonames.org/ontology#Feature"
+        },
+        "https://www.thegazette.co.uk/def/water#inPlaceOfExistingUndertaker": {
+            "label": "inPlaceOfExistingUndertaker property",
+            "comment": "existing undertaker",
+            "domain": "https://www.thegazette.co.uk/def/water#ChangeOfUndertaker",
+            "range": "https://www.thegazette.co.uk/def/organisation#Organisation"
+        },
+        "https://www.thegazette.co.uk/def/water#hasNewUndertaker": {
+            "label": "hasNewUndertaker property",
+            "comment": "new undertaker",
+            "domain": "https://www.thegazette.co.uk/def/water#ChangeOfUndertaker",
+            "range": "https://www.thegazette.co.uk/def/organisation#Organisation"
+        },
+        "https://www.thegazette.co.uk/def/water#hasLocationOfUndertaking": {
+            "label": "hasLocationOfUndertaking property",
+            "comment": "location that is being undertaken",
+            "domain": "https://www.thegazette.co.uk/def/water#ChangeOfUndertaker",
+            "range": "http://www.geonames.org/ontology#Feature"
+        },
+        "https://www.thegazette.co.uk/def/water#amalgamatesDrainageDistrict": {
+            "label": "amalgamatesDrainageDistrict property",
+            "comment": "drainage districts that are being amalgamated",
+            "domain": "https://www.thegazette.co.uk/def/water#AmalgamationOfDrainageDistrict",
+            "range": "https://www.thegazette.co.uk/def/water#DrainageDistrict"
+        },
+        "https://www.thegazette.co.uk/def/water#hasDrainageDistrict": {
+            "label": "hasDrainageDistrict property",
+            "comment": "drainage districts within a drainage board",
+            "domain": "https://www.thegazette.co.uk/def/water#InternalDrainageBoard",
+            "range": "https://www.thegazette.co.uk/def/water#DrainageDistrict"
+        },
+        "https://www.thegazette.co.uk/def/water#hasDrainageBoard": {
+            "label": "hasDrainageBoard property",
+            "comment": "Drainage board that is assocaited with the change of drainage baord",
+            "domain": "https://www.thegazette.co.uk/def/water#ChangeDrainageBaord",
+            "range": "https://www.thegazette.co.uk/def/water#InternalDrainageBoard"
+        },
+        "https://www.thegazette.co.uk/def/water#hasMineralWaterDesignation": {
+            "label": "hasMineralWaterDesignation property",
+            "comment": "Designation of mineral water",
+            "domain": "https://www.thegazette.co.uk/def/water#ChangeOfMineralWaterSource",
+            "range": "https://www.thegazette.co.uk/def/water#NaturalMineralWater"
+        },
+        "https://www.thegazette.co.uk/def/water#hasSource": {
+            "label": "hasSource property",
+            "comment": "location (source) of mineral water",
+            "domain": "https://www.thegazette.co.uk/def/water#NaturalMineralWater",
+            "range": "http://www.geonames.org/ontology#Feature"
+        },
+        "https://www.thegazette.co.uk/def/water#hasProducer": {
+            "label": "hasProducer property",
+            "comment": "organisation associated with mineral water production",
+            "domain": "https://www.thegazette.co.uk/def/water#NaturalMineralWater",
+            "range": "https://www.thegazette.co.uk/def/organisation#Organisation"
+        },
+        "https://www.thegazette.co.uk/def/water#hasPreviousDesignation": {
+            "label": "hasPreviousDesignation property",
+            "comment": "previous mineral water designation",
+            "domain": "https://www.thegazette.co.uk/def/water#RedesignateSource",
+            "range": "https://www.thegazette.co.uk/def/water#NaturalMineralWater"
+        },
+        "https://www.thegazette.co.uk/def/water#hasNewDesignation": {
+            "label": "hasNewDesignation property",
+            "comment": "new mineral water designation",
+            "domain": "https://www.thegazette.co.uk/def/water#RedesignateSource",
+            "range": "https://www.thegazette.co.uk/def/water#NaturalMineralWater"
+        },
+        "https://www.thegazette.co.uk/def/water#hasDesignation": {
+            "label": "hasDesignation property",
+            "comment": "mineral water designation",
+            "domain": "https://www.thegazette.co.uk/def/water#ChangeOfMineralWaterSource",
+            "range": "https://www.thegazette.co.uk/def/water#NaturalMineralWater"
+        }
+    },
+    "data_properties": {
+        "https://www.thegazette.co.uk/def/water#dateOfApplication": {
+            "label": "dateOfApplication functional property",
+            "comment": "date application made",
+            "domain": "https://www.thegazette.co.uk/def/water#ByelawConfirmation",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/water#dateOfApproval": {
+            "label": "dateOfApproval property",
+            "comment": "Date approved",
+            "domain": "https://www.thegazette.co.uk/def/water#NaturalMineralWaterSourceApplicationApproval",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "https://www.thegazette.co.uk/def/water#dischargeQuantity": {
+            "label": "dischargeQuantity property",
+            "comment": "quantity of discharge being applied for",
+            "domain": "https://www.thegazette.co.uk/def/water#ChangeOfDischarge",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/water#dischargeType": {
+            "label": "dischargeType property",
+            "comment": "type of discharge being applied for",
+            "domain": "https://www.thegazette.co.uk/def/water#ChangeOfDischarge",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/water#newNumberOfMembers": {
+            "label": "newNumberOfMembers property",
+            "comment": "new number of member in reconstituted drainage board",
+            "domain": "https://www.thegazette.co.uk/def/water#ReconstitutionOfDrainageBoard",
+            "range": "http://www.w3.org/2001/XMLSchema#integer"
+        },
+        "https://www.thegazette.co.uk/def/water#previousNumberOfMembers": {
+            "label": "previousNumberOfMembers property",
+            "comment": "previous number of member in reconstituted drainage board",
+            "domain": "https://www.thegazette.co.uk/def/water#ReconstitutionOfDrainageBoard",
+            "range": "http://www.w3.org/2001/XMLSchema#integer"
+        },
+        "https://www.thegazette.co.uk/def/water#nameOfMineralWater": {
+            "label": "nameOfMineralWater property",
+            "comment": "name of mineral water",
+            "domain": "https://www.thegazette.co.uk/def/water#NaturalMineralWater",
+            "range": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "https://www.thegazette.co.uk/def/water#dateOfDesignation": {
+            "label": "dateOfDesignation property",
+            "comment": "date of mineral water designation",
+            "domain": "https://www.thegazette.co.uk/def/water#ReconstitutionOfDrainageBoard",
+            "range": "http://www.w3.org/2001/XMLSchema#date"
+        }
+    }
+}

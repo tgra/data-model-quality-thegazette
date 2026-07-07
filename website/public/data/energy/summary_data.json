@@ -1,0 +1,38 @@
+{
+    "classes": {
+        "https://www.thegazette.co.uk/def/energy#EnergyNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/energy#EnergyThing": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/energy#Gas": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/energy#GasNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/energy#Coal": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/energy#CoalNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/energy#Electricity": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/energy#ElectricityNotice": {
+            "label": null,
+            "comment": null
+        }
+    },
+    "object_properties": {},
+    "data_properties": {}
+}

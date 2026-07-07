@@ -1,0 +1,158 @@
+{
+    "classes": {
+        "https://www.thegazette.co.uk/def/health#HealthNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/health#HealthThing": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/health#Medicines": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/health#MedicinesNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/health#ProductLicensing": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/health#ProductLicensingNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/health#PowersRelatingToPotentiallyInfectiousPersons": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/health#PowersRelatingToPotentiallyInfectiousPersonsNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/health#PowersToIssueDirectionsRelatingToEventsGatheringsAndPremises": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/health#PowersToIssueDirectionsRelatingToEventsGatheringsAndPremisesNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/health#TransportationStorageAndDisposalOfDeadBodiesEtc": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/health#TransportationStorageAndDisposalOfDeadBodiesEtcNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/health#EmergencyVolunteerCompensation": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/health#EmergencyVolunteerCompensationNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/health#DisapplicationModificationOfDbsProvisionsWales": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/health#DisapplicationModificationOfDbsProvisionsWalesNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/health#ReviewOfMedicalCertificatesOfCauseOfDeathAndCremationsScotland": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/health#ReviewOfMedicalCertificatesOfCauseOfDeathAndCremationsScotlandNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/health#InformationRelatingToFoodSupplyChainsFinancialPenalties": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/health#InformationRelatingToFoodSupplyChainsFinancialPenaltiesNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/health#TemporaryClosureOfEducationalInstitutionsAndChildcarePremises": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/health#TemporaryClosureOfEducationalInstitutionsAndChildcarePremisesNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/health#TemporaryContinuityDirectionsEtcEducationTrainingAndChildcare": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/health#TemporaryContinuityDirectionsEtcEducationTrainingAndChildcareNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/health#PostponementOfElectionsScotland": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/health#PostponementOfElectionsScotlandNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/health#FailureToPublishReportsOnTheNonDevolvedProvisionsOfCoronavirusAct2020": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/health#FailureToPublishReportsOnTheNonDevolvedProvisionsOfCoronavirusAct2020Notice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/health#TemporaryRegistrationOfSocialWorkersScotland": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/health#TemporaryRegistrationOfSocialWorkersScotlandNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/health#FreedomOfInformationExtensionsScotland": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/health#FreedomOfInformationExtensionsScotlandNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/health#ReportingOfStatutoryDutiesScotland": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/health#ReportingOfStatutoryDutiesScotlandNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/health#SeriousAndImminentThreatDeclaration": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/health#SeriousAndImminentThreatDeclarationNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/health#VeterinaryMedicines": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/health#VeterinaryMedicinesNotice": {
+            "label": null,
+            "comment": null
+        }
+    },
+    "object_properties": {},
+    "data_properties": {}
+}

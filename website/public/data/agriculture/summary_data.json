@@ -1,0 +1,54 @@
+{
+    "classes": {
+        "https://www.thegazette.co.uk/def/agriculture#AgricultureNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/agriculture#AgricultureThing": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/agriculture#Fisheries": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/agriculture#FisheriesNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/agriculture#CornReturns": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/agriculture#CornReturnsNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/agriculture#AnimalHealth": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/agriculture#AnimalHealthNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/agriculture#ForestryHealth": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/agriculture#ForestryHealthNotice": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/agriculture#InterventionBoard": {
+            "label": null,
+            "comment": null
+        },
+        "https://www.thegazette.co.uk/def/agriculture#InterventionBoardNotice": {
+            "label": null,
+            "comment": null
+        }
+    },
+    "object_properties": {},
+    "data_properties": {}
+}

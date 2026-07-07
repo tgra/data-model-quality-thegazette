@@ -15,10 +15,11 @@ export interface OverviewRow {
   dataProperties: number;
 }
 
+// Validated brand palette — slots defined in globals.css (:root)
 const SERIES = [
-  { key: "classes", label: "Classes", color: "#8e2433" },
-  { key: "objectProperties", label: "Object properties", color: "#2a78d6" },
-  { key: "dataProperties", label: "Data properties", color: "#c98500" },
+  { key: "classes", label: "Classes", color: "var(--series-1)" },
+  { key: "objectProperties", label: "Object properties", color: "var(--series-2)" },
+  { key: "dataProperties", label: "Data properties", color: "var(--series-3)" },
 ] as const;
 
 const BAR = 14;

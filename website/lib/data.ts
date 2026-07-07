@@ -103,7 +103,18 @@ export function getAllStats(): CategoryStats[] {
   return getCategories().map(getCategoryStats);
 }
 
-export function lodeUrl(category: string): string {
-  const ontology = encodeURIComponent(`https://www.thegazette.co.uk/def/${category}`);
-  return `http://150.146.207.114/lode/extract?lang=en&url=${ontology}`;
+/** Static pyLODE documentation generated at build time into public/docs. */
+export function docUrl(category: string): string {
+  return `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/docs/${category}.html`;
+}
+
+/** URIs observed at least once in The Gazette data, across all entity kinds. */
+export function getUsedUris(category: string): Set<string> {
+  const used = new Set<string>();
+  for (const { slug } of ENTITY_KINDS) {
+    for (const row of getFrequency(category, slug)) {
+      if (row.Frequency > 0) used.add(row.URI);
+    }
+  }
+  return used;
 }

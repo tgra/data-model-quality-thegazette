@@ -3,12 +3,14 @@ import { notFound } from "next/navigation";
 import {
   ENTITY_KINDS,
   categoryTitle,
+  docUrl,
   getCategories,
   getCompleteness,
   getFrequency,
   getSummaryData,
-  lodeUrl,
+  getUsedUris,
 } from "@/lib/data";
+import { BAND_LABEL, band, getDimensionScores } from "@/lib/quality";
 import { FrequencyBars } from "@/components/charts/FrequencyBars";
 import { CompletenessMeters } from "@/components/charts/CompletenessMeters";
 import { EntityTable } from "@/components/EntityTable";
@@ -37,11 +39,13 @@ export default async function QualityReview({
   const prev = categories[index - 1];
   const next = categories[index + 1];
   const summary = getSummaryData(category);
+  const scores = summary ? getDimensionScores(summary, getUsedUris(category)) : [];
 
   return (
     <>
       <nav className="breadcrumb" aria-label="Breadcrumb">
-        <Link href="/">Dashboard</Link> <span>/</span> Quality review <span>/</span>{" "}
+        <Link href="/">Dashboard</Link> <span>/</span>{" "}
+        <Link href="/quality-review">Quality review</Link> <span>/</span>{" "}
         {categoryTitle(category)}
       </nav>
 
@@ -49,30 +53,76 @@ export default async function QualityReview({
         <div>
           <h2>{categoryTitle(category)} ontology</h2>
           <p className="lead-muted">
-            Relevance (how often each term appears in The Gazette data) and completeness
-            (how well each term is annotated) for this ontology.
+            Quality of this ontology measured against DAMA data-quality dimensions, with the
+            underlying relevance and completeness detail per entity kind below.
           </p>
         </div>
         <div className="page-actions">
           <Link href={`/documentation/${category}`} className="btn btn-primary">
             Documentation
           </Link>
-          <a href={lodeUrl(category)} target="_blank" rel="noopener" className="btn">
-            LODE ↗
+          <a href={docUrl(category)} target="_blank" rel="noopener" className="btn">
+            Docs in new tab ↗
           </a>
         </div>
       </div>
+
+      {scores.length > 0 && (
+        <section aria-label="Quality scorecard">
+          <div className="scorecard">
+            {scores.map((s) => (
+              <div key={s.dimension} className="score-tile">
+                <div className="score-head">
+                  <span className="score-dimension">{s.dimension}</span>
+                  {s.score != null && (
+                    <span className={`score-badge ${band(s.score)}`}>
+                      {BAND_LABEL[band(s.score)]}
+                    </span>
+                  )}
+                </div>
+                {s.score != null ? (
+                  <>
+                    <div className="score-value">{s.score}%</div>
+                    <div
+                      className="score-meter"
+                      role="meter"
+                      aria-valuemin={0}
+                      aria-valuemax={100}
+                      aria-valuenow={s.score}
+                      aria-label={`${s.dimension} score`}
+                    >
+                      <div className="score-meter-fill" style={{ width: `${s.score}%` }} />
+                    </div>
+                  </>
+                ) : (
+                  <div className="score-value score-na">n/a</div>
+                )}
+                <p className="score-note">
+                  {s.method}
+                  {s.detail ? ` — ${s.detail}` : ""}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       {ENTITY_KINDS.map(({ slug, key, label }) => {
         const frequency = getFrequency(category, slug);
         const completeness = getCompleteness(category, slug);
         const entities = summary?.[key] ?? {};
-        if (frequency.length === 0 && !completeness && Object.keys(entities).length === 0) {
+        const count = Object.keys(entities).length;
+        if (frequency.length === 0 && !completeness && count === 0) {
           return null;
         }
         return (
           <section key={slug}>
-            <h4>{label}</h4>
+            <div className="section-head">
+              <h4>{label}</h4>
+              <span className="section-count">
+                {count} {count === 1 ? "term" : "terms"}
+              </span>
+            </div>
             <div className="panel-grid">
               <div className="card">
                 <h5 className="card-title">Relevance</h5>

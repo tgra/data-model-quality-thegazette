@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import "./globals.css";
 import { SiteNav } from "@/components/SiteNav";
 import { getCategories } from "@/lib/data";
@@ -21,15 +20,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body>
         <header className="site-header">
-          <Link href="/">
-            <Image
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/logo.png`}
-              alt="The Gazette logo"
-              width={43}
-              height={52}
-              priority
-            />
-          </Link>
           <h1>
             <Link href="/">The Gazette Data Model</Link>
           </h1>

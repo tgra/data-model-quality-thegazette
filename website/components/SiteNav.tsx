@@ -5,7 +5,8 @@ import { usePathname } from "next/navigation";
 import { categoryTitle } from "@/lib/nav";
 
 export function SiteNav({ categories }: { categories: string[] }) {
-  const pathname = usePathname();
+  // trailingSlash is on for static export — normalise before matching
+  const pathname = (usePathname() ?? "/").replace(/\/+$/, "") || "/";
   const active = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
@@ -18,6 +19,22 @@ export function SiteNav({ categories }: { categories: string[] }) {
         <li>
           <Link href="/" className={active("/") ? "active" : ""}>
             Dashboard
+          </Link>
+        </li>
+        <li>
+          <Link
+            href="/quality-review"
+            className={pathname === "/quality-review" ? "active" : ""}
+          >
+            Quality review
+          </Link>
+        </li>
+        <li>
+          <Link
+            href="/documentation"
+            className={pathname === "/documentation" ? "active" : ""}
+          >
+            Documentation
           </Link>
         </li>
       </ul>

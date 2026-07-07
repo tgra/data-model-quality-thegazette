@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { categoryTitle, getCategories, lodeUrl } from "@/lib/data";
+import { categoryTitle, docUrl, getCategories } from "@/lib/data";
 
 export function generateStaticParams() {
   return getCategories().map((category) => ({ category }));
@@ -24,7 +24,8 @@ export default async function Documentation({
   return (
     <>
       <nav className="breadcrumb" aria-label="Breadcrumb">
-        <Link href="/">Dashboard</Link> <span>/</span> Documentation <span>/</span>{" "}
+        <Link href="/">Dashboard</Link> <span>/</span>{" "}
+        <Link href="/documentation">Documentation</Link> <span>/</span>{" "}
         {categoryTitle(category)}
       </nav>
       <div className="page-head">
@@ -33,14 +34,14 @@ export default async function Documentation({
           <Link href={`/quality-review/${category}`} className="btn btn-primary">
             Quality review
           </Link>
-          <a href={lodeUrl(category)} target="_blank" rel="noopener" className="btn">
+          <a href={docUrl(category)} target="_blank" rel="noopener" className="btn">
             Open in new tab ↗
           </a>
         </div>
       </div>
       <iframe
         className="doc-frame"
-        src={lodeUrl(category)}
+        src={docUrl(category)}
         title={`${categoryTitle(category)} ontology documentation`}
       />
     </>

@@ -91,6 +91,26 @@ a:hover {
   color: inherit;
 }
 
+/* ---------- Site footer: data provenance ---------- */
+.site-footer {
+  border-top: 1px solid var(--border);
+  margin-top: 2rem;
+  padding: 1.25rem 1.5rem;
+  color: var(--ink-muted);
+  font-size: 0.8125rem;
+  text-align: center;
+}
+
+.site-footer a {
+  color: var(--brand);
+}
+
+.provenance-note {
+  margin-top: 0.5rem;
+  color: var(--ink-muted);
+  font-size: 0.8125rem;
+}
+
 /* ---------- Layout: sidebar + content ---------- */
 .layout {
   display: flex;

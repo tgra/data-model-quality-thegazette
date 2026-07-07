@@ -48,6 +48,11 @@ function pct(numerator: number, denominator: number): number {
   return denominator === 0 ? 0 : Math.round((numerator / denominator) * 100);
 }
 
+/** A field counts as present only when it holds a non-empty value. */
+function present(value: string | null | undefined): boolean {
+  return value != null && value !== "";
+}
+
 /**
  * DAMA-style quality dimensions computed from the ontology summary and
  * term-frequency data. Each score states its method so the number is auditable.
@@ -61,12 +66,12 @@ export function getDimensionScores(
 
   // Completeness: label and comment annotations present
   const fieldsPresent = entries.reduce(
-    (n, { entity }) => n + (entity.label != null ? 1 : 0) + (entity.comment != null ? 1 : 0),
+    (n, { entity }) => n + (present(entity.label) ? 1 : 0) + (present(entity.comment) ? 1 : 0),
     0,
   );
 
   // Uniqueness: labels not shared by another entity (case-insensitive)
-  const labelled = entries.filter(({ entity }) => entity.label != null);
+  const labelled = entries.filter(({ entity }) => present(entity.label));
   const labelCounts = new Map<string, number>();
   for (const { entity } of labelled) {
     const key = String(entity.label).trim().toLowerCase();
@@ -87,7 +92,7 @@ export function getDimensionScores(
   // Validity: properties declare both a domain and a range
   const properties = entries.filter(({ kind }) => kind === "property");
   const validProperties = properties.filter(
-    ({ entity }) => entity.domain != null && entity.range != null,
+    ({ entity }) => present(entity.domain) && present(entity.range),
   ).length;
 
   // Relevance: terms observed at least once in The Gazette data

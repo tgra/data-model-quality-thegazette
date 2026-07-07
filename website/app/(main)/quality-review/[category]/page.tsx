@@ -13,6 +13,7 @@ import { BAND_LABEL, band, getDimensionScores } from "@/lib/quality";
 import { FrequencyBars } from "@/components/charts/FrequencyBars";
 import { CompletenessMeters } from "@/components/charts/CompletenessMeters";
 import { EntityTable } from "@/components/EntityTable";
+import { formatQueryDate, getProvenance } from "@/lib/provenance";
 
 export function generateStaticParams() {
   return getCategories().map((category) => ({ category }));
@@ -39,6 +40,7 @@ export default async function QualityReview({
   const next = categories[index + 1];
   const summary = getSummaryData(category);
   const scores = summary ? getDimensionScores(summary, getUsedUris(category)) : [];
+  const provenance = getProvenance();
 
   return (
     <>
@@ -54,6 +56,10 @@ export default async function QualityReview({
           <p className="lead-muted">
             Quality of this ontology measured against DAMA data-quality dimensions, with the
             underlying relevance and completeness detail per entity kind below.
+          </p>
+          <p className="provenance-note">
+            Relevance figures reflect {provenance.source} data as queried on{" "}
+            {formatQueryDate(provenance.queriedOn)}.
           </p>
         </div>
         <div className="page-actions">

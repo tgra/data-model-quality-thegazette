@@ -16,6 +16,9 @@ concurrency:
 
 jobs:
   build:
+    # GitHub Pages deploy is only for the original repo; the Symantix mirror
+    # deploys via Vercel instead.
+    if: github.repository == 'tgra/data-model-quality-thegazette'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

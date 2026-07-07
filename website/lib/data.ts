@@ -104,12 +104,15 @@ export function getAllStats(): CategoryStats[] {
 }
 
 /**
- * Static pyLODE documentation, stored as docs/<category>/index.html so the
- * clean URL /docs/<category>/ serves on both Vercel (trailingSlash cleanUrls)
- * and GitHub Pages (directory index).
+ * pyLODE documentation HTML, read at build time and inlined into the doc page
+ * via <iframe srcDoc>. Inlining avoids any static-file URL that resolves
+ * differently in `next dev` (needs /docs/<cat>/index.html) vs Vercel
+ * (trailingSlash serves it at /docs/<cat>/ and 404s the index.html path).
  */
-export function docUrl(category: string): string {
-  return `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/docs/${category}/`;
+export function getDocHtml(category: string): string | null {
+  const file = path.join(process.cwd(), "public", "docs", category, "index.html");
+  if (!fs.existsSync(file)) return null;
+  return fs.readFileSync(file, "utf8");
 }
 
 /** URIs observed at least once in The Gazette data, across all entity kinds. */

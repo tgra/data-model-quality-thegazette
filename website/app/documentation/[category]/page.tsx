@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { categoryTitle, docUrl, getCategories } from "@/lib/data";
+import { categoryTitle, getCategories, getDocHtml } from "@/lib/data";
 
 export function generateStaticParams() {
   return getCategories().map((category) => ({ category }));
@@ -20,6 +20,7 @@ export default async function Documentation({
 }) {
   const { category } = await params;
   if (!getCategories().includes(category)) notFound();
+  const html = getDocHtml(category);
 
   return (
     <div className="doc-page">
@@ -32,11 +33,17 @@ export default async function Documentation({
           Quality review
         </Link>
       </div>
-      <iframe
-        className="doc-frame"
-        src={docUrl(category)}
-        title={`${categoryTitle(category)} ontology documentation`}
-      />
+      {html ? (
+        <iframe
+          className="doc-frame"
+          srcDoc={html}
+          title={`${categoryTitle(category)} ontology documentation`}
+        />
+      ) : (
+        <p className="viz-empty" style={{ padding: "1.5rem" }}>
+          No documentation is available for this ontology.
+        </p>
+      )}
     </div>
   );
 }

@@ -3,7 +3,6 @@ import { notFound } from "next/navigation";
 import {
   ENTITY_KINDS,
   categoryTitle,
-  docUrl,
   getCategories,
   getCompleteness,
   getFrequency,
@@ -61,9 +60,6 @@ export default async function QualityReview({
           <Link href={`/documentation/${category}`} className="btn btn-primary">
             Documentation
           </Link>
-          <a href={docUrl(category)} target="_blank" rel="noopener" className="btn">
-            Docs in new tab ↗
-          </a>
         </div>
       </div>
 
